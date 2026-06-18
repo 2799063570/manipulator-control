@@ -1,0 +1,30 @@
+[0.010s] Invoking command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2 -- -j8 -l8
+[0.063s] [  1%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[0.068s] [  7%] Built target joint_velocity_publisher
+[0.068s] [  9%] Built target timer_control_node
+[0.069s] [ 12%] Built target joint_velocity_subscriber
+[0.072s] [ 12%] Built target ament_cmake_python_copy_robot_control_ros2
+[0.221s] running egg_info
+[0.231s] writing robot_control_ros2.egg-info/PKG-INFO
+[0.232s] writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt
+[0.232s] writing top-level names to robot_control_ros2.egg-info/top_level.txt
+[0.269s] reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[0.270s] writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[0.295s] [ 12%] Built target ament_cmake_python_build_robot_control_ros2_egg
+[1.091s] Traceback (most recent call last):
+[1.091s]   File "/opt/ros/jazzy/lib/rosidl_generator_type_description/rosidl_generator_type_description", line 50, in <module>
+[1.091s]     sys.exit(main())
+[1.091s]              ^^^^^^
+[1.091s]   File "/opt/ros/jazzy/lib/rosidl_generator_type_description/rosidl_generator_type_description", line 46, in main
+[1.091s]     generate_type_hash(args.generator_arguments_file)
+[1.091s]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_generator_type_description/__init__.py", line 162, in generate_type_hash
+[1.091s]     with include_path.open('r') as include_file:
+[1.091s]          ^^^^^^^^^^^^^^^^^^^^^^
+[1.091s]   File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+[1.091s]     return io.open(self, mode, buffering, encoding, errors, newline)
+[1.091s]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[1.091s] FileNotFoundError: [Errno 2] No such file or directory: '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2/rosidl_generator_type_description/robot_control_ros2/msg/String.json'
+[1.124s] gmake[2]: *** [CMakeFiles/robot_control_ros2__rosidl_generator_type_description.dir/build.make:77: rosidl_generator_type_description/robot_control_ros2/msg/JointStateCommand.json] Error 1
+[1.124s] gmake[1]: *** [CMakeFiles/Makefile2:225: CMakeFiles/robot_control_ros2__rosidl_generator_type_description.dir/all] Error 2
+[1.125s] gmake: *** [Makefile:146: all] Error 2
+[1.127s] Invoked command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2 -- -j8 -l8

@@ -1,0 +1,28 @@
+[  1%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[  7%] Built target joint_velocity_publisher
+[  9%] Built target timer_control_node
+[ 12%] Built target joint_velocity_subscriber
+[ 12%] Built target ament_cmake_python_copy_robot_control_ros2
+running egg_info
+writing robot_control_ros2.egg-info/PKG-INFO
+writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt
+writing top-level names to robot_control_ros2.egg-info/top_level.txt
+reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[ 12%] Built target ament_cmake_python_build_robot_control_ros2_egg
+Traceback (most recent call last):
+  File "/opt/ros/jazzy/lib/rosidl_generator_type_description/rosidl_generator_type_description", line 50, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/opt/ros/jazzy/lib/rosidl_generator_type_description/rosidl_generator_type_description", line 46, in main
+    generate_type_hash(args.generator_arguments_file)
+  File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_generator_type_description/__init__.py", line 162, in generate_type_hash
+    with include_path.open('r') as include_file:
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2/rosidl_generator_type_description/robot_control_ros2/msg/String.json'
+gmake[2]: *** [CMakeFiles/robot_control_ros2__rosidl_generator_type_description.dir/build.make:77: rosidl_generator_type_description/robot_control_ros2/msg/JointStateCommand.json] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:225: CMakeFiles/robot_control_ros2__rosidl_generator_type_description.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

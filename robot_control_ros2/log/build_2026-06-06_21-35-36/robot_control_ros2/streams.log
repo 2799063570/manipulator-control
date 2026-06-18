@@ -1,0 +1,30 @@
+[0.010s] Invoking command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2 -- -j8 -l8
+[0.064s] [  2%] Built target robot_control_ros2__rosidl_generator_type_description
+[0.068s] [  4%] [32mBuilding CXX object CMakeFiles/joint_velocity_subscriber.dir/src/joint_velocity_subscriber.cpp.o[0m
+[0.070s] [  9%] Built target timer_control_node
+[0.070s] [ 14%] Built target joint_velocity_publisher
+[0.078s] [ 14%] Built target ament_cmake_python_copy_robot_control_ros2
+[0.092s] [ 21%] Built target robot_control_ros2__cpp
+[0.093s] [ 28%] Built target robot_control_ros2__rosidl_generator_c
+[0.122s] [ 35%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_c
+[0.128s] [ 42%] Built target robot_control_ros2__rosidl_typesupport_introspection_c
+[0.129s] [ 50%] Built target robot_control_ros2__rosidl_typesupport_c
+[0.131s] [ 57%] Built target robot_control_ros2__rosidl_typesupport_cpp
+[0.137s] [ 64%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_cpp
+[0.139s] [ 71%] Built target robot_control_ros2__rosidl_typesupport_introspection_cpp
+[0.162s] [ 76%] Built target robot_state_pub
+[0.163s] [ 76%] Built target robot_control_ros2
+[0.189s] [ 78%] Built target robot_control_ros2__py
+[0.219s] [ 83%] Built target robot_control_ros2__rosidl_generator_py
+[0.249s] [ 97%] Built target robot_control_ros2_s__rosidl_typesupport_fastrtps_c
+[0.249s] [ 97%] Built target robot_control_ros2_s__rosidl_typesupport_c
+[0.249s] [ 97%] Built target robot_control_ros2_s__rosidl_typesupport_introspection_c
+[0.259s] running egg_info
+[0.279s] writing robot_control_ros2.egg-info/PKG-INFO
+[0.280s] writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt
+[0.280s] writing top-level names to robot_control_ros2.egg-info/top_level.txt
+[0.317s] reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[0.318s] writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[0.346s] [ 97%] Built target ament_cmake_python_build_robot_control_ros2_egg
+[5.565s] [100%] [32m[1mLinking CXX executable joint_velocity_subscriber[0m
+[5.744s] [100%] Built target joint_velocity_subscriber

@@ -1,0 +1,41 @@
+[  1%] Built target robot_control_ros2__rosidl_generator_type_description
+[  3%] Built target timer_control_node
+[  6%] Built target joint_velocity_subscriber
+[  6%] Built target ament_cmake_python_copy_robot_control_ros2
+[  7%] Built target robot_control_ros2__cpp
+[ 25%] Built target robot_control_ros2__rosidl_generator_c
+[ 33%] Built target robot_control_ros2__rosidl_typesupport_cpp
+[ 41%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_cpp
+[ 48%] Built target robot_control_ros2__rosidl_typesupport_c
+[ 56%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_c
+[ 64%] Built target robot_control_ros2__rosidl_typesupport_introspection_c
+[ 71%] Built target robot_control_ros2__rosidl_typesupport_introspection_cpp
+[ 71%] Built target robot_control_ros2
+[ 76%] Built target student_servier
+[ 76%] Built target robot_state_pub
+[ 79%] Built target student_client
+[ 82%] Built target vel_to_pos_node
+[ 83%] [32mBuilding CXX object CMakeFiles/joint_velocity_publisher.dir/src/joint_velocity_publisher.cpp.o[0m
+[ 84%] Built target robot_control_ros2__py
+[ 91%] Built target robot_control_ros2__rosidl_generator_py
+[ 96%] Built target robot_control_ros2_s__rosidl_typesupport_c
+[ 96%] Built target robot_control_ros2_s__rosidl_typesupport_fastrtps_c
+[ 98%] Built target robot_control_ros2_s__rosidl_typesupport_introspection_c
+running egg_info
+writing robot_control_ros2.egg-info/PKG-INFO
+writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt
+writing top-level names to robot_control_ros2.egg-info/top_level.txt
+reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[ 98%] Built target ament_cmake_python_build_robot_control_ros2_egg
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/joint_velocity_publisher.cpp:[m[K In member function ‘[01m[Kvoid JointVelocityPublisher::[01;32m[Ktime_callback[m[K()[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/joint_velocity_publisher.cpp:17:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kjoint_velocity_cmd[m[K’ was not declared in this scope; did you mean ‘[01m[KJointVelocityCmd[m[K’?
+   17 |             [01;31m[Kjoint_velocity_cmd[m[K message;
+      |             [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+      |             [32m[KJointVelocityCmd[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/joint_velocity_publisher.cpp:18:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kmessage[m[K’ was not declared in this scope
+   18 |             [01;31m[Kmessage[m[K.velocity_cmd = {0.1, 0.2, 0.3, 0.5, 0.1, 0.7};
+      |             [01;31m[K^~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/joint_velocity_publisher.dir/build.make:76: CMakeFiles/joint_velocity_publisher.dir/src/joint_velocity_publisher.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:637: CMakeFiles/joint_velocity_publisher.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

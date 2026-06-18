@@ -1,0 +1,8 @@
+String name
+int32 num1
+int32 num2
+
+---
+
+int num
+bool is_ok

@@ -1,0 +1,92 @@
+[  1%] Built target robot_control_ros2__rosidl_generator_type_description
+[  5%] Built target joint_velocity_subscriber
+[  8%] Built target joint_velocity_publisher
+[ 12%] Built target timer_control_node
+[ 12%] Built target ament_cmake_python_copy_robot_control_ros2
+[ 14%] Built target robot_control_ros2__cpp
+[ 28%] Built target robot_control_ros2__rosidl_generator_c
+[ 42%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_cpp
+[ 41%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_c
+[ 50%] Built target robot_control_ros2__rosidl_typesupport_cpp
+[ 57%] Built target robot_control_ros2__rosidl_typesupport_introspection_c
+[ 64%] Built target robot_control_ros2__rosidl_typesupport_c
+[ 71%] Built target robot_control_ros2__rosidl_typesupport_introspection_cpp
+[ 71%] Built target robot_control_ros2
+[ 75%] Built target student_servier
+[ 78%] Built target robot_state_pub
+[ 80%] [32mBuilding CXX object CMakeFiles/student_client.dir/src/student_client.cpp.o[0m
+[ 82%] Built target robot_control_ros2__py
+[ 87%] Built target robot_control_ros2__rosidl_generator_py
+[ 98%] Built target robot_control_ros2_s__rosidl_typesupport_fastrtps_c
+[ 98%] Built target robot_control_ros2_s__rosidl_typesupport_c
+[ 98%] Built target robot_control_ros2_s__rosidl_typesupport_introspection_c
+running egg_info
+writing robot_control_ros2.egg-info/PKG-INFO
+writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt
+writing top-level names to robot_control_ros2.egg-info/top_level.txt
+reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[ 98%] Built target ament_cmake_python_build_robot_control_ros2_egg
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:[m[K In function ‘[01m[Kint[01;32m[K main[m[K(int, char**)[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:43:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kbool ServiceClient::[01;32m[KwaitConnect[m[K()[m[K’ is private within this context
+   43 |     bool flag = [01;31m[Kclient_node->waitConnect()[m[K;
+      |                 [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:15:10:[m[K [01;36m[Knote: [m[Kdeclared private here
+   15 |     bool [01;36m[KwaitConnect[m[K()
+      |          [01;36m[K^~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:49:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kclcpp[m[K’ has not been declared
+   49 |     [01;31m[Kclcpp[m[K::Client<Student>::FutureAndRequestId response = client_node->set_request(1, 2);
+      |     [01;31m[K^~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:49:26:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+   49 |     clcpp::Client<Student[01;31m[K>[m[K::FutureAndRequestId response = client_node->set_request(1, 2);
+      |                          [01;31m[K^[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:49:29:[m[K [01;31m[Kerror: [m[K‘[01m[K::FutureAndRequestId[m[K’ has not been declared; did you mean ‘[01m[Krclcpp::detail::FutureAndRequestId[m[K’?
+   49 |     clcpp::Client<Student>::[01;31m[KFutureAndRequestId[m[K response = client_node->set_request(1, 2);
+      |                             [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+      |                             [32m[Krclcpp::detail::FutureAndRequestId[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executor_options.hpp:22[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executor.hpp:38[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172[m[K,
+                 from [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:1[m[K:
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/client.hpp:61:8:[m[K [01;36m[Knote: [m[K‘[01m[Krclcpp::detail::FutureAndRequestId[m[K’ declared here
+   61 | struct [01;36m[KFutureAndRequestId[m[K
+      |        [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:50:9:[m[K [01;31m[Kerror: [m[K‘[01m[Krcl[m[K’ has not been declared
+   50 |     if ([01;31m[Krcl[m[K::spin_until_future_complete(client_node, response) == rclcpp::FutureReturnCode::SUCCESS)
+      |         [01;31m[K^~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:50:54:[m[K [01;31m[Kerror: [m[K‘[01m[Kresponse[m[K’ was not declared in this scope
+   50 |     if (rcl::spin_until_future_complete(client_node, [01;31m[Kresponse[m[K) == rclcpp::FutureReturnCode::SUCCESS)
+      |                                                      [01;31m[K^~~~~~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:52:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kclient[m[K’ was not declared in this scope
+   52 |         RCLCPP_INFO([01;31m[Kclient[m[K->get_logger(),"请求正常处理");
+      |                     [01;31m[K^~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:52:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   52 |         [01;31m[KRCLCPP_INFO[m[K(client->get_logger(),"请求正常处理");
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:53:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kclient[m[K’ was not declared in this scope
+   53 |         RCLCPP_INFO([01;31m[Kclient[m[K->get_logger(),"响应结果:%d!", response.get()->sum);
+      |                     [01;31m[K^~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:53:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   53 |         [01;31m[KRCLCPP_INFO[m[K(client->get_logger(),"响应结果:%d!", response.get()->sum);
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:56:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kclient[m[K’ was not declared in this scope
+   56 |         RCLCPP_INFO([01;31m[Kclient[m[K->get_logger(),"请求异常");
+      |                     [01;31m[K^~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:56:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   56 |         [01;31m[KRCLCPP_INFO[m[K(client->get_logger(),"请求异常");
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:[m[K In member function ‘[01m[Kbool ServiceClient::[01;32m[KwaitConnect[m[K()[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:27:5:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+   27 |     [01;35m[K}[m[K
+      |     [01;35m[K^[m[K
+gmake[2]: *** [CMakeFiles/student_client.dir/build.make:76: CMakeFiles/student_client.dir/src/student_client.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:769: CMakeFiles/student_client.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

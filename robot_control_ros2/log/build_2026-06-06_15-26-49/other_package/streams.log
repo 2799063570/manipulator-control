@@ -1,0 +1,35 @@
+[0.010s] Invoking command in '/home/chenque/cpp_practice/robot_control_ros2/build/other_package': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/chenque/cpp_practice/robot_control_ros2/src/other_package -DCMAKE_INSTALL_PREFIX=/home/chenque/cpp_practice/robot_control_ros2/install/other_package
+[0.065s] -- The C compiler identification is GNU 13.3.0
+[0.125s] -- The CXX compiler identification is GNU 13.3.0
+[0.144s] -- Detecting C compiler ABI info
+[0.246s] -- Detecting C compiler ABI info - done
+[0.251s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.251s] -- Detecting C compile features
+[0.252s] -- Detecting C compile features - done
+[0.263s] -- Detecting CXX compiler ABI info
+[0.367s] -- Detecting CXX compiler ABI info - done
+[0.374s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.374s] -- Detecting CXX compile features
+[0.374s] -- Detecting CXX compile features - done
+[0.377s] -- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.510s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.586s] -- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.613s] -- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.622s] -- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.632s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.644s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.702s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.705s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.786s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[0.802s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[0.823s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.871s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[0.880s] -- Found robot_control_ros2: 0.0.0 (/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake)
+[0.886s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_target_dependencies/cmake/ament_target_dependencies.cmake:42 (message):
+[0.886s]   ament_target_dependencies() the first argument must be a valid target name
+[0.886s] Call Stack (most recent call first):
+[0.886s]   CMakeLists.txt:15 (ament_target_dependencies)
+[0.886s] 
+[0.886s] [0m
+[0.887s] -- Configuring incomplete, errors occurred!
+[0.895s] Invoked command in '/home/chenque/cpp_practice/robot_control_ros2/build/other_package' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/chenque/cpp_practice/robot_control_ros2/src/other_package -DCMAKE_INSTALL_PREFIX=/home/chenque/cpp_practice/robot_control_ros2/install/other_package

@@ -1,0 +1,45 @@
+[0.013s] Invoking command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2 -- -j8 -l8
+[0.039s] -- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.062s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.138s] -- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.159s] -- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.165s] -- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.175s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.184s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.230s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.230s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.288s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.347s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[0.360s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.370s] -- Found rosidl_adapter: 4.6.7 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[0.588s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[0.729s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.779s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.780s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[0.979s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[0.990s] -- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[1.004s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.005s] -- Configured cppcheck include dirs: /home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/include
+[1.005s] -- Configured cppcheck exclude dirs and/or files: 
+[1.005s] -- Added test 'lint_cmake' to check CMake code style
+[1.007s] -- Added test 'uncrustify' to check C / C++ code style
+[1.007s] -- Configured uncrustify additional arguments: 
+[1.007s] -- Added test 'xmllint' to check XML markup files
+[1.010s] -- Configuring done (1.0s)
+[1.016s] [31mCMake Error at CMakeLists.txt:56 (add_executable):
+[1.016s]   Cannot find source file:
+[1.016s] 
+[1.016s]     src/robot_state.cpp
+[1.016s] 
+[1.016s]   Tried extensions .c .C .c++ .cc .cpp .cxx .cu .mpp .m .M .mm .ixx .cppm
+[1.016s]   .ccm .cxxm .c++m .h .hh .h++ .hm .hpp .hxx .in .txx .f .F .for .f77 .f90
+[1.017s]   .f95 .f03 .hip .ispc
+[1.017s] 
+[1.017s] [0m
+[1.019s] [31mCMake Error at CMakeLists.txt:56 (add_executable):
+[1.019s]   No SOURCES given to target: vel_to_pos_node
+[1.019s] 
+[1.019s] [0m
+[1.019s] [0mCMake Generate step failed.  Build files cannot be regenerated correctly.[0m
+[1.027s] gmake: *** [Makefile:1912: cmake_check_build_system] Error 1
+[1.029s] Invoked command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2 -- -j8 -l8

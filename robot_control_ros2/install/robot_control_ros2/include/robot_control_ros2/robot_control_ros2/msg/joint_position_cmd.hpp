@@ -1,0 +1,12 @@
+// generated from rosidl_generator_cpp/resource/idl.hpp.em
+// generated code does not contain a copyright notice
+
+#ifndef ROBOT_CONTROL_ROS2__MSG__JOINT_POSITION_CMD_HPP_
+#define ROBOT_CONTROL_ROS2__MSG__JOINT_POSITION_CMD_HPP_
+
+#include "robot_control_ros2/msg/detail/joint_position_cmd__struct.hpp"
+#include "robot_control_ros2/msg/detail/joint_position_cmd__builder.hpp"
+#include "robot_control_ros2/msg/detail/joint_position_cmd__traits.hpp"
+#include "robot_control_ros2/msg/detail/joint_position_cmd__type_support.hpp"
+
+#endif  // ROBOT_CONTROL_ROS2__MSG__JOINT_POSITION_CMD_HPP_

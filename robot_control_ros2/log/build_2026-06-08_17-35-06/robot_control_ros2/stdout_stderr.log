@@ -1,0 +1,48 @@
+[  1%] Built target robot_control_ros2__rosidl_generator_type_description
+[  3%] Built target joint_velocity_publisher
+[  7%] Built target joint_velocity_subscriber
+[  8%] Built target timer_control_node
+[  8%] Built target ament_cmake_python_copy_robot_control_ros2
+[ 10%] Built target robot_control_ros2__cpp
+[ 28%] Built target robot_control_ros2__rosidl_generator_c
+[ 51%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_cpp
+[ 51%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_c
+[ 51%] Built target robot_control_ros2__rosidl_typesupport_cpp
+[ 61%] Built target robot_control_ros2__rosidl_typesupport_introspection_cpp
+[ 66%] Built target robot_control_ros2__rosidl_typesupport_introspection_c
+[ 74%] Built target robot_control_ros2__rosidl_typesupport_c
+[ 75%] Built target robot_control_ros2
+[ 80%] Built target student_client
+[ 82%] Built target robot_state_pub
+[ 82%] Built target student_servier
+[ 83%] [32mBuilding CXX object CMakeFiles/vel_to_pos_node.dir/src/vel_to_pos_node.cpp.o[0m
+[ 84%] Built target robot_control_ros2__py
+[ 91%] Built target robot_control_ros2__rosidl_generator_py
+[ 97%] Built target robot_control_ros2_s__rosidl_typesupport_fastrtps_c
+[ 97%] Built target robot_control_ros2_s__rosidl_typesupport_c
+[ 98%] Built target robot_control_ros2_s__rosidl_typesupport_introspection_c
+running egg_info
+writing robot_control_ros2.egg-info/PKG-INFO
+writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt
+writing top-level names to robot_control_ros2.egg-info/top_level.txt
+reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[ 98%] Built target ament_cmake_python_build_robot_control_ros2_egg
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:[m[K In constructor ‘[01m[KVel2PosNode::[01;32m[KVel2PosNode[m[K()[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:12:13:[m[K [01;35m[Kwarning: [m[Klist-initializer for non-class type must not be parenthesized
+   12 |             [01;35m[Kvelocity_cmd_({0,0,0,0,0,0})[m[K,
+      |             [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:13:13:[m[K [01;35m[Kwarning: [m[Klist-initializer for non-class type must not be parenthesized
+   13 |             [01;35m[Kposition_cmd_({0,0,0,0,0,0})[m[K,
+      |             [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:14:16:[m[K [01;35m[Kwarning: [m[Kconverting to ‘[01m[K_Float32[m[K’ from ‘[01m[Kdouble[m[K’ with greater conversion rank
+   14 |             dt([01;35m[K0.02[m[K)
+      |                [01;35m[K^~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:[m[K In member function ‘[01m[Kvoid Vel2PosNode::[01;32m[Ktimer_callback[m[K()[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:37:30:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing JointPositionCmd = using robot_control_ros2::msg::JointPositionCmd = struct robot_control_ros2::msg::JointPositionCmd_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct robot_control_ros2::msg::JointPositionCmd_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kposition_cmd[m[K’; did you mean ‘[01m[Kpostion_cmd[m[K’?
+   37 |                 position_cmd.[01;31m[Kposition_cmd[m[K[i] = position_cmd_[i];
+      |                              [01;31m[K^~~~~~~~~~~~[m[K
+      |                              [32m[Kpostion_cmd[m[K
+gmake[2]: *** [CMakeFiles/vel_to_pos_node.dir/build.make:76: CMakeFiles/vel_to_pos_node.dir/src/vel_to_pos_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:799: CMakeFiles/vel_to_pos_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

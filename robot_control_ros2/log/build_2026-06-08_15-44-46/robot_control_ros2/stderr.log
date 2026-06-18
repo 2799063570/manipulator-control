@@ -1,0 +1,11 @@
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+                 from [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:1[m[K:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:[m[K In function ‘[01m[Kint[01;32m[K main[m[K(int, char**)[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:54:46:[m[K [01;31m[Kerror: [m[Kbase operand of ‘[01m[K->[m[K’ has non-pointer type ‘[01m[Krclcpp::Client<robot_control_ros2::srv::Student>::FutureAndRequestId[m[K’
+   54 |                 response.get()->num, response[01;31m[K->[m[Kis_ok ? "true" : "false");
+      |                                              [01;31m[K^~[m[K
+gmake[2]: *** [CMakeFiles/student_client.dir/build.make:76: CMakeFiles/student_client.dir/src/student_client.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:769: CMakeFiles/student_client.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,20 @@
+[ 50%] Built target self_msg_test_publisher
+[100%] Built target self_msg_test_subscriber
+-- Install configuration: ""
+-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/lib/other_package/self_msg_test_publisher
+-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/lib/other_package/self_msg_test_subscriber
+-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/ament_index/resource_index/package_run_dependencies/other_package
+-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/ament_index/resource_index/parent_prefix_path/other_package
+-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/environment/ament_prefix_path.sh
+-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/environment/path.sh
+-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/environment/path.dsv
+-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/local_setup.bash
+-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/local_setup.sh
+-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/local_setup.zsh
+-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/local_setup.dsv
+-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/package.dsv
+-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/ament_index/resource_index/packages/other_package
+-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/cmake/other_packageConfig.cmake
+-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/cmake/other_packageConfig-version.cmake
+-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/package.xml

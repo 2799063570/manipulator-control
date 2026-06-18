@@ -1,0 +1,3 @@
+/home/chenque/cpp_practice/cubic_interpolator/build/CMakeFiles/test_cubic_interpolator.dir
+/home/chenque/cpp_practice/cubic_interpolator/build/CMakeFiles/edit_cache.dir
+/home/chenque/cpp_practice/cubic_interpolator/build/CMakeFiles/rebuild_cache.dir

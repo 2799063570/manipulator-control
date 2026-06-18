@@ -1,0 +1,38 @@
+{
+  "package_name": "robot_control_ros2",
+  "output_dir": "/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2/rosidl_generator_py/robot_control_ros2",
+  "template_dir": "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource",
+  "idl_tuples": [
+    "/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2/rosidl_adapter/robot_control_ros2:msg/JointStateCommand.idl",
+    "/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2/rosidl_adapter/robot_control_ros2:srv/Student.idl",
+    "/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2/rosidl_adapter/robot_control_ros2:msg/JointVelocityCmd.idl",
+    "/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2/rosidl_adapter/robot_control_ros2:msg/JointPositionCmd.idl"
+  ],
+  "ros_interface_dependencies": [
+    "service_msgs:/opt/ros/jazzy/share/service_msgs/msg/ServiceEventInfo.idl",
+    "builtin_interfaces:/opt/ros/jazzy/share/builtin_interfaces/msg/Duration.idl",
+    "builtin_interfaces:/opt/ros/jazzy/share/builtin_interfaces/msg/Time.idl"
+  ],
+  "target_dependencies": [
+    "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../../../lib/rosidl_generator_py/rosidl_generator_py",
+    "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_generator_py/__init__.py",
+    "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_generator_py/generate_py_impl.py",
+    "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_action_pkg_typesupport_entry_point.c.em",
+    "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_action.py.em",
+    "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_idl_pkg_typesupport_entry_point.c.em",
+    "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_idl_support.c.em",
+    "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_idl.py.em",
+    "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_msg_pkg_typesupport_entry_point.c.em",
+    "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_msg_support.c.em",
+    "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_msg.py.em",
+    "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_srv_pkg_typesupport_entry_point.c.em",
+    "/opt/ros/jazzy/share/rosidl_generator_py/cmake/../resource/_srv.py.em",
+    "/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2/rosidl_adapter/robot_control_ros2/msg/JointStateCommand.idl",
+    "/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2/rosidl_adapter/robot_control_ros2/srv/Student.idl",
+    "/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2/rosidl_adapter/robot_control_ros2/msg/JointVelocityCmd.idl",
+    "/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2/rosidl_adapter/robot_control_ros2/msg/JointPositionCmd.idl",
+    "/opt/ros/jazzy/share/service_msgs/msg/ServiceEventInfo.idl",
+    "/opt/ros/jazzy/share/builtin_interfaces/msg/Duration.idl",
+    "/opt/ros/jazzy/share/builtin_interfaces/msg/Time.idl"
+  ]
+}

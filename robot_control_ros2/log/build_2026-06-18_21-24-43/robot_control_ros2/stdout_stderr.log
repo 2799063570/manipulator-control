@@ -1,0 +1,137 @@
+[  1%] Built target robot_control_ros2__rosidl_generator_type_description
+[  3%] Built target timer_control_node
+[  6%] Built target joint_velocity_subscriber
+[  6%] Built target ament_cmake_python_copy_robot_control_ros2
+[  7%] Built target robot_control_ros2__cpp
+[ 24%] Built target robot_control_ros2__rosidl_generator_c
+[ 37%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_c
+[ 39%] Built target robot_control_ros2__rosidl_typesupport_cpp
+[ 51%] Built target robot_control_ros2__rosidl_typesupport_introspection_c
+[ 53%] Built target robot_control_ros2__rosidl_typesupport_introspection_cpp
+[ 60%] Built target robot_control_ros2__rosidl_typesupport_c
+[ 68%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_cpp
+[ 70%] Built target joint_velocity_publisher
+[ 73%] Built target student_servier
+[ 75%] Built target robot_state_pub
+[ 75%] Built target robot_control_ros2
+[ 78%] Built target student_client
+[ 80%] [32mBuilding CXX object CMakeFiles/vel_to_pos_node.dir/src/robot_utils/safety_limiter.cpp.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/vel_to_pos_node.dir/src/vel_to_pos_node.cpp.o[0m
+[ 81%] [32mBuilding CXX object CMakeFiles/vel_to_pos_node.dir/src/robot_utils/trajectory_buffer.cpp.o[0m
+[ 82%] [32mBuilding CXX object CMakeFiles/vel_to_pos_node.dir/src/robot_utils/robot_state.cpp.o[0m
+[ 84%] [32mBuilding CXX object CMakeFiles/vel_to_pos_node.dir/src/robot_utils/cubic_interpolator.cpp.o[0m
+[ 85%] Built target robot_control_ros2__py
+[ 91%] Built target robot_control_ros2__rosidl_generator_py
+[ 93%] Built target robot_control_ros2_s__rosidl_typesupport_introspection_c
+[ 96%] Built target robot_control_ros2_s__rosidl_typesupport_fastrtps_c
+running egg_info
+[ 98%] Built target robot_control_ros2_s__rosidl_typesupport_c
+writing robot_control_ros2.egg-info/PKG-INFO
+writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt
+writing top-level names to robot_control_ros2.egg-info/top_level.txt
+reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[ 98%] Built target ament_cmake_python_build_robot_control_ros2_egg
+In file included from [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/safety_limiter.cpp:1[m[K:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/include/robot_utils/safety_limiter.hpp:[m[K In constructor ‘[01m[KSafetyLimiter::[01;32m[KSafetyLimiter[m[K(size_t, double)[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/include/robot_utils/safety_limiter.hpp:29:12:[m[K [01;35m[Kwarning: [m[K‘[01m[KSafetyLimiter::maxVelocity_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   29 |     double [01;35m[KmaxVelocity_[m[K;
+      |            [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/include/robot_utils/safety_limiter.hpp:27:25:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kstd::vector<double> SafetyLimiter::low_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   27 |     std::vector<double> [01;35m[Klow_[m[K;
+      |                         [01;35m[K^~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/safety_limiter.cpp:6:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+    6 | [01;35m[KSafetyLimiter[m[K::SafetyLimiter(size_t dof, double maxVelocity)
+      | [01;35m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/safety_limiter.cpp:[m[K In member function ‘[01m[Kbool SafetyLimiter::[01;32m[KisSafe[m[K(const std::vector<double>&, const std::vector<double>&) const[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/safety_limiter.cpp:49:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kconst size_t[m[K’ {aka ‘[01m[Kconst long unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+   49 |     for (int i = 0; [01;35m[Ki < dof_[m[K; i++)
+      |                     [01;35m[K~~^~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/safety_limiter.cpp:57:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kconst size_t[m[K’ {aka ‘[01m[Kconst long unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+   57 |     for (int i = 0; [01;35m[Ki<dof_[m[K; i++)
+      |                     [01;35m[K~^~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/safety_limiter.cpp:[m[K In member function ‘[01m[Kstd::vector<double> SafetyLimiter::[01;32m[KclampPosition[m[K(const std::vector<double>&) const[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/safety_limiter.cpp:76:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kconst size_t[m[K’ {aka ‘[01m[Kconst long unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+   76 |     for (int i = 0; [01;35m[Ki < dof_[m[K; i++)
+      |                     [01;35m[K~~^~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/safety_limiter.cpp:[m[K In member function ‘[01m[Kstd::vector<double> SafetyLimiter::[01;32m[KclampVelocity[m[K(const std::vector<double>&) const[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/safety_limiter.cpp:91:23:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kconst size_t[m[K’ {aka ‘[01m[Kconst long unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+   91 |     for (int i = 0; [01;35m[Ki < dof_[m[K; i++)
+      |                     [01;35m[K~~^~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/safety_limiter.cpp:[m[K In member function ‘[01m[KRobotState SafetyLimiter::[01;32m[KclampRobotState[m[K(const RobotState&) const[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/safety_limiter.cpp:106:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kconst size_t[m[K’ {aka ‘[01m[Kconst long unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  106 |     for (int i = 0; [01;35m[Ki<dof_[m[K; i++)
+      |                     [01;35m[K~^~~~~[m[K
+In file included from [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/robot_state.cpp:1[m[K:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/include/robot_utils/robot_state.hpp:[m[K In constructor ‘[01m[KRobotState::[01;32m[KRobotState[m[K(size_t)[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/include/robot_utils/robot_state.hpp:24:12:[m[K [01;35m[Kwarning: [m[K‘[01m[KRobotState::dof_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   24 |     size_t [01;35m[Kdof_[m[K;
+      |            [01;35m[K^~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/include/robot_utils/robot_state.hpp:22:25:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kstd::vector<double> RobotState::q_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   22 |     std::vector<double> [01;35m[Kq_[m[K;
+      |                         [01;35m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/robot_state.cpp:3:1:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+    3 | [01;35m[KRobotState[m[K::RobotState(size_t dof)
+      | [01;35m[K^~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/robot_state.cpp:[m[K In member function ‘[01m[Kbool RobotState::[01;32m[Koperator==[m[K(const RobotState&)[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/robot_state.cpp:46:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+   46 |     for (int i = 0; [01;35m[Ki<dof_[m[K; i++)
+      |                     [01;35m[K~^~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/robot_state.cpp:[m[K In member function ‘[01m[Kbool RobotState::[01;32m[Koperator!=[m[K(const RobotState&)[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/robot_state.cpp:56:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+   56 |     for (int i = 0; [01;35m[Ki<dof_[m[K; i++)
+      |                     [01;35m[K~^~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:[m[K In member function ‘[01m[Kvoid CubicInterpolator::[01;32m[Kcalculate5Times[m[K()[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:108:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  108 |     for (int i = 0; [01;35m[Ki<dof_[m[K; i++)
+      |                     [01;35m[K~^~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:[m[K In member function ‘[01m[Kconst RobotState& CubicInterpolator::[01;32m[KgetRobotState[m[K(size_t) const[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:171:15:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kconst int[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  171 |     if ([01;35m[Kindex >= num_[m[K) throw std::runtime_error("index out of tras index");
+      |         [01;35m[K~~~~~~^~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:[m[K In constructor ‘[01m[KVel2PosNode::[01;32m[KVel2PosNode[m[K()[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:26:39:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K)[m[K’ token
+   26 |             cubic_interpolator_(dof_, [01;31m[K)[m[K
+      |                                       [01;31m[K^[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:113:16:[m[K [01;35m[Kwarning: [m[K‘[01m[KVel2PosNode::duration_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  113 |         double [01;35m[Kduration_[m[K;
+      |                [01;35m[K^~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:110:16:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kdouble Vel2PosNode::dt_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  110 |         double [01;35m[Kdt_[m[K;
+      |                [01;35m[K^~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:16:9:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   16 |         [01;35m[KVel2PosNode[m[K() : Node("Vel_to_Pos_node"),
+      |         [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:112:13:[m[K [01;35m[Kwarning: [m[K‘[01m[KVel2PosNode::control_rate_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  112 |         int [01;35m[Kcontrol_rate_[m[K;
+      |             [01;35m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:111:13:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kint Vel2PosNode::control_time_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  111 |         int [01;35m[Kcontrol_time_[m[K;
+      |             [01;35m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:16:9:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   16 |         [01;35m[KVel2PosNode[m[K() : Node("Vel_to_Pos_node"),
+      |         [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:[m[K In member function ‘[01m[Kvoid Vel2PosNode::[01;32m[Ksub_callback[m[K(const JointVelocityCmd&)[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:63:43:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[KRobotState[m[K’ to ‘[01m[Kconst std::vector<double, std::allocator<double> >&[m[K’
+   63 |             robot_state_goal_.setPosition([01;31m[Krobot_state_goal_[m[K);
+      |                                           [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+      |                                           [01;31m[K|[m[K
+      |                                           [01;31m[KRobotState[m[K
+In file included from [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:4[m[K:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/include/robot_utils/robot_state.hpp:12:49:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kvoid RobotState::[01;32m[KsetPosition[m[K(const std::vector<double, std::allocator<double> >&)[m[K’
+   12 |     void setPosition([01;36m[Kconst std::vector<double>& q[m[K);
+      |                      [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:[m[K In member function ‘[01m[Kvoid Vel2PosNode::[01;32m[Ktimer_callback[m[K()[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:87:40:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass TrajectoryBuffer[m[K’ has no member named ‘[01m[Kpush_back[m[K’
+   87 |                     trajectory_buffer_.[01;31m[Kpush_back[m[K(trajectory[i]);
+      |                                        [01;31m[K^~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+                 from [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:1[m[K:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:99:21:[m[K [01;31m[Kerror: [m[K‘[01m[Krobot_state_[m[K’ was not declared in this scope; did you mean ‘[01m[KrobotState[m[K’?
+   99 |                     [01;31m[Krobot_state_[m[K.position()[0], robot_state_.position()[1], robot_state_.position()[2],
+      |                     [01;31m[K^~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/vel_to_pos_node.dir/build.make:76: CMakeFiles/vel_to_pos_node.dir/src/vel_to_pos_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:801: CMakeFiles/vel_to_pos_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

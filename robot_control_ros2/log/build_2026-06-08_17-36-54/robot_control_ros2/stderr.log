@@ -1,0 +1,7 @@
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:[m[K In constructor ‘[01m[KVel2PosNode::[01;32m[KVel2PosNode[m[K()[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:12:13:[m[K [01;35m[Kwarning: [m[Klist-initializer for non-class type must not be parenthesized
+   12 |             [01;35m[Kvelocity_cmd_({0,0,0,0,0,0})[m[K,
+      |             [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:13:13:[m[K [01;35m[Kwarning: [m[Klist-initializer for non-class type must not be parenthesized
+   13 |             [01;35m[Kposition_cmd_({0,0,0,0,0,0})[m[K,
+      |             [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K

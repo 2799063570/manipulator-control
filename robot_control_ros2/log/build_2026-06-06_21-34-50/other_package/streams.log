@@ -1,0 +1,30 @@
+[0.013s] Invoking command in '/home/chenque/cpp_practice/robot_control_ros2/build/other_package': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/other_package -- -j8 -l8
+[0.079s] [ 25%] [32mBuilding CXX object CMakeFiles/self_msg_test_publisher.dir/src/self_msg_test_publisher.cpp.o[0m
+[0.079s] [ 50%] [32mBuilding CXX object CMakeFiles/self_msg_test_subscriber.dir/src/self_msg_test_subscriber.cpp.o[0m
+[1.674s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:[m[K In member function ‘[01m[Kvoid SelfMsgSubscriber::[01;32m[Ksub_callback[m[K(const robot_control_ros2::msg::JointStateCommand&)[m[K’:
+[1.675s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:16:9:[m[K [01;31m[Kerror: [m[K‘[01m[KRCLROS_INFO[m[K’ was not declared in this scope; did you mean ‘[01m[KRCLCPP_INFO[m[K’?
+[1.675s]    16 |         [01;31m[KRCLROS_INFO[m[K(this->get_logger(), "get msg : position[%.2f, %.2f, %.2f], velocity[%.2f, %.2f, %.2f], excution is %s",
+[1.675s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[1.675s]       |         [32m[KRCLCPP_INFO[m[K
+[1.675s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:[m[K In function ‘[01m[Kint[01;32m[K main[m[K(int, char**)[m[K’:
+[1.675s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:24:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[1.675s]    24 |     [01;31m[Kros[m[K::init(argc, argv);
+[1.675s]       |     [01;31m[K^~~[m[K
+[1.675s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:25:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[1.675s]    25 |     [01;31m[Kros[m[K::spin(std::make_shared<SelfMsgSubscriber>());
+[1.675s]       |     [01;31m[K^~~[m[K
+[1.675s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:26:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[1.675s]    26 |     [01;31m[Kros[m[K::shutdown();
+[1.675s]       |     [01;31m[K^~~[m[K
+[1.694s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_publisher.cpp:[m[K In member function ‘[01m[Kvoid SelfMsgPublisher::[01;32m[Ktimer_callback[m[K()[m[K’:
+[1.694s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_publisher.cpp:21:9:[m[K [01;31m[Kerror: [m[K‘[01m[KRCLROS_INFO[m[K’ was not declared in this scope; did you mean ‘[01m[KRCLCPP_INFO[m[K’?
+[1.694s]    21 |         [01;31m[KRCLROS_INFO[m[K(this->get_logger(), "pub msg : position[%.2f, %.2f, %.2f], velocity[%.2f, %.2f, %.2f], excution is %s",
+[1.694s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[1.694s]       |         [32m[KRCLCPP_INFO[m[K
+[2.357s] gmake[2]: *** [CMakeFiles/self_msg_test_publisher.dir/build.make:76: CMakeFiles/self_msg_test_publisher.dir/src/self_msg_test_publisher.cpp.o] Error 1
+[2.357s] gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/self_msg_test_publisher.dir/all] Error 2
+[2.357s] gmake[1]: *** Waiting for unfinished jobs....
+[3.096s] gmake[2]: *** [CMakeFiles/self_msg_test_subscriber.dir/build.make:76: CMakeFiles/self_msg_test_subscriber.dir/src/self_msg_test_subscriber.cpp.o] Error 1
+[3.097s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/self_msg_test_subscriber.dir/all] Error 2
+[3.097s] gmake: *** [Makefile:146: all] Error 2
+[3.100s] Invoked command in '/home/chenque/cpp_practice/robot_control_ros2/build/other_package' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/other_package -- -j8 -l8

@@ -1,0 +1,316 @@
+[0.000000] (-) TimerEvent: {}
+[0.000165] (other_package) JobQueued: {'identifier': 'other_package', 'dependencies': OrderedDict()}
+[0.000223] (robot_control_ros2) JobQueued: {'identifier': 'robot_control_ros2', 'dependencies': OrderedDict()}
+[0.000277] (other_package) JobStarted: {'identifier': 'other_package'}
+[0.004165] (robot_control_ros2) JobStarted: {'identifier': 'robot_control_ros2'}
+[0.008141] (other_package) JobProgress: {'identifier': 'other_package', 'progress': 'cmake'}
+[0.009281] (other_package) JobProgress: {'identifier': 'other_package', 'progress': 'build'}
+[0.009326] (other_package) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/chenque/cpp_practice/robot_control_ros2/build/other_package', '--', '-j8', '-l8'], 'cwd': '/home/chenque/cpp_practice/robot_control_ros2/build/other_package', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'chenque', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/chenque', 'OLDPWD': '/home/chenque/cpp_practice/robot_control_ros2/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '1578', 'SYSTEMD_EXEC_PID': '2032', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '9622', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/chenque/cpp_practice/robot_control_ros2/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'chenque', 'JOURNAL_STREAM': '9:27094', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'chenque', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/chenque:@/tmp/.ICE-unix/1801,unix/chenque:/tmp/.ICE-unix/1801', 'INVOCATION_ID': 'f7c565e97de74622bed63d0fc04f894d', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.304OQ3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/chenque/cpp_practice/robot_control_ros2/install/other_package:/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:1bea20c3-2ba0-450c-91e7-461c40f02532', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/chenque/cpp_practice/robot_control_ros2/build/other_package', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/chenque/cpp_practice/robot_control_ros2/install/other_package:/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.013606] (robot_control_ros2) JobProgress: {'identifier': 'robot_control_ros2', 'progress': 'cmake'}
+[0.013660] (robot_control_ros2) JobProgress: {'identifier': 'robot_control_ros2', 'progress': 'build'}
+[0.013674] (robot_control_ros2) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2', '--', '-j8', '-l8'], 'cwd': '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'chenque', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/chenque', 'OLDPWD': '/home/chenque/cpp_practice/robot_control_ros2/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '1578', 'SYSTEMD_EXEC_PID': '2032', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '9622', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/chenque/cpp_practice/robot_control_ros2/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'chenque', 'JOURNAL_STREAM': '9:27094', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'chenque', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/chenque:@/tmp/.ICE-unix/1801,unix/chenque:/tmp/.ICE-unix/1801', 'INVOCATION_ID': 'f7c565e97de74622bed63d0fc04f894d', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.304OQ3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/chenque/cpp_practice/robot_control_ros2/install/other_package:/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:1bea20c3-2ba0-450c-91e7-461c40f02532', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/chenque/cpp_practice/robot_control_ros2/install/other_package:/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.037877] (other_package) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.038270] (robot_control_ros2) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.057071] (robot_control_ros2) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[0.099790] (-) TimerEvent: {}
+[0.115017] (robot_control_ros2) StdoutLine: {'line': b'-- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.135288] (robot_control_ros2) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.140443] (robot_control_ros2) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.147629] (robot_control_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.157696] (robot_control_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.197878] (robot_control_ros2) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[0.198737] (robot_control_ros2) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.200196] (-) TimerEvent: {}
+[0.219305] (other_package) StdoutLine: {'line': b'-- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.237295] (other_package) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.242478] (other_package) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.246981] (robot_control_ros2) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.248991] (other_package) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.260527] (other_package) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.292158] (robot_control_ros2) StdoutLine: {'line': b'-- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)\n'}
+[0.300526] (robot_control_ros2) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)\n'}
+[0.300651] (-) TimerEvent: {}
+[0.305259] (robot_control_ros2) StdoutLine: {'line': b'-- Found rosidl_adapter: 4.6.7 (/opt/ros/jazzy/share/rosidl_adapter/cmake)\n'}
+[0.312070] (other_package) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[0.313666] (other_package) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.370544] (other_package) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.401271] (-) TimerEvent: {}
+[0.415195] (other_package) StdoutLine: {'line': b'-- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)\n'}
+[0.423479] (other_package) StdoutLine: {'line': b'-- Found robot_control_ros2: 0.0.0 (/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake)\n'}
+[0.437059] (other_package) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[0.497985] (robot_control_ros2) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)\n'}
+[0.501314] (other_package) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[0.501455] (-) TimerEvent: {}
+[0.501545] (other_package) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[0.501602] (other_package) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[0.502013] (other_package) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.502709] (other_package) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[0.502776] (other_package) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[0.502954] (other_package) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.504241] (other_package) StdoutLine: {'line': b'-- Configuring done (0.5s)\n'}
+[0.526285] (other_package) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[0.532912] (other_package) StdoutLine: {'line': b'-- Build files have been written to: /home/chenque/cpp_practice/robot_control_ros2/build/other_package\n'}
+[0.579884] (other_package) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/self_msg_test_subscriber.dir/src/self_msg_test_subscriber.cpp.o\x1b[0m\n'}
+[0.580035] (other_package) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/self_msg_test_publisher.dir/src/self_msg_test_publisher.cpp.o\x1b[0m\n'}
+[0.601715] (-) TimerEvent: {}
+[0.620069] (robot_control_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.673228] (robot_control_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.674108] (robot_control_ros2) StdoutLine: {'line': b'-- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)\n'}
+[0.702229] (-) TimerEvent: {}
+[0.803261] (-) TimerEvent: {}
+[0.872268] (robot_control_ros2) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed \n'}
+[0.884232] (robot_control_ros2) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[0.891669] (robot_control_ros2) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[0.891976] (robot_control_ros2) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[0.892055] (robot_control_ros2) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[0.892829] (robot_control_ros2) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.894387] (robot_control_ros2) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[0.894507] (robot_control_ros2) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[0.894918] (robot_control_ros2) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.896741] (robot_control_ros2) StdoutLine: {'line': b'-- Configuring done (0.9s)\n'}
+[0.903769] (-) TimerEvent: {}
+[0.952348] (robot_control_ros2) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[0.975872] (robot_control_ros2) StdoutLine: {'line': b'-- Build files have been written to: /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2\n'}
+[1.005266] (-) TimerEvent: {}
+[1.027441] (robot_control_ros2) StdoutLine: {'line': b'[  1%] Built target robot_control_ros2__rosidl_generator_type_description\n'}
+[1.033421] (robot_control_ros2) StdoutLine: {'line': b'[  8%] Built target joint_velocity_subscriber\n'}
+[1.033632] (robot_control_ros2) StdoutLine: {'line': b'[  8%] Built target joint_velocity_publisher\n'}
+[1.033707] (robot_control_ros2) StdoutLine: {'line': b'[ 12%] Built target timer_control_node\n'}
+[1.037521] (robot_control_ros2) StdoutLine: {'line': b'[ 12%] Built target ament_cmake_python_copy_robot_control_ros2\n'}
+[1.052703] (robot_control_ros2) StdoutLine: {'line': b'[ 14%] Built target robot_control_ros2__cpp\n'}
+[1.055299] (robot_control_ros2) StdoutLine: {'line': b'[ 28%] Built target robot_control_ros2__rosidl_generator_c\n'}
+[1.085317] (robot_control_ros2) StdoutLine: {'line': b'[ 35%] Built target robot_control_ros2__rosidl_typesupport_introspection_c\n'}
+[1.087623] (robot_control_ros2) StdoutLine: {'line': b'[ 42%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_cpp\n'}
+[1.089289] (robot_control_ros2) StdoutLine: {'line': b'[ 50%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_c\n'}
+[1.090579] (robot_control_ros2) StdoutLine: {'line': b'[ 60%] Built target robot_control_ros2__rosidl_typesupport_cpp\n'}
+[1.090742] (robot_control_ros2) StdoutLine: {'line': b'[ 64%] Built target robot_control_ros2__rosidl_typesupport_c\n'}
+[1.094808] (robot_control_ros2) StdoutLine: {'line': b'[ 71%] Built target robot_control_ros2__rosidl_typesupport_introspection_cpp\n'}
+[1.106229] (-) TimerEvent: {}
+[1.119397] (robot_control_ros2) StdoutLine: {'line': b'[ 73%] \x1b[32mBuilding CXX object CMakeFiles/student_client.dir/src/student_client.cpp.o\x1b[0m\n'}
+[1.122722] (robot_control_ros2) StdoutLine: {'line': b'[ 73%] Built target robot_control_ros2\n'}
+[1.127028] (robot_control_ros2) StdoutLine: {'line': b'[ 78%] Built target robot_state_pub\n'}
+[1.127367] (robot_control_ros2) StdoutLine: {'line': b'[ 80%] Built target student_servier\n'}
+[1.148553] (robot_control_ros2) StdoutLine: {'line': b'[ 82%] Built target robot_control_ros2__py\n'}
+[1.177612] (robot_control_ros2) StdoutLine: {'line': b'[ 87%] Built target robot_control_ros2__rosidl_generator_py\n'}
+[1.206376] (robot_control_ros2) StdoutLine: {'line': b'[ 91%] Built target robot_control_ros2_s__rosidl_typesupport_c\n'}
+[1.206589] (-) TimerEvent: {}
+[1.206720] (robot_control_ros2) StdoutLine: {'line': b'[ 94%] Built target robot_control_ros2_s__rosidl_typesupport_introspection_c\n'}
+[1.207796] (robot_control_ros2) StdoutLine: {'line': b'[ 98%] Built target robot_control_ros2_s__rosidl_typesupport_fastrtps_c\n'}
+[1.230010] (robot_control_ros2) StdoutLine: {'line': b'running egg_info\n'}
+[1.244635] (robot_control_ros2) StdoutLine: {'line': b'writing robot_control_ros2.egg-info/PKG-INFO\n'}
+[1.245034] (robot_control_ros2) StdoutLine: {'line': b'writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt\n'}
+[1.245415] (robot_control_ros2) StdoutLine: {'line': b'writing top-level names to robot_control_ros2.egg-info/top_level.txt\n'}
+[1.297043] (robot_control_ros2) StdoutLine: {'line': b"reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'\n"}
+[1.297531] (robot_control_ros2) StdoutLine: {'line': b"writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'\n"}
+[1.307208] (-) TimerEvent: {}
+[1.324669] (robot_control_ros2) StdoutLine: {'line': b'[ 98%] Built target ament_cmake_python_build_robot_control_ros2_egg\n'}
+[1.407737] (-) TimerEvent: {}
+[1.508288] (-) TimerEvent: {}
+[1.609230] (-) TimerEvent: {}
+[1.709748] (-) TimerEvent: {}
+[1.810289] (-) TimerEvent: {}
+[1.910740] (-) TimerEvent: {}
+[2.011250] (-) TimerEvent: {}
+[2.111790] (-) TimerEvent: {}
+[2.212229] (-) TimerEvent: {}
+[2.312803] (-) TimerEvent: {}
+[2.413771] (-) TimerEvent: {}
+[2.514259] (-) TimerEvent: {}
+[2.614745] (-) TimerEvent: {}
+[2.715281] (-) TimerEvent: {}
+[2.815769] (-) TimerEvent: {}
+[2.916236] (-) TimerEvent: {}
+[3.016718] (-) TimerEvent: {}
+[3.117237] (-) TimerEvent: {}
+[3.217720] (-) TimerEvent: {}
+[3.318228] (-) TimerEvent: {}
+[3.418727] (-) TimerEvent: {}
+[3.519227] (-) TimerEvent: {}
+[3.619790] (-) TimerEvent: {}
+[3.720252] (-) TimerEvent: {}
+[3.820721] (-) TimerEvent: {}
+[3.921267] (-) TimerEvent: {}
+[4.021726] (-) TimerEvent: {}
+[4.122221] (-) TimerEvent: {}
+[4.222740] (-) TimerEvent: {}
+[4.323237] (-) TimerEvent: {}
+[4.423716] (-) TimerEvent: {}
+[4.474931] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Client<robot_control_ros2::srv::Student>::FutureAndRequestId ServiceClient::\x1b[01;32m\x1b[Ksend_request\x1b[m\x1b[K(int32_t, int32_t)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.475221] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:30:14:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KShared_ptr\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kstd\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kshared_ptr\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[4.475326] (robot_control_ros2) StderrLine: {'line': b'   30 |         std::\x1b[01;31m\x1b[KShared_ptr\x1b[m\x1b[K<Student::Request> msg = std::make_shared<Student::Request>();\n'}
+[4.475411] (robot_control_ros2) StderrLine: {'line': b'      |              \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.475528] (robot_control_ros2) StderrLine: {'line': b'      |              \x1b[32m\x1b[Kshared_ptr\x1b[m\x1b[K\n'}
+[4.475638] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:30:41:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[K>\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[4.475755] (robot_control_ros2) StderrLine: {'line': b'   30 |         std::Shared_ptr<Student::Request\x1b[01;31m\x1b[K>\x1b[m\x1b[K msg = std::make_shared<Student::Request>();\n'}
+[4.475876] (robot_control_ros2) StderrLine: {'line': b'      |                                         \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.476161] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:30:43:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.476226] (robot_control_ros2) StderrLine: {'line': b'   30 |         std::Shared_ptr<Student::Request> \x1b[01;31m\x1b[Kmsg\x1b[m\x1b[K = std::make_shared<Student::Request>();\n'}
+[4.476257] (robot_control_ros2) StderrLine: {'line': b'      |                                           \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.476281] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:30:43:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Ksuggested alternatives:\n'}
+[4.476305] (robot_control_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__struct.hpp:157\x1b[m\x1b[K,\n'}
+[4.476327] (robot_control_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/list_parameters.hpp:7\x1b[m\x1b[K,\n'}
+[4.476348] (robot_control_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:21\x1b[m\x1b[K,\n'}
+[4.476370] (robot_control_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171\x1b[m\x1b[K,\n'}
+[4.476392] (robot_control_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:1\x1b[m\x1b[K:\n'}
+[4.476413] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__struct.hpp:31:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Krcl_interfaces::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.476435] (robot_control_ros2) StderrLine: {'line': b'   31 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[4.476457] (robot_control_ros2) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.476477] (robot_control_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/service_msgs/service_msgs/msg/detail/service_event_info__struct.hpp:24\x1b[m\x1b[K,\n'}
+[4.476498] (robot_control_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__struct.hpp:268\x1b[m\x1b[K:\n'}
+[4.476519] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:31:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kbuiltin_interfaces::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.476557] (robot_control_ros2) StderrLine: {'line': b'   31 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[4.476668] (robot_control_ros2) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.476708] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/service_msgs/service_msgs/msg/detail/service_event_info__struct.hpp:35:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kservice_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.476736] (robot_control_ros2) StderrLine: {'line': b'   35 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[4.476765] (robot_control_ros2) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.476787] (robot_control_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__struct.hpp:27\x1b[m\x1b[K,\n'}
+[4.476810] (robot_control_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/statistics_msgs/statistics_msgs/msg/metrics_message.hpp:7\x1b[m\x1b[K,\n'}
+[4.476831] (robot_control_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp:21\x1b[m\x1b[K,\n'}
+[4.476853] (robot_control_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:23\x1b[m\x1b[K,\n'}
+[4.476875] (robot_control_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/subscription.hpp:50\x1b[m\x1b[K,\n'}
+[4.476897] (robot_control_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/any_executable.hpp:25\x1b[m\x1b[K,\n'}
+[4.476918] (robot_control_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategy.hpp:25\x1b[m\x1b[K,\n'}
+[4.476939] (robot_control_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategies.hpp:18\x1b[m\x1b[K,\n'}
+[4.476963] (robot_control_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/executor_options.hpp:22\x1b[m\x1b[K,\n'}
+[4.476987] (robot_control_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/executor.hpp:38\x1b[m\x1b[K,\n'}
+[4.477008] (robot_control_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25\x1b[m\x1b[K,\n'}
+[4.477028] (robot_control_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:21\x1b[m\x1b[K,\n'}
+[4.477049] (robot_control_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172\x1b[m\x1b[K:\n'}
+[4.477101] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__struct.hpp:31:11:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K  \xe2\x80\x98\x1b[01m\x1b[Kstatistics_msgs::msg\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.477140] (robot_control_ros2) StderrLine: {'line': b'   31 | namespace \x1b[01;36m\x1b[Kmsg\x1b[m\x1b[K\n'}
+[4.477296] (robot_control_ros2) StderrLine: {'line': b'      |           \x1b[01;36m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.479919] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[01;32m\x1b[K main\x1b[m\x1b[K(int, char**)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[4.479985] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:42:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[KShared_ptr\x1b[m\x1b[K\xe2\x80\x99 is not a member of \xe2\x80\x98\x1b[01m\x1b[Kstd\x1b[m\x1b[K\xe2\x80\x99; did you mean \xe2\x80\x98\x1b[01m\x1b[Kshared_ptr\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[4.480020] (robot_control_ros2) StderrLine: {'line': b'   42 |     std::\x1b[01;31m\x1b[KShared_ptr\x1b[m\x1b[K<ServiceClient> client_node = std::make_shared<ServiceClient>();\n'}
+[4.480044] (robot_control_ros2) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.480091] (robot_control_ros2) StderrLine: {'line': b'      |          \x1b[32m\x1b[Kshared_ptr\x1b[m\x1b[K\n'}
+[4.480160] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:42:34:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[K>\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[4.480196] (robot_control_ros2) StderrLine: {'line': b'   42 |     std::Shared_ptr<ServiceClient\x1b[01;31m\x1b[K>\x1b[m\x1b[K client_node = std::make_shared<ServiceClient>();\n'}
+[4.480221] (robot_control_ros2) StderrLine: {'line': b'      |                                  \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.483616] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:42:36:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclient_node\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.483715] (robot_control_ros2) StderrLine: {'line': b'   42 |     std::Shared_ptr<ServiceClient> \x1b[01;31m\x1b[Kclient_node\x1b[m\x1b[K = std::make_shared<ServiceClient>();\n'}
+[4.483786] (robot_control_ros2) StderrLine: {'line': b'      |                                    \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.489145] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:43:17:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclinet\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kclone\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[4.489245] (robot_control_ros2) StderrLine: {'line': b'   43 |     bool flag = \x1b[01;31m\x1b[Kclinet\x1b[m\x1b[K->waitConncet();\n'}
+[4.489424] (robot_control_ros2) StderrLine: {'line': b'      |                 \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[4.489500] (robot_control_ros2) StderrLine: {'line': b'      |                 \x1b[32m\x1b[Kclone\x1b[m\x1b[K\n'}
+[4.489636] (robot_control_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27\x1b[m\x1b[K:\n'}
+[4.489716] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:46:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktoo many arguments to function \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Logger rclcpp::\x1b[01;32m\x1b[Kget_logger\x1b[m\x1b[K(const std::string&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.489913] (robot_control_ros2) StderrLine: {'line': b'   46 |         RCLCPP_INFO(\x1b[01;31m\x1b[Krclcpp::get_logger("rclcpp", "service connecting fail..")\x1b[m\x1b[K);\n'}
+[4.489990] (robot_control_ros2) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.490058] (robot_control_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:26\x1b[m\x1b[K:\n'}
+[4.490205] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/logger.hpp:107:17:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[4.490277] (robot_control_ros2) StderrLine: {'line': b'  107 |   friend Logger \x1b[01;36m\x1b[Krclcpp\x1b[m\x1b[K::get_logger(const std::string & name);\n'}
+[4.490347] (robot_control_ros2) StderrLine: {'line': b'      |                 \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[4.490415] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:46:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktoo many arguments to function \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Logger rclcpp::\x1b[01;32m\x1b[Kget_logger\x1b[m\x1b[K(const std::string&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.490480] (robot_control_ros2) StderrLine: {'line': b'   46 |         RCLCPP_INFO(\x1b[01;31m\x1b[Krclcpp::get_logger("rclcpp", "service connecting fail..")\x1b[m\x1b[K);\n'}
+[4.490542] (robot_control_ros2) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.490625] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/logger.hpp:107:17:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[4.490696] (robot_control_ros2) StderrLine: {'line': b'  107 |   friend Logger \x1b[01;36m\x1b[Krclcpp\x1b[m\x1b[K::get_logger(const std::string & name);\n'}
+[4.490765] (robot_control_ros2) StderrLine: {'line': b'      |                 \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[4.490825] (robot_control_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24\x1b[m\x1b[K:\n'}
+[4.490900] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:46:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktoo many arguments to function \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Logger rclcpp::\x1b[01;32m\x1b[Kget_logger\x1b[m\x1b[K(const std::string&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.490966] (robot_control_ros2) StderrLine: {'line': b'   46 |         RCLCPP_INFO(\x1b[01;31m\x1b[Krclcpp::get_logger("rclcpp", "service connecting fail..")\x1b[m\x1b[K);\n'}
+[4.491028] (robot_control_ros2) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.491209] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/logger.hpp:107:17:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[4.491280] (robot_control_ros2) StderrLine: {'line': b'  107 |   friend Logger \x1b[01;36m\x1b[Krclcpp\x1b[m\x1b[K::get_logger(const std::string & name);\n'}
+[4.491348] (robot_control_ros2) StderrLine: {'line': b'      |                 \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[4.491410] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:46:39:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktoo many arguments to function \xe2\x80\x98\x1b[01m\x1b[Krclcpp::Logger rclcpp::\x1b[01;32m\x1b[Kget_logger\x1b[m\x1b[K(const std::string&)\x1b[m\x1b[K\xe2\x80\x99\n'}
+[4.491479] (robot_control_ros2) StderrLine: {'line': b'   46 |         RCLCPP_INFO(\x1b[01;31m\x1b[Krclcpp::get_logger("rclcpp", "service connecting fail..")\x1b[m\x1b[K);\n'}
+[4.491543] (robot_control_ros2) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.491632] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/logger.hpp:107:17:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kdeclared here\n'}
+[4.491693] (robot_control_ros2) StderrLine: {'line': b'  107 |   friend Logger \x1b[01;36m\x1b[Krclcpp\x1b[m\x1b[K::get_logger(const std::string & name);\n'}
+[4.491755] (robot_control_ros2) StderrLine: {'line': b'      |                 \x1b[01;36m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[4.491825] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:46:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[K)\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[4.491895] (robot_control_ros2) StderrLine: {'line': b'   46 |         \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(rclcpp::get_logger("rclcpp", "service connecting fail.."));\n'}
+[4.491963] (robot_control_ros2) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.492039] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:49:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclcpp\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[4.492219] (robot_control_ros2) StderrLine: {'line': b'   49 |     \x1b[01;31m\x1b[Kclcpp\x1b[m\x1b[K::Client<Student>::FutureAndRequestId response = client_node->set_request(1, 2);\n'}
+[4.492286] (robot_control_ros2) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[4.492384] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:49:26:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kexpected primary-expression before \xe2\x80\x98\x1b[01m\x1b[K>\x1b[m\x1b[K\xe2\x80\x99 token\n'}
+[4.492462] (robot_control_ros2) StderrLine: {'line': b'   49 |     clcpp::Client<Student\x1b[01;31m\x1b[K>\x1b[m\x1b[K::FutureAndRequestId response = client_node->set_request(1, 2);\n'}
+[4.492606] (robot_control_ros2) StderrLine: {'line': b'      |                          \x1b[01;31m\x1b[K^\x1b[m\x1b[K\n'}
+[4.492669] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:49:29:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[K::FutureAndRequestId\x1b[m\x1b[K\xe2\x80\x99 has not been declared; did you mean \xe2\x80\x98\x1b[01m\x1b[Krclcpp::detail::FutureAndRequestId\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[4.492738] (robot_control_ros2) StderrLine: {'line': b'   49 |     clcpp::Client<Student>::\x1b[01;31m\x1b[KFutureAndRequestId\x1b[m\x1b[K response = client_node->set_request(1, 2);\n'}
+[4.492803] (robot_control_ros2) StderrLine: {'line': b'      |                             \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.492864] (robot_control_ros2) StderrLine: {'line': b'      |                             \x1b[32m\x1b[Krclcpp::detail::FutureAndRequestId\x1b[m\x1b[K\n'}
+[4.492931] (robot_control_ros2) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/callback_group.hpp:24\x1b[m\x1b[K,\n'}
+[4.492996] (robot_control_ros2) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/any_executable.hpp:20\x1b[m\x1b[K:\n'}
+[4.493058] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/opt/ros/jazzy/include/rclcpp/rclcpp/client.hpp:61:8:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Krclcpp::detail::FutureAndRequestId\x1b[m\x1b[K\xe2\x80\x99 declared here\n'}
+[4.493227] (robot_control_ros2) StderrLine: {'line': b'   61 | struct \x1b[01;36m\x1b[KFutureAndRequestId\x1b[m\x1b[K\n'}
+[4.493297] (robot_control_ros2) StderrLine: {'line': b'      |        \x1b[01;36m\x1b[K^~~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.493360] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:50:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Krcl\x1b[m\x1b[K\xe2\x80\x99 has not been declared\n'}
+[4.493422] (robot_control_ros2) StderrLine: {'line': b'   50 |     if (\x1b[01;31m\x1b[Krcl\x1b[m\x1b[K::spin_until_future_complete(client_node, response) == rclcpp::FutureReturnCode::SUCCESS)\n'}
+[4.493482] (robot_control_ros2) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~\x1b[m\x1b[K\n'}
+[4.493540] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:50:54:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kresponse\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.493633] (robot_control_ros2) StderrLine: {'line': b'   50 |     if (rcl::spin_until_future_complete(client_node, \x1b[01;31m\x1b[Kresponse\x1b[m\x1b[K) == rclcpp::FutureReturnCode::SUCCESS)\n'}
+[4.493682] (robot_control_ros2) StderrLine: {'line': b'      |                                                      \x1b[01;31m\x1b[K^~~~~~~~\x1b[m\x1b[K\n'}
+[4.493929] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:52:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclient\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.493996] (robot_control_ros2) StderrLine: {'line': b'   52 |         RCLCPP_INFO(\x1b[01;31m\x1b[Kclient\x1b[m\x1b[K->get_logger(),"\xe8\xaf\xb7\xe6\xb1\x82\xe6\xad\xa3\xe5\xb8\xb8\xe5\xa4\x84\xe7\x90\x86");\n'}
+[4.494025] (robot_control_ros2) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[4.494049] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:52:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[4.494106] (robot_control_ros2) StderrLine: {'line': b'   52 |         \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(client->get_logger(),"\xe8\xaf\xb7\xe6\xb1\x82\xe6\xad\xa3\xe5\xb8\xb8\xe5\xa4\x84\xe7\x90\x86");\n'}
+[4.494140] (robot_control_ros2) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.495901] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:53:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclient\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.495970] (robot_control_ros2) StderrLine: {'line': b'   53 |         RCLCPP_INFO(\x1b[01;31m\x1b[Kclient\x1b[m\x1b[K->get_logger(),"\xe5\x93\x8d\xe5\xba\x94\xe7\xbb\x93\xe6\x9e\x9c:%d!", response.get()->sum);\n'}
+[4.496001] (robot_control_ros2) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[4.496024] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:53:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[4.496047] (robot_control_ros2) StderrLine: {'line': b'   53 |         \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(client->get_logger(),"\xe5\x93\x8d\xe5\xba\x94\xe7\xbb\x93\xe6\x9e\x9c:%d!", response.get()->sum);\n'}
+[4.496095] (robot_control_ros2) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.497835] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:56:21:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kclient\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[4.497906] (robot_control_ros2) StderrLine: {'line': b'   56 |         RCLCPP_INFO(\x1b[01;31m\x1b[Kclient\x1b[m\x1b[K->get_logger(),"\xe8\xaf\xb7\xe6\xb1\x82\xe5\xbc\x82\xe5\xb8\xb8");\n'}
+[4.497936] (robot_control_ros2) StderrLine: {'line': b'      |                     \x1b[01;31m\x1b[K^~~~~~\x1b[m\x1b[K\n'}
+[4.497960] (robot_control_ros2) StderrLine: {'line': b'\x1b[01m\x1b[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:56:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Ktemplate argument 1 is invalid\n'}
+[4.497984] (robot_control_ros2) StderrLine: {'line': b'   56 |         \x1b[01;31m\x1b[KRCLCPP_INFO\x1b[m\x1b[K(client->get_logger(),"\xe8\xaf\xb7\xe6\xb1\x82\xe5\xbc\x82\xe5\xb8\xb8");\n'}
+[4.498005] (robot_control_ros2) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~\x1b[m\x1b[K\n'}
+[4.524243] (-) TimerEvent: {}
+[4.624718] (-) TimerEvent: {}
+[4.725215] (-) TimerEvent: {}
+[4.825728] (-) TimerEvent: {}
+[4.926220] (-) TimerEvent: {}
+[5.026771] (-) TimerEvent: {}
+[5.127219] (-) TimerEvent: {}
+[5.227742] (-) TimerEvent: {}
+[5.328262] (-) TimerEvent: {}
+[5.428786] (-) TimerEvent: {}
+[5.529260] (-) TimerEvent: {}
+[5.629821] (-) TimerEvent: {}
+[5.730239] (-) TimerEvent: {}
+[5.778995] (other_package) StdoutLine: {'line': b'[ 75%] \x1b[32m\x1b[1mLinking CXX executable self_msg_test_publisher\x1b[0m\n'}
+[5.809890] (robot_control_ros2) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/student_client.dir/build.make:76: CMakeFiles/student_client.dir/src/student_client.cpp.o] Error 1\n'}
+[5.810219] (robot_control_ros2) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:769: CMakeFiles/student_client.dir/all] Error 2\n'}
+[5.811689] (robot_control_ros2) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[5.814856] (robot_control_ros2) CommandEnded: {'returncode': 2}
+[5.827677] (robot_control_ros2) JobEnded: {'identifier': 'robot_control_ros2', 'rc': 2}
+[5.830672] (-) TimerEvent: {}
+[5.923236] (other_package) StdoutLine: {'line': b'[ 75%] Built target self_msg_test_publisher\n'}
+[5.931169] (-) TimerEvent: {}
+[6.031696] (-) TimerEvent: {}
+[6.132221] (-) TimerEvent: {}
+[6.232696] (-) TimerEvent: {}
+[6.333205] (-) TimerEvent: {}
+[6.433689] (-) TimerEvent: {}
+[6.534191] (-) TimerEvent: {}
+[6.634700] (-) TimerEvent: {}
+[6.735203] (-) TimerEvent: {}
+[6.835695] (-) TimerEvent: {}
+[6.936278] (-) TimerEvent: {}
+[7.037193] (-) TimerEvent: {}
+[7.137684] (-) TimerEvent: {}
+[7.238176] (-) TimerEvent: {}
+[7.338668] (-) TimerEvent: {}
+[7.439167] (-) TimerEvent: {}
+[7.539687] (-) TimerEvent: {}
+[7.640166] (-) TimerEvent: {}
+[7.740659] (-) TimerEvent: {}
+[7.841170] (-) TimerEvent: {}
+[7.941680] (-) TimerEvent: {}
+[8.042172] (-) TimerEvent: {}
+[8.142691] (-) TimerEvent: {}
+[8.197503] (other_package) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable self_msg_test_subscriber\x1b[0m\n'}
+[8.243218] (-) TimerEvent: {}
+[8.343697] (-) TimerEvent: {}
+[8.444174] (-) TimerEvent: {}
+[8.476055] (other_package) StdoutLine: {'line': b'[100%] Built target self_msg_test_subscriber\n'}
+[8.486795] (other_package) JobEnded: {'identifier': 'other_package', 'rc': 'SIGINT'}
+[8.497849] (-) EventReactorShutdown: {}

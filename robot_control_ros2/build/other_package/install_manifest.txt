@@ -1,0 +1,17 @@
+/home/chenque/cpp_practice/robot_control_ros2/install/other_package/lib/other_package/self_msg_test_publisher
+/home/chenque/cpp_practice/robot_control_ros2/install/other_package/lib/other_package/self_msg_test_subscriber
+/home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/ament_index/resource_index/package_run_dependencies/other_package
+/home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/ament_index/resource_index/parent_prefix_path/other_package
+/home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/environment/ament_prefix_path.sh
+/home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/environment/ament_prefix_path.dsv
+/home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/environment/path.sh
+/home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/environment/path.dsv
+/home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/local_setup.bash
+/home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/local_setup.sh
+/home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/local_setup.zsh
+/home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/local_setup.dsv
+/home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/package.dsv
+/home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/ament_index/resource_index/packages/other_package
+/home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/cmake/other_packageConfig.cmake
+/home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/cmake/other_packageConfig-version.cmake
+/home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/package.xml

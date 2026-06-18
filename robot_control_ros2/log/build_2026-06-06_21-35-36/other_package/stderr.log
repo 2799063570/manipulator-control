@@ -1,0 +1,14 @@
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:[m[K In function ‘[01m[Kint[01;32m[K main[m[K(int, char**)[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:24:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+   24 |     [01;31m[Kros[m[K::init(argc, argv);
+      |     [01;31m[K^~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:25:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+   25 |     [01;31m[Kros[m[K::spin(std::make_shared<SelfMsgSubscriber>());
+      |     [01;31m[K^~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:26:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+   26 |     [01;31m[Kros[m[K::shutdown();
+      |     [01;31m[K^~~[m[K
+gmake[2]: *** [CMakeFiles/self_msg_test_subscriber.dir/build.make:76: CMakeFiles/self_msg_test_subscriber.dir/src/self_msg_test_subscriber.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/self_msg_test_subscriber.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake: *** [Makefile:146: all] Error 2

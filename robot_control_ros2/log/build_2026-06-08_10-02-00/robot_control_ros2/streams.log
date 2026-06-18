@@ -1,0 +1,65 @@
+[0.011s] Invoking command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2 -- -j8 -l8
+[0.036s] -- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.121s] -- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.139s] -- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.144s] -- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.151s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.159s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.198s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.199s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.246s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.286s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[0.295s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.301s] -- Found rosidl_adapter: 4.6.7 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[0.452s] [31mCMake Error at /opt/ros/jazzy/share/rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake:57 (message):
+[0.452s]   execute_process(/usr/bin/python3 -m rosidl_adapter --package-name
+[0.452s]   robot_control_ros2 --arguments-file
+[0.452s]   /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2/rosidl_adapter__arguments__robot_control_ros2.json
+[0.452s]   --output-dir
+[0.452s]   /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2/rosidl_adapter/robot_control_ros2
+[0.452s]   --output-file
+[0.452s]   /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2/rosidl_adapter/robot_control_ros2.idls)
+[0.452s]   returned error code 1:
+[0.452s] 
+[0.452s]   Error processing 'int num' of 'robot_control_ros2/Student_Response': ''int'
+[0.452s]   is an invalid message name.  It should have the pattern
+[0.452s]   '^[A-Z][A-Za-z0-9]*$''
+[0.452s] 
+[0.453s]   Traceback (most recent call last):
+[0.453s] 
+[0.453s]     File "<frozen runpy>", line 198, in _run_module_as_main
+[0.453s]     File "<frozen runpy>", line 88, in _run_code
+[0.453s]     File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/__main__.py", line 19, in <module>
+[0.453s]       sys.exit(main())
+[0.453s]                ^^^^^^
+[0.453s]     File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/main.py", line 53, in main
+[0.453s]       abs_idl_file = convert_to_idl(
+[0.453s]                      ^^^^^^^^^^^^^^^
+[0.453s]     File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/__init__.py", line 24, in convert_to_idl
+[0.453s]       return convert_srv_to_idl(
+[0.453s]              ^^^^^^^^^^^^^^^^^^^
+[0.453s]     File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/srv/__init__.py", line 28, in convert_srv_to_idl
+[0.453s]       srv = parse_service_string(package_name, input_file.stem, content)
+[0.453s]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0.453s]     File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/parser.py", line 864, in parse_service_string
+[0.453s]       response_message = parse_message_string(
+[0.453s]                          ^^^^^^^^^^^^^^^^^^^^^
+[0.453s]     File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/parser.py", line 521, in parse_message_string
+[0.453s]       Type(type_string, context_package_name=pkg_name),
+[0.453s]       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0.453s]     File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/parser.py", line 278, in __init__
+[0.453s]       super(Type, self).__init__(
+[0.453s]     File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/parser.py", line 206, in __init__
+[0.453s]       raise InvalidResourceName(
+[0.453s] 
+[0.453s]   rosidl_adapter.parser.InvalidResourceName: 'int' is an invalid message
+[0.453s]   name.  It should have the pattern '^[A-Z][A-Za-z0-9]*$'
+[0.453s] 
+[0.453s] Call Stack (most recent call first):
+[0.453s]   /opt/ros/jazzy/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:132 (rosidl_adapt_interfaces)
+[0.453s]   CMakeLists.txt:14 (rosidl_generate_interfaces)
+[0.453s] 
+[0.453s] [0m
+[0.454s] -- Configuring incomplete, errors occurred!
+[0.459s] gmake: *** [Makefile:979: cmake_check_build_system] Error 1
+[0.463s] Invoked command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2 -- -j8 -l8

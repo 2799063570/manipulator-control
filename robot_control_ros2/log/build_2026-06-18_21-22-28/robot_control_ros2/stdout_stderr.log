@@ -1,0 +1,252 @@
+[  1%] Built target robot_control_ros2__rosidl_generator_type_description
+[  3%] Built target timer_control_node
+[  6%] Built target joint_velocity_subscriber
+[  6%] Built target ament_cmake_python_copy_robot_control_ros2
+[  7%] Built target robot_control_ros2__cpp
+[ 24%] Built target robot_control_ros2__rosidl_generator_c
+[ 39%] Built target robot_control_ros2__rosidl_typesupport_introspection_c
+[ 39%] Built target robot_control_ros2__rosidl_typesupport_cpp
+[ 46%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_c
+[ 53%] Built target robot_control_ros2__rosidl_typesupport_introspection_cpp
+[ 60%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_cpp
+[ 68%] Built target robot_control_ros2__rosidl_typesupport_c
+[ 71%] Built target joint_velocity_publisher
+[ 73%] Built target robot_state_pub
+[ 75%] Built target student_client
+[ 78%] Built target student_servier
+[ 78%] Built target robot_control_ros2
+[ 79%] [32mBuilding CXX object CMakeFiles/vel_to_pos_node.dir/src/robot_utils/cubic_interpolator.cpp.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/vel_to_pos_node.dir/src/vel_to_pos_node.cpp.o[0m
+[ 81%] Built target robot_control_ros2__py
+[ 87%] Built target robot_control_ros2__rosidl_generator_py
+[ 90%] Built target robot_control_ros2_s__rosidl_typesupport_introspection_c
+[ 92%] Built target robot_control_ros2_s__rosidl_typesupport_c
+[ 95%] Built target robot_control_ros2_s__rosidl_typesupport_fastrtps_c
+running egg_info
+writing robot_control_ros2.egg-info/PKG-INFO
+writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt
+writing top-level names to robot_control_ros2.egg-info/top_level.txt
+reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[ 95%] Built target ament_cmake_python_build_robot_control_ros2_egg
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:13:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid CubicInterpolator::[01;32m[Kcalculate3Times[m[K()[m[K’
+   13 | void [01;31m[KCubicInterpolator[m[K::calculate3Times()
+      |      [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:13:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid CubicInterpolator::[01;32m[Kcalculate3Times[m[K()[m[K’
+In file included from [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:4[m[K:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/include/robot_utils/cubic_interpolator.hpp:13:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass CubicInterpolator[m[K’ defined here
+   13 | class [01;36m[KCubicInterpolator[m[K
+      |       [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:62:5:[m[K [01;31m[Kerror: [m[K‘[01m[KQuinticCoeff[m[K’ has not been declared
+   62 |     [01;31m[KQuinticCoeff[m[K& coeff
+      |     [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:[m[K In function ‘[01m[Kvoid[01;32m[K computeQuinticCoeff[m[K(double, double, double, double, double, double, double, int&)[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:65:11:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka0[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+   65 |     coeff.[01;31m[Ka0[m[K = q0;
+      |           [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:66:11:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka1[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+   66 |     coeff.[01;31m[Ka1[m[K = v0;
+      |           [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:67:11:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka2[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+   67 |     coeff.[01;31m[Ka2[m[K = 0.5 * a0;
+      |           [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:68:29:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka0[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+   68 |     double Dq = qt - (coeff.[01;31m[Ka0[m[K + coeff.a1 + coeff.a2*T*T);
+      |                             [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:68:40:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka1[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+   68 |     double Dq = qt - (coeff.a0 + coeff.[01;31m[Ka1[m[K + coeff.a2*T*T);
+      |                                        [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:68:51:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka2[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+   68 |     double Dq = qt - (coeff.a0 + coeff.a1 + coeff.[01;31m[Ka2[m[K*T*T);
+      |                                                   [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:69:29:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka1[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+   69 |     double Dv = vt - (coeff.[01;31m[Ka1[m[K + 2*coeff.a2*T);
+      |                             [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:69:42:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka2[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+   69 |     double Dv = vt - (coeff.a1 + 2*coeff.[01;31m[Ka2[m[K*T);
+      |                                          [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:70:33:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka2[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+   70 |     double Da = at - (2 * coeff.[01;31m[Ka2[m[K);
+      |                                 [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:72:11:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka3[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+   72 |     coeff.[01;31m[Ka3[m[K = 10.0 * Dq / (T * T * T)
+      |           [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:76:11:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka4[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+   76 |     coeff.[01;31m[Ka4[m[K = -15.0 * Dq / (T * T * T * T)
+      |           [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:80:11:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka5[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+   80 |     coeff.[01;31m[Ka5[m[K = 6.0 * Dq / (T * T * T * T * T)
+      |           [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:[m[K At global scope:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:84:30:[m[K [01;31m[Kerror: [m[K‘[01m[KQuinticCoeff[m[K’ does not name a type
+   84 | double computePosition(const [01;31m[KQuinticCoeff[m[K& coeff, double t)
+      |                              [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:[m[K In function ‘[01m[Kdouble[01;32m[K computePosition[m[K(const int&, double)[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:86:18:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka0[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+   86 |     return coeff.[01;31m[Ka0[m[K + coeff.a1*t + coeff.a2*t*t + coeff.a3*t*t*t +
+      |                  [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:86:29:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka1[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+   86 |     return coeff.a0 + coeff.[01;31m[Ka1[m[K*t + coeff.a2*t*t + coeff.a3*t*t*t +
+      |                             [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:86:42:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka2[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+   86 |     return coeff.a0 + coeff.a1*t + coeff.[01;31m[Ka2[m[K*t*t + coeff.a3*t*t*t +
+      |                                          [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:86:57:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka3[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+   86 |     return coeff.a0 + coeff.a1*t + coeff.a2*t*t + coeff.[01;31m[Ka3[m[K*t*t*t +
+      |                                                         [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:87:15:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka4[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+   87 |         coeff.[01;31m[Ka4[m[K*t*t*t*t + coeff.a5*t*t*t*t*t;
+      |               [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:87:34:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka5[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+   87 |         coeff.a4*t*t*t*t + coeff.[01;31m[Ka5[m[K*t*t*t*t*t;
+      |                                  [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:[m[K At global scope:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:89:30:[m[K [01;31m[Kerror: [m[K‘[01m[KQuinticCoeff[m[K’ does not name a type
+   89 | double computeVelocity(const [01;31m[KQuinticCoeff[m[K& coeff, double t)
+      |                              [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:[m[K In function ‘[01m[Kdouble[01;32m[K computeVelocity[m[K(const int&, double)[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:91:18:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka1[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+   91 |     return coeff.[01;31m[Ka1[m[K + 2*coeff.a2*t + 3*coeff.a3*t*t
+      |                  [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:91:31:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka2[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+   91 |     return coeff.a1 + 2*coeff.[01;31m[Ka2[m[K*t + 3*coeff.a3*t*t
+      |                               [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:91:46:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka3[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+   91 |     return coeff.a1 + 2*coeff.a2*t + 3*coeff.[01;31m[Ka3[m[K*t*t
+      |                                              [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:92:19:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka4[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+   92 |         + 4*coeff.[01;31m[Ka4[m[K*t*t*t + 5*coeff.a5*t*t*t*t;
+      |                   [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:92:38:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ka5[m[K’ in ‘[01m[Kcoeff[m[K’, which is of non-class type ‘[01m[Kconst int[m[K’
+   92 |         + 4*coeff.a4*t*t*t + 5*coeff.[01;31m[Ka5[m[K*t*t*t*t;
+      |                                      [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:[m[K At global scope:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:94:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid CubicInterpolator::[01;32m[Kcalculate5Times[m[K()[m[K’
+   94 | void [01;31m[KCubicInterpolator[m[K::calculate5Times()
+      |      [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:94:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid CubicInterpolator::[01;32m[Kcalculate5Times[m[K()[m[K’
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/include/robot_utils/cubic_interpolator.hpp:13:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass CubicInterpolator[m[K’ defined here
+   13 | class [01;36m[KCubicInterpolator[m[K
+      |       [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:141:45:[m[K [01;31m[Kerror: [m[K‘[01m[KRobotState[m[K’ does not name a type
+  141 | void CubicInterpolator::setStateStart(const [01;31m[KRobotState[m[K& q)
+      |                                             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:141:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid CubicInterpolator::[01;32m[KsetStateStart[m[K(const int&)[m[K’
+  141 | void [01;31m[KCubicInterpolator[m[K::setStateStart(const RobotState& q)
+      |      [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:141:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid CubicInterpolator::[01;32m[KsetStateStart[m[K(const int&)[m[K’
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/include/robot_utils/cubic_interpolator.hpp:13:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass CubicInterpolator[m[K’ defined here
+   13 | class [01;36m[KCubicInterpolator[m[K
+      |       [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:147:44:[m[K [01;31m[Kerror: [m[K‘[01m[KRobotState[m[K’ does not name a type
+  147 | void CubicInterpolator::setStateGoal(const [01;31m[KRobotState[m[K& q)
+      |                                            [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:147:6:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kvoid CubicInterpolator::[01;32m[KsetStateGoal[m[K(const int&)[m[K’
+  147 | void [01;31m[KCubicInterpolator[m[K::setStateGoal(const RobotState& q)
+      |      [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:147:6:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kvoid CubicInterpolator::[01;32m[KsetStateGoal[m[K(const int&)[m[K’
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/include/robot_utils/cubic_interpolator.hpp:13:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass CubicInterpolator[m[K’ defined here
+   13 | class [01;36m[KCubicInterpolator[m[K
+      |       [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:163:19:[m[K [01;31m[Kerror: [m[K‘[01m[KRobotState[m[K’ was not declared in this scope
+  163 | const std::vector<[01;31m[KRobotState[m[K>& CubicInterpolator::getTrajectory() const
+      |                   [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:163:29:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+  163 | const std::vector<RobotState[01;31m[K>[m[K& CubicInterpolator::getTrajectory() const
+      |                             [01;31m[K^[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:163:29:[m[K [01;31m[Kerror: [m[Ktemplate argument 2 is invalid
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:163:32:[m[K [01;31m[Kerror: [m[Kno declaration matches ‘[01m[Kconst int& CubicInterpolator::[01;32m[KgetTrajectory[m[K() const[m[K’
+  163 | const std::vector<RobotState>& [01;31m[KCubicInterpolator[m[K::getTrajectory() const
+      |                                [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:163:32:[m[K [01;36m[Knote: [m[Kno functions named ‘[01m[Kconst int& CubicInterpolator::[01;32m[KgetTrajectory[m[K() const[m[K’
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/include/robot_utils/cubic_interpolator.hpp:13:7:[m[K [01;36m[Knote: [m[K‘[01m[Kclass CubicInterpolator[m[K’ defined here
+   13 | class [01;36m[KCubicInterpolator[m[K
+      |       [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:169:7:[m[K [01;31m[Kerror: [m[K‘[01m[KRobotState[m[K’ does not name a type
+  169 | const [01;31m[KRobotState[m[K& CubicInterpolator::getRobotState(size_t index) const
+      |       [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:178:7:[m[K [01;31m[Kerror: [m[K‘[01m[KRobotState[m[K’ does not name a type
+  178 | const [01;31m[KRobotState[m[K& CubicInterpolator::getStateStart() const
+      |       [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:182:7:[m[K [01;31m[Kerror: [m[K‘[01m[KRobotState[m[K’ does not name a type
+  182 | const [01;31m[KRobotState[m[K& CubicInterpolator::getStateGoal() const
+      |       [01;31m[K^~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/vel_to_pos_node.dir/build.make:118: CMakeFiles/vel_to_pos_node.dir/src/robot_utils/cubic_interpolator.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:116:9:[m[K [01;31m[Kerror: [m[K‘[01m[KTrajectoryBuffer[m[K’ does not name a type
+  116 |         [01;31m[KTrajectoryBuffer[m[K trajectory_buffer_;
+      |         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:[m[K In constructor ‘[01m[KVel2PosNode::[01;32m[KVel2PosNode[m[K()[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:24:13:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KVel2PosNode[m[K’ does not have any field named ‘[01m[Ktrajectory_buffer_[m[K’
+   24 |             [01;31m[Ktrajectory_buffer_[m[K(dof_),
+      |             [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:25:39:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K)[m[K’ token
+   25 |             cubic_interpolator_(dof_, [01;31m[K)[m[K
+      |                                       [01;31m[K^[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:112:16:[m[K [01;35m[Kwarning: [m[K‘[01m[KVel2PosNode::duration_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  112 |         double [01;35m[Kduration_[m[K;
+      |                [01;35m[K^~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:109:16:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kdouble Vel2PosNode::dt_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  109 |         double [01;35m[Kdt_[m[K;
+      |                [01;35m[K^~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:15:9:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   15 |         [01;35m[KVel2PosNode[m[K() : Node("Vel_to_Pos_node"),
+      |         [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:111:13:[m[K [01;35m[Kwarning: [m[K‘[01m[KVel2PosNode::control_rate_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  111 |         int [01;35m[Kcontrol_rate_[m[K;
+      |             [01;35m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:110:13:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kint Vel2PosNode::control_time_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  110 |         int [01;35m[Kcontrol_time_[m[K;
+      |             [01;35m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:15:9:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   15 |         [01;35m[KVel2PosNode[m[K() : Node("Vel_to_Pos_node"),
+      |         [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:39:13:[m[K [01;31m[Kerror: [m[K‘[01m[Ktrajectory_buffer_[m[K’ was not declared in this scope
+   39 |             [01;31m[Ktrajectory_buffer_[m[K.clear();
+      |             [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:[m[K In member function ‘[01m[Kvoid Vel2PosNode::[01;32m[Ksub_callback[m[K(const JointVelocityCmd&)[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:62:43:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[KRobotState[m[K’ to ‘[01m[Kconst std::vector<double, std::allocator<double> >&[m[K’
+   62 |             robot_state_goal_.setPosition([01;31m[Krobot_state_goal_[m[K);
+      |                                           [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+      |                                           [01;31m[K|[m[K
+      |                                           [01;31m[KRobotState[m[K
+In file included from [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:4[m[K:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/include/robot_utils/robot_state.hpp:12:49:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kvoid RobotState::[01;32m[KsetPosition[m[K(const std::vector<double, std::allocator<double> >&)[m[K’
+   12 |     void setPosition([01;36m[Kconst std::vector<double>& q[m[K);
+      |                      [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:[m[K In member function ‘[01m[Kvoid Vel2PosNode::[01;32m[Ktimer_callback[m[K()[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:76:35:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator!=[m[K’ (operand types are ‘[01m[KRobotState[m[K’ and ‘[01m[KRobotState[m[K’)
+   76 |             if ([32m[Krobot_state_goal_[m[K [01;31m[K!=[m[K [34m[Krobot_state_start_[m[K)
+      |                 [32m[K~~~~~~~~~~~~~~~~~[m[K [01;31m[K^~[m[K [34m[K~~~~~~~~~~~~~~~~~~[m[K
+      |                 [32m[K|[m[K                    [34m[K|[m[K
+      |                 [32m[KRobotState[m[K           [34m[KRobotState[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:78:37:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass CubicInterpolator[m[K’ has no member named ‘[01m[KsetStateStart[m[K’
+   78 |                 cubic_interpolator_.[01;31m[KsetStateStart[m[K(robot_state_start_);
+      |                                     [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:79:37:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass CubicInterpolator[m[K’ has no member named ‘[01m[KsetStateGoal[m[K’
+   79 |                 cubic_interpolator_.[01;31m[KsetStateGoal[m[K(robot_state_goal_);
+      |                                     [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:80:37:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass CubicInterpolator[m[K’ has no member named ‘[01m[Kcalculate5Times[m[K’; did you mean ‘[01m[KcalculateTras[m[K’?
+   80 |                 cubic_interpolator_.[01;31m[Kcalculate5Times[m[K();
+      |                                     [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                                     [32m[KcalculateTras[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:83:74:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass CubicInterpolator[m[K’ has no member named ‘[01m[KgetTrajectory[m[K’
+   83 |                 std::vector<RobotState> trajectory = cubic_interpolator_.[01;31m[KgetTrajectory[m[K();
+      |                                                                          [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:86:21:[m[K [01;31m[Kerror: [m[K‘[01m[Ktrajectory_buffer_[m[K’ was not declared in this scope; did you mean ‘[01m[Ktrajectory_nums[m[K’?
+   86 |                     [01;31m[Ktrajectory_buffer_[m[K.push_back(trajectory[i]);
+      |                     [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+      |                     [32m[Ktrajectory_nums[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:90:17:[m[K [01;31m[Kerror: [m[K‘[01m[Ktrajectory_buffer_[m[K’ was not declared in this scope
+   90 |             if ([01;31m[Ktrajectory_buffer_[m[K.hasNext())
+      |                 [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+                 from [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:1[m[K:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:98:21:[m[K [01;31m[Kerror: [m[K‘[01m[Krobot_state_[m[K’ was not declared in this scope; did you mean ‘[01m[KrobotState[m[K’?
+   98 |                     [01;31m[Krobot_state_[m[K.position()[0], robot_state_.position()[1], robot_state_.position()[2],
+      |                     [01;31m[K^~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/vel_to_pos_node.dir/build.make:76: CMakeFiles/vel_to_pos_node.dir/src/vel_to_pos_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:801: CMakeFiles/vel_to_pos_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

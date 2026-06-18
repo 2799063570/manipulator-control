@@ -1,0 +1,8 @@
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/joint_velocity_publisher.cpp:2:10:[m[K [01;31m[Kfatal error: [m[Krobot_control_ros2/msg/joint_velocity_cmd.hpp: No such file or directory
+    2 | #include [01;31m[K"robot_control_ros2/msg/joint_velocity_cmd.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/joint_velocity_publisher.dir/build.make:76: CMakeFiles/joint_velocity_publisher.dir/src/joint_velocity_publisher.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:635: CMakeFiles/joint_velocity_publisher.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake: *** [Makefile:146: all] Error 2

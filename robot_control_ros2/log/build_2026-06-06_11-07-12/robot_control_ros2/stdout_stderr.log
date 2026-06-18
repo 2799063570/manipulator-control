@@ -1,0 +1,64 @@
+-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+-- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+-- Found rosidl_adapter: 4.6.7 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+-- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+-- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: 
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done (0.8s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2
+[  2%] Built target robot_control_ros2__rosidl_generator_type_description
+[ 11%] [32mBuilding CXX object CMakeFiles/robot_state_pub.dir/src/robot_state_pub.cpp.o[0m
+[ 14%] Built target timer_control_node
+[ 16%] Built target joint_velocity_subscriber
+[ 19%] Built target joint_velocity_publisher
+[ 19%] Built target ament_cmake_python_copy_robot_control_ros2
+[ 21%] Built target robot_control_ros2__cpp
+[ 33%] Built target robot_control_ros2__rosidl_generator_c
+[ 47%] Built target robot_control_ros2__rosidl_typesupport_c
+[ 47%] Built target robot_control_ros2__rosidl_typesupport_introspection_c
+[ 54%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_c
+[ 61%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_cpp
+[ 71%] Built target robot_control_ros2__rosidl_typesupport_cpp
+[ 76%] Built target robot_control_ros2__rosidl_typesupport_introspection_cpp
+[ 76%] Built target robot_control_ros2
+[ 78%] Built target robot_control_ros2__py
+[ 83%] Built target robot_control_ros2__rosidl_generator_py
+[ 92%] Built target robot_control_ros2_s__rosidl_typesupport_introspection_c
+[ 92%] Built target robot_control_ros2_s__rosidl_typesupport_c
+[ 97%] Built target robot_control_ros2_s__rosidl_typesupport_fastrtps_c
+running egg_info
+writing robot_control_ros2.egg-info/PKG-INFO
+writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt
+writing top-level names to robot_control_ros2.egg-info/top_level.txt
+reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_state_pub.cpp:2:10:[m[K [01;31m[Kfatal error: [m[Krobot_control_ros2/msg/joint_state_command.hpp: No such file or directory
+    2 | #include [01;31m[K"robot_control_ros2/msg/joint_state_command.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/robot_state_pub.dir/build.make:76: CMakeFiles/robot_state_pub.dir/src/robot_state_pub.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:707: CMakeFiles/robot_state_pub.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[ 97%] Built target ament_cmake_python_build_robot_control_ros2_egg
+gmake: *** [Makefile:146: all] Error 2

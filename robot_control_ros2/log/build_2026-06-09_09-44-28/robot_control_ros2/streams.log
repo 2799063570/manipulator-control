@@ -1,0 +1,39 @@
+[0.013s] Invoking command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2 -- -j8 -l8
+[0.093s] [  1%] Built target robot_control_ros2__rosidl_generator_type_description
+[0.107s] [  5%] Built target joint_velocity_subscriber
+[0.107s] [  6%] Built target timer_control_node
+[0.109s] [  6%] Built target ament_cmake_python_copy_robot_control_ros2
+[0.123s] [  7%] Built target robot_control_ros2__cpp
+[0.132s] [ 25%] Built target robot_control_ros2__rosidl_generator_c
+[0.168s] [ 61%] Built target robot_control_ros2__rosidl_typesupport_c
+[0.168s] [ 69%] Built target robot_control_ros2__rosidl_typesupport_introspection_cpp
+[0.168s] [ 60%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_cpp
+[0.168s] [ 70%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_c
+[0.169s] [ 70%] Built target robot_control_ros2__rosidl_typesupport_cpp
+[0.169s] [ 71%] Built target robot_control_ros2__rosidl_typesupport_introspection_c
+[0.202s] [ 76%] Built target student_servier
+[0.202s] [ 78%] [32mBuilding CXX object CMakeFiles/vel_to_pos_node.dir/src/vel_to_pos_node.cpp.o[0m
+[0.202s] [ 78%] Built target robot_state_pub
+[0.204s] [ 80%] Built target student_client
+[0.208s] [ 83%] Built target joint_velocity_publisher
+[0.225s] [ 83%] Built target robot_control_ros2
+[0.249s] [ 84%] Built target robot_control_ros2__py
+[0.277s] running egg_info
+[0.278s] [ 91%] Built target robot_control_ros2__rosidl_generator_py
+[0.293s] writing robot_control_ros2.egg-info/PKG-INFO
+[0.294s] writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt
+[0.294s] writing top-level names to robot_control_ros2.egg-info/top_level.txt
+[0.307s] [ 98%] Built target robot_control_ros2_s__rosidl_typesupport_introspection_c
+[0.308s] [ 98%] Built target robot_control_ros2_s__rosidl_typesupport_c
+[0.308s] [ 98%] Built target robot_control_ros2_s__rosidl_typesupport_fastrtps_c
+[0.327s] reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[0.327s] writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[0.351s] [ 98%] Built target ament_cmake_python_build_robot_control_ros2_egg
+[0.440s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:4:10:[m[K [01;31m[Kfatal error: [m[Krobot_utils/robot_state.hpp: No such file or directory
+[0.440s]     4 | #include [01;31m[K"robot_utils/robot_state.hpp"[m[K
+[0.440s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.440s] compilation terminated.
+[0.443s] gmake[2]: *** [CMakeFiles/vel_to_pos_node.dir/build.make:76: CMakeFiles/vel_to_pos_node.dir/src/vel_to_pos_node.cpp.o] Error 1
+[0.444s] gmake[1]: *** [CMakeFiles/Makefile2:801: CMakeFiles/vel_to_pos_node.dir/all] Error 2
+[0.444s] gmake: *** [Makefile:146: all] Error 2
+[0.448s] Invoked command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2 -- -j8 -l8

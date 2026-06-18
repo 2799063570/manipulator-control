@@ -1,0 +1,20 @@
+[0.011s] Invoking command in '/home/chenque/cpp_practice/robot_control_ros2/build/other_package': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/other_package -- -j8 -l8
+[0.074s] [ 25%] [32mBuilding CXX object CMakeFiles/self_msg_test_publisher.dir/src/self_msg_test_publisher.cpp.o[0m
+[0.076s] [ 50%] [32mBuilding CXX object CMakeFiles/self_msg_test_subscriber.dir/src/self_msg_test_subscriber.cpp.o[0m
+[1.856s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:[m[K In function ‘[01m[Kint[01;32m[K main[m[K(int, char**)[m[K’:
+[1.856s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:24:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[1.856s]    24 |     [01;31m[Kros[m[K::init(argc, argv);
+[1.857s]       |     [01;31m[K^~~[m[K
+[1.857s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:25:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[1.857s]    25 |     [01;31m[Kros[m[K::spin(std::make_shared<SelfMsgSubscriber>());
+[1.857s]       |     [01;31m[K^~~[m[K
+[1.857s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:26:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+[1.857s]    26 |     [01;31m[Kros[m[K::shutdown();
+[1.857s]       |     [01;31m[K^~~[m[K
+[3.391s] [ 75%] [32m[1mLinking CXX executable self_msg_test_publisher[0m
+[3.404s] gmake[2]: *** [CMakeFiles/self_msg_test_subscriber.dir/build.make:76: CMakeFiles/self_msg_test_subscriber.dir/src/self_msg_test_subscriber.cpp.o] Error 1
+[3.404s] gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/self_msg_test_subscriber.dir/all] Error 2
+[3.404s] gmake[1]: *** Waiting for unfinished jobs....
+[3.517s] [ 75%] Built target self_msg_test_publisher
+[3.518s] gmake: *** [Makefile:146: all] Error 2
+[3.521s] Invoked command in '/home/chenque/cpp_practice/robot_control_ros2/build/other_package' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/other_package -- -j8 -l8

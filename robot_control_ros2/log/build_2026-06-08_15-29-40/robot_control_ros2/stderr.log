@@ -1,0 +1,14 @@
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:[m[K In function ‘[01m[Kint[01;32m[K main[m[K(int, char**)[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:49:85:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp::Client<robot_control_ros2::srv::Student>::FutureAndRequestId ServiceClient::[01;32m[Ksend_request[m[K(int32_t, int32_t)[m[K’ is private within this context
+   49 |     rclcpp::Client<Student>::FutureAndRequestId response = [01;31m[Kclient_node->send_request(1, 2)[m[K;
+      |                                                            [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:28:49:[m[K [01;36m[Knote: [m[Kdeclared private here
+   28 |     rclcpp::Client<Student>::FutureAndRequestId [01;36m[Ksend_request[m[K(int32_t num1, int32_t num2)
+      |                                                 [01;36m[K^~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:[m[K In member function ‘[01m[Kbool ServiceClient::[01;32m[KwaitConnect[m[K()[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:26:5:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+   26 |     [01;35m[K}[m[K
+      |     [01;35m[K^[m[K
+gmake[2]: *** [CMakeFiles/student_client.dir/build.make:76: CMakeFiles/student_client.dir/src/student_client.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:769: CMakeFiles/student_client.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

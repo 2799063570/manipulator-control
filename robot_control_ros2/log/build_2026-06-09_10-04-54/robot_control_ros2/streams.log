@@ -1,0 +1,250 @@
+[0.011s] Invoking command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2 -- -j8 -l8
+[0.066s] [  1%] Built target robot_control_ros2__rosidl_generator_type_description
+[0.070s] [  3%] Built target timer_control_node
+[0.070s] [  6%] Built target joint_velocity_subscriber
+[0.075s] [  6%] Built target ament_cmake_python_copy_robot_control_ros2
+[0.088s] [  7%] Built target robot_control_ros2__cpp
+[0.089s] [ 25%] Built target robot_control_ros2__rosidl_generator_c
+[0.123s] [ 60%] Built target robot_control_ros2__rosidl_typesupport_introspection_cpp
+[0.123s] [ 60%] Built target robot_control_ros2__rosidl_typesupport_introspection_c
+[0.123s] [ 60%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_c
+[0.123s] [ 66%] Built target robot_control_ros2__rosidl_typesupport_c
+[0.123s] [ 67%] Built target robot_control_ros2__rosidl_typesupport_cpp
+[0.123s] [ 70%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_cpp
+[0.153s] [ 80%] Built target student_client
+[0.153s] [ 80%] Built target student_servier
+[0.153s] [ 80%] Built target joint_velocity_publisher
+[0.153s] [ 80%] Built target robot_state_pub
+[0.158s] [ 81%] [32mBuilding CXX object CMakeFiles/vel_to_pos_node.dir/src/vel_to_pos_node.cpp.o[0m
+[0.173s] [ 81%] Built target robot_control_ros2
+[0.194s] [ 82%] Built target robot_control_ros2__py
+[0.221s] [ 88%] Built target robot_control_ros2__rosidl_generator_py
+[0.238s] running egg_info
+[0.245s] [ 93%] Built target robot_control_ros2_s__rosidl_typesupport_fastrtps_c
+[0.245s] [ 93%] Built target robot_control_ros2_s__rosidl_typesupport_introspection_c
+[0.246s] [ 96%] Built target robot_control_ros2_s__rosidl_typesupport_c
+[0.249s] writing robot_control_ros2.egg-info/PKG-INFO
+[0.250s] writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt
+[0.250s] writing top-level names to robot_control_ros2.egg-info/top_level.txt
+[0.277s] reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[0.278s] writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[0.298s] [ 96%] Built target ament_cmake_python_build_robot_control_ros2_egg
+[6.404s] [ 97%] [32m[1mLinking CXX executable vel_to_pos_node[0m
+[6.646s] [100%] Built target vel_to_pos_node
+[6.659s] Invoked command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2 -- -j8 -l8
+[6.660s] Invoking command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2
+[6.668s] -- Install configuration: ""
+[6.668s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/ament_index/resource_index/rosidl_interfaces/robot_control_ros2
+[6.668s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/msg/JointStateCommand.json
+[6.668s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/srv/Student.json
+[6.668s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/msg/JointVelocityCmd.json
+[6.670s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/msg/JointPositionCmd.json
+[6.670s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2
+[6.670s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv
+[6.670s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail
+[6.670s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail/student__struct.h
+[6.671s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail/student__type_support.h
+[6.671s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail/student__type_support.c
+[6.671s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail/student__description.c
+[6.671s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail/student__functions.h
+[6.671s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail/student__functions.c
+[6.671s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/student.h
+[6.671s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg
+[6.671s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/joint_position_cmd.h
+[6.671s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail
+[6.671s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_position_cmd__type_support.h
+[6.671s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_velocity_cmd__functions.h
+[6.671s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_velocity_cmd__type_support.c
+[6.671s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_velocity_cmd__type_support.h
+[6.671s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_position_cmd__functions.c
+[6.671s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__type_support.h
+[6.671s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__type_support.c
+[6.671s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_position_cmd__struct.h
+[6.671s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_position_cmd__type_support.c
+[6.672s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_velocity_cmd__description.c
+[6.672s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__functions.c
+[6.672s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__description.c
+[6.672s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__functions.h
+[6.672s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__struct.h
+[6.672s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_position_cmd__functions.h
+[6.672s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_velocity_cmd__struct.h
+[6.672s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_position_cmd__description.c
+[6.672s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_velocity_cmd__functions.c
+[6.672s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/joint_velocity_cmd.h
+[6.672s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/joint_state_command.h
+[6.672s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/rosidl_generator_c__visibility_control.h
+[6.672s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/environment/library_path.sh
+[6.672s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/environment/library_path.dsv
+[6.672s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_generator_c.so
+[6.672s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2
+[6.672s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv
+[6.672s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail
+[6.672s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail/student__rosidl_typesupport_fastrtps_c.h
+[6.673s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg
+[6.673s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail
+[6.673s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__rosidl_typesupport_fastrtps_c.h
+[6.673s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_velocity_cmd__rosidl_typesupport_fastrtps_c.h
+[6.673s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_position_cmd__rosidl_typesupport_fastrtps_c.h
+[6.673s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[6.674s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_typesupport_fastrtps_c.so
+[6.674s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2
+[6.674s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv
+[6.674s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail
+[6.674s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail/student__traits.hpp
+[6.674s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail/student__struct.hpp
+[6.674s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail/student__builder.hpp
+[6.674s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail/student__type_support.hpp
+[6.674s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/student.hpp
+[6.675s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg
+[6.675s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail
+[6.675s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_position_cmd__type_support.hpp
+[6.675s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__type_support.hpp
+[6.675s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__struct.hpp
+[6.675s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_velocity_cmd__traits.hpp
+[6.675s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_velocity_cmd__struct.hpp
+[6.675s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_position_cmd__traits.hpp
+[6.675s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_velocity_cmd__builder.hpp
+[6.675s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__builder.hpp
+[6.675s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_position_cmd__builder.hpp
+[6.675s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__traits.hpp
+[6.676s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_position_cmd__struct.hpp
+[6.676s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_velocity_cmd__type_support.hpp
+[6.676s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/rosidl_generator_cpp__visibility_control.hpp
+[6.676s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/joint_position_cmd.hpp
+[6.676s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/joint_velocity_cmd.hpp
+[6.676s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/joint_state_command.hpp
+[6.676s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2
+[6.676s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv
+[6.676s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail
+[6.676s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail/dds_fastrtps
+[6.676s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail/student__rosidl_typesupport_fastrtps_cpp.hpp
+[6.676s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg
+[6.676s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail
+[6.676s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_position_cmd__rosidl_typesupport_fastrtps_cpp.hpp
+[6.676s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/dds_fastrtps
+[6.677s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__rosidl_typesupport_fastrtps_cpp.hpp
+[6.677s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_velocity_cmd__rosidl_typesupport_fastrtps_cpp.hpp
+[6.677s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[6.677s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_typesupport_fastrtps_cpp.so
+[6.677s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2
+[6.677s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv
+[6.677s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail
+[6.677s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail/student__rosidl_typesupport_introspection_c.h
+[6.677s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail/student__type_support.c
+[6.677s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg
+[6.678s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail
+[6.678s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_velocity_cmd__type_support.c
+[6.678s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_velocity_cmd__rosidl_typesupport_introspection_c.h
+[6.678s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__type_support.c
+[6.678s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_position_cmd__type_support.c
+[6.678s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_position_cmd__rosidl_typesupport_introspection_c.h
+[6.678s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__rosidl_typesupport_introspection_c.h
+[6.678s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[6.678s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_typesupport_introspection_c.so
+[6.678s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_typesupport_c.so
+[6.678s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2
+[6.678s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv
+[6.678s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail
+[6.678s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail/student__type_support.cpp
+[6.678s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/srv/detail/student__rosidl_typesupport_introspection_cpp.hpp
+[6.678s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg
+[6.679s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail
+[6.679s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__type_support.cpp
+[6.679s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__rosidl_typesupport_introspection_cpp.hpp
+[6.679s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_velocity_cmd__type_support.cpp
+[6.679s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_velocity_cmd__rosidl_typesupport_introspection_cpp.hpp
+[6.679s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_position_cmd__type_support.cpp
+[6.679s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_position_cmd__rosidl_typesupport_introspection_cpp.hpp
+[6.679s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_typesupport_introspection_cpp.so
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_typesupport_cpp.so
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/environment/pythonpath.sh
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/environment/pythonpath.dsv
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2-0.0.0-py3.12.egg-info
+[6.680s] -- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2-0.0.0-py3.12.egg-info/SOURCES.txt
+[6.680s] -- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2-0.0.0-py3.12.egg-info/top_level.txt
+[6.680s] -- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2-0.0.0-py3.12.egg-info/PKG-INFO
+[6.680s] -- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2-0.0.0-py3.12.egg-info/dependency_links.txt
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/_robot_control_ros2_s.ep.rosidl_typesupport_introspection_c.c
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_introspection_c.so
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/_robot_control_ros2_s.ep.rosidl_typesupport_fastrtps_c.c
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_fastrtps_c.so
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/srv
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/srv/_student.py
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/srv/__init__.py
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/srv/_student_s.c
+[6.680s] -- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/__init__.py
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/msg
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/msg/_joint_position_cmd_s.c
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/msg/_joint_state_command_s.c
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/msg/_joint_velocity_cmd_s.c
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/msg/_joint_position_cmd.py
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/msg/_joint_state_command.py
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/msg/__init__.py
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/msg/_joint_velocity_cmd.py
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/_robot_control_ros2_s.ep.rosidl_typesupport_c.c
+[6.680s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_c.so
+[6.705s] Listing '/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2'...
+[6.705s] Compiling '/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/__init__.py'...
+[6.705s] Listing '/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/msg'...
+[6.705s] Listing '/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/srv'...
+[6.708s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_fastrtps_c.so
+[6.708s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_introspection_c.so
+[6.708s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_c.so
+[6.709s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_generator_py.so
+[6.709s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/msg/JointStateCommand.idl
+[6.709s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/srv/Student.idl
+[6.709s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/msg/JointVelocityCmd.idl
+[6.709s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/msg/JointPositionCmd.idl
+[6.709s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/msg/JointStateCommand.msg
+[6.709s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/srv/Student.srv
+[6.709s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/msg/JointVelocityCmd.msg
+[6.710s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/msg/JointPositionCmd.msg
+[6.710s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/robot_control_ros2/joint_velocity_publisher
+[6.710s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/robot_control_ros2/joint_velocity_subscriber
+[6.710s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/robot_control_ros2/timer_control_node
+[6.711s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/robot_control_ros2/robot_state_pub
+[6.711s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/robot_control_ros2/student_servier
+[6.711s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/robot_control_ros2/student_client
+[6.711s] -- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/robot_control_ros2/vel_to_pos_node
+[6.718s] -- Set non-toolchain portion of runtime path of "/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/robot_control_ros2/vel_to_pos_node" to ""
+[6.718s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/ament_index/resource_index/package_run_dependencies/robot_control_ros2
+[6.718s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/ament_index/resource_index/parent_prefix_path/robot_control_ros2
+[6.718s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/environment/ament_prefix_path.sh
+[6.718s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/environment/ament_prefix_path.dsv
+[6.719s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/environment/path.sh
+[6.719s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/environment/path.dsv
+[6.719s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/local_setup.bash
+[6.719s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/local_setup.sh
+[6.719s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/local_setup.zsh
+[6.719s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/local_setup.dsv
+[6.719s] -- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/package.dsv
+[6.719s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/ament_index/resource_index/packages/robot_control_ros2
+[6.720s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/export_robot_control_ros2__rosidl_generator_cExport.cmake
+[6.720s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/export_robot_control_ros2__rosidl_generator_cExport-noconfig.cmake
+[6.720s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/export_robot_control_ros2__rosidl_typesupport_fastrtps_cExport.cmake
+[6.720s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/export_robot_control_ros2__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[6.720s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/export_robot_control_ros2__rosidl_generator_cppExport.cmake
+[6.720s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/export_robot_control_ros2__rosidl_typesupport_fastrtps_cppExport.cmake
+[6.720s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/export_robot_control_ros2__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[6.721s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/robot_control_ros2__rosidl_typesupport_introspection_cExport.cmake
+[6.721s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/robot_control_ros2__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[6.721s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/robot_control_ros2__rosidl_typesupport_cExport.cmake
+[6.721s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/robot_control_ros2__rosidl_typesupport_cExport-noconfig.cmake
+[6.721s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/robot_control_ros2__rosidl_typesupport_introspection_cppExport.cmake
+[6.721s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/robot_control_ros2__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[6.722s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/robot_control_ros2__rosidl_typesupport_cppExport.cmake
+[6.722s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/robot_control_ros2__rosidl_typesupport_cppExport-noconfig.cmake
+[6.722s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/export_robot_control_ros2__rosidl_generator_pyExport.cmake
+[6.722s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/export_robot_control_ros2__rosidl_generator_pyExport-noconfig.cmake
+[6.722s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/rosidl_cmake-extras.cmake
+[6.722s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/ament_cmake_export_dependencies-extras.cmake
+[6.722s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/ament_cmake_export_include_directories-extras.cmake
+[6.722s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/ament_cmake_export_libraries-extras.cmake
+[6.722s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/ament_cmake_export_targets-extras.cmake
+[6.722s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[6.722s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[6.722s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/robot_control_ros2Config.cmake
+[6.722s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/robot_control_ros2Config-version.cmake
+[6.722s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/package.xml
+[6.725s] Invoked command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2

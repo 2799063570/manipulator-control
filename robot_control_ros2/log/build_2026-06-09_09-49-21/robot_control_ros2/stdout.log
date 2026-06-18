@@ -1,0 +1,61 @@
+-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+-- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+-- Found rosidl_adapter: 4.6.7 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+-- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+-- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: /home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/include
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done (0.9s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2
+[  1%] Built target robot_control_ros2__rosidl_generator_type_description
+[  3%] Built target timer_control_node
+[  6%] Built target joint_velocity_subscriber
+[  6%] Built target ament_cmake_python_copy_robot_control_ros2
+[  7%] Built target robot_control_ros2__cpp
+[ 25%] Built target robot_control_ros2__rosidl_generator_c
+[ 46%] Built target robot_control_ros2__rosidl_typesupport_c
+[ 47%] Built target robot_control_ros2__rosidl_typesupport_introspection_cpp
+[ 47%] Built target robot_control_ros2__rosidl_typesupport_introspection_c
+[ 56%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_cpp
+[ 63%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_c
+[ 70%] Built target robot_control_ros2__rosidl_typesupport_cpp
+[ 70%] Built target robot_control_ros2
+[ 77%] [32mBuilding CXX object CMakeFiles/vel_to_pos_node.dir/src/vel_to_pos_node.cpp.o[0m
+[ 81%] [32mBuilding CXX object CMakeFiles/vel_to_pos_node.dir/src/robot_utils/robot_state.cpp.o[0m
+[ 77%] Built target joint_velocity_publisher
+[ 80%] Built target student_servier
+[ 82%] Built target robot_state_pub
+[ 82%] Built target student_client
+[ 83%] [32mBuilding CXX object CMakeFiles/vel_to_pos_node.dir/src/robot_utils/safety_limiter.cpp.o[0m
+[ 85%] Built target robot_control_ros2__py
+[ 91%] Built target robot_control_ros2__rosidl_generator_py
+[ 98%] Built target robot_control_ros2_s__rosidl_typesupport_introspection_c
+[ 98%] Built target robot_control_ros2_s__rosidl_typesupport_fastrtps_c
+[ 98%] Built target robot_control_ros2_s__rosidl_typesupport_c
+running egg_info
+writing robot_control_ros2.egg-info/PKG-INFO
+writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt
+writing top-level names to robot_control_ros2.egg-info/top_level.txt
+reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[ 98%] Built target ament_cmake_python_build_robot_control_ros2_egg

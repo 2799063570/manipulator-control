@@ -1,0 +1,12 @@
+[  1%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[  7%] Built target joint_velocity_publisher
+[  9%] Built target timer_control_node
+[ 12%] Built target joint_velocity_subscriber
+[ 12%] Built target ament_cmake_python_copy_robot_control_ros2
+running egg_info
+writing robot_control_ros2.egg-info/PKG-INFO
+writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt
+writing top-level names to robot_control_ros2.egg-info/top_level.txt
+reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[ 12%] Built target ament_cmake_python_build_robot_control_ros2_egg

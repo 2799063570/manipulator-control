@@ -1,0 +1,23 @@
+[ 25%] [32mBuilding CXX object CMakeFiles/self_msg_test_subscriber.dir/src/self_msg_test_subscriber.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/self_msg_test_publisher.dir/src/self_msg_test_publisher.cpp.o[0m
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:[m[K In function ‘[01m[Kint[01;32m[K main[m[K(int, char**)[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:24:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+   24 |     [01;31m[Kros[m[K::init(argc, argv);
+      |     [01;31m[K^~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:25:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+   25 |     [01;31m[Kros[m[K::spin(std::make_shared<SelfMsgSubscriber>());
+      |     [01;31m[K^~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:26:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+   26 |     [01;31m[Kros[m[K::shutdown();
+      |     [01;31m[K^~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_publisher.cpp:[m[K In member function ‘[01m[Kvoid SelfMsgPublisher::[01;32m[Ktimer_callback[m[K()[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_publisher.cpp:21:9:[m[K [01;31m[Kerror: [m[K‘[01m[KRCLROS_INFO[m[K’ was not declared in this scope; did you mean ‘[01m[KRCLCPP_INFO[m[K’?
+   21 |         [01;31m[KRCLROS_INFO[m[K(this->get_logger(), "pub msg : position[%.2f, %.2f, %.2f], velocity[%.2f, %.2f, %.2f], excution is %s",
+      |         [01;31m[K^~~~~~~~~~~[m[K
+      |         [32m[KRCLCPP_INFO[m[K
+gmake[2]: *** [CMakeFiles/self_msg_test_publisher.dir/build.make:76: CMakeFiles/self_msg_test_publisher.dir/src/self_msg_test_publisher.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/self_msg_test_publisher.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake[2]: *** [CMakeFiles/self_msg_test_subscriber.dir/build.make:76: CMakeFiles/self_msg_test_subscriber.dir/src/self_msg_test_subscriber.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/self_msg_test_subscriber.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

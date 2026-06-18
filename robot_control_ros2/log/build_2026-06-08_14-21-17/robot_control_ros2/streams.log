@@ -1,0 +1,188 @@
+[0.012s] Invoking command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2 -- -j8 -l8
+[0.031s] -- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.052s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.111s] -- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.128s] -- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.134s] -- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.140s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.148s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.186s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.187s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.232s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.272s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[0.280s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.285s] -- Found rosidl_adapter: 4.6.7 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[0.454s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[0.562s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.601s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.602s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[0.776s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[0.786s] -- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[0.792s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.792s] -- Configured cppcheck include dirs: 
+[0.792s] -- Configured cppcheck exclude dirs and/or files: 
+[0.793s] -- Added test 'lint_cmake' to check CMake code style
+[0.794s] -- Added test 'uncrustify' to check C / C++ code style
+[0.794s] -- Configured uncrustify additional arguments: 
+[0.794s] -- Added test 'xmllint' to check XML markup files
+[0.795s] -- Configuring done (0.8s)
+[0.847s] -- Generating done (0.0s)
+[0.863s] -- Build files have been written to: /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2
+[0.904s] [  1%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[0.910s] [  5%] Built target timer_control_node
+[0.910s] [  9%] Built target joint_velocity_subscriber
+[0.911s] [ 12%] Built target joint_velocity_publisher
+[0.912s] [ 12%] Built target ament_cmake_python_copy_robot_control_ros2
+[1.032s] [ 12%] Built target robot_control_ros2__rosidl_generator_type_description
+[1.040s] running egg_info
+[1.044s] [ 14%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.050s] writing robot_control_ros2.egg-info/PKG-INFO
+[1.050s] writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt
+[1.051s] writing top-level names to robot_control_ros2.egg-info/top_level.txt
+[1.054s] [ 16%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.080s] reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[1.080s] writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[1.102s] [ 16%] Built target ament_cmake_python_build_robot_control_ros2_egg
+[1.265s] [ 16%] Built target robot_control_ros2__cpp
+[1.280s] [ 20%] [32mBuilding C object CMakeFiles/robot_control_ros2__rosidl_generator_c.dir/rosidl_generator_c/robot_control_ros2/msg/detail/joint_state_command__description.c.o[0m
+[1.280s] [ 20%] [32mBuilding C object CMakeFiles/robot_control_ros2__rosidl_generator_c.dir/rosidl_generator_c/robot_control_ros2/msg/detail/joint_state_command__type_support.c.o[0m
+[1.280s] [ 22%] [32mBuilding C object CMakeFiles/robot_control_ros2__rosidl_generator_c.dir/rosidl_generator_c/robot_control_ros2/srv/detail/student__functions.c.o[0m
+[1.281s] [ 24%] [32mBuilding C object CMakeFiles/robot_control_ros2__rosidl_generator_c.dir/rosidl_generator_c/robot_control_ros2/msg/detail/joint_state_command__functions.c.o[0m
+[1.281s] [ 25%] [32mBuilding C object CMakeFiles/robot_control_ros2__rosidl_generator_c.dir/rosidl_generator_c/robot_control_ros2/srv/detail/student__description.c.o[0m
+[1.282s] [ 27%] [32mBuilding C object CMakeFiles/robot_control_ros2__rosidl_generator_c.dir/rosidl_generator_c/robot_control_ros2/srv/detail/student__type_support.c.o[0m
+[1.397s] [ 29%] [32m[1mLinking C shared library librobot_control_ros2__rosidl_generator_c.so[0m
+[1.455s] [ 29%] Built target robot_control_ros2__rosidl_generator_c
+[1.465s] [ 31%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[1.465s] [ 33%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[1.467s] [ 35%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[1.467s] [ 37%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[1.467s] [ 40%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[1.467s] [ 40%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[1.663s] [ 42%] [32mBuilding CXX object CMakeFiles/robot_control_ros2__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_control_ros2/srv/student__type_support.cpp.o[0m
+[1.671s] [ 44%] [32mBuilding CXX object CMakeFiles/robot_control_ros2__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_control_ros2/msg/joint_state_command__type_support.cpp.o[0m
+[1.688s] [ 46%] [32mBuilding CXX object CMakeFiles/robot_control_ros2__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_control_ros2/msg/joint_state_command__type_support.cpp.o[0m
+[1.688s] [ 48%] [32mBuilding CXX object CMakeFiles/robot_control_ros2__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_control_ros2/srv/student__type_support.cpp.o[0m
+[1.700s] [ 50%] [32mBuilding C object CMakeFiles/robot_control_ros2__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_control_ros2/msg/detail/joint_state_command__type_support.c.o[0m
+[1.701s] [ 51%] [32mBuilding CXX object CMakeFiles/robot_control_ros2__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_control_ros2/msg/detail/joint_state_command__type_support.cpp.o[0m
+[1.732s] [ 53%] [32mBuilding CXX object CMakeFiles/robot_control_ros2__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_control_ros2/msg/detail/dds_fastrtps/joint_state_command__type_support.cpp.o[0m
+[1.742s] [ 55%] [32mBuilding C object CMakeFiles/robot_control_ros2__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_control_ros2/srv/detail/student__type_support.c.o[0m
+[1.753s] [ 57%] [32mBuilding CXX object CMakeFiles/robot_control_ros2__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_control_ros2/msg/detail/joint_state_command__type_support_c.cpp.o[0m
+[1.792s] [ 59%] [32m[1mLinking C shared library librobot_control_ros2__rosidl_typesupport_introspection_c.so[0m
+[1.807s] [ 61%] [32m[1mLinking CXX shared library librobot_control_ros2__rosidl_typesupport_c.so[0m
+[1.810s] [ 62%] [32mBuilding CXX object CMakeFiles/robot_control_ros2__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_control_ros2/srv/detail/student__type_support_c.cpp.o[0m
+[1.829s] [ 62%] Built target robot_control_ros2__rosidl_typesupport_introspection_c
+[1.841s] [ 64%] [32mBuilding CXX object CMakeFiles/robot_control_ros2__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_control_ros2/srv/detail/student__type_support.cpp.o[0m
+[1.861s] [ 64%] Built target robot_control_ros2__rosidl_typesupport_c
+[1.876s] [ 66%] [32mBuilding CXX object CMakeFiles/robot_control_ros2__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_control_ros2/srv/detail/dds_fastrtps/student__type_support.cpp.o[0m
+[2.431s] [ 68%] [32m[1mLinking CXX shared library librobot_control_ros2__rosidl_typesupport_cpp.so[0m
+[2.522s] [ 68%] Built target robot_control_ros2__rosidl_typesupport_cpp
+[2.556s] [ 70%] [32mBuilding CXX object CMakeFiles/student_servier.dir/src/student_servier.cpp.o[0m
+[2.564s] [ 72%] [32mBuilding CXX object CMakeFiles/robot_state_pub.dir/src/robot_state_pub.cpp.o[0m
+[2.642s] [ 74%] [32m[1mLinking CXX shared library librobot_control_ros2__rosidl_typesupport_introspection_cpp.so[0m
+[2.663s] [ 75%] [32m[1mLinking CXX shared library librobot_control_ros2__rosidl_typesupport_fastrtps_c.so[0m
+[2.722s] [ 75%] Built target robot_control_ros2__rosidl_typesupport_introspection_cpp
+[2.735s] [ 75%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_c
+[2.779s] [ 77%] [32m[1mLinking CXX shared library librobot_control_ros2__rosidl_typesupport_fastrtps_cpp.so[0m
+[2.849s] [ 77%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_cpp
+[2.877s] [ 77%] Built target robot_control_ros2
+[2.902s] [ 79%] [34m[1mGenerating Python code for ROS interfaces[0m
+[3.175s] [ 79%] Built target robot_control_ros2__py
+[3.202s] [ 81%] [32mBuilding C object CMakeFiles/robot_control_ros2__rosidl_generator_py.dir/rosidl_generator_py/robot_control_ros2/msg/_joint_state_command_s.c.o[0m
+[3.203s] [ 83%] [32mBuilding C object CMakeFiles/robot_control_ros2__rosidl_generator_py.dir/rosidl_generator_py/robot_control_ros2/srv/_student_s.c.o[0m
+[3.486s] [ 85%] [32m[1mLinking C shared library librobot_control_ros2__rosidl_generator_py.so[0m
+[3.533s] [ 85%] Built target robot_control_ros2__rosidl_generator_py
+[3.560s] [ 87%] [32mBuilding C object CMakeFiles/robot_control_ros2_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/robot_control_ros2/_robot_control_ros2_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[3.560s] [ 88%] [32mBuilding C object CMakeFiles/robot_control_ros2_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/robot_control_ros2/_robot_control_ros2_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[3.560s] [ 90%] [32mBuilding C object CMakeFiles/robot_control_ros2_s__rosidl_typesupport_c.dir/rosidl_generator_py/robot_control_ros2/_robot_control_ros2_s.ep.rosidl_typesupport_c.c.o[0m
+[3.652s] [ 92%] [32m[1mLinking C shared module rosidl_generator_py/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_c.so[0m
+[3.657s] [ 94%] [32m[1mLinking C shared module rosidl_generator_py/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_introspection_c.so[0m
+[3.662s] [ 96%] [32m[1mLinking C shared module rosidl_generator_py/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_fastrtps_c.so[0m
+[3.688s] [ 96%] Built target robot_control_ros2_s__rosidl_typesupport_c
+[3.691s] [ 96%] Built target robot_control_ros2_s__rosidl_typesupport_introspection_c
+[3.698s] [ 96%] Built target robot_control_ros2_s__rosidl_typesupport_fastrtps_c
+[5.630s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:4:42:[m[K [01;31m[Kerror: [m[K‘[01m[KStudent[m[K’ is not a namespace-name
+[5.630s]     4 | using namespace robot_control_ros2::srv::[01;31m[KStudent[m[K;
+[5.630s]       |                                          [01;31m[K^~~~~~~[m[K
+[5.632s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:16:32:[m[K [01;31m[Kerror: [m[K‘[01m[KStudent[m[K’ does not name a type
+[5.632s]    16 |     void serviceCallback(const [01;31m[KStudent[m[K::Request::SharedPtr& req, const Student::Response::SharedPtr& res)
+[5.632s]       |                                [01;31m[K^~~~~~~[m[K
+[5.632s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:16:48:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+[5.632s]    16 |     void serviceCallback(const Student::Request[01;31m[K::[m[KSharedPtr& req, const Student::Response::SharedPtr& res)
+[5.633s]       |                                                [01;31m[K^~[m[K
+[5.633s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:16:48:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+[5.633s]    16 |     void serviceCallback[34m[K([m[Kconst Student::Request[01;31m[K:[m[K[32m[K:[m[KSharedPtr& req, const Student::Response::SharedPtr& res)
+[5.633s]       |                         [34m[K~[m[K                      [01;31m[K^[m[K[32m[K~[m[K
+[5.633s]       |                                                [32m[K)[m[K
+[5.633s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:16:41:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[5.633s]    16 |     void serviceCallback(const Student::[01;31m[KRequest[m[K::SharedPtr& req, const Student::Response::SharedPtr& res)
+[5.633s]       |                                         [01;31m[K^~~~~~~[m[K
+[5.633s]       |                                                [32m[K;[m[K
+[5.635s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:16:50:[m[K [01;31m[Kerror: [m[K‘[01m[KSharedPtr[m[K’ in namespace ‘[01m[K::[m[K’ does not name a type
+[5.635s]    16 |     void serviceCallback(const Student::Request::[01;31m[KSharedPtr[m[K& req, const Student::Response::SharedPtr& res)
+[5.635s]       |                                                  [01;31m[K^~~~~~~~~[m[K
+[5.636s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:25:21:[m[K [01;31m[Kerror: [m[K‘[01m[KStudent[m[K’ was not declared in this scope; did you mean ‘[01m[Krobot_control_ros2::srv::Student[m[K’?
+[5.636s]    25 |     rclcpp::Service<[01;31m[KStudent[m[K>::SharedPtr server_;
+[5.636s]       |                     [01;31m[K^~~~~~~[m[K
+[5.636s]       |                     [32m[Krobot_control_ros2::srv::Student[m[K
+[5.636s] In file included from [01m[K/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2/rosidl_generator_cpp/robot_control_ros2/srv/student.hpp:7[m[K,
+[5.636s]                  from [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:2[m[K:
+[5.636s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2/rosidl_generator_cpp/robot_control_ros2/srv/detail/student__struct.hpp:432:8:[m[K [01;36m[Knote: [m[K‘[01m[Krobot_control_ros2::srv::Student[m[K’ declared here
+[5.637s]   432 | struct [01;36m[KStudent[m[K
+[5.637s]       |        [01;36m[K^~~~~~~[m[K
+[5.637s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:25:28:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[5.637s]    25 |     rclcpp::Service<Student[01;31m[K>[m[K::SharedPtr server_;
+[5.637s]       |                            [01;31m[K^[m[K
+[5.637s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:25:31:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+[5.637s]    25 |     rclcpp::Service<Student>::[01;31m[KSharedPtr[m[K server_;
+[5.637s]       |                               [01;31m[K^~~~~~~~~[m[K
+[5.637s]       |                                        [32m[K;[m[K
+[5.638s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:25:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kserver_[m[K’ does not name a type
+[5.638s]    25 |     rclcpp::Service<Student>::SharedPtr [01;31m[Kserver_[m[K;
+[5.638s]       |                                         [01;31m[K^~~~~~~[m[K
+[5.639s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:26:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ after class definition
+[5.639s]    26 | }
+[5.639s]       |  [01;31m[K^[m[K
+[5.639s]       |  [32m[K;[m[K
+[5.639s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:[m[K In constructor ‘[01m[KServicer::[01;32m[KServicer[m[K()[m[K’:
+[5.639s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:9:40:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KServicer[m[K’ does not have any field named ‘[01m[Kcount_[m[K’
+[5.639s]     9 |     Servicer() : Node("Service_node"), [01;31m[Kcount_[m[K(0)
+[5.639s]       |                                        [01;31m[K^~~~~~[m[K
+[5.643s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:11:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kserver_[m[K’ was not declared in this scope
+[5.643s]    11 |         [01;31m[Kserver_[m[K = this->create_service<Student>("student_service",
+[5.643s]       |         [01;31m[K^~~~~~~[m[K
+[5.644s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:11:40:[m[K [01;31m[Kerror: [m[K‘[01m[KStudent[m[K’ was not declared in this scope; did you mean ‘[01m[Krobot_control_ros2::srv::Student[m[K’?
+[5.644s]    11 |         server_ = this->create_service<[01;31m[KStudent[m[K>("student_service",
+[5.644s]       |                                        [01;31m[K^~~~~~~[m[K
+[5.644s]       |                                        [32m[Krobot_control_ros2::srv::Student[m[K
+[5.644s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2/rosidl_generator_cpp/robot_control_ros2/srv/detail/student__struct.hpp:432:8:[m[K [01;36m[Knote: [m[K‘[01m[Krobot_control_ros2::srv::Student[m[K’ declared here
+[5.644s]   432 | struct [01;36m[KStudent[m[K
+[5.644s]       |        [01;36m[K^~~~~~~[m[K
+[5.658s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:11:48:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KServicer::create_service<<expression error> >(const char [16], std::_Bind_helper<false, void (Servicer::*)(...), Servicer*, const std::_Placeholder<1>&, const std::_Placeholder<2>&>::type)[m[K’
+[5.658s]    11 |         server_ = [01;31m[Kthis->create_service<Student>("student_service",[m[K
+[5.658s]       |                   [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~[m[K
+[5.658s]    12 | [01;31m[K            std::bind(&Servicer::serviceCallback, this, std::placeholders::_1, std::placeholders::_2))[m[K;
+[5.659s]       |             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[5.659s] In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[5.659s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+[5.659s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172[m[K,
+[5.659s]                  from [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:1[m[K:
+[5.659s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:302:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ServiceT, class CallbackT> typename rclcpp::Service<ServiceT>::SharedPtr rclcpp::Node::[01;32m[Kcreate_service[m[K(const std::string&, CallbackT&&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr)[m[K’
+[5.659s]   302 |   [01;36m[Kcreate_service[m[K(
+[5.659s]       |   [01;36m[K^~~~~~~~~~~~~~[m[K
+[5.659s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:302:3:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 2 provided
+[5.659s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:318:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ServiceT, class CallbackT> typename rclcpp::Service<ServiceT>::SharedPtr rclcpp::Node::[01;32m[Kcreate_service[m[K(const std::string&, CallbackT&&, const rclcpp::QoS&, rclcpp::CallbackGroup::SharedPtr)[m[K’
+[5.659s]   318 |   [01;36m[Kcreate_service[m[K(
+[5.659s]       |   [01;36m[K^~~~~~~~~~~~~~[m[K
+[5.659s] [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:318:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[5.659s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:11:48:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[5.659s]    11 |         server_ = [01;31m[Kthis->create_service<Student>("student_service",[m[K
+[5.659s]       |                   [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~[m[K
+[5.659s]    12 | [01;31m[K            std::bind(&Servicer::serviceCallback, this, std::placeholders::_1, std::placeholders::_2))[m[K;
+[5.659s]       |             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[6.566s] gmake[2]: *** [CMakeFiles/student_servier.dir/build.make:76: CMakeFiles/student_servier.dir/src/student_servier.cpp.o] Error 1
+[6.567s] gmake[1]: *** [CMakeFiles/Makefile2:739: CMakeFiles/student_servier.dir/all] Error 2
+[6.567s] gmake[1]: *** Waiting for unfinished jobs....
+[7.566s] [ 98%] [32m[1mLinking CXX executable robot_state_pub[0m
+[7.716s] [ 98%] Built target robot_state_pub
+[7.717s] gmake: *** [Makefile:146: all] Error 2
+[7.720s] Invoked command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2 -- -j8 -l8

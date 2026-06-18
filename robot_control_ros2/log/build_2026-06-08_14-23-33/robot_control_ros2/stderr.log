@@ -1,0 +1,7 @@
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:[m[K In member function ‘[01m[Kvoid Servicer::[01;32m[KserviceCallback[m[K(const robot_control_ros2::srv::Student_Request_<std::allocator<void> >::SharedPtr&, const robot_control_ros2::srv::Student_Response_<std::allocator<void> >::SharedPtr&)[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:19:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing std::__shared_ptr_access<robot_control_ros2::srv::Student_Request_<std::allocator<void> >, __gnu_cxx::_S_atomic, false, false>::element_type = struct robot_control_ros2::srv::Student_Request_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct robot_control_ros2::srv::Student_Request_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kis_ok[m[K’
+   19 |         req->[01;31m[Kis_ok[m[K = true;
+      |              [01;31m[K^~~~~[m[K
+gmake[2]: *** [CMakeFiles/student_servier.dir/build.make:76: CMakeFiles/student_servier.dir/src/student_servier.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:739: CMakeFiles/student_servier.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

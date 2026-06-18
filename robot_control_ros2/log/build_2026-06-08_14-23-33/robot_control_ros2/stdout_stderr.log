@@ -1,0 +1,35 @@
+[  1%] Built target robot_control_ros2__rosidl_generator_type_description
+[  5%] Built target timer_control_node
+[  9%] Built target joint_velocity_publisher
+[ 12%] Built target joint_velocity_subscriber
+[ 12%] Built target ament_cmake_python_copy_robot_control_ros2
+[ 14%] Built target robot_control_ros2__cpp
+[ 29%] Built target robot_control_ros2__rosidl_generator_c
+[ 37%] Built target robot_control_ros2__rosidl_typesupport_cpp
+[ 44%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_c
+[ 51%] Built target robot_control_ros2__rosidl_typesupport_c
+[ 64%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_cpp
+[ 66%] Built target robot_control_ros2__rosidl_typesupport_introspection_cpp
+[ 74%] Built target robot_control_ros2__rosidl_typesupport_introspection_c
+[ 74%] Built target robot_control_ros2
+[ 77%] Built target robot_state_pub
+[ 79%] [32mBuilding CXX object CMakeFiles/student_servier.dir/src/student_servier.cpp.o[0m
+[ 81%] Built target robot_control_ros2__py
+[ 87%] Built target robot_control_ros2__rosidl_generator_py
+[ 94%] Built target robot_control_ros2_s__rosidl_typesupport_introspection_c
+[ 94%] Built target robot_control_ros2_s__rosidl_typesupport_fastrtps_c
+[ 98%] Built target robot_control_ros2_s__rosidl_typesupport_c
+running egg_info
+writing robot_control_ros2.egg-info/PKG-INFO
+writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt
+writing top-level names to robot_control_ros2.egg-info/top_level.txt
+reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[ 98%] Built target ament_cmake_python_build_robot_control_ros2_egg
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:[m[K In member function ‘[01m[Kvoid Servicer::[01;32m[KserviceCallback[m[K(const robot_control_ros2::srv::Student_Request_<std::allocator<void> >::SharedPtr&, const robot_control_ros2::srv::Student_Response_<std::allocator<void> >::SharedPtr&)[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:19:14:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing std::__shared_ptr_access<robot_control_ros2::srv::Student_Request_<std::allocator<void> >, __gnu_cxx::_S_atomic, false, false>::element_type = struct robot_control_ros2::srv::Student_Request_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct robot_control_ros2::srv::Student_Request_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kis_ok[m[K’
+   19 |         req->[01;31m[Kis_ok[m[K = true;
+      |              [01;31m[K^~~~~[m[K
+gmake[2]: *** [CMakeFiles/student_servier.dir/build.make:76: CMakeFiles/student_servier.dir/src/student_servier.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:739: CMakeFiles/student_servier.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

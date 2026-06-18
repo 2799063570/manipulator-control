@@ -1,0 +1,33 @@
+[  1%] Built target robot_control_ros2__rosidl_generator_type_description
+[  3%] Built target timer_control_node
+[  6%] Built target joint_velocity_subscriber
+[  6%] Built target ament_cmake_python_copy_robot_control_ros2
+[  7%] Built target robot_control_ros2__cpp
+[ 24%] Built target robot_control_ros2__rosidl_generator_c
+[ 54%] Built target robot_control_ros2__rosidl_typesupport_c
+[ 56%] Built target robot_control_ros2__rosidl_typesupport_introspection_c
+[ 54%] Built target robot_control_ros2__rosidl_typesupport_cpp
+[ 54%] Built target robot_control_ros2__rosidl_typesupport_introspection_cpp
+[ 60%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_c
+[ 68%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_cpp
+[ 70%] Built target student_servier
+[ 73%] Built target joint_velocity_publisher
+[ 75%] Built target robot_state_pub
+[ 78%] Built target student_client
+[ 79%] [32mBuilding CXX object CMakeFiles/vel_to_pos_node.dir/src/vel_to_pos_node.cpp.o[0m
+[ 81%] [32mBuilding CXX object CMakeFiles/vel_to_pos_node.dir/src/robot_utils/safety_limiter.cpp.o[0m
+[ 81%] [32mBuilding CXX object CMakeFiles/vel_to_pos_node.dir/src/robot_utils/trajectory_buffer.cpp.o[0m
+[ 82%] [32mBuilding CXX object CMakeFiles/vel_to_pos_node.dir/src/robot_utils/cubic_interpolator.cpp.o[0m
+[ 82%] Built target robot_control_ros2
+[ 84%] Built target robot_control_ros2__py
+[ 90%] Built target robot_control_ros2__rosidl_generator_py
+[ 95%] Built target robot_control_ros2_s__rosidl_typesupport_introspection_c
+[ 95%] Built target robot_control_ros2_s__rosidl_typesupport_fastrtps_c
+running egg_info
+[ 97%] Built target robot_control_ros2_s__rosidl_typesupport_c
+writing robot_control_ros2.egg-info/PKG-INFO
+writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt
+writing top-level names to robot_control_ros2.egg-info/top_level.txt
+reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[ 97%] Built target ament_cmake_python_build_robot_control_ros2_egg

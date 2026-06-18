@@ -1,0 +1,159 @@
+[0.008s] Invoking command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2 -DCMAKE_INSTALL_PREFIX=/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2
+[0.056s] -- The C compiler identification is GNU 13.3.0
+[0.099s] -- The CXX compiler identification is GNU 13.3.0
+[0.114s] -- Detecting C compiler ABI info
+[0.197s] -- Detecting C compiler ABI info - done
+[0.202s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.202s] -- Detecting C compile features
+[0.203s] -- Detecting C compile features - done
+[0.213s] -- Detecting CXX compiler ABI info
+[0.302s] -- Detecting CXX compiler ABI info - done
+[0.308s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.308s] -- Detecting CXX compile features
+[0.308s] -- Detecting CXX compile features - done
+[0.310s] -- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.417s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.490s] -- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.518s] -- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.526s] -- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.537s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.551s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.599s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.601s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.676s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[0.693s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[0.711s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.762s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[0.771s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.780s] -- Found rosidl_adapter: 4.6.7 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[1.225s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[1.861s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.109s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.111s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[2.226s] -- Found PythonExtra: /usr/bin/python3  
+[2.534s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[2.568s] -- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[2.582s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.582s] -- Configured cppcheck include dirs: 
+[2.582s] -- Configured cppcheck exclude dirs and/or files: 
+[2.583s] -- Added test 'lint_cmake' to check CMake code style
+[2.584s] -- Added test 'uncrustify' to check C / C++ code style
+[2.584s] -- Configured uncrustify additional arguments: 
+[2.584s] -- Added test 'xmllint' to check XML markup files
+[2.587s] -- Configuring done (2.6s)
+[2.627s] -- Generating done (0.0s)
+[2.638s] -- Build files have been written to: /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2
+[2.650s] Invoked command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2 -DCMAKE_INSTALL_PREFIX=/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2
+[2.651s] Invoking command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2 -- -j8 -l8
+[2.706s] [  2%] [32mBuilding CXX object CMakeFiles/joint_velocity_subscriber.dir/src/joint_velocity_subscriber.cpp.o[0m
+[2.707s] [  4%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[2.707s] [  7%] [32mBuilding CXX object CMakeFiles/joint_velocity_publisher.dir/src/joint_velocity_publisher.cpp.o[0m
+[2.707s] [  9%] [32mBuilding CXX object CMakeFiles/timer_control_node.dir/src/timer_control_node.cpp.o[0m
+[2.714s] [  9%] Built target ament_cmake_python_copy_robot_control_ros2
+[2.850s] [  9%] Built target robot_control_ros2__rosidl_generator_type_description
+[2.863s] [ 11%] [34m[1mGenerating C code for ROS interfaces[0m
+[2.879s] [ 14%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[2.894s] running egg_info
+[2.896s] creating robot_control_ros2.egg-info
+[2.908s] writing robot_control_ros2.egg-info/PKG-INFO
+[2.908s] writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt
+[2.909s] writing top-level names to robot_control_ros2.egg-info/top_level.txt
+[2.909s] writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[2.945s] reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[2.945s] writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[2.975s] [ 14%] Built target ament_cmake_python_build_robot_control_ros2_egg
+[3.073s] [ 16%] [32mBuilding C object CMakeFiles/robot_control_ros2__rosidl_generator_c.dir/rosidl_generator_c/robot_control_ros2/msg/detail/joint_state_command__type_support.c.o[0m
+[3.074s] [ 19%] [32mBuilding C object CMakeFiles/robot_control_ros2__rosidl_generator_c.dir/rosidl_generator_c/robot_control_ros2/msg/detail/joint_state_command__description.c.o[0m
+[3.074s] [ 19%] Built target robot_control_ros2__cpp
+[3.075s] [ 21%] [32mBuilding C object CMakeFiles/robot_control_ros2__rosidl_generator_c.dir/rosidl_generator_c/robot_control_ros2/msg/detail/joint_state_command__functions.c.o[0m
+[3.122s] [ 23%] [32m[1mLinking C shared library librobot_control_ros2__rosidl_generator_c.so[0m
+[3.158s] [ 23%] Built target robot_control_ros2__rosidl_generator_c
+[3.172s] [ 26%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[3.172s] [ 28%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[3.172s] [ 33%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[3.173s] [ 33%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[3.174s] [ 35%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[3.379s] [ 38%] [32mBuilding CXX object CMakeFiles/robot_control_ros2__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_control_ros2/msg/joint_state_command__type_support.cpp.o[0m
+[3.382s] [ 40%] [32mBuilding CXX object CMakeFiles/robot_control_ros2__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_control_ros2/msg/joint_state_command__type_support.cpp.o[0m
+[3.404s] [ 45%] [32mBuilding CXX object CMakeFiles/robot_control_ros2__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_control_ros2/msg/detail/dds_fastrtps/joint_state_command__type_support.cpp.o[0m
+[3.404s] [ 45%] [32mBuilding C object CMakeFiles/robot_control_ros2__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_control_ros2/msg/detail/joint_state_command__type_support.c.o[0m
+[3.408s] [ 47%] [32mBuilding CXX object CMakeFiles/robot_control_ros2__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_control_ros2/msg/detail/joint_state_command__type_support_c.cpp.o[0m
+[3.434s] [ 50%] [32m[1mLinking CXX shared library librobot_control_ros2__rosidl_typesupport_c.so[0m
+[3.442s] [ 52%] [32m[1mLinking C shared library librobot_control_ros2__rosidl_typesupport_introspection_c.so[0m
+[3.482s] [ 52%] Built target robot_control_ros2__rosidl_typesupport_introspection_c
+[3.482s] [ 52%] Built target robot_control_ros2__rosidl_typesupport_c
+[3.495s] [ 54%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[3.642s] [ 57%] [32m[1mLinking CXX shared library librobot_control_ros2__rosidl_typesupport_cpp.so[0m
+[3.694s] [ 57%] Built target robot_control_ros2__rosidl_typesupport_cpp
+[3.725s] [ 59%] [32mBuilding CXX object CMakeFiles/robot_control_ros2__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_control_ros2/msg/detail/joint_state_command__type_support.cpp.o[0m
+[3.725s] [ 61%] [32mBuilding CXX object CMakeFiles/robot_state_pub.dir/src/robot_state_pub.cpp.o[0m
+[3.789s] [ 64%] [32m[1mLinking CXX shared library librobot_control_ros2__rosidl_typesupport_fastrtps_cpp.so[0m
+[3.797s] [ 66%] [32m[1mLinking CXX shared library librobot_control_ros2__rosidl_typesupport_fastrtps_c.so[0m
+[3.855s] [ 66%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_cpp
+[3.856s] [ 66%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_c
+[3.981s] [ 69%] [32m[1mLinking CXX shared library librobot_control_ros2__rosidl_typesupport_introspection_cpp.so[0m
+[4.030s] [ 69%] Built target robot_control_ros2__rosidl_typesupport_introspection_cpp
+[4.057s] [ 69%] Built target robot_control_ros2
+[4.086s] [ 71%] [34m[1mGenerating Python code for ROS interfaces[0m
+[4.296s] [ 71%] Built target robot_control_ros2__py
+[4.324s] [ 73%] [32mBuilding C object CMakeFiles/robot_control_ros2__rosidl_generator_py.dir/rosidl_generator_py/robot_control_ros2/msg/_joint_state_command_s.c.o[0m
+[4.438s] [ 76%] [32m[1mLinking C shared library librobot_control_ros2__rosidl_generator_py.so[0m
+[4.489s] [ 76%] Built target robot_control_ros2__rosidl_generator_py
+[4.517s] [ 80%] [32mBuilding C object CMakeFiles/robot_control_ros2_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/robot_control_ros2/_robot_control_ros2_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[4.518s] [ 80%] [32mBuilding C object CMakeFiles/robot_control_ros2_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/robot_control_ros2/_robot_control_ros2_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[4.518s] [ 83%] [32mBuilding C object CMakeFiles/robot_control_ros2_s__rosidl_typesupport_c.dir/rosidl_generator_py/robot_control_ros2/_robot_control_ros2_s.ep.rosidl_typesupport_c.c.o[0m
+[4.624s] [ 85%] [32m[1mLinking C shared module rosidl_generator_py/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_c.so[0m
+[4.625s] [ 88%] [32m[1mLinking C shared module rosidl_generator_py/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_introspection_c.so[0m
+[4.635s] [ 90%] [32m[1mLinking C shared module rosidl_generator_py/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_fastrtps_c.so[0m
+[4.679s] [ 90%] Built target robot_control_ros2_s__rosidl_typesupport_introspection_c
+[4.680s] [ 90%] Built target robot_control_ros2_s__rosidl_typesupport_c
+[4.681s] [ 90%] Built target robot_control_ros2_s__rosidl_typesupport_fastrtps_c
+[5.758s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_state_pub.cpp:[m[K In member function ‘[01m[Kvoid RobotStatePub::[01;32m[Ktime_callback[m[K()[m[K’:
+[5.758s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_state_pub.cpp:17:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing robot_control_ros2::msg::JointStateCommand = struct robot_control_ros2::msg::JointStateCommand_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct robot_control_ros2::msg::JointStateCommand_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kposition[m[K’
+[5.758s]    17 |         msg.[01;31m[Kposition[m[K = {1.0, 2.3, 3.1};
+[5.758s]       |             [01;31m[K^~~~~~~~[m[K
+[5.758s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_state_pub.cpp:18:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing robot_control_ros2::msg::JointStateCommand = struct robot_control_ros2::msg::JointStateCommand_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct robot_control_ros2::msg::JointStateCommand_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kvelocity[m[K’
+[5.759s]    18 |         msg.[01;31m[Kvelocity[m[K = {2.8, 3.1, 3.3};
+[5.759s]       |             [01;31m[K^~~~~~~~[m[K
+[5.759s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_state_pub.cpp:19:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing robot_control_ros2::msg::JointStateCommand = struct robot_control_ros2::msg::JointStateCommand_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct robot_control_ros2::msg::JointStateCommand_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kis_exc[m[K’
+[5.759s]    19 |         msg.[01;31m[Kis_exc[m[K = true;
+[5.759s]       |             [01;31m[K^~~~~~[m[K
+[5.759s] In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[5.759s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+[5.759s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+[5.759s]                  from [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_state_pub.cpp:1[m[K:
+[5.759s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_state_pub.cpp:21:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing robot_control_ros2::msg::JointStateCommand = struct robot_control_ros2::msg::JointStateCommand_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct robot_control_ros2::msg::JointStateCommand_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kposition[m[K’
+[5.759s]    21 |             msg.[01;31m[Kposition[m[K[0], msg.position[1], msg.position[2], msg.velocity[0], msg.velocity[1], msg.velocity[2],
+[5.759s]       |                 [01;31m[K^~~~~~~~[m[K
+[5.759s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_state_pub.cpp:21:34:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing robot_control_ros2::msg::JointStateCommand = struct robot_control_ros2::msg::JointStateCommand_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct robot_control_ros2::msg::JointStateCommand_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kposition[m[K’
+[5.759s]    21 |             msg.position[0], msg.[01;31m[Kposition[m[K[1], msg.position[2], msg.velocity[0], msg.velocity[1], msg.velocity[2],
+[5.759s]       |                                  [01;31m[K^~~~~~~~[m[K
+[5.759s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_state_pub.cpp:21:51:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing robot_control_ros2::msg::JointStateCommand = struct robot_control_ros2::msg::JointStateCommand_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct robot_control_ros2::msg::JointStateCommand_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kposition[m[K’
+[5.759s]    21 |             msg.position[0], msg.position[1], msg.[01;31m[Kposition[m[K[2], msg.velocity[0], msg.velocity[1], msg.velocity[2],
+[5.759s]       |                                                   [01;31m[K^~~~~~~~[m[K
+[5.759s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_state_pub.cpp:21:68:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing robot_control_ros2::msg::JointStateCommand = struct robot_control_ros2::msg::JointStateCommand_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct robot_control_ros2::msg::JointStateCommand_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kvelocity[m[K’
+[5.759s]    21 |          msg.position[0], msg.position[1], msg.position[2], msg.[01;31m[Kvelocity[m[K[0], msg.velocity[1], msg.velocity[2],
+[5.759s]       |                                                                 [01;31m[K^~~~~~~~[m[K
+[5.759s] 
+[5.759s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_state_pub.cpp:21:85:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing robot_control_ros2::msg::JointStateCommand = struct robot_control_ros2::msg::JointStateCommand_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct robot_control_ros2::msg::JointStateCommand_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kvelocity[m[K’
+[5.759s]    21 | tion[0], msg.position[1], msg.position[2], msg.velocity[0], msg.[01;31m[Kvelocity[m[K[1], msg.velocity[2],
+[5.759s]       |                                                                 [01;31m[K^~~~~~~~[m[K
+[5.759s] 
+[5.759s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_state_pub.cpp:21:102:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing robot_control_ros2::msg::JointStateCommand = struct robot_control_ros2::msg::JointStateCommand_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct robot_control_ros2::msg::JointStateCommand_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kvelocity[m[K’
+[5.759s]    21 | tion[1], msg.position[2], msg.velocity[0], msg.velocity[1], msg.[01;31m[Kvelocity[m[K[2],
+[5.759s]       |                                                                 [01;31m[K^~~~~~~~[m[K
+[5.760s] 
+[5.760s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_state_pub.cpp:22:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing robot_control_ros2::msg::JointStateCommand = struct robot_control_ros2::msg::JointStateCommand_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct robot_control_ros2::msg::JointStateCommand_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kis_exc[m[K’
+[5.760s]    22 |             msg.[01;31m[Kis_exc[m[K ? "true" : "false");
+[5.760s]       |                 [01;31m[K^~~~~~[m[K
+[6.535s] gmake[2]: *** [CMakeFiles/robot_state_pub.dir/build.make:76: CMakeFiles/robot_state_pub.dir/src/robot_state_pub.cpp.o] Error 1
+[6.535s] gmake[1]: *** [CMakeFiles/Makefile2:709: CMakeFiles/robot_state_pub.dir/all] Error 2
+[6.535s] gmake[1]: *** Waiting for unfinished jobs....
+[6.578s] [ 92%] [32m[1mLinking CXX executable joint_velocity_publisher[0m
+[6.638s] [ 95%] [32m[1mLinking CXX executable timer_control_node[0m
+[6.710s] [ 95%] Built target joint_velocity_publisher
+[6.766s] [ 95%] Built target timer_control_node
+[8.748s] [ 97%] [32m[1mLinking CXX executable joint_velocity_subscriber[0m
+[8.939s] [ 97%] Built target joint_velocity_subscriber
+[8.941s] gmake: *** [Makefile:146: all] Error 2
+[8.943s] Invoked command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2 -- -j8 -l8

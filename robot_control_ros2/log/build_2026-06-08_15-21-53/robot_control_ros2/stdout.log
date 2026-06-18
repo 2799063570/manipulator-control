@@ -1,0 +1,29 @@
+[  1%] Built target robot_control_ros2__rosidl_generator_type_description
+[  5%] Built target joint_velocity_publisher
+[  8%] Built target joint_velocity_subscriber
+[ 12%] Built target timer_control_node
+[ 12%] Built target ament_cmake_python_copy_robot_control_ros2
+[ 14%] Built target robot_control_ros2__cpp
+[ 28%] Built target robot_control_ros2__rosidl_generator_c
+[ 35%] Built target robot_control_ros2__rosidl_typesupport_cpp
+[ 42%] Built target robot_control_ros2__rosidl_typesupport_introspection_c
+[ 50%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_cpp
+[ 57%] Built target robot_control_ros2__rosidl_typesupport_introspection_cpp
+[ 64%] Built target robot_control_ros2__rosidl_typesupport_c
+[ 71%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_c
+[ 75%] Built target robot_state_pub
+[ 75%] Built target robot_control_ros2
+[ 78%] Built target student_servier
+[ 80%] [32mBuilding CXX object CMakeFiles/student_client.dir/src/student_client.cpp.o[0m
+[ 82%] Built target robot_control_ros2__py
+[ 87%] Built target robot_control_ros2__rosidl_generator_py
+[ 91%] Built target robot_control_ros2_s__rosidl_typesupport_c
+[ 94%] Built target robot_control_ros2_s__rosidl_typesupport_fastrtps_c
+[ 98%] Built target robot_control_ros2_s__rosidl_typesupport_introspection_c
+running egg_info
+writing robot_control_ros2.egg-info/PKG-INFO
+writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt
+writing top-level names to robot_control_ros2.egg-info/top_level.txt
+reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[ 98%] Built target ament_cmake_python_build_robot_control_ros2_egg

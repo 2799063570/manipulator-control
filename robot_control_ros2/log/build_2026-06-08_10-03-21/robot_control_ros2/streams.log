@@ -1,0 +1,58 @@
+[0.012s] Invoking command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2 -- -j8 -l8
+[0.037s] -- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.127s] -- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.147s] -- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.153s] -- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.160s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.168s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.211s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.212s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.261s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.305s] -- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+[0.313s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.319s] -- Found rosidl_adapter: 4.6.7 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[0.526s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[0.649s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.694s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.697s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[1.288s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[1.303s] -- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[1.330s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.330s] -- Configured cppcheck include dirs: 
+[1.330s] -- Configured cppcheck exclude dirs and/or files: 
+[1.332s] -- Added test 'lint_cmake' to check CMake code style
+[1.333s] -- Added test 'uncrustify' to check C / C++ code style
+[1.333s] -- Configured uncrustify additional arguments: 
+[1.334s] -- Added test 'xmllint' to check XML markup files
+[1.339s] -- Configuring done (1.3s)
+[1.520s] -- Generating done (0.2s)
+[1.555s] -- Build files have been written to: /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2
+[1.597s] [  1%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[1.607s] [  5%] Built target timer_control_node
+[1.607s] [ 12%] Built target joint_velocity_subscriber
+[1.607s] [ 12%] Built target joint_velocity_publisher
+[1.617s] [ 12%] Built target ament_cmake_python_copy_robot_control_ros2
+[1.822s] running egg_info
+[1.836s] writing robot_control_ros2.egg-info/PKG-INFO
+[1.837s] writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt
+[1.837s] writing top-level names to robot_control_ros2.egg-info/top_level.txt
+[1.871s] reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[1.872s] writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[1.894s] [ 12%] Built target ament_cmake_python_build_robot_control_ros2_egg
+[4.748s] Traceback (most recent call last):
+[4.749s]   File "/opt/ros/jazzy/lib/rosidl_generator_type_description/rosidl_generator_type_description", line 50, in <module>
+[4.749s]     sys.exit(main())
+[4.749s]              ^^^^^^
+[4.749s]   File "/opt/ros/jazzy/lib/rosidl_generator_type_description/rosidl_generator_type_description", line 46, in main
+[4.749s]     generate_type_hash(args.generator_arguments_file)
+[4.749s]   File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_generator_type_description/__init__.py", line 162, in generate_type_hash
+[4.753s]     with include_path.open('r') as include_file:
+[4.753s]          ^^^^^^^^^^^^^^^^^^^^^^
+[4.753s]   File "/usr/lib/python3.12/pathlib.py", line 1015, in open
+[4.753s]     return io.open(self, mode, buffering, encoding, errors, newline)
+[4.753s]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[4.753s] FileNotFoundError: [Errno 2] No such file or directory: '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2/rosidl_generator_type_description/robot_control_ros2/msg/String.json'
+[4.778s] gmake[2]: *** [CMakeFiles/robot_control_ros2__rosidl_generator_type_description.dir/build.make:77: rosidl_generator_type_description/robot_control_ros2/msg/JointStateCommand.json] Error 1
+[4.780s] gmake[1]: *** [CMakeFiles/Makefile2:225: CMakeFiles/robot_control_ros2__rosidl_generator_type_description.dir/all] Error 2
+[4.780s] gmake: *** [Makefile:146: all] Error 2
+[4.782s] Invoked command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2 -- -j8 -l8

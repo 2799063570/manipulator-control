@@ -1,0 +1,22 @@
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:[m[K In constructor ‘[01m[KVel2PosNode::[01;32m[KVel2PosNode[m[K()[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:12:13:[m[K [01;35m[Kwarning: [m[Klist-initializer for non-class type must not be parenthesized
+   12 |             [01;35m[Kvelocity_cmd_({0,0,0,0,0,0})[m[K,
+      |             [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:13:13:[m[K [01;35m[Kwarning: [m[Klist-initializer for non-class type must not be parenthesized
+   13 |             [01;35m[Kposition_cmd_({0,0,0,0,0,0})[m[K,
+      |             [01;35m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:14:16:[m[K [01;35m[Kwarning: [m[Kconverting to ‘[01m[K_Float32[m[K’ from ‘[01m[Kdouble[m[K’ with greater conversion rank
+   14 |             dt([01;35m[K0.02[m[K)
+      |                [01;35m[K^~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:[m[K In member function ‘[01m[Kvoid Vel2PosNode::[01;32m[Ksub_callback[m[K(const JointVelocityCmd&)[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:28:40:[m[K [01;31m[Kerror: [m[K‘[01m[Kconst JointVelocityCmd[m[K’ {aka ‘[01m[Kconst struct robot_control_ros2::msg::JointVelocityCmd_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kvelocity[m[K’; did you mean ‘[01m[Kvelocity_cmd[m[K’?
+   28 |                 velocity_cmd_[i] = vel.[01;31m[Kvelocity[m[K[i];
+      |                                        [01;31m[K^~~~~~~~[m[K
+      |                                        [32m[Kvelocity_cmd[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:[m[K In member function ‘[01m[Kvoid Vel2PosNode::[01;32m[Ktimer_callback[m[K()[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:37:30:[m[K [01;31m[Kerror: [m[K‘[01m[Kusing JointPositionCmd = using robot_control_ros2::msg::JointPositionCmd = struct robot_control_ros2::msg::JointPositionCmd_<std::allocator<void> >[m[K’ {aka ‘[01m[Kstruct robot_control_ros2::msg::JointPositionCmd_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kvelocity[m[K’
+   37 |                 position_cmd.[01;31m[Kvelocity[m[K[i] = position_cmd_[i];
+      |                              [01;31m[K^~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/vel_to_pos_node.dir/build.make:76: CMakeFiles/vel_to_pos_node.dir/src/vel_to_pos_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:799: CMakeFiles/vel_to_pos_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

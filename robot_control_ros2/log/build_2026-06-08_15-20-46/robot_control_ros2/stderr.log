@@ -1,0 +1,131 @@
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:[m[K In member function ‘[01m[Krclcpp::Client<robot_control_ros2::srv::Student>::FutureAndRequestId ServiceClient::[01;32m[Ksend_request[m[K(int32_t, int32_t)[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:30:14:[m[K [01;31m[Kerror: [m[K‘[01m[KShared_ptr[m[K’ is not a member of ‘[01m[Kstd[m[K’; did you mean ‘[01m[Kshared_ptr[m[K’?
+   30 |         std::[01;31m[KShared_ptr[m[K<Student::Request> msg = std::make_shared<Student::Request>();
+      |              [01;31m[K^~~~~~~~~~[m[K
+      |              [32m[Kshared_ptr[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:30:41:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+   30 |         std::Shared_ptr<Student::Request[01;31m[K>[m[K msg = std::make_shared<Student::Request>();
+      |                                         [01;31m[K^[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:30:43:[m[K [01;31m[Kerror: [m[K‘[01m[Kmsg[m[K’ was not declared in this scope
+   30 |         std::Shared_ptr<Student::Request> [01;31m[Kmsg[m[K = std::make_shared<Student::Request>();
+      |                                           [01;31m[K^~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:30:43:[m[K [01;36m[Knote: [m[Ksuggested alternatives:
+In file included from [01m[K/opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__struct.hpp:157[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/list_parameters.hpp:7[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:21[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+                 from [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:1[m[K:
+[01m[K/opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/list_parameters_result__struct.hpp:31:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Krcl_interfaces::msg[m[K’
+   31 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/service_msgs/service_msgs/msg/detail/service_event_info__struct.hpp:24[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/detail/list_parameters__struct.hpp:268[m[K:
+[01m[K/opt/ros/jazzy/include/builtin_interfaces/builtin_interfaces/msg/detail/time__struct.hpp:31:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kbuiltin_interfaces::msg[m[K’
+   31 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+[01m[K/opt/ros/jazzy/include/service_msgs/service_msgs/msg/detail/service_event_info__struct.hpp:35:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kservice_msgs::msg[m[K’
+   35 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/statistics_msgs/statistics_msgs/msg/detail/metrics_message__struct.hpp:27[m[K,
+                 from [01m[K/opt/ros/jazzy/include/statistics_msgs/statistics_msgs/msg/metrics_message.hpp:7[m[K,
+                 from [01m[K/opt/ros/jazzy/include/libstatistics_collector/libstatistics_collector/collector/generate_statistics_message.hpp:21[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/topic_statistics/subscription_topic_statistics.hpp:23[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/subscription.hpp:50[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/any_executable.hpp:25[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executor_options.hpp:22[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executor.hpp:38[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172[m[K:
+[01m[K/opt/ros/jazzy/include/statistics_msgs/statistics_msgs/msg/detail/statistic_data_point__struct.hpp:31:11:[m[K [01;36m[Knote: [m[K  ‘[01m[Kstatistics_msgs::msg[m[K’
+   31 | namespace [01;36m[Kmsg[m[K
+      |           [01;36m[K^~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:[m[K In function ‘[01m[Kint[01;32m[K main[m[K(int, char**)[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:42:10:[m[K [01;31m[Kerror: [m[K‘[01m[KShared_ptr[m[K’ is not a member of ‘[01m[Kstd[m[K’; did you mean ‘[01m[Kshared_ptr[m[K’?
+   42 |     std::[01;31m[KShared_ptr[m[K<ServiceClient> client_node = std::make_shared<ServiceClient>();
+      |          [01;31m[K^~~~~~~~~~[m[K
+      |          [32m[Kshared_ptr[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:42:34:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+   42 |     std::Shared_ptr<ServiceClient[01;31m[K>[m[K client_node = std::make_shared<ServiceClient>();
+      |                                  [01;31m[K^[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:42:36:[m[K [01;31m[Kerror: [m[K‘[01m[Kclient_node[m[K’ was not declared in this scope
+   42 |     std::Shared_ptr<ServiceClient> [01;31m[Kclient_node[m[K = std::make_shared<ServiceClient>();
+      |                                    [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:43:17:[m[K [01;31m[Kerror: [m[K‘[01m[Kclinet[m[K’ was not declared in this scope; did you mean ‘[01m[Kclone[m[K’?
+   43 |     bool flag = [01;31m[Kclinet[m[K->waitConncet();
+      |                 [01;31m[K^~~~~~[m[K
+      |                 [32m[Kclone[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:46:39:[m[K [01;31m[Kerror: [m[Ktoo many arguments to function ‘[01m[Krclcpp::Logger rclcpp::[01;32m[Kget_logger[m[K(const std::string&)[m[K’
+   46 |         RCLCPP_INFO([01;31m[Krclcpp::get_logger("rclcpp", "service connecting fail..")[m[K);
+      |                     [01;31m[K~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:26[m[K:
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logger.hpp:107:17:[m[K [01;36m[Knote: [m[Kdeclared here
+  107 |   friend Logger [01;36m[Krclcpp[m[K::get_logger(const std::string & name);
+      |                 [01;36m[K^~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:46:39:[m[K [01;31m[Kerror: [m[Ktoo many arguments to function ‘[01m[Krclcpp::Logger rclcpp::[01;32m[Kget_logger[m[K(const std::string&)[m[K’
+   46 |         RCLCPP_INFO([01;31m[Krclcpp::get_logger("rclcpp", "service connecting fail..")[m[K);
+      |                     [01;31m[K~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logger.hpp:107:17:[m[K [01;36m[Knote: [m[Kdeclared here
+  107 |   friend Logger [01;36m[Krclcpp[m[K::get_logger(const std::string & name);
+      |                 [01;36m[K^~~~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24[m[K:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:46:39:[m[K [01;31m[Kerror: [m[Ktoo many arguments to function ‘[01m[Krclcpp::Logger rclcpp::[01;32m[Kget_logger[m[K(const std::string&)[m[K’
+   46 |         RCLCPP_INFO([01;31m[Krclcpp::get_logger("rclcpp", "service connecting fail..")[m[K);
+      |                     [01;31m[K~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logger.hpp:107:17:[m[K [01;36m[Knote: [m[Kdeclared here
+  107 |   friend Logger [01;36m[Krclcpp[m[K::get_logger(const std::string & name);
+      |                 [01;36m[K^~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:46:39:[m[K [01;31m[Kerror: [m[Ktoo many arguments to function ‘[01m[Krclcpp::Logger rclcpp::[01;32m[Kget_logger[m[K(const std::string&)[m[K’
+   46 |         RCLCPP_INFO([01;31m[Krclcpp::get_logger("rclcpp", "service connecting fail..")[m[K);
+      |                     [01;31m[K~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logger.hpp:107:17:[m[K [01;36m[Knote: [m[Kdeclared here
+  107 |   friend Logger [01;36m[Krclcpp[m[K::get_logger(const std::string & name);
+      |                 [01;36m[K^~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:46:9:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K)[m[K’ token
+   46 |         [01;31m[KRCLCPP_INFO[m[K(rclcpp::get_logger("rclcpp", "service connecting fail.."));
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:49:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kclcpp[m[K’ has not been declared
+   49 |     [01;31m[Kclcpp[m[K::Client<Student>::FutureAndRequestId response = client_node->set_request(1, 2);
+      |     [01;31m[K^~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:49:26:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+   49 |     clcpp::Client<Student[01;31m[K>[m[K::FutureAndRequestId response = client_node->set_request(1, 2);
+      |                          [01;31m[K^[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:49:29:[m[K [01;31m[Kerror: [m[K‘[01m[K::FutureAndRequestId[m[K’ has not been declared; did you mean ‘[01m[Krclcpp::detail::FutureAndRequestId[m[K’?
+   49 |     clcpp::Client<Student>::[01;31m[KFutureAndRequestId[m[K response = client_node->set_request(1, 2);
+      |                             [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+      |                             [32m[Krclcpp::detail::FutureAndRequestId[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/any_executable.hpp:20[m[K:
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/client.hpp:61:8:[m[K [01;36m[Knote: [m[K‘[01m[Krclcpp::detail::FutureAndRequestId[m[K’ declared here
+   61 | struct [01;36m[KFutureAndRequestId[m[K
+      |        [01;36m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:50:9:[m[K [01;31m[Kerror: [m[K‘[01m[Krcl[m[K’ has not been declared
+   50 |     if ([01;31m[Krcl[m[K::spin_until_future_complete(client_node, response) == rclcpp::FutureReturnCode::SUCCESS)
+      |         [01;31m[K^~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:50:54:[m[K [01;31m[Kerror: [m[K‘[01m[Kresponse[m[K’ was not declared in this scope
+   50 |     if (rcl::spin_until_future_complete(client_node, [01;31m[Kresponse[m[K) == rclcpp::FutureReturnCode::SUCCESS)
+      |                                                      [01;31m[K^~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:52:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kclient[m[K’ was not declared in this scope
+   52 |         RCLCPP_INFO([01;31m[Kclient[m[K->get_logger(),"请求正常处理");
+      |                     [01;31m[K^~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:52:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   52 |         [01;31m[KRCLCPP_INFO[m[K(client->get_logger(),"请求正常处理");
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:53:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kclient[m[K’ was not declared in this scope
+   53 |         RCLCPP_INFO([01;31m[Kclient[m[K->get_logger(),"响应结果:%d!", response.get()->sum);
+      |                     [01;31m[K^~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:53:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   53 |         [01;31m[KRCLCPP_INFO[m[K(client->get_logger(),"响应结果:%d!", response.get()->sum);
+      |         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:56:21:[m[K [01;31m[Kerror: [m[K‘[01m[Kclient[m[K’ was not declared in this scope
+   56 |         RCLCPP_INFO([01;31m[Kclient[m[K->get_logger(),"请求异常");
+      |                     [01;31m[K^~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:56:9:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   56 |         [01;31m[KRCLCPP_INFO[m[K(client->get_logger(),"请求异常");
+      |         [01;31m[K^~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/student_client.dir/build.make:76: CMakeFiles/student_client.dir/src/student_client.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:769: CMakeFiles/student_client.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,45 @@
+-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)
+-- Found robot_control_ros2: 0.0.0 (/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake)
+-- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: 
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done (0.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/chenque/cpp_practice/robot_control_ros2/build/other_package
+[ 25%] [32mBuilding CXX object CMakeFiles/self_msg_test_subscriber.dir/src/self_msg_test_subscriber.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/self_msg_test_publisher.dir/src/self_msg_test_publisher.cpp.o[0m
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:[m[K In member function ‘[01m[Kvoid SelfMsgSubscriber::[01;32m[Ksub_callback[m[K(const robot_control_ros2::msg::JointStateCommand&)[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:16:9:[m[K [01;31m[Kerror: [m[K‘[01m[KRCLROS_INFO[m[K’ was not declared in this scope; did you mean ‘[01m[KRCLCPP_INFO[m[K’?
+   16 |         [01;31m[KRCLROS_INFO[m[K(this->get_logger(), "get msg : position[%.2f, %.2f, %.2f], velocity[%.2f, %.2f, %.2f], excution is %s",
+      |         [01;31m[K^~~~~~~~~~~[m[K
+      |         [32m[KRCLCPP_INFO[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:[m[K In function ‘[01m[Kint[01;32m[K main[m[K(int, char**)[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:24:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+   24 |     [01;31m[Kros[m[K::init(argc, argv);
+      |     [01;31m[K^~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:25:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+   25 |     [01;31m[Kros[m[K::spin(std::make_shared<SelfMsgSubscriber>());
+      |     [01;31m[K^~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/other_package/src/self_msg_test_subscriber.cpp:26:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kros[m[K’ has not been declared
+   26 |     [01;31m[Kros[m[K::shutdown();
+      |     [01;31m[K^~~[m[K
+gmake[2]: *** [CMakeFiles/self_msg_test_subscriber.dir/build.make:76: CMakeFiles/self_msg_test_subscriber.dir/src/self_msg_test_subscriber.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/self_msg_test_subscriber.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+[ 75%] [32m[1mLinking CXX executable self_msg_test_publisher[0m
+[ 75%] Built target self_msg_test_publisher
+gmake: *** [Makefile:146: all] Error 2

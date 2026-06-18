@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-08e548f9ee89cce26ed5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "other_package",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "other_package_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-other_package_uninstall-f7937868f7009cc9f612.json",
+					"name" : "other_package_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "self_msg_test_publisher::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-self_msg_test_publisher-df2d89c1cbe5432a9b93.json",
+					"name" : "self_msg_test_publisher",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "self_msg_test_subscriber::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-self_msg_test_subscriber-bc6ac81723091364e4ba.json",
+					"name" : "self_msg_test_subscriber",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-7d1ceb222b2ddc484778.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/chenque/cpp_practice/robot_control_ros2/build/other_package",
+		"source" : "/home/chenque/cpp_practice/robot_control_ros2/src/other_package"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

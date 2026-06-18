@@ -1,0 +1,83 @@
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:4:42:[m[K [01;31m[Kerror: [m[K‘[01m[KStudent[m[K’ is not a namespace-name
+    4 | using namespace robot_control_ros2::srv::[01;31m[KStudent[m[K;
+      |                                          [01;31m[K^~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:16:32:[m[K [01;31m[Kerror: [m[K‘[01m[KStudent[m[K’ does not name a type
+   16 |     void serviceCallback(const [01;31m[KStudent[m[K::Request::SharedPtr& req, const Student::Response::SharedPtr& res)
+      |                                [01;31m[K^~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:16:48:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+   16 |     void serviceCallback(const Student::Request[01;31m[K::[m[KSharedPtr& req, const Student::Response::SharedPtr& res)
+      |                                                [01;31m[K^~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:16:48:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K)[m[K’ before ‘[01m[K::[m[K’ token
+   16 |     void serviceCallback[34m[K([m[Kconst Student::Request[01;31m[K:[m[K[32m[K:[m[KSharedPtr& req, const Student::Response::SharedPtr& res)
+      |                         [34m[K~[m[K                      [01;31m[K^[m[K[32m[K~[m[K
+      |                                                [32m[K)[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:16:41:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   16 |     void serviceCallback(const Student::[01;31m[KRequest[m[K::SharedPtr& req, const Student::Response::SharedPtr& res)
+      |                                         [01;31m[K^~~~~~~[m[K
+      |                                                [32m[K;[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:16:50:[m[K [01;31m[Kerror: [m[K‘[01m[KSharedPtr[m[K’ in namespace ‘[01m[K::[m[K’ does not name a type
+   16 |     void serviceCallback(const Student::Request::[01;31m[KSharedPtr[m[K& req, const Student::Response::SharedPtr& res)
+      |                                                  [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:25:21:[m[K [01;31m[Kerror: [m[K‘[01m[KStudent[m[K’ was not declared in this scope; did you mean ‘[01m[Krobot_control_ros2::srv::Student[m[K’?
+   25 |     rclcpp::Service<[01;31m[KStudent[m[K>::SharedPtr server_;
+      |                     [01;31m[K^~~~~~~[m[K
+      |                     [32m[Krobot_control_ros2::srv::Student[m[K
+In file included from [01m[K/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2/rosidl_generator_cpp/robot_control_ros2/srv/student.hpp:7[m[K,
+                 from [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:2[m[K:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2/rosidl_generator_cpp/robot_control_ros2/srv/detail/student__struct.hpp:432:8:[m[K [01;36m[Knote: [m[K‘[01m[Krobot_control_ros2::srv::Student[m[K’ declared here
+  432 | struct [01;36m[KStudent[m[K
+      |        [01;36m[K^~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:25:28:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   25 |     rclcpp::Service<Student[01;31m[K>[m[K::SharedPtr server_;
+      |                            [01;31m[K^[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:25:31:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   25 |     rclcpp::Service<Student>::[01;31m[KSharedPtr[m[K server_;
+      |                               [01;31m[K^~~~~~~~~[m[K
+      |                                        [32m[K;[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:25:41:[m[K [01;31m[Kerror: [m[K‘[01m[Kserver_[m[K’ does not name a type
+   25 |     rclcpp::Service<Student>::SharedPtr [01;31m[Kserver_[m[K;
+      |                                         [01;31m[K^~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:26:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ after class definition
+   26 | }
+      |  [01;31m[K^[m[K
+      |  [32m[K;[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:[m[K In constructor ‘[01m[KServicer::[01;32m[KServicer[m[K()[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:9:40:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KServicer[m[K’ does not have any field named ‘[01m[Kcount_[m[K’
+    9 |     Servicer() : Node("Service_node"), [01;31m[Kcount_[m[K(0)
+      |                                        [01;31m[K^~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:11:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kserver_[m[K’ was not declared in this scope
+   11 |         [01;31m[Kserver_[m[K = this->create_service<Student>("student_service",
+      |         [01;31m[K^~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:11:40:[m[K [01;31m[Kerror: [m[K‘[01m[KStudent[m[K’ was not declared in this scope; did you mean ‘[01m[Krobot_control_ros2::srv::Student[m[K’?
+   11 |         server_ = this->create_service<[01;31m[KStudent[m[K>("student_service",
+      |                                        [01;31m[K^~~~~~~[m[K
+      |                                        [32m[Krobot_control_ros2::srv::Student[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2/rosidl_generator_cpp/robot_control_ros2/srv/detail/student__struct.hpp:432:8:[m[K [01;36m[Knote: [m[K‘[01m[Krobot_control_ros2::srv::Student[m[K’ declared here
+  432 | struct [01;36m[KStudent[m[K
+      |        [01;36m[K^~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:11:48:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KServicer::create_service<<expression error> >(const char [16], std::_Bind_helper<false, void (Servicer::*)(...), Servicer*, const std::_Placeholder<1>&, const std::_Placeholder<2>&>::type)[m[K’
+   11 |         server_ = [01;31m[Kthis->create_service<Student>("student_service",[m[K
+      |                   [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~[m[K
+   12 | [01;31m[K            std::bind(&Servicer::serviceCallback, this, std::placeholders::_1, std::placeholders::_2))[m[K;
+      |             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:172[m[K,
+                 from [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:1[m[K:
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:302:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ServiceT, class CallbackT> typename rclcpp::Service<ServiceT>::SharedPtr rclcpp::Node::[01;32m[Kcreate_service[m[K(const std::string&, CallbackT&&, const rmw_qos_profile_t&, rclcpp::CallbackGroup::SharedPtr)[m[K’
+  302 |   [01;36m[Kcreate_service[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:302:3:[m[K [01;36m[Knote: [m[K  candidate expects 3 arguments, 2 provided
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:318:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class ServiceT, class CallbackT> typename rclcpp::Service<ServiceT>::SharedPtr rclcpp::Node::[01;32m[Kcreate_service[m[K(const std::string&, CallbackT&&, const rclcpp::QoS&, rclcpp::CallbackGroup::SharedPtr)[m[K’
+  318 |   [01;36m[Kcreate_service[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/node.hpp:318:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_servier.cpp:11:48:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   11 |         server_ = [01;31m[Kthis->create_service<Student>("student_service",[m[K
+      |                   [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~[m[K
+   12 | [01;31m[K            std::bind(&Servicer::serviceCallback, this, std::placeholders::_1, std::placeholders::_2))[m[K;
+      |             [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/student_servier.dir/build.make:76: CMakeFiles/student_servier.dir/src/student_servier.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:739: CMakeFiles/student_servier.dir/all] Error 2
+gmake[1]: *** Waiting for unfinished jobs....
+gmake: *** [Makefile:146: all] Error 2

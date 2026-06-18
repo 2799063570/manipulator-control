@@ -1,0 +1,88 @@
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/trajectory_buffer.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Ktrajectory_buffer.hpp: No such file or directory
+    1 | #include [01;31m[K"trajectory_buffer.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/vel_to_pos_node.dir/build.make:132: CMakeFiles/vel_to_pos_node.dir/src/robot_utils/trajectory_buffer.cpp.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/robot_utils/cubic_interpolator.cpp:4:10:[m[K [01;31m[Kfatal error: [m[Kcubic_interpolator.hpp: No such file or directory
+    4 | #include [01;31m[K"cubic_interpolator.hpp"[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/vel_to_pos_node.dir/build.make:118: CMakeFiles/vel_to_pos_node.dir/src/robot_utils/cubic_interpolator.cpp.o] Error 1
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:116:9:[m[K [01;31m[Kerror: [m[K‘[01m[KTrajectoryBuffer[m[K’ does not name a type
+  116 |         [01;31m[KTrajectoryBuffer[m[K trajectory_buffer_;
+      |         [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:[m[K In constructor ‘[01m[KVel2PosNode::[01;32m[KVel2PosNode[m[K()[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:24:13:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KVel2PosNode[m[K’ does not have any field named ‘[01m[Ktrajectory_buffer_[m[K’
+   24 |             [01;31m[Ktrajectory_buffer_[m[K(dof_),
+      |             [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:25:39:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K)[m[K’ token
+   25 |             cubic_interpolator_(dof_, [01;31m[K)[m[K
+      |                                       [01;31m[K^[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:112:16:[m[K [01;35m[Kwarning: [m[K‘[01m[KVel2PosNode::duration_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  112 |         double [01;35m[Kduration_[m[K;
+      |                [01;35m[K^~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:109:16:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kdouble Vel2PosNode::dt_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  109 |         double [01;35m[Kdt_[m[K;
+      |                [01;35m[K^~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:15:9:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   15 |         [01;35m[KVel2PosNode[m[K() : Node("Vel_to_Pos_node"),
+      |         [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:111:13:[m[K [01;35m[Kwarning: [m[K‘[01m[KVel2PosNode::control_rate_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  111 |         int [01;35m[Kcontrol_rate_[m[K;
+      |             [01;35m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:110:13:[m[K [01;35m[Kwarning: [m[K  ‘[01m[Kint Vel2PosNode::control_time_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+  110 |         int [01;35m[Kcontrol_time_[m[K;
+      |             [01;35m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:15:9:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+   15 |         [01;35m[KVel2PosNode[m[K() : Node("Vel_to_Pos_node"),
+      |         [01;35m[K^~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:39:13:[m[K [01;31m[Kerror: [m[K‘[01m[Ktrajectory_buffer_[m[K’ was not declared in this scope
+   39 |             [01;31m[Ktrajectory_buffer_[m[K.clear();
+      |             [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:[m[K In member function ‘[01m[Kvoid Vel2PosNode::[01;32m[Ksub_callback[m[K(const JointVelocityCmd&)[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:62:43:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[KRobotState[m[K’ to ‘[01m[Kconst std::vector<double, std::allocator<double> >&[m[K’
+   62 |             robot_state_goal_.setPosition([01;31m[Krobot_state_goal_[m[K);
+      |                                           [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+      |                                           [01;31m[K|[m[K
+      |                                           [01;31m[KRobotState[m[K
+In file included from [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:4[m[K:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/include/robot_utils/robot_state.hpp:12:49:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kvoid RobotState::[01;32m[KsetPosition[m[K(const std::vector<double, std::allocator<double> >&)[m[K’
+   12 |     void setPosition([01;36m[Kconst std::vector<double>& q[m[K);
+      |                      [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~^[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:[m[K In member function ‘[01m[Kvoid Vel2PosNode::[01;32m[Ktimer_callback[m[K()[m[K’:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:76:35:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator!=[m[K’ (operand types are ‘[01m[KRobotState[m[K’ and ‘[01m[KRobotState[m[K’)
+   76 |             if ([32m[Krobot_state_goal_[m[K [01;31m[K!=[m[K [34m[Krobot_state_start_[m[K)
+      |                 [32m[K~~~~~~~~~~~~~~~~~[m[K [01;31m[K^~[m[K [34m[K~~~~~~~~~~~~~~~~~~[m[K
+      |                 [32m[K|[m[K                    [34m[K|[m[K
+      |                 [32m[KRobotState[m[K           [34m[KRobotState[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:78:37:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass CubicInterpolator[m[K’ has no member named ‘[01m[KsetStateStart[m[K’
+   78 |                 cubic_interpolator_.[01;31m[KsetStateStart[m[K(robot_state_start_);
+      |                                     [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:79:37:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass CubicInterpolator[m[K’ has no member named ‘[01m[KsetStateGoal[m[K’
+   79 |                 cubic_interpolator_.[01;31m[KsetStateGoal[m[K(robot_state_goal_);
+      |                                     [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:80:37:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass CubicInterpolator[m[K’ has no member named ‘[01m[Kcalculate5Times[m[K’; did you mean ‘[01m[KcalculateTras[m[K’?
+   80 |                 cubic_interpolator_.[01;31m[Kcalculate5Times[m[K();
+      |                                     [01;31m[K^~~~~~~~~~~~~~~[m[K
+      |                                     [32m[KcalculateTras[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:83:74:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass CubicInterpolator[m[K’ has no member named ‘[01m[KgetTrajectory[m[K’
+   83 |                 std::vector<RobotState> trajectory = cubic_interpolator_.[01;31m[KgetTrajectory[m[K();
+      |                                                                          [01;31m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:86:21:[m[K [01;31m[Kerror: [m[K‘[01m[Ktrajectory_buffer_[m[K’ was not declared in this scope; did you mean ‘[01m[Ktrajectory_nums[m[K’?
+   86 |                     [01;31m[Ktrajectory_buffer_[m[K.push_back(trajectory[i]);
+      |                     [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+      |                     [32m[Ktrajectory_nums[m[K
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:90:17:[m[K [01;31m[Kerror: [m[K‘[01m[Ktrajectory_buffer_[m[K’ was not declared in this scope
+   90 |             if ([01;31m[Ktrajectory_buffer_[m[K.hasNext())
+      |                 [01;31m[K^~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+                 from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+                 from [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:1[m[K:
+[01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:98:21:[m[K [01;31m[Kerror: [m[K‘[01m[Krobot_state_[m[K’ was not declared in this scope; did you mean ‘[01m[KrobotState[m[K’?
+   98 |                     [01;31m[Krobot_state_[m[K.position()[0], robot_state_.position()[1], robot_state_.position()[2],
+      |                     [01;31m[K^~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/vel_to_pos_node.dir/build.make:76: CMakeFiles/vel_to_pos_node.dir/src/vel_to_pos_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:801: CMakeFiles/vel_to_pos_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

@@ -1,0 +1,300 @@
+[0.000000] (-) TimerEvent: {}
+[0.000555] (robot_control_ros2) JobQueued: {'identifier': 'robot_control_ros2', 'dependencies': OrderedDict()}
+[0.000746] (robot_control_ros2) JobStarted: {'identifier': 'robot_control_ros2'}
+[0.008857] (robot_control_ros2) JobProgress: {'identifier': 'robot_control_ros2', 'progress': 'cmake'}
+[0.009968] (robot_control_ros2) JobProgress: {'identifier': 'robot_control_ros2', 'progress': 'build'}
+[0.010013] (robot_control_ros2) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2', '--', '-j8', '-l8'], 'cwd': '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'chenque', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/chenque', 'OLDPWD': '/home/chenque/cpp_practice/robot_control_ros2', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '1578', 'SYSTEMD_EXEC_PID': '2032', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '9622', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/chenque/cpp_practice/robot_control_ros2/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'chenque', 'JOURNAL_STREAM': '9:27094', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'chenque', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/chenque:@/tmp/.ICE-unix/1801,unix/chenque:/tmp/.ICE-unix/1801', 'INVOCATION_ID': 'f7c565e97de74622bed63d0fc04f894d', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.304OQ3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:1bea20c3-2ba0-450c-91e7-461c40f02532', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[0.036969] (robot_control_ros2) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.055581] (robot_control_ros2) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[0.100442] (-) TimerEvent: {}
+[0.107128] (robot_control_ros2) StdoutLine: {'line': b'-- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[0.124472] (robot_control_ros2) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[0.129945] (robot_control_ros2) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[0.136863] (robot_control_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.146891] (robot_control_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.187267] (robot_control_ros2) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[0.188158] (robot_control_ros2) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.200955] (-) TimerEvent: {}
+[0.245216] (robot_control_ros2) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.285938] (robot_control_ros2) StdoutLine: {'line': b'-- Found std_msgs: 5.3.6 (/opt/ros/jazzy/share/std_msgs/cmake)\n'}
+[0.294196] (robot_control_ros2) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)\n'}
+[0.299545] (robot_control_ros2) StdoutLine: {'line': b'-- Found rosidl_adapter: 4.6.7 (/opt/ros/jazzy/share/rosidl_adapter/cmake)\n'}
+[0.301251] (-) TimerEvent: {}
+[0.401951] (-) TimerEvent: {}
+[0.491782] (robot_control_ros2) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)\n'}
+[0.502431] (-) TimerEvent: {}
+[0.602944] (-) TimerEvent: {}
+[0.642320] (robot_control_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.700932] (robot_control_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.701763] (robot_control_ros2) StdoutLine: {'line': b'-- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)\n'}
+[0.703416] (-) TimerEvent: {}
+[0.803932] (-) TimerEvent: {}
+[0.904449] (-) TimerEvent: {}
+[0.927662] (robot_control_ros2) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed \n'}
+[0.952581] (robot_control_ros2) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[0.962299] (robot_control_ros2) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[0.962707] (robot_control_ros2) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[0.962794] (robot_control_ros2) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[0.963159] (robot_control_ros2) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.964383] (robot_control_ros2) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[0.964457] (robot_control_ros2) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[0.964974] (robot_control_ros2) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.966460] (robot_control_ros2) StdoutLine: {'line': b'-- Configuring done (0.9s)\n'}
+[1.004806] (-) TimerEvent: {}
+[1.028783] (robot_control_ros2) StdoutLine: {'line': b'-- Generating done (0.1s)\n'}
+[1.050773] (robot_control_ros2) StdoutLine: {'line': b'-- Build files have been written to: /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2\n'}
+[1.103886] (robot_control_ros2) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating type hashes for ROS interfaces\x1b[0m\n'}
+[1.105426] (-) TimerEvent: {}
+[1.110937] (robot_control_ros2) StdoutLine: {'line': b'[  7%] Built target timer_control_node\n'}
+[1.111183] (robot_control_ros2) StdoutLine: {'line': b'[ 16%] Built target joint_velocity_subscriber\n'}
+[1.111241] (robot_control_ros2) StdoutLine: {'line': b'[ 16%] Built target joint_velocity_publisher\n'}
+[1.113662] (robot_control_ros2) StdoutLine: {'line': b'[ 16%] Built target ament_cmake_python_copy_robot_control_ros2\n'}
+[1.206010] (-) TimerEvent: {}
+[1.248300] (robot_control_ros2) StdoutLine: {'line': b'[ 16%] Built target robot_control_ros2__rosidl_generator_type_description\n'}
+[1.263092] (robot_control_ros2) StdoutLine: {'line': b'[ 19%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[1.276075] (robot_control_ros2) StdoutLine: {'line': b'[ 21%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[1.306178] (-) TimerEvent: {}
+[1.308410] (robot_control_ros2) StdoutLine: {'line': b'running egg_info\n'}
+[1.319005] (robot_control_ros2) StdoutLine: {'line': b'writing robot_control_ros2.egg-info/PKG-INFO\n'}
+[1.319571] (robot_control_ros2) StdoutLine: {'line': b'writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt\n'}
+[1.320297] (robot_control_ros2) StdoutLine: {'line': b'writing top-level names to robot_control_ros2.egg-info/top_level.txt\n'}
+[1.367436] (robot_control_ros2) StdoutLine: {'line': b"reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'\n"}
+[1.367879] (robot_control_ros2) StdoutLine: {'line': b"writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'\n"}
+[1.397727] (robot_control_ros2) StdoutLine: {'line': b'[ 21%] Built target ament_cmake_python_build_robot_control_ros2_egg\n'}
+[1.406404] (-) TimerEvent: {}
+[1.458641] (robot_control_ros2) StdoutLine: {'line': b'[ 21%] Built target robot_control_ros2__cpp\n'}
+[1.478352] (robot_control_ros2) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding C object CMakeFiles/robot_control_ros2__rosidl_generator_c.dir/rosidl_generator_c/robot_control_ros2/msg/detail/joint_state_command__functions.c.o\x1b[0m\n'}
+[1.479063] (robot_control_ros2) StdoutLine: {'line': b'[ 26%] \x1b[32mBuilding C object CMakeFiles/robot_control_ros2__rosidl_generator_c.dir/rosidl_generator_c/robot_control_ros2/msg/detail/joint_state_command__description.c.o\x1b[0m\n'}
+[1.480664] (robot_control_ros2) StdoutLine: {'line': b'[ 28%] \x1b[32mBuilding C object CMakeFiles/robot_control_ros2__rosidl_generator_c.dir/rosidl_generator_c/robot_control_ros2/msg/detail/joint_state_command__type_support.c.o\x1b[0m\n'}
+[1.506928] (-) TimerEvent: {}
+[1.528447] (robot_control_ros2) StdoutLine: {'line': b'[ 30%] \x1b[32m\x1b[1mLinking C shared library librobot_control_ros2__rosidl_generator_c.so\x1b[0m\n'}
+[1.568011] (robot_control_ros2) StdoutLine: {'line': b'[ 30%] Built target robot_control_ros2__rosidl_generator_c\n'}
+[1.581002] (robot_control_ros2) StdoutLine: {'line': b'[ 35%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[1.581194] (robot_control_ros2) StdoutLine: {'line': b'[ 35%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[1.581547] (robot_control_ros2) StdoutLine: {'line': b'[ 38%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[1.581909] (robot_control_ros2) StdoutLine: {'line': b'[ 40%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[1.582424] (robot_control_ros2) StdoutLine: {'line': b'[ 42%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[1.582703] (robot_control_ros2) StdoutLine: {'line': b'[ 45%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[1.607518] (-) TimerEvent: {}
+[1.707950] (-) TimerEvent: {}
+[1.774680] (robot_control_ros2) StdoutLine: {'line': b'[ 47%] \x1b[32mBuilding CXX object CMakeFiles/robot_control_ros2__rosidl_typesupport_c.dir/rosidl_typesupport_c/robot_control_ros2/msg/joint_state_command__type_support.cpp.o\x1b[0m\n'}
+[1.778838] (robot_control_ros2) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/robot_control_ros2__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/robot_control_ros2/msg/joint_state_command__type_support.cpp.o\x1b[0m\n'}
+[1.782703] (robot_control_ros2) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding C object CMakeFiles/robot_control_ros2__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/robot_control_ros2/msg/detail/joint_state_command__type_support.c.o\x1b[0m\n'}
+[1.788907] (robot_control_ros2) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding CXX object CMakeFiles/robot_control_ros2__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_control_ros2/msg/detail/joint_state_command__type_support.cpp.o\x1b[0m\n'}
+[1.794852] (robot_control_ros2) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding CXX object CMakeFiles/robot_control_ros2__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/robot_control_ros2/msg/detail/dds_fastrtps/joint_state_command__type_support.cpp.o\x1b[0m\n'}
+[1.800793] (robot_control_ros2) StdoutLine: {'line': b'[ 59%] \x1b[32mBuilding CXX object CMakeFiles/robot_control_ros2__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/robot_control_ros2/msg/detail/joint_state_command__type_support_c.cpp.o\x1b[0m\n'}
+[1.809457] (-) TimerEvent: {}
+[1.822527] (robot_control_ros2) StdoutLine: {'line': b'[ 61%] \x1b[32m\x1b[1mLinking CXX shared library librobot_control_ros2__rosidl_typesupport_c.so\x1b[0m\n'}
+[1.832565] (robot_control_ros2) StdoutLine: {'line': b'[ 64%] \x1b[32m\x1b[1mLinking C shared library librobot_control_ros2__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[1.871645] (robot_control_ros2) StdoutLine: {'line': b'[ 64%] Built target robot_control_ros2__rosidl_typesupport_introspection_c\n'}
+[1.871873] (robot_control_ros2) StdoutLine: {'line': b'[ 64%] Built target robot_control_ros2__rosidl_typesupport_c\n'}
+[1.910003] (-) TimerEvent: {}
+[2.012006] (-) TimerEvent: {}
+[2.033823] (robot_control_ros2) StdoutLine: {'line': b'[ 66%] \x1b[32m\x1b[1mLinking CXX shared library librobot_control_ros2__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[2.064984] (robot_control_ros2) StdoutLine: {'line': b'[ 69%] \x1b[32m\x1b[1mLinking CXX shared library librobot_control_ros2__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[2.080826] (robot_control_ros2) StdoutLine: {'line': b'[ 69%] Built target robot_control_ros2__rosidl_typesupport_cpp\n'}
+[2.112544] (-) TimerEvent: {}
+[2.116206] (robot_control_ros2) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/robot_state_pub.dir/src/robot_state_pub.cpp.o\x1b[0m\n'}
+[2.134879] (robot_control_ros2) StdoutLine: {'line': b'[ 71%] Built target robot_control_ros2__rosidl_typesupport_introspection_cpp\n'}
+[2.178947] (robot_control_ros2) StdoutLine: {'line': b'[ 73%] \x1b[32m\x1b[1mLinking CXX shared library librobot_control_ros2__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[2.213309] (-) TimerEvent: {}
+[2.221032] (robot_control_ros2) StdoutLine: {'line': b'[ 76%] \x1b[32m\x1b[1mLinking CXX shared library librobot_control_ros2__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[2.226590] (robot_control_ros2) StdoutLine: {'line': b'[ 76%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_c\n'}
+[2.284790] (robot_control_ros2) StdoutLine: {'line': b'[ 76%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_cpp\n'}
+[2.307089] (robot_control_ros2) StdoutLine: {'line': b'[ 76%] Built target robot_control_ros2\n'}
+[2.313481] (-) TimerEvent: {}
+[2.335110] (robot_control_ros2) StdoutLine: {'line': b'[ 78%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[2.414023] (-) TimerEvent: {}
+[2.515004] (-) TimerEvent: {}
+[2.560029] (robot_control_ros2) StdoutLine: {'line': b'[ 78%] Built target robot_control_ros2__py\n'}
+[2.592982] (robot_control_ros2) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding C object CMakeFiles/robot_control_ros2__rosidl_generator_py.dir/rosidl_generator_py/robot_control_ros2/msg/_joint_state_command_s.c.o\x1b[0m\n'}
+[2.615472] (-) TimerEvent: {}
+[2.715955] (-) TimerEvent: {}
+[2.720187] (robot_control_ros2) StdoutLine: {'line': b'[ 83%] \x1b[32m\x1b[1mLinking C shared library librobot_control_ros2__rosidl_generator_py.so\x1b[0m\n'}
+[2.762846] (robot_control_ros2) StdoutLine: {'line': b'[ 83%] Built target robot_control_ros2__rosidl_generator_py\n'}
+[2.790073] (robot_control_ros2) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding C object CMakeFiles/robot_control_ros2_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/robot_control_ros2/_robot_control_ros2_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[2.790227] (robot_control_ros2) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding C object CMakeFiles/robot_control_ros2_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/robot_control_ros2/_robot_control_ros2_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[2.790566] (robot_control_ros2) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/robot_control_ros2_s__rosidl_typesupport_c.dir/rosidl_generator_py/robot_control_ros2/_robot_control_ros2_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[2.816421] (-) TimerEvent: {}
+[2.883590] (robot_control_ros2) StdoutLine: {'line': b'[ 92%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_c.so\x1b[0m\n'}
+[2.884756] (robot_control_ros2) StdoutLine: {'line': b'[ 95%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[2.887439] (robot_control_ros2) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared module rosidl_generator_py/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[2.916930] (-) TimerEvent: {}
+[2.919453] (robot_control_ros2) StdoutLine: {'line': b'[ 97%] Built target robot_control_ros2_s__rosidl_typesupport_introspection_c\n'}
+[2.919681] (robot_control_ros2) StdoutLine: {'line': b'[ 97%] Built target robot_control_ros2_s__rosidl_typesupport_c\n'}
+[2.920528] (robot_control_ros2) StdoutLine: {'line': b'[ 97%] Built target robot_control_ros2_s__rosidl_typesupport_fastrtps_c\n'}
+[3.017460] (-) TimerEvent: {}
+[3.117962] (-) TimerEvent: {}
+[3.218468] (-) TimerEvent: {}
+[3.318952] (-) TimerEvent: {}
+[3.419442] (-) TimerEvent: {}
+[3.519946] (-) TimerEvent: {}
+[3.620464] (-) TimerEvent: {}
+[3.720951] (-) TimerEvent: {}
+[3.821470] (-) TimerEvent: {}
+[3.922523] (-) TimerEvent: {}
+[4.023452] (-) TimerEvent: {}
+[4.123949] (-) TimerEvent: {}
+[4.224449] (-) TimerEvent: {}
+[4.324966] (-) TimerEvent: {}
+[4.425613] (-) TimerEvent: {}
+[4.526480] (-) TimerEvent: {}
+[4.626948] (-) TimerEvent: {}
+[4.727458] (-) TimerEvent: {}
+[4.827948] (-) TimerEvent: {}
+[4.928431] (-) TimerEvent: {}
+[5.028934] (-) TimerEvent: {}
+[5.129434] (-) TimerEvent: {}
+[5.229914] (-) TimerEvent: {}
+[5.276058] (robot_control_ros2) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable robot_state_pub\x1b[0m\n'}
+[5.330442] (-) TimerEvent: {}
+[5.386414] (robot_control_ros2) StdoutLine: {'line': b'[100%] Built target robot_state_pub\n'}
+[5.398321] (robot_control_ros2) CommandEnded: {'returncode': 0}
+[5.399035] (robot_control_ros2) JobProgress: {'identifier': 'robot_control_ros2', 'progress': 'install'}
+[5.407671] (robot_control_ros2) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2'], 'cwd': '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'chenque', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/chenque', 'OLDPWD': '/home/chenque/cpp_practice/robot_control_ros2', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '1578', 'SYSTEMD_EXEC_PID': '2032', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '9622', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/chenque/cpp_practice/robot_control_ros2/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'chenque', 'JOURNAL_STREAM': '9:27094', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'chenque', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/chenque:@/tmp/.ICE-unix/1801,unix/chenque:/tmp/.ICE-unix/1801', 'INVOCATION_ID': 'f7c565e97de74622bed63d0fc04f894d', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.304OQ3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:1bea20c3-2ba0-450c-91e7-461c40f02532', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'QTWEBENGINE_DICTIONARIES_PATH': '/usr/share/hunspell-bdic/', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[5.416388] (robot_control_ros2) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[5.416689] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/ament_index/resource_index/rosidl_interfaces/robot_control_ros2\n'}
+[5.416777] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/msg/JointStateCommand.json\n'}
+[5.416877] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2\n'}
+[5.416916] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg\n'}
+[5.417103] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail\n'}
+[5.417165] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__type_support.h\n'}
+[5.417200] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__type_support.c\n'}
+[5.417260] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__functions.c\n'}
+[5.417495] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__description.c\n'}
+[5.417572] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__functions.h\n'}
+[5.418064] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__struct.h\n'}
+[5.418130] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/joint_state_command.h\n'}
+[5.418165] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/rosidl_generator_c__visibility_control.h\n'}
+[5.418308] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/environment/library_path.sh\n'}
+[5.418415] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/environment/library_path.dsv\n'}
+[5.418655] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_generator_c.so\n'}
+[5.419166] (robot_control_ros2) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_generator_c.so" to ""\n'}
+[5.419712] (robot_control_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2\n'}
+[5.420090] (robot_control_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg\n'}
+[5.420194] (robot_control_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail\n'}
+[5.420447] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__rosidl_typesupport_fastrtps_c.h\n'}
+[5.420525] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[5.420580] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_typesupport_fastrtps_c.so\n'}
+[5.420660] (robot_control_ros2) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[5.420738] (robot_control_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2\n'}
+[5.420863] (robot_control_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg\n'}
+[5.421111] (robot_control_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail\n'}
+[5.421219] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__type_support.hpp\n'}
+[5.421320] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__struct.hpp\n'}
+[5.421536] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__builder.hpp\n'}
+[5.421599] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__traits.hpp\n'}
+[5.421630] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[5.421655] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/joint_state_command.hpp\n'}
+[5.421679] (robot_control_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2\n'}
+[5.421702] (robot_control_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg\n'}
+[5.421724] (robot_control_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail\n'}
+[5.421750] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/dds_fastrtps\n'}
+[5.421776] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[5.421939] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[5.422002] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_typesupport_fastrtps_cpp.so\n'}
+[5.422156] (robot_control_ros2) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[5.422218] (robot_control_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2\n'}
+[5.422390] (robot_control_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg\n'}
+[5.422499] (robot_control_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail\n'}
+[5.422596] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__type_support.c\n'}
+[5.422873] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__rosidl_typesupport_introspection_c.h\n'}
+[5.422965] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[5.423040] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_typesupport_introspection_c.so\n'}
+[5.423260] (robot_control_ros2) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_typesupport_introspection_c.so" to ""\n'}
+[5.423356] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_typesupport_c.so\n'}
+[5.423492] (robot_control_ros2) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_typesupport_c.so" to ""\n'}
+[5.423527] (robot_control_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2\n'}
+[5.423742] (robot_control_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg\n'}
+[5.423843] (robot_control_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail\n'}
+[5.423883] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__type_support.cpp\n'}
+[5.424026] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/include/robot_control_ros2/robot_control_ros2/msg/detail/joint_state_command__rosidl_typesupport_introspection_cpp.hpp\n'}
+[5.424096] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_typesupport_introspection_cpp.so\n'}
+[5.424373] (robot_control_ros2) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[5.424611] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_typesupport_cpp.so\n'}
+[5.424856] (robot_control_ros2) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_typesupport_cpp.so" to ""\n'}
+[5.424965] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/environment/pythonpath.sh\n'}
+[5.425339] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/environment/pythonpath.dsv\n'}
+[5.425447] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2-0.0.0-py3.12.egg-info\n'}
+[5.425537] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2-0.0.0-py3.12.egg-info/SOURCES.txt\n'}
+[5.425736] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2-0.0.0-py3.12.egg-info/top_level.txt\n'}
+[5.425860] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2-0.0.0-py3.12.egg-info/PKG-INFO\n'}
+[5.426057] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2-0.0.0-py3.12.egg-info/dependency_links.txt\n'}
+[5.426105] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2\n'}
+[5.426489] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/_robot_control_ros2_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[5.427096] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_introspection_c.so\n'}
+[5.427136] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/_robot_control_ros2_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[5.427163] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_fastrtps_c.so\n'}
+[5.427187] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/__init__.py\n'}
+[5.427211] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/msg\n'}
+[5.427725] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/msg/_joint_state_command_s.c\n'}
+[5.428682] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/msg/_joint_state_command.py\n'}
+[5.428866] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/msg/__init__.py\n'}
+[5.428938] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/_robot_control_ros2_s.ep.rosidl_typesupport_c.c\n'}
+[5.429016] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_c.so\n'}
+[5.430855] (-) TimerEvent: {}
+[5.454162] (robot_control_ros2) StdoutLine: {'line': b"Listing '/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2'...\n"}
+[5.454348] (robot_control_ros2) StdoutLine: {'line': b"Compiling '/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/__init__.py'...\n"}
+[5.454417] (robot_control_ros2) StdoutLine: {'line': b"Listing '/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/msg'...\n"}
+[5.454500] (robot_control_ros2) StdoutLine: {'line': b"Compiling '/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/msg/__init__.py'...\n"}
+[5.454567] (robot_control_ros2) StdoutLine: {'line': b"Compiling '/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/msg/_joint_state_command.py'...\n"}
+[5.457702] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_fastrtps_c.so\n'}
+[5.458130] (robot_control_ros2) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[5.458394] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_introspection_c.so\n'}
+[5.458888] (robot_control_ros2) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_introspection_c.so" to ""\n'}
+[5.459191] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_c.so\n'}
+[5.459436] (robot_control_ros2) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/python3.12/site-packages/robot_control_ros2/robot_control_ros2_s__rosidl_typesupport_c.so" to ""\n'}
+[5.459646] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_generator_py.so\n'}
+[5.459993] (robot_control_ros2) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/librobot_control_ros2__rosidl_generator_py.so" to ""\n'}
+[5.460057] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/msg/JointStateCommand.idl\n'}
+[5.460369] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/msg/JointStateCommand.msg\n'}
+[5.460441] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/robot_control_ros2/joint_velocity_publisher\n'}
+[5.461688] (robot_control_ros2) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/robot_control_ros2/joint_velocity_publisher" to ""\n'}
+[5.461796] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/robot_control_ros2/joint_velocity_subscriber\n'}
+[5.464797] (robot_control_ros2) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/robot_control_ros2/joint_velocity_subscriber" to ""\n'}
+[5.465176] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/robot_control_ros2/timer_control_node\n'}
+[5.465981] (robot_control_ros2) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/robot_control_ros2/timer_control_node" to ""\n'}
+[5.466087] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/robot_control_ros2/robot_state_pub\n'}
+[5.467112] (robot_control_ros2) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/lib/robot_control_ros2/robot_state_pub" to ""\n'}
+[5.467303] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/ament_index/resource_index/package_run_dependencies/robot_control_ros2\n'}
+[5.467451] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/ament_index/resource_index/parent_prefix_path/robot_control_ros2\n'}
+[5.467736] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/environment/ament_prefix_path.sh\n'}
+[5.467897] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/environment/ament_prefix_path.dsv\n'}
+[5.468075] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/environment/path.sh\n'}
+[5.468347] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/environment/path.dsv\n'}
+[5.468446] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/local_setup.bash\n'}
+[5.468588] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/local_setup.sh\n'}
+[5.469015] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/local_setup.zsh\n'}
+[5.469155] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/local_setup.dsv\n'}
+[5.469386] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/package.dsv\n'}
+[5.469457] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/ament_index/resource_index/packages/robot_control_ros2\n'}
+[5.469727] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/export_robot_control_ros2__rosidl_generator_cExport.cmake\n'}
+[5.469950] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/export_robot_control_ros2__rosidl_generator_cExport-noconfig.cmake\n'}
+[5.470014] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/export_robot_control_ros2__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[5.470221] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/export_robot_control_ros2__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[5.470417] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/export_robot_control_ros2__rosidl_generator_cppExport.cmake\n'}
+[5.470619] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/export_robot_control_ros2__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[5.470936] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/export_robot_control_ros2__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[5.471003] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/robot_control_ros2__rosidl_typesupport_introspection_cExport.cmake\n'}
+[5.471085] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/robot_control_ros2__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[5.471319] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/robot_control_ros2__rosidl_typesupport_cExport.cmake\n'}
+[5.471452] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/robot_control_ros2__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[5.471884] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/robot_control_ros2__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[5.471950] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/robot_control_ros2__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[5.472037] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/robot_control_ros2__rosidl_typesupport_cppExport.cmake\n'}
+[5.472414] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/robot_control_ros2__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[5.472477] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/export_robot_control_ros2__rosidl_generator_pyExport.cmake\n'}
+[5.472697] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/export_robot_control_ros2__rosidl_generator_pyExport-noconfig.cmake\n'}
+[5.472833] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/rosidl_cmake-extras.cmake\n'}
+[5.473027] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[5.473800] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[5.473868] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[5.473898] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[5.473985] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[5.474124] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[5.474387] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/robot_control_ros2Config.cmake\n'}
+[5.474455] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/cmake/robot_control_ros2Config-version.cmake\n'}
+[5.474484] (robot_control_ros2) StdoutLine: {'line': b'-- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/robot_control_ros2/share/robot_control_ros2/package.xml\n'}
+[5.477590] (robot_control_ros2) CommandEnded: {'returncode': 0}
+[5.497460] (robot_control_ros2) JobEnded: {'identifier': 'robot_control_ros2', 'rc': 0}
+[5.498352] (-) EventReactorShutdown: {}

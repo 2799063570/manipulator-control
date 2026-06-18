@@ -1,0 +1,120 @@
+[0.011s] Invoking command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2 -- -j8 -l8
+[0.071s] [  1%] Built target robot_control_ros2__rosidl_generator_type_description
+[0.072s] [  3%] Built target joint_velocity_subscriber
+[0.074s] [  6%] Built target timer_control_node
+[0.082s] [  6%] Built target ament_cmake_python_copy_robot_control_ros2
+[0.095s] [  7%] Built target robot_control_ros2__cpp
+[0.096s] [ 25%] Built target robot_control_ros2__rosidl_generator_c
+[0.128s] [ 40%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_c
+[0.128s] [ 40%] Built target robot_control_ros2__rosidl_typesupport_introspection_c
+[0.128s] [ 47%] Built target robot_control_ros2__rosidl_typesupport_cpp
+[0.132s] [ 60%] Built target robot_control_ros2__rosidl_typesupport_c
+[0.132s] [ 62%] Built target robot_control_ros2__rosidl_typesupport_introspection_cpp
+[0.132s] [ 70%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_cpp
+[0.163s] [ 75%] Built target student_servier
+[0.164s] [ 75%] Built target robot_state_pub
+[0.164s] [ 77%] Built target student_client
+[0.165s] [ 80%] Built target joint_velocity_publisher
+[0.167s] [ 81%] [32mBuilding CXX object CMakeFiles/vel_to_pos_node.dir/src/vel_to_pos_node.cpp.o[0m
+[0.192s] [ 81%] Built target robot_control_ros2
+[0.221s] [ 82%] Built target robot_control_ros2__py
+[0.250s] [ 88%] Built target robot_control_ros2__rosidl_generator_py
+[0.262s] running egg_info
+[0.277s] writing robot_control_ros2.egg-info/PKG-INFO
+[0.277s] writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt
+[0.277s] writing top-level names to robot_control_ros2.egg-info/top_level.txt
+[0.280s] [ 91%] Built target robot_control_ros2_s__rosidl_typesupport_c
+[0.282s] [ 93%] Built target robot_control_ros2_s__rosidl_typesupport_introspection_c
+[0.282s] [ 96%] Built target robot_control_ros2_s__rosidl_typesupport_fastrtps_c
+[0.318s] reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[0.319s] writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[0.344s] [ 96%] Built target ament_cmake_python_build_robot_control_ros2_egg
+[1.589s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:[m[K In constructor ‘[01m[KVel2PosNode::[01;32m[KVel2PosNode[m[K()[m[K’:
+[1.589s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:15:13:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KVel2PosNode[m[K’ does not have any field named ‘[01m[Kdof_[m[K’
+[1.589s]    15 |             [01;31m[Kdof_[m[K(this->declare_parameter<int>("dof", 6)),
+[1.589s]       |             [01;31m[K^~~~[m[K
+[1.590s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:16:13:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KVel2PosNode[m[K’ does not have any field named ‘[01m[Kmax_velocity_[m[K’
+[1.590s]    16 |             [01;31m[Kmax_velocity_[m[K(this->declare_parameter<double>("maxVelocity", 6.0)),
+[1.590s]       |             [01;31m[K^~~~~~~~~~~~~[m[K
+[1.595s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:18:26:[m[K [01;31m[Kerror: [m[K‘[01m[Kdof_[m[K’ was not declared in this scope
+[1.595s]    18 |             robot_state_([01;31m[Kdof_[m[K),
+[1.596s]       |                          [01;31m[K^~~~[m[K
+[1.600s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:19:35:[m[K [01;31m[Kerror: [m[K‘[01m[KmaxVelocity_[m[K’ was not declared in this scope
+[1.600s]    19 |             safety_limiter_(dof_, [01;31m[KmaxVelocity_[m[K)
+[1.600s]       |                                   [01;31m[K^~~~~~~~~~~~[m[K
+[1.600s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:76:16:[m[K [01;35m[Kwarning: [m[K‘[01m[KVel2PosNode::dt_[m[K’ will be initialized after [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[1.601s]    76 |         double [01;35m[Kdt_[m[K;
+[1.601s]       |                [01;35m[K^~~[m[K
+[1.601s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:74:20:[m[K [01;35m[Kwarning: [m[K  ‘[01m[KRobotState Vel2PosNode::robot_state_[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[1.601s]    74 |         RobotState [01;35m[Krobot_state_[m[K;
+[1.601s]       |                    [01;35m[K^~~~~~~~~~~~[m[K
+[1.601s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:14:9:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreorder-Wreorder]8;;[m[K]
+[1.601s]    14 |         [01;35m[KVel2PosNode[m[K() : Node("Vel_to_Pos_node"),
+[1.601s]       |         [01;35m[K^~~~~~~~~~~[m[K
+[1.606s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:40:85:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Kstd::chrono::duration<long int, std::ratio<1, 1000> >::duration(double&)[m[K’
+[1.606s]    40 |             timer_ = this->create_wall_timer(std::chrono::milliseconds(control_time_[01;31m[K)[m[K,
+[1.606s]       |                                                                                     [01;31m[K^[m[K
+[1.607s] In file included from [01m[K/usr/include/c++/13/chrono:41[m[K,
+[1.607s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/utilities.hpp:18[m[K,
+[1.607s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/logging.hpp:25[m[K,
+[1.607s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/copy_all_parameter_values.hpp:27[m[K,
+[1.607s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:171[m[K,
+[1.607s]                  from [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:1[m[K:
+[1.607s] [01m[K/usr/include/c++/13/bits/chrono.h:581:21:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Rep2, class _Period2, class> constexpr std::chrono::duration<_Rep, _Period>::[01;32m[Kduration[m[K(const std::chrono::duration<_Rep, _Period>&) [35m[K[with _Period2 = _Rep2; <template-parameter-2-3> = _Period2; _Rep = long int; _Period = std::ratio<1, 1000>][m[K[m[K’
+[1.607s]   581 |           constexpr [01;36m[Kduration[m[K(const duration<_Rep2, _Period2>& __d)
+[1.607s]       |                     [01;36m[K^~~~~~~~[m[K
+[1.607s] [01m[K/usr/include/c++/13/bits/chrono.h:581:21:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[1.607s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:40:85:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst std::chrono::duration<_Rep1, _Period1>[m[K’ and ‘[01m[Kdouble[m[K’
+[1.607s]    40 |             timer_ = this->create_wall_timer(std::chrono::milliseconds(control_time_[01;36m[K)[m[K,
+[1.607s]       |                                                                                     [01;36m[K^[m[K
+[1.607s] [01m[K/usr/include/c++/13/bits/chrono.h:573:30:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Rep2, class> constexpr std::chrono::duration<_Rep, _Period>::[01;32m[Kduration[m[K(const _Rep2&) [35m[K[with <template-parameter-2-2> = _Rep2; _Rep = long int; _Period = std::ratio<1, 1000>][m[K[m[K’
+[1.608s]   573 |           constexpr explicit [01;36m[Kduration[m[K(const _Rep2& __rep)
+[1.608s]       |                              [01;36m[K^~~~~~~~[m[K
+[1.608s] [01m[K/usr/include/c++/13/bits/chrono.h:573:30:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[1.608s] In file included from [01m[K/usr/include/c++/13/bits/move.h:37[m[K,
+[1.608s]                  from [01m[K/usr/include/c++/13/bits/new_allocator.h:36[m[K,
+[1.608s]                  from [01m[K/usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:33[m[K,
+[1.608s]                  from [01m[K/usr/include/c++/13/bits/allocator.h:46[m[K,
+[1.608s]                  from [01m[K/usr/include/c++/13/memory:65[m[K,
+[1.608s]                  from [01m[K/opt/ros/jazzy/include/rclcpp/rclcpp/rclcpp.hpp:169[m[K:
+[1.608s] /usr/include/c++/13/type_traits: In substitution of ‘[01m[Ktemplate<bool _Cond, class _Tp> using std::__enable_if_t = typename std::enable_if::type [35m[K[with bool _Cond = false; _Tp = void][m[K[m[K’:
+[1.608s] [01m[K/usr/include/c++/13/type_traits:2224:11:[m[K   required by substitution of ‘[01m[Ktemplate<class ... _Cond> using std::_Require = std::__enable_if_t<std::__and_<_Bn>::value> [35m[K[with _Cond = {std::is_convertible<const double&, long int>, std::__or_<std::chrono::treat_as_floating_point<long int>, std::__not_<std::chrono::treat_as_floating_point<double> > >}][m[K[m[K’
+[1.608s] [01m[K/usr/include/c++/13/bits/chrono.h:570:27:[m[K   required from here
+[1.608s] [01m[K/usr/include/c++/13/type_traits:116:11:[m[K [01;31m[Kerror: [m[Kno type named ‘[01m[Ktype[m[K’ in ‘[01m[Kstruct std::enable_if<false, void>[m[K’
+[1.608s]   116 |     using [01;31m[K__enable_if_t[m[K = typename enable_if<_Cond, _Tp>::type;
+[1.608s]       |           [01;31m[K^~~~~~~~~~~~~[m[K
+[1.608s] [01m[K/usr/include/c++/13/bits/chrono.h:566:9:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kconstexpr std::chrono::duration<_Rep, _Period>::[01;32m[Kduration[m[K(const std::chrono::duration<_Rep, _Period>&) [35m[K[with _Rep = long int; _Period = std::ratio<1, 1000>][m[K[m[K’
+[1.608s]   566 |         [01;36m[Kduration[m[K(const duration&) = default;
+[1.608s]       |         [01;36m[K^~~~~~~~[m[K
+[1.608s] [01m[K/usr/include/c++/13/bits/chrono.h:566:18:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kdouble[m[K’ to ‘[01m[Kconst std::chrono::duration<long int, std::ratio<1, 1000> >&[m[K’
+[1.608s]   566 |         duration([01;36m[Kconst duration&[m[K) = default;
+[1.608s]       |                  [01;36m[K^~~~~~~~~~~~~~~[m[K
+[1.608s] [01m[K/usr/include/c++/13/bits/chrono.h:564:19:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Kstd::chrono::duration<_Rep, _Period>::[01;32m[Kduration[m[K() [35m[K[with _Rep = long int; _Period = std::ratio<1, 1000>][m[K[m[K’
+[1.608s]   564 |         constexpr [01;36m[Kduration[m[K() = default;
+[1.609s]       |                   [01;36m[K^~~~~~~~[m[K
+[1.609s] [01m[K/usr/include/c++/13/bits/chrono.h:564:19:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 1 provided
+[1.615s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:[m[K In member function ‘[01m[Kvoid Vel2PosNode::[01;32m[Ksub_callback[m[K(const JointVelocityCmd&)[m[K’:
+[1.615s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:48:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kdof_[m[K’ was not declared in this scope
+[1.615s]    48 |             for (int i = 0; i<[01;31m[Kdof_[m[K; i++)
+[1.615s]       |                               [01;31m[K^~~~[m[K
+[1.615s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:53:58:[m[K [01;31m[Kerror: [m[Kcannot convert ‘[01m[KRobotState[m[K’ to ‘[01m[Kconst std::vector<double, std::allocator<double> >&[m[K’
+[1.615s]    53 |             robot_state_ = safety_limiter_.clampVelocity([01;31m[Krobot_state_[m[K);
+[1.615s]       |                                                          [01;31m[K^~~~~~~~~~~~[m[K
+[1.615s]       |                                                          [01;31m[K|[m[K
+[1.616s]       |                                                          [01;31m[KRobotState[m[K
+[1.616s] In file included from [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:5[m[K:
+[1.616s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/include/robot_utils/safety_limiter.hpp:22:66:[m[K [01;36m[Knote: [m[K  initializing argument 1 of ‘[01m[Kstd::vector<double, std::allocator<double> > SafetyLimiter::[01;32m[KclampVelocity[m[K(const std::vector<double, std::allocator<double> >&) const[m[K’
+[1.616s]    22 |     std::vector<double> clampVelocity([01;36m[Kconst std::vector<double>& velocity[m[K) const;
+[1.616s]       |                                       [01;36m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~[m[K
+[1.619s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:[m[K In member function ‘[01m[Kvoid Vel2PosNode::[01;32m[Ktimer_callback[m[K()[m[K’:
+[1.619s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:61:31:[m[K [01;31m[Kerror: [m[K‘[01m[Kdof_[m[K’ was not declared in this scope
+[1.619s]    61 |             for (int i = 0; i<[01;31m[Kdof_[m[K; i++)
+[1.619s]       |                               [01;31m[K^~~~[m[K
+[1.622s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/vel_to_pos_node.cpp:63:102:[m[K [01;31m[Kerror: [m[K‘[01m[Kdt[m[K’ was not declared in this scope; did you mean ‘[01m[Kdt_[m[K’?
+[1.622s]    63 |                 robot_state_.position()[i] = robot_state_.position()[i] + robot_state_.velocity()[i]*[01;31m[Kdt[m[K;
+[1.622s]       |                                                                                                      [01;31m[K^~[m[K
+[1.622s]       |                                                                                                      [32m[Kdt_[m[K
+[4.351s] gmake[2]: *** [CMakeFiles/vel_to_pos_node.dir/build.make:76: CMakeFiles/vel_to_pos_node.dir/src/vel_to_pos_node.cpp.o] Error 1
+[4.352s] gmake[1]: *** [CMakeFiles/Makefile2:801: CMakeFiles/vel_to_pos_node.dir/all] Error 2
+[4.352s] gmake: *** [Makefile:146: all] Error 2
+[4.355s] Invoked command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2 -- -j8 -l8

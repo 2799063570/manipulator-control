@@ -1,0 +1,45 @@
+[0.012s] Invoking command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2 -- -j8 -l8
+[0.073s] [  1%] Built target robot_control_ros2__rosidl_generator_type_description
+[0.075s] [  5%] Built target joint_velocity_subscriber
+[0.078s] [  8%] Built target joint_velocity_publisher
+[0.082s] [  8%] Built target ament_cmake_python_copy_robot_control_ros2
+[0.084s] [ 12%] Built target timer_control_node
+[0.095s] [ 14%] Built target robot_control_ros2__cpp
+[0.096s] [ 28%] Built target robot_control_ros2__rosidl_generator_c
+[0.125s] [ 35%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_c
+[0.125s] [ 50%] Built target robot_control_ros2__rosidl_typesupport_fastrtps_cpp
+[0.125s] [ 50%] Built target robot_control_ros2__rosidl_typesupport_cpp
+[0.128s] [ 57%] Built target robot_control_ros2__rosidl_typesupport_introspection_c
+[0.129s] [ 64%] Built target robot_control_ros2__rosidl_typesupport_c
+[0.133s] [ 71%] Built target robot_control_ros2__rosidl_typesupport_introspection_cpp
+[0.153s] [ 78%] Built target student_servier
+[0.153s] [ 78%] Built target robot_state_pub
+[0.158s] [ 80%] [32mBuilding CXX object CMakeFiles/student_client.dir/src/student_client.cpp.o[0m
+[0.159s] [ 80%] Built target robot_control_ros2
+[0.183s] [ 82%] Built target robot_control_ros2__py
+[0.214s] [ 87%] Built target robot_control_ros2__rosidl_generator_py
+[0.239s] [ 94%] Built target robot_control_ros2_s__rosidl_typesupport_fastrtps_c
+[0.240s] [ 94%] Built target robot_control_ros2_s__rosidl_typesupport_c
+[0.240s] [ 98%] Built target robot_control_ros2_s__rosidl_typesupport_introspection_c
+[0.248s] running egg_info
+[0.259s] writing robot_control_ros2.egg-info/PKG-INFO
+[0.259s] writing dependency_links to robot_control_ros2.egg-info/dependency_links.txt
+[0.260s] writing top-level names to robot_control_ros2.egg-info/top_level.txt
+[0.290s] reading manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[0.291s] writing manifest file 'robot_control_ros2.egg-info/SOURCES.txt'
+[0.314s] [ 98%] Built target ament_cmake_python_build_robot_control_ros2_egg
+[1.818s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:[m[K In function ‘[01m[Kint[01;32m[K main[m[K(int, char**)[m[K’:
+[1.818s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:49:85:[m[K [01;31m[Kerror: [m[K‘[01m[Krclcpp::Client<robot_control_ros2::srv::Student>::FutureAndRequestId ServiceClient::[01;32m[Ksend_request[m[K(int32_t, int32_t)[m[K’ is private within this context
+[1.818s]    49 |     rclcpp::Client<Student>::FutureAndRequestId response = [01;31m[Kclient_node->send_request(1, 2)[m[K;
+[1.818s]       |                                                            [01;31m[K~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~[m[K
+[1.818s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:28:49:[m[K [01;36m[Knote: [m[Kdeclared private here
+[1.818s]    28 |     rclcpp::Client<Student>::FutureAndRequestId [01;36m[Ksend_request[m[K(int32_t num1, int32_t num2)
+[1.818s]       |                                                 [01;36m[K^~~~~~~~~~~~[m[K
+[2.394s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:[m[K In member function ‘[01m[Kbool ServiceClient::[01;32m[KwaitConnect[m[K()[m[K’:
+[2.394s] [01m[K/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2/src/student_client.cpp:26:5:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wreturn-type-Wreturn-type]8;;[m[K]
+[2.395s]    26 |     [01;35m[K}[m[K
+[2.395s]       |     [01;35m[K^[m[K
+[2.433s] gmake[2]: *** [CMakeFiles/student_client.dir/build.make:76: CMakeFiles/student_client.dir/src/student_client.cpp.o] Error 1
+[2.434s] gmake[1]: *** [CMakeFiles/Makefile2:769: CMakeFiles/student_client.dir/all] Error 2
+[2.434s] gmake: *** [Makefile:146: all] Error 2
+[2.436s] Invoked command in '/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2 -- -j8 -l8

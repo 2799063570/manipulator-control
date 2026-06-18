@@ -1,0 +1,4 @@
+[ 25%] [32mBuilding CXX object CMakeFiles/self_msg_test_publisher.dir/src/self_msg_test_publisher.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/self_msg_test_subscriber.dir/src/self_msg_test_subscriber.cpp.o[0m
+[ 75%] [32m[1mLinking CXX executable self_msg_test_publisher[0m
+[ 75%] Built target self_msg_test_publisher

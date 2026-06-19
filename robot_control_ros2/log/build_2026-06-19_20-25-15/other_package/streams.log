@@ -1,0 +1,24 @@
+[0.010s] Invoking command in '/home/chenque/cpp_practice/robot_control_ros2/build/other_package': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/other_package -- -j8 -l8
+[0.063s] [ 50%] Built target self_msg_test_subscriber
+[0.064s] [100%] Built target self_msg_test_publisher
+[0.077s] Invoked command in '/home/chenque/cpp_practice/robot_control_ros2/build/other_package' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/chenque/cpp_practice/robot_control_ros2/build/other_package -- -j8 -l8
+[0.086s] Invoking command in '/home/chenque/cpp_practice/robot_control_ros2/build/other_package': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/chenque/cpp_practice/robot_control_ros2/build/other_package
+[0.093s] -- Install configuration: ""
+[0.095s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/lib/other_package/self_msg_test_publisher
+[0.095s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/lib/other_package/self_msg_test_subscriber
+[0.096s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/ament_index/resource_index/package_run_dependencies/other_package
+[0.096s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/ament_index/resource_index/parent_prefix_path/other_package
+[0.096s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/environment/ament_prefix_path.sh
+[0.096s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/environment/ament_prefix_path.dsv
+[0.096s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/environment/path.sh
+[0.096s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/environment/path.dsv
+[0.096s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/local_setup.bash
+[0.096s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/local_setup.sh
+[0.096s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/local_setup.zsh
+[0.096s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/local_setup.dsv
+[0.096s] -- Installing: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/package.dsv
+[0.096s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/ament_index/resource_index/packages/other_package
+[0.096s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/cmake/other_packageConfig.cmake
+[0.096s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/cmake/other_packageConfig-version.cmake
+[0.096s] -- Up-to-date: /home/chenque/cpp_practice/robot_control_ros2/install/other_package/share/other_package/package.xml
+[0.102s] Invoked command in '/home/chenque/cpp_practice/robot_control_ros2/build/other_package' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/chenque/cpp_practice/robot_control_ros2/build/other_package

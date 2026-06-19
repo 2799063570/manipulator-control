@@ -1,8 +1,0 @@
-msg/JointPositionCmd.idl
-msg/JointPositionCmd.msg
-msg/JointStateCommand.idl
-msg/JointStateCommand.msg
-msg/JointVelocityCmd.idl
-msg/JointVelocityCmd.msg
-srv/Student.idl
-srv/Student.srv

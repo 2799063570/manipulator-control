@@ -1,3 +1,0 @@
-float64[] position
-float64[] velocity
-bool is_exc

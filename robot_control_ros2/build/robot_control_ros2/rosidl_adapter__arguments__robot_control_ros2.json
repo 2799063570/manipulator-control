@@ -1,9 +1,0 @@
-{
-  "package_name": "robot_control_ros2",
-  "non_idl_tuples": [
-    "/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2:msg/JointStateCommand.msg",
-    "/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2:srv/Student.srv",
-    "/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2:msg/JointVelocityCmd.msg",
-    "/home/chenque/cpp_practice/robot_control_ros2/src/robot_control_ros2:msg/JointPositionCmd.msg"
-  ]
-}

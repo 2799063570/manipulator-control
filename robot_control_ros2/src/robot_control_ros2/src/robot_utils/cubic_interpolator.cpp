@@ -47,12 +47,12 @@ void CubicInterpolator::calculate3Times()
     std::vector<double> q_goal_ = robot_goal_.position();
     std::vector<double> dq_start_ = robot_start_.velocity();
     std::vector<double> dq_goal_ = robot_goal_.velocity();
-    std::vector<QuinticCoeff> coeffs;
-    for (int i = 0; i<dof_; i++)
+    std::vector<QuinticCoeff> coeffs(dof_);
+    for (size_t i = 0; i<dof_; i++)
     {
         compute3Coeff(q_start_[i], dq_start_[i], q_goal_[i], dq_goal_[i], duration_, coeffs[i]);
     }
-    for (int i = 0; i<num_; ++i)
+    for (size_t i = 0; i<num_; ++i)
     {
         double t = i * dt_;
         if (t > duration_) t = duration_;
@@ -132,14 +132,14 @@ void CubicInterpolator::calculate5Times()
     std::vector<double> dq_goal_ = robot_goal_.velocity();
 
     std::vector<QuinticCoeff> joints_coeff(dof_);
-    for (int i = 0; i<dof_; i++)
+    for (size_t i = 0; i<dof_; i++)
     {
         computeQuinticCoeff(q_start_[i], dq_start_[i], 0.0,
             q_goal_[i], dq_goal_[i], 0.0, duration_, joints_coeff[i]);
     }
 
 
-    for (int i = 0; i<num_; ++i)
+    for (size_t i = 0; i<num_; ++i)
     {
         double t = i * dt_;
         std::vector<double> q, dq;

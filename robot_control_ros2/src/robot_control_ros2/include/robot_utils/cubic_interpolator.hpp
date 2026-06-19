@@ -34,7 +34,7 @@ public:
     void calculate5Times();
 
 private:
-    int num_;
+    size_t num_;
     size_t dof_;
     RobotState robot_start_;
     RobotState robot_goal_;

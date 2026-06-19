@@ -3,6 +3,29 @@
 #include <cmath>
 #include "robot_utils/cubic_interpolator.hpp"
 
+void compute3Coeff(
+    double q0,
+    double v0,
+    double qt,
+    double vt,
+    double T,
+    QuinticCoeff& coeff
+)
+{
+    coeff.a0 = q0;
+    coeff.a1 = v0;
+    coeff.a2 = (3*(qt - q0) - (2*v0 + vt)*T)/(T*T);
+    coeff.a3 = (2*(q0 - qt) + (v0 + vt)*T)/(T*T*T);
+}
+double compute3Position(const QuinticCoeff& coeff, double t)
+{
+    return coeff.a0 + coeff.a1*t + coeff.a2*t*t + coeff.a3*t*t*t;
+}
+double compute3Velocity(const QuinticCoeff& coeff, double t)
+{
+    return coeff.a1 + 2*coeff.a2*t + 3*coeff.a3*t*t;
+}
+
 CubicInterpolator::CubicInterpolator(size_t dof, double duration, double dt)
     : num_(0),
       dof_(dof),
@@ -22,14 +45,17 @@ void CubicInterpolator::calculate3Times()
     trajectory_.reserve(num_); 
     std::vector<double> q_start_ = robot_start_.position();
     std::vector<double> q_goal_ = robot_goal_.position();
-    // std::vector<double> dq_start_ = robot_start_.velocity();
-    // std::vector<double> dq_goal_ = robot_goal_.velocity();
+    std::vector<double> dq_start_ = robot_start_.velocity();
+    std::vector<double> dq_goal_ = robot_goal_.velocity();
+    std::vector<QuinticCoeff> coeffs;
+    for (int i = 0; i<dof_; i++)
+    {
+        compute3Coeff(q_start_[i], dq_start_[i], q_goal_[i], dq_goal_[i], duration_, coeffs[i]);
+    }
     for (int i = 0; i<num_; ++i)
     {
         double t = i * dt_;
         if (t > duration_) t = duration_;
-        double tau = t / duration_;
-        double s = 3*tau*tau - 2*tau*tau*tau;
         std::vector<double> q, dq;
         q.reserve(dof_);
         dq.reserve(dof_);   
@@ -37,9 +63,8 @@ void CubicInterpolator::calculate3Times()
         RobotState rs(dof_);
         for (size_t j = 0; j<dof_; j++)
         {
-            double dq_j = ((6.0 * tau - 6.0 * tau * tau) / duration_) 
-              * (q_goal_[j] - q_start_[j]);
-            double q_j = q_start_[j] + s * (q_goal_[j] - q_start_[j]);
+            double q_j = compute3Position(coeffs[j], t);
+            double dq_j = compute3Velocity(coeffs[j], t);
             q.push_back(q_j); 
             dq.push_back(dq_j);
 

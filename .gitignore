@@ -1,0 +1,32 @@
+# CMake build files
+build/
+**/build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+Makefile
+compile_commands.json
+
+# ROS2 / colcon
+install/
+log/
+**/install/
+**/log/
+
+# Compiled files
+*.o
+*.so
+*.a
+*.out
+*.exe
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db

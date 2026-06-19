@@ -497,6 +497,19 @@ vel_to_pos_node/fast:
 .PHONY : vel_to_pos_node/fast
 
 #=============================================================================
+# Target rules for targets named cubic_interpolator_test
+
+# Build rule for target.
+cubic_interpolator_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cubic_interpolator_test
+.PHONY : cubic_interpolator_test
+
+# fast build rule for target.
+cubic_interpolator_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cubic_interpolator_test.dir/build.make CMakeFiles/cubic_interpolator_test.dir/build
+.PHONY : cubic_interpolator_test/fast
+
+#=============================================================================
 # Target rules for targets named robot_control_ros2__py
 
 # Build rule for target.
@@ -1541,6 +1554,30 @@ rosidl_typesupport_introspection_cpp/robot_control_ros2/srv/detail/student__type
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/robot_control_ros2__rosidl_typesupport_introspection_cpp.dir/build.make CMakeFiles/robot_control_ros2__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/robot_control_ros2/srv/detail/student__type_support.cpp.s
 .PHONY : rosidl_typesupport_introspection_cpp/robot_control_ros2/srv/detail/student__type_support.cpp.s
 
+src/examples/cubic_interpolator_test.o: src/examples/cubic_interpolator_test.cpp.o
+.PHONY : src/examples/cubic_interpolator_test.o
+
+# target to build an object file
+src/examples/cubic_interpolator_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cubic_interpolator_test.dir/build.make CMakeFiles/cubic_interpolator_test.dir/src/examples/cubic_interpolator_test.cpp.o
+.PHONY : src/examples/cubic_interpolator_test.cpp.o
+
+src/examples/cubic_interpolator_test.i: src/examples/cubic_interpolator_test.cpp.i
+.PHONY : src/examples/cubic_interpolator_test.i
+
+# target to preprocess a source file
+src/examples/cubic_interpolator_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cubic_interpolator_test.dir/build.make CMakeFiles/cubic_interpolator_test.dir/src/examples/cubic_interpolator_test.cpp.i
+.PHONY : src/examples/cubic_interpolator_test.cpp.i
+
+src/examples/cubic_interpolator_test.s: src/examples/cubic_interpolator_test.cpp.s
+.PHONY : src/examples/cubic_interpolator_test.s
+
+# target to generate assembly for a file
+src/examples/cubic_interpolator_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cubic_interpolator_test.dir/build.make CMakeFiles/cubic_interpolator_test.dir/src/examples/cubic_interpolator_test.cpp.s
+.PHONY : src/examples/cubic_interpolator_test.cpp.s
+
 src/joint_velocity_publisher.o: src/joint_velocity_publisher.cpp.o
 .PHONY : src/joint_velocity_publisher.o
 
@@ -1619,6 +1656,7 @@ src/robot_utils/cubic_interpolator.o: src/robot_utils/cubic_interpolator.cpp.o
 # target to build an object file
 src/robot_utils/cubic_interpolator.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vel_to_pos_node.dir/build.make CMakeFiles/vel_to_pos_node.dir/src/robot_utils/cubic_interpolator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cubic_interpolator_test.dir/build.make CMakeFiles/cubic_interpolator_test.dir/src/robot_utils/cubic_interpolator.cpp.o
 .PHONY : src/robot_utils/cubic_interpolator.cpp.o
 
 src/robot_utils/cubic_interpolator.i: src/robot_utils/cubic_interpolator.cpp.i
@@ -1627,6 +1665,7 @@ src/robot_utils/cubic_interpolator.i: src/robot_utils/cubic_interpolator.cpp.i
 # target to preprocess a source file
 src/robot_utils/cubic_interpolator.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vel_to_pos_node.dir/build.make CMakeFiles/vel_to_pos_node.dir/src/robot_utils/cubic_interpolator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cubic_interpolator_test.dir/build.make CMakeFiles/cubic_interpolator_test.dir/src/robot_utils/cubic_interpolator.cpp.i
 .PHONY : src/robot_utils/cubic_interpolator.cpp.i
 
 src/robot_utils/cubic_interpolator.s: src/robot_utils/cubic_interpolator.cpp.s
@@ -1635,6 +1674,7 @@ src/robot_utils/cubic_interpolator.s: src/robot_utils/cubic_interpolator.cpp.s
 # target to generate assembly for a file
 src/robot_utils/cubic_interpolator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vel_to_pos_node.dir/build.make CMakeFiles/vel_to_pos_node.dir/src/robot_utils/cubic_interpolator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cubic_interpolator_test.dir/build.make CMakeFiles/cubic_interpolator_test.dir/src/robot_utils/cubic_interpolator.cpp.s
 .PHONY : src/robot_utils/cubic_interpolator.cpp.s
 
 src/robot_utils/robot_state.o: src/robot_utils/robot_state.cpp.o
@@ -1643,6 +1683,7 @@ src/robot_utils/robot_state.o: src/robot_utils/robot_state.cpp.o
 # target to build an object file
 src/robot_utils/robot_state.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vel_to_pos_node.dir/build.make CMakeFiles/vel_to_pos_node.dir/src/robot_utils/robot_state.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cubic_interpolator_test.dir/build.make CMakeFiles/cubic_interpolator_test.dir/src/robot_utils/robot_state.cpp.o
 .PHONY : src/robot_utils/robot_state.cpp.o
 
 src/robot_utils/robot_state.i: src/robot_utils/robot_state.cpp.i
@@ -1651,6 +1692,7 @@ src/robot_utils/robot_state.i: src/robot_utils/robot_state.cpp.i
 # target to preprocess a source file
 src/robot_utils/robot_state.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vel_to_pos_node.dir/build.make CMakeFiles/vel_to_pos_node.dir/src/robot_utils/robot_state.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cubic_interpolator_test.dir/build.make CMakeFiles/cubic_interpolator_test.dir/src/robot_utils/robot_state.cpp.i
 .PHONY : src/robot_utils/robot_state.cpp.i
 
 src/robot_utils/robot_state.s: src/robot_utils/robot_state.cpp.s
@@ -1659,6 +1701,7 @@ src/robot_utils/robot_state.s: src/robot_utils/robot_state.cpp.s
 # target to generate assembly for a file
 src/robot_utils/robot_state.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/vel_to_pos_node.dir/build.make CMakeFiles/vel_to_pos_node.dir/src/robot_utils/robot_state.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cubic_interpolator_test.dir/build.make CMakeFiles/cubic_interpolator_test.dir/src/robot_utils/robot_state.cpp.s
 .PHONY : src/robot_utils/robot_state.cpp.s
 
 src/robot_utils/safety_limiter.o: src/robot_utils/safety_limiter.cpp.o
@@ -1826,6 +1869,7 @@ help:
 	@echo "... robot_control_ros2__rosidl_generator_type_description"
 	@echo "... robot_control_ros2_uninstall"
 	@echo "... uninstall"
+	@echo "... cubic_interpolator_test"
 	@echo "... joint_velocity_publisher"
 	@echo "... joint_velocity_subscriber"
 	@echo "... robot_control_ros2__rosidl_generator_c"
@@ -1973,6 +2017,9 @@ help:
 	@echo "... rosidl_typesupport_introspection_cpp/robot_control_ros2/srv/detail/student__type_support.o"
 	@echo "... rosidl_typesupport_introspection_cpp/robot_control_ros2/srv/detail/student__type_support.i"
 	@echo "... rosidl_typesupport_introspection_cpp/robot_control_ros2/srv/detail/student__type_support.s"
+	@echo "... src/examples/cubic_interpolator_test.o"
+	@echo "... src/examples/cubic_interpolator_test.i"
+	@echo "... src/examples/cubic_interpolator_test.s"
 	@echo "... src/joint_velocity_publisher.o"
 	@echo "... src/joint_velocity_publisher.i"
 	@echo "... src/joint_velocity_publisher.s"

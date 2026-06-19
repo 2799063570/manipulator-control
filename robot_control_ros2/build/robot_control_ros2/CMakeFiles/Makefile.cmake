@@ -825,5 +825,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/student_servier.dir/DependInfo.cmake"
   "CMakeFiles/student_client.dir/DependInfo.cmake"
   "CMakeFiles/vel_to_pos_node.dir/DependInfo.cmake"
+  "CMakeFiles/cubic_interpolator_test.dir/DependInfo.cmake"
   "/home/chenque/cpp_practice/robot_control_ros2/build/robot_control_ros2/robot_control_ros2__py/CMakeFiles/robot_control_ros2__py.dir/DependInfo.cmake"
   )

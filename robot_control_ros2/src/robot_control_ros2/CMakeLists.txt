@@ -70,6 +70,21 @@ ament_target_dependencies(
   "std_msgs"
 )
 
+add_executable(cubic_interpolator_test 
+  src/examples/cubic_interpolator_test.cpp
+  src/robot_utils/robot_state.cpp
+  src/robot_utils/cubic_interpolator.cpp)
+
+target_include_directories(cubic_interpolator_test PUBLIC
+  include
+)
+
+ament_target_dependencies(
+  cubic_interpolator_test
+  "rclcpp"
+  "std_msgs"
+)
+
 rosidl_get_typesupport_target(cpp_typesupport_target
   ${PROJECT_NAME}
   rosidl_typesupport_cpp
@@ -98,6 +113,7 @@ install(TARGETS
   student_servier
   student_client
   vel_to_pos_node
+  cubic_interpolator_test
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)

@@ -11,6 +11,7 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(robot_control_ros2 REQUIRED)
 find_package(robot_control REQUIRED)
+find_package(Eigen3 REQUIRED)
 
 add_executable(self_msg_test_publisher src/self_msg_test_publisher.cpp)
 ament_target_dependencies( self_msg_test_publisher
@@ -27,13 +28,18 @@ add_executable(lib_test src/lib_test.cpp)
 ament_target_dependencies(lib_test
   robot_control
 )
-# target_link_libraries(lib_test #PRIVATE
-#   robot_state_control
-# )
+
+add_executable(jacobian_lib_test src/jacobian_lib_test.cpp)
+ament_target_dependencies(jacobian_lib_test
+  robot_control
+)
+target_link_libraries(jacobian_lib_test #PRIVATE
+ Eigen3::Eigen
+)
 
 
 install(TARGETS
-  self_msg_test_publisher self_msg_test_subscriber lib_test
+  self_msg_test_publisher self_msg_test_subscriber lib_test jacobian_lib_test
   DESTINATION lib/${PROJECT_NAME}
 )
 

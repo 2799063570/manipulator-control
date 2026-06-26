@@ -10,6 +10,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
+find_package(robot_control REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/JointStateCommand.msg"
@@ -55,35 +56,19 @@ ament_target_dependencies(
 )
 add_executable(vel_to_pos_node 
   src/vel_to_pos_node.cpp
-  src/robot_utils/robot_state.cpp
-  src/robot_utils/safety_limiter.cpp
-  src/robot_utils/cubic_interpolator.cpp
-  src/robot_utils/trajectory_buffer.cpp)
-
-target_include_directories(vel_to_pos_node PUBLIC
-  include
 )
+
+# target_include_directories(vel_to_pos_node PUBLIC
+#   include
+# )
 
 ament_target_dependencies(
   vel_to_pos_node
   "rclcpp"
   "std_msgs"
+  robot_control
 )
 
-add_executable(cubic_interpolator_test 
-  src/examples/cubic_interpolator_test.cpp
-  src/robot_utils/robot_state.cpp
-  src/robot_utils/cubic_interpolator.cpp)
-
-target_include_directories(cubic_interpolator_test PUBLIC
-  include
-)
-
-ament_target_dependencies(
-  cubic_interpolator_test
-  "rclcpp"
-  "std_msgs"
-)
 
 rosidl_get_typesupport_target(cpp_typesupport_target
   ${PROJECT_NAME}
@@ -113,7 +98,6 @@ install(TARGETS
   student_servier
   student_client
   vel_to_pos_node
-  cubic_interpolator_test
   DESTINATION lib/${PROJECT_NAME})
 ament_export_dependencies(rosidl_default_runtime)
 

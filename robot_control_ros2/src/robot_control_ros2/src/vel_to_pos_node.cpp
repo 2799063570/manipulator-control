@@ -1,10 +1,10 @@
 #include "rclcpp/rclcpp.hpp"
 #include "robot_control_ros2/msg/joint_velocity_cmd.hpp"
 #include "robot_control_ros2/msg/joint_position_cmd.hpp"
-#include "robot_utils/robot_state.hpp"
-#include "robot_utils/safety_limiter.hpp"
-#include "robot_utils/cubic_interpolator.hpp"
-#include "robot_utils/trajectory_buffer.hpp"
+#include "robot_state.hpp"
+#include "safety_limiter.hpp"
+#include "cubic_interpolator.hpp"
+#include "trajectory_buffer.hpp"
 #include <vector>
 
 using JointVelocityCmd = robot_control_ros2::msg::JointVelocityCmd;

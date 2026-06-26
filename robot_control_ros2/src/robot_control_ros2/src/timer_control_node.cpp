@@ -1,6 +1,9 @@
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/float64_multi_array.hpp"
 
+
+// 使用标准信息 一个浮点数的顺序表
+
 class TimerControlNode : public rclcpp::Node
 {
 public:
@@ -12,12 +15,12 @@ public:
         RCLCPP_INFO(this->get_logger(), "get dof : %d", dof_);
         pub_ = this->create_publisher<std_msgs::msg::Float64MultiArray>("joint_postion_cmd", 10);
         timer_ = this->create_wall_timer(std::chrono::milliseconds(100), 
-            std::bind(&TimerControlNode::timeCallBack, this));
+            std::bind(&TimerControlNode::timeCallBack, this));// 创建一个时间循环的线程
     }
 private:
     void timeCallBack()
     {
-        std_msgs::msg::Float64MultiArray msg;
+        std_msgs::msg::Float64MultiArray msg;// 进入回调函数 添加相关的参数
         count_++;
         msg.data = {count_*0.01, count_*0.01, count_*0.01, count_*0.01, count_*0.01, count_*0.01};
         RCLCPP_INFO(this->get_logger(), "pub postion :  [%.2f, %.2f, %.2f, %.2f, %.2f, %.2f]",

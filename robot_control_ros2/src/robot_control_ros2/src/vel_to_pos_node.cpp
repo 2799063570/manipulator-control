@@ -16,10 +16,10 @@ class Vel2PosNode : public rclcpp::Node
         Vel2PosNode() : Node("Vel_to_Pos_node"), 
             dof_(this->declare_parameter<int>("dof", 6)),
             max_velocity_(this->declare_parameter<double>("max_velocity", 1.2)),
-            dt_(this->declare_parameter<double>("dt", 0.02)),
-            duration_(this->declare_parameter<double>("duration", 1)),
+            duration_(this->declare_parameter<double>("velocity_cmd_time", 0.1)),
             control_rate_(this->declare_parameter<double>("control_rate", 50)),
             control_time_(1000/control_rate_),
+            dt_(this->declare_parameter<double>("dt", control_time_*0.001)),
             robot_state_start_(dof_), robot_state_goal_(dof_),
             safety_limiter_(dof_, max_velocity_),
             trajectory_buffer_(dof_),
@@ -36,6 +36,11 @@ class Vel2PosNode : public rclcpp::Node
             );
             safety_limiter_.setLowerLimits(lower_limits_);
             safety_limiter_.setUpperLimits(upper_limits_);
+
+            robot_state_start_.setPosition(std::vector<double>(dof_, double{}));
+            robot_state_start_.setPosition(std::vector<double>(dof_, double()));
+            robot_state_goal_.setPosition(std::vector<double>(dof_, double{}));
+            robot_state_goal_.setPosition(std::vector<double>(dof_, double()));
 
             trajectory_buffer_.clear();
 
@@ -55,25 +60,20 @@ class Vel2PosNode : public rclcpp::Node
             for (int i = 0; i<dof_; i++)
             {
                 robot_velocity.push_back(vel.velocity_cmd[i]);
-                robot_position.push_back(robot_state_goal_.position()[i] + vel.velocity_cmd[i]*0.5*duration_);
+                robot_position.push_back(robot_state_goal_.position()[i] + (vel.velocity_cmd[i] + robot_state_goal_.velocity()[i])*0.5*duration_);
             }
             
-
             robot_state_goal_.setVelocity(robot_velocity);
             robot_state_goal_.setPosition(robot_position);
             safety_limiter_.clampRobotState(robot_state_goal_);// 位置速度限幅
-            RCLCPP_INFO(this->get_logger(), "get velocity cmd: [%.2f, %.2f, %.2f, %.2f, %.2f, %.2f]", 
+            RCLCPP_INFO(this->get_logger(), "clamp velocity cmd: [%.2f, %.2f, %.2f, %.2f, %.2f, %.2f]", 
                 robot_state_goal_.velocity()[0], robot_state_goal_.velocity()[1], robot_state_goal_.velocity()[2], 
                 robot_state_goal_.velocity()[3], robot_state_goal_.velocity()[4], robot_state_goal_.velocity()[5]);
-            RCLCPP_INFO(this->get_logger(), "set position cmd: [%.2f, %.2f, %.2f, %.2f, %.2f, %.2f]", 
+            RCLCPP_INFO(this->get_logger(), "clamp position cmd: [%.2f, %.2f, %.2f, %.2f, %.2f, %.2f]", 
                 robot_state_goal_.position()[0], robot_state_goal_.position()[1], robot_state_goal_.position()[2], 
                 robot_state_goal_.position()[3], robot_state_goal_.position()[4], robot_state_goal_.position()[5]);
             
-        }
-        void timer_callback()
-        {
-            JointPositionCmd position_cmd;// 位置指令
-
+            
             if (robot_state_goal_ != robot_state_start_)
             {
                 cubic_interpolator_.setStateStart(robot_state_start_);
@@ -88,6 +88,11 @@ class Vel2PosNode : public rclcpp::Node
                 }
             }
             
+        }
+        void timer_callback()
+        {
+            JointPositionCmd position_cmd;// 位置指令
+
             if (trajectory_buffer_.hasNext())
             {
                 RobotState robotState = trajectory_buffer_.popNext();
@@ -100,7 +105,10 @@ class Vel2PosNode : public rclcpp::Node
                     robotState.position()[3], robotState.position()[4], robotState.position()[5]);
                 pub_->publish(position_cmd);
                 robot_state_start_ = robot_state_goal_;
-            } 
+            } else
+            {
+                RCLCPP_INFO(this->get_logger(), "deque has not robot states");
+            }
         }
 
         rclcpp::TimerBase::SharedPtr timer_;
@@ -109,11 +117,10 @@ class Vel2PosNode : public rclcpp::Node
         
         int dof_;
         double max_velocity_;
-        double dt_;
         double duration_;
         int control_rate_;
         int control_time_;      
-        
+        double dt_;
         RobotState robot_state_start_, robot_state_goal_;
         SafetyLimiter safety_limiter_;
         TrajectoryBuffer trajectory_buffer_;

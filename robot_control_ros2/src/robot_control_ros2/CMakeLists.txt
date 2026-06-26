@@ -57,16 +57,19 @@ ament_target_dependencies(
 add_executable(vel_to_pos_node 
   src/vel_to_pos_node.cpp
 )
-
-# target_include_directories(vel_to_pos_node PUBLIC
-#   include
-# )
-
 ament_target_dependencies(
   vel_to_pos_node
   "rclcpp"
   "std_msgs"
   robot_control
+)
+
+add_executable(robot_velocity_pub 
+  src/robot_velocity_pub.cpp
+)
+ament_target_dependencies(
+  robot_velocity_pub
+  "rclcpp"
 )
 
 
@@ -90,6 +93,9 @@ target_link_libraries(vel_to_pos_node
 target_link_libraries(joint_velocity_publisher
   "${cpp_typesupport_target}"
 )
+target_link_libraries(robot_velocity_pub
+  "${cpp_typesupport_target}"
+)
 install(TARGETS
   joint_velocity_publisher 
   joint_velocity_subscriber 
@@ -98,8 +104,15 @@ install(TARGETS
   student_servier
   student_client
   vel_to_pos_node
+  robot_velocity_pub
   DESTINATION lib/${PROJECT_NAME})
 ament_export_dependencies(rosidl_default_runtime)
+
+install(DIRECTORY
+  launch
+  config
+  DESTINATION share/${PROJECT_NAME}
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

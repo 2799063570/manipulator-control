@@ -20,7 +20,7 @@ public:
 private:
     void timeCallBack()
     {
-        std_msgs::msg::Float64MultiArray msg;// 进入回调函数 添加相关的参数
+        std_msgs::msg::Float64MultiArray msg;// 进入回调函数
         count_++;
         msg.data = {count_*0.01, count_*0.01, count_*0.01, count_*0.01, count_*0.01, count_*0.01};
         RCLCPP_INFO(this->get_logger(), "pub postion :  [%.2f, %.2f, %.2f, %.2f, %.2f, %.2f]",

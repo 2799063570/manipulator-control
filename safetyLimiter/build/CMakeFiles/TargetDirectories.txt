@@ -1,3 +1,0 @@
-/home/chenque/cpp_practice/safetyLimiter/build/CMakeFiles/safety_test.dir
-/home/chenque/cpp_practice/safetyLimiter/build/CMakeFiles/edit_cache.dir
-/home/chenque/cpp_practice/safetyLimiter/build/CMakeFiles/rebuild_cache.dir

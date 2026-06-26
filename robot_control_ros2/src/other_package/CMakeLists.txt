@@ -10,22 +10,30 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(robot_control_ros2 REQUIRED)
+find_package(robot_control REQUIRED)
 
 add_executable(self_msg_test_publisher src/self_msg_test_publisher.cpp)
-ament_target_dependencies(
-  self_msg_test_publisher
+ament_target_dependencies( self_msg_test_publisher
   "rclcpp"
   "robot_control_ros2"
 )
 add_executable(self_msg_test_subscriber src/self_msg_test_subscriber.cpp)
-ament_target_dependencies(
-  self_msg_test_subscriber
+ament_target_dependencies( self_msg_test_subscriber
   "rclcpp"
   "robot_control_ros2"
 )
 
+add_executable(lib_test src/lib_test.cpp)
+ament_target_dependencies(lib_test
+  robot_control
+)
+# target_link_libraries(lib_test #PRIVATE
+#   robot_state_control
+# )
+
+
 install(TARGETS
-  self_msg_test_publisher self_msg_test_subscriber
+  self_msg_test_publisher self_msg_test_subscriber lib_test
   DESTINATION lib/${PROJECT_NAME}
 )
 

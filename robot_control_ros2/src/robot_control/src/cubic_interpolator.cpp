@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <cmath>
-#include "robot_utils/cubic_interpolator.hpp"
+#include "cubic_interpolator.hpp"
 
 void compute3Coeff(
     double q0,

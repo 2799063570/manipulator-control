@@ -26,7 +26,7 @@ public:
         interploator_.setStateGoal(robot_goal);
         interploator_.calculate3Times();
 
-        int num = interploator_.getTraNum();
+        int num = interploator_.getStateNum();
         RCLCPP_INFO(this->get_logger(), "get %d points", num);
         std::vector<RobotState> robotStates = interploator_.getTrajectory();
         for (int i = 0; i<num; i++)
@@ -56,7 +56,7 @@ public:
         interploator_.setStateGoal(robot_goal);
         interploator_.calculate5Times();
 
-        int num = interploator_.getTraNum();
+        int num = interploator_.getStateNum();
         RCLCPP_INFO(this->get_logger(), "get %d points", num);
         std::vector<RobotState> robotStates = interploator_.getTrajectory();
         for (int i = 0; i<num; i++)

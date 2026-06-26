@@ -1,3 +1,0 @@
-/home/chenque/cpp_practice/jacobian_solver/build/CMakeFiles/test_jacobian.dir
-/home/chenque/cpp_practice/jacobian_solver/build/CMakeFiles/edit_cache.dir
-/home/chenque/cpp_practice/jacobian_solver/build/CMakeFiles/rebuild_cache.dir

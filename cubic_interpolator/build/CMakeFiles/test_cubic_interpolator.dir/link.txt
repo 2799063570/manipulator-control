@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/test_cubic_interpolator.dir/src/cubic_interpolator.cpp.o CMakeFiles/test_cubic_interpolator.dir/examples/main.cpp.o -o test_cubic_interpolator 

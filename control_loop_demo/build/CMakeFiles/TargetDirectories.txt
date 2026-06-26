@@ -1,3 +1,0 @@
-/home/chenque/cpp_practice/control_loop_demo/build/CMakeFiles/test_control.dir
-/home/chenque/cpp_practice/control_loop_demo/build/CMakeFiles/edit_cache.dir
-/home/chenque/cpp_practice/control_loop_demo/build/CMakeFiles/rebuild_cache.dir

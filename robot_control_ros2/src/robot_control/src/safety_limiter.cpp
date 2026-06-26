@@ -1,4 +1,4 @@
-#include "robot_utils/safety_limiter.hpp"
+#include "safety_limiter.hpp"
 #include <iostream>
 #include <stdexcept>
 #include <vector>
@@ -68,6 +68,37 @@ bool SafetyLimiter::isSafe(const std::vector<double>& positon, const std::vector
     return posIsSafety&&velIsSafety;
 }
 
+bool SafetyLimiter::isSafe(const RobotState& robotState) const
+{
+    if (robotState.size() != dof_)
+        throw std::runtime_error("robot DOF does not match");
+        
+    bool posIsSafety = true;
+    bool velIsSafety = true;
+    const std::vector<double>& vel = robotState.velocity();
+    const std::vector<double>& pos = robotState.position(); 
+    for (size_t i = 0; i < dof_; i++)
+    {
+        if (vel[i] < -maxVelocity_ || vel[i] > maxVelocity_)
+        {
+            velIsSafety = false;
+            break;
+        }
+    }
+    for (size_t i = 0; i<dof_; i++)
+    {
+        if (pos[i] < low_[i] || pos[i] > upr_[i])
+        {
+            posIsSafety = false;
+            break;
+        }
+    }
+
+    if (!posIsSafety) std::cout << "position over" << std::endl;
+    if (!velIsSafety) std::cout << "velocity over" << std::endl;
+    return posIsSafety&&velIsSafety;
+}
+
 std::vector<double> SafetyLimiter::clampPosition(const std::vector<double>& position) const
 {
     if (position.size() != dof_)
@@ -101,20 +132,18 @@ std::vector<double> SafetyLimiter::clampVelocity(const std::vector<double>& velo
 void SafetyLimiter::clampRobotState(RobotState& robot_state)
 {
     if (robot_state.size() != dof_) throw std::runtime_error("robot DOF does not match");
-    std::vector<double> clampedVelocity = robot_state.velocity();
-    std::vector<double> clampedPosition = robot_state.position();
+    const std::vector<double>& clampedVelocity = robot_state.velocity();
+    const std::vector<double>& clampedPosition = robot_state.position();
     for (size_t i = 0; i<dof_; i++)
     {
         if (clampedVelocity[i] < -maxVelocity_)
-            robot_state.setJointVelocity(i, -maxVelocity_);
+            robot_state.setVelocity(i, -maxVelocity_);
         else if (clampedVelocity[i] > maxVelocity_)
-            robot_state.setJointVelocity(i, maxVelocity_);
+            robot_state.setVelocity(i, maxVelocity_);
         
         if (clampedPosition[i] < low_[i])
-            robot_state.setJointPosition(i, low_[i]);
+            robot_state.setPosition(i, low_[i]);
         else if (clampedPosition[i] > upr_[i])
-            robot_state.setJointPosition(i, upr_[i]);
+            robot_state.setPosition(i, upr_[i]);
     }
 }
-
-

@@ -80,7 +80,7 @@ class Vel2PosNode : public rclcpp::Node
                 cubic_interpolator_.setStateGoal(robot_state_goal_);
                 cubic_interpolator_.calculate5Times();
 
-                int trajectory_nums = cubic_interpolator_.getTraNum();
+                int trajectory_nums = cubic_interpolator_.getStateNum();
                 std::vector<RobotState> trajectory = cubic_interpolator_.getTrajectory();
                 for (int i  = 1; i < trajectory_nums; ++i)
                 {

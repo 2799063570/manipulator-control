@@ -1,3 +1,0 @@
-/home/chenque/cpp_practice/trajectory_buffer/build/CMakeFiles/test_trajectory_buffer.dir
-/home/chenque/cpp_practice/trajectory_buffer/build/CMakeFiles/edit_cache.dir
-/home/chenque/cpp_practice/trajectory_buffer/build/CMakeFiles/rebuild_cache.dir

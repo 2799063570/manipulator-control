@@ -115,6 +115,7 @@ install(TARGETS
   vel_to_pos_node
   cubic_interpolator_test
   DESTINATION lib/${PROJECT_NAME})
+ament_export_dependencies(rosidl_default_runtime)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

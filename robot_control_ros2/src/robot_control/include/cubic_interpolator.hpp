@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <cstddef>
-#include "robot_utils/robot_state.hpp"
+#include "robot_state.hpp"
 
 struct QuinticCoeff
 {

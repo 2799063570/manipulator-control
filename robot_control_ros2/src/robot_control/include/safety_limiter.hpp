@@ -3,12 +3,12 @@
 
 #include <vector>
 #include <cstddef>
-#include "robot_utils/robot_state.hpp"
+#include "robot_state.hpp"
 
 class SafetyLimiter{
 
 public:
-    explicit SafetyLimiter(size_t dof, double maxVelocity);
+    explicit SafetyLimiter(size_t dof, double maxVelocity = 10);
 
     void setLowerLimits(const std::vector<double>& low);
     void setUpperLimits(const std::vector<double>& upr);
@@ -18,6 +18,7 @@ public:
     double maxVelocity() const; 
     size_t size() const;
     bool isSafe(const std::vector<double>& positon, const std::vector<double>& vel) const;
+    bool isSafe(const RobotState& robotState) const;
     std::vector<double> clampPosition(const std::vector<double>& position) const;
     std::vector<double> clampVelocity(const std::vector<double>& velocity) const;
     void clampRobotState(RobotState& robot_state);
@@ -28,6 +29,5 @@ private:
     std::vector<double> low_;
     std::vector<double> upr_;
 };
-
 
 #endif 

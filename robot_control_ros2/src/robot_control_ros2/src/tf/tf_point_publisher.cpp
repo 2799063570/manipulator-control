@@ -17,7 +17,7 @@ private:
     {
         geometry_msgs::msg::PointStamped point;
         point.header.stamp = this->now();
-        point.header.frame_id = "base_link";
+        point.header.frame_id = "laser";
         point.point.x = 0.01;
         point.point.y = 0.01 * (count_++);
         point.point.z = 0.01 * count_;

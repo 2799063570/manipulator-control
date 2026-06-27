@@ -11,6 +11,10 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 find_package(robot_control REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
+find_package(turtlesim REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/JointStateCommand.msg"
@@ -72,6 +76,48 @@ ament_target_dependencies(
   "rclcpp"
 )
 
+add_executable(tf_static_broadcaster 
+  src/tf/tf_static_broadcaster.cpp
+)
+ament_target_dependencies(
+  tf_static_broadcaster
+  "rclcpp"
+  "tf2"
+  "tf2_ros"
+  "geometry_msgs"
+)
+
+add_executable(tf_dynamic_broadcaster 
+  src/tf/tf_dynamic_broadcaster.cpp
+)
+ament_target_dependencies(
+  tf_dynamic_broadcaster
+  "rclcpp"
+  "tf2"
+  "tf2_ros"
+  "geometry_msgs"
+  "turtlesim"
+)
+
+add_executable(tf_point_publisher 
+  src/tf/tf_point_publisher.cpp
+)
+ament_target_dependencies(
+  tf_point_publisher
+  "rclcpp"
+  "geometry_msgs"
+)
+
+add_executable(tf_transform_listener 
+  src/tf/tf_transform_listener.cpp
+)
+ament_target_dependencies(
+  tf_transform_listener
+  "rclcpp"
+  "tf2"
+  "tf2_ros"
+  "geometry_msgs"
+)
 
 rosidl_get_typesupport_target(cpp_typesupport_target
   ${PROJECT_NAME}
@@ -105,6 +151,10 @@ install(TARGETS
   student_client
   vel_to_pos_node
   robot_velocity_pub
+  tf_static_broadcaster
+  tf_dynamic_broadcaster
+  tf_point_publisher
+  tf_transform_listener
   DESTINATION lib/${PROJECT_NAME})
 ament_export_dependencies(rosidl_default_runtime)
 

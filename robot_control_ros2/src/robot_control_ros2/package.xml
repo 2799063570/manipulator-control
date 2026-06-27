@@ -13,6 +13,9 @@
   <depend>std_msgs</depend>  
   <depend>robot_control</depend>
   <depend>eigen3_cmake_module</depend>
+  <depend>tf2</depend>
+<depend>tf2_ros</depend>
+<depend>geometry_msgs</depend>
 <depend>eigen</depend>
 <exec_depend>launch</exec_depend>
 <exec_depend>launch_ros</exec_depend>

@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<robot name="simple_2dof_arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- ===================== -->
+  <!-- Parameters -->
+  <!-- ===================== -->
+  <xacro:property name="base_size_x" value="0.25"/>
+  <xacro:property name="base_size_y" value="0.25"/>
+  <xacro:property name="base_size_z" value="0.10"/>
+
+  <xacro:property name="link1_length" value="1.0"/>
+  <xacro:property name="link2_length" value="0.8"/>
+
+  <xacro:property name="link1_width" value="0.08"/>
+  <xacro:property name="link2_width" value="0.06"/>
+
+  <!-- ===================== -->
+  <!-- Materials -->
+  <!-- ===================== -->
+  <material name="gray">
+    <color rgba="0.5 0.5 0.5 1.0"/>
+  </material>
+
+  <material name="blue">
+    <color rgba="0.1 0.3 0.9 1.0"/>
+  </material>
+
+  <material name="green">
+    <color rgba="0.1 0.8 0.2 1.0"/>
+  </material>
+
+  <!-- ===================== -->
+  <!-- base_link -->
+  <!-- ===================== -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="${base_size_x} ${base_size_y} ${base_size_z}"/>
+      </geometry>
+      <material name="gray"/>
+    </visual>
+  </link>
+
+  <!-- ===================== -->
+  <!-- joint1: base_link -> link1 -->
+  <!-- ===================== -->
+  <joint name="joint1" type="revolute">
+    <parent link="base_link"/>
+    <child link="link1"/>
+
+    <!-- joint1 位于 base_link 上方一点 -->
+    <origin xyz="0 0 ${base_size_z / 2.0}" rpy="0 0 0"/>
+
+    <!-- 绕 z 轴旋转 -->
+    <axis xyz="0 0 1"/>
+
+    <limit lower="-3.14" upper="3.14" effort="10.0" velocity="1.0"/>
+  </joint>
+
+  <!-- ===================== -->
+  <!-- link1 -->
+  <!-- ===================== -->
+  <link name="link1">
+    <visual>
+      <!-- link1 的坐标系在 joint1 处，所以盒子的中心放在 x=0.5 处 -->
+      <origin xyz="${link1_length / 2.0} 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="${link1_length} ${link1_width} ${link1_width}"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+  </link>
+
+  <!-- ===================== -->
+  <!-- joint2: link1 -> link2 -->
+  <!-- ===================== -->
+  <joint name="joint2" type="revolute">
+    <parent link="link1"/>
+    <child link="link2"/>
+
+    <!-- joint2 位于 link1 末端 -->
+    <origin xyz="${link1_length} 0 0" rpy="0 0 0"/>
+
+    <!-- 绕 z 轴旋转 -->
+    <axis xyz="0 0 1"/>
+
+    <limit lower="-1.57" upper="1.57" effort="10.0" velocity="1.0"/>
+  </joint>
+
+  <!-- ===================== -->
+  <!-- link2 -->
+  <!-- ===================== -->
+  <link name="link2">
+    <visual>
+      <!-- link2 的坐标系在 joint2 处，所以盒子的中心放在 x=0.4 处 -->
+      <origin xyz="${link2_length / 2.0} 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="${link2_length} ${link2_width} ${link2_width}"/>
+      </geometry>
+      <material name="green"/>
+    </visual>
+  </link>
+
+</robot>

@@ -29,18 +29,25 @@
     <color rgba="0.1 0.8 0.2 1.0"/>
   </material>
 
-  <!-- ===================== -->
-  <!-- base_link -->
-  <!-- ===================== -->
-  <link name="base_link">
-    <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
-      <geometry>
-        <box size="${base_size_x} ${base_size_y} ${base_size_z}"/>
-      </geometry>
-      <material name="gray"/>
-    </visual>
-  </link>
+<!-- ===================== -->
+<!-- base_link -->
+<!-- ===================== -->
+<link name="base_link">
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <box size="${base_size_x} ${base_size_y} ${base_size_z}"/>
+    </geometry>
+    <material name="gray"/>
+  </visual>
+
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <box size="${base_size_x} ${base_size_y} ${base_size_z}"/>
+    </geometry>
+  </collision>
+</link>
 
   <!-- ===================== -->
   <!-- joint1: base_link -> link1 -->
@@ -58,19 +65,26 @@
     <limit lower="-3.14" upper="3.14" effort="10.0" velocity="1.0"/>
   </joint>
 
-  <!-- ===================== -->
-  <!-- link1 -->
-  <!-- ===================== -->
-  <link name="link1">
-    <visual>
-      <!-- link1 的坐标系在 joint1 处，所以盒子的中心放在 x=0.5 处 -->
-      <origin xyz="${link1_length / 2.0} 0 0" rpy="0 0 0"/>
-      <geometry>
-        <box size="${link1_length} ${link1_width} ${link1_width}"/>
-      </geometry>
-      <material name="blue"/>
-    </visual>
-  </link>
+<!-- ===================== -->
+<!-- link1 -->
+<!-- ===================== -->
+<link name="link1">
+  <visual>
+    <!-- link1 的坐标系在 joint1 处，所以盒子的中心放在 x=0.5 处 -->
+    <origin xyz="${link1_length / 2.0} 0 0" rpy="0 0 0"/>
+    <geometry>
+      <box size="${link1_length} ${link1_width} ${link1_width}"/>
+    </geometry>
+    <material name="blue"/>
+  </visual>
+
+  <collision>
+    <origin xyz="${link1_length / 2.0} 0 0" rpy="0 0 0"/>
+    <geometry>
+      <box size="${link1_length} ${link1_width} ${link1_width}"/>
+    </geometry>
+  </collision>
+</link>
 
   <!-- ===================== -->
   <!-- joint2: link1 -> link2 -->
@@ -88,18 +102,25 @@
     <limit lower="-1.57" upper="1.57" effort="10.0" velocity="1.0"/>
   </joint>
 
-  <!-- ===================== -->
-  <!-- link2 -->
-  <!-- ===================== -->
-  <link name="link2">
-    <visual>
-      <!-- link2 的坐标系在 joint2 处，所以盒子的中心放在 x=0.4 处 -->
-      <origin xyz="${link2_length / 2.0} 0 0" rpy="0 0 0"/>
-      <geometry>
-        <box size="${link2_length} ${link2_width} ${link2_width}"/>
-      </geometry>
-      <material name="green"/>
-    </visual>
-  </link>
+<!-- ===================== -->
+<!-- link2 -->
+<!-- ===================== -->
+<link name="link2">
+  <visual>
+    <!-- link2 的坐标系在 joint2 处，所以盒子的中心放在 x=0.4 处 -->
+    <origin xyz="${link2_length / 2.0} 0 0" rpy="0 0 0"/>
+    <geometry>
+      <box size="${link2_length} ${link2_width} ${link2_width}"/>
+    </geometry>
+    <material name="green"/>
+  </visual>
+
+  <collision>
+    <origin xyz="${link2_length / 2.0} 0 0" rpy="0 0 0"/>
+    <geometry>
+      <box size="${link2_length} ${link2_width} ${link2_width}"/>
+    </geometry>
+  </collision>
+</link>
 
 </robot>

@@ -8,6 +8,28 @@ robot_control_ros2/src/robot_control
 
 它虽然放在 ROS2 工作区中，并使用 `ament_cmake` 管理构建，但核心控制逻辑是普通 C++ 代码：状态、限幅、插值、轨迹缓冲和雅可比求解都可以作为控制算法库单独理解和测试。
 
+## 文档导航
+
+项目阶段总结按章节放在 `docs/` 目录中：
+
+- [第 1 周：纯 C++ 控制基础库](docs/week1_control_library.md)
+- [第 2 周：Eigen、雅可比求解与项目化](docs/week2_jacobian_projectization.md)
+- [第 3 周：ROS2 控制节点与通信链路](docs/week3_ros2_control_nodes.md)
+- [第 4 周：URDF、TF 与 RViz2 可视化闭环](docs/week4_visualization_closure.md)
+- [简历描述与面试讲解稿](docs/resume_and_interview.md)
+
+当前项目主线：
+
+```text
+纯 C++ 控制库
+  -> ROS2 控制节点
+  -> 关节命令 topic
+  -> /joint_states
+  -> robot_state_publisher
+  -> TF / robot_description
+  -> RViz2 可视化
+```
+
 ## 解决什么问题
 
 这个库解决的是机器人关节空间控制循环中的基础数据流问题：
@@ -120,8 +142,59 @@ robot_control_ros2/
       CMakeLists.txt
       package.xml
     robot_control_ros2/         # ROS2 节点、消息和服务
+    simple_arm_description/     # 2 自由度机械臂 URDF / RViz2 可视化
     other_package/              # 消费自定义消息的示例包
 ```
+
+## RViz2 可视化闭环 demo
+
+当前已经完成一个 2 自由度机械臂可视化闭环：
+
+```text
+robot_position_cmd
+  -> /joint_position_cmd
+  -> joint_position_cmd_to_states
+  -> /joint_states
+  -> robot_state_publisher
+  -> TF / robot_description
+  -> RViz2
+```
+
+启动显示端：
+
+```bash
+cd ~/cpp_practice/robot_control_ros2
+colcon build
+source install/setup.bash
+ros2 launch simple_arm_description simple_2dof_arm_display.launch.py
+```
+
+另开终端启动位置命令发布：
+
+```bash
+cd ~/cpp_practice/robot_control_ros2
+source install/setup.bash
+ros2 run robot_control_ros2 robot_position_cmd
+```
+
+再开一个终端启动关节状态发布：
+
+```bash
+cd ~/cpp_practice/robot_control_ros2
+source install/setup.bash
+ros2 run robot_control_ros2 joint_position_cmd_to_states
+```
+
+验证 topic 和 TF：
+
+```bash
+ros2 topic list
+ros2 topic echo /joint_position_cmd
+ros2 topic echo /joint_states
+ros2 run tf2_tools view_frames
+```
+
+详细说明见 [第 4 周：URDF、TF 与 RViz2 可视化闭环](docs/week4_visualization_closure.md)。
 
 ## 编译纯 C++ 控制库
 

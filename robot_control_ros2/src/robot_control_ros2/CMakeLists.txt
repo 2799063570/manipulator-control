@@ -17,6 +17,7 @@ find_package(tf2_ros REQUIRED)
 find_package(turtlesim REQUIRED)
 # find_package(turtlesim REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/JointStateCommand.msg"
@@ -135,6 +136,25 @@ ament_target_dependencies(
   "message_filters"
 )
 
+add_executable(joint_position_cmd_to_states 
+  src/joint_position_cmd_to_states.cpp
+)
+ament_target_dependencies(
+  joint_position_cmd_to_states
+  "rclcpp"
+  "sensor_msgs"
+  robot_control
+)
+
+add_executable(robot_position_cmd 
+  src/robot_position_cmd.cpp
+)
+ament_target_dependencies(
+  robot_position_cmd
+  "rclcpp"
+  robot_control
+)
+
 rosidl_get_typesupport_target(cpp_typesupport_target
   ${PROJECT_NAME}
   rosidl_typesupport_cpp
@@ -158,6 +178,12 @@ target_link_libraries(joint_velocity_publisher
 target_link_libraries(robot_velocity_pub
   "${cpp_typesupport_target}"
 )
+target_link_libraries(joint_position_cmd_to_states
+  "${cpp_typesupport_target}"
+)
+target_link_libraries(robot_position_cmd
+  "${cpp_typesupport_target}"
+)
 install(TARGETS
   joint_velocity_publisher 
   joint_velocity_subscriber 
@@ -172,6 +198,8 @@ install(TARGETS
   tf_point_publisher
   tf_transform_listener
   tf_point_listener
+  joint_position_cmd_to_states
+  robot_position_cmd
   DESTINATION lib/${PROJECT_NAME})
 ament_export_dependencies(rosidl_default_runtime)
 

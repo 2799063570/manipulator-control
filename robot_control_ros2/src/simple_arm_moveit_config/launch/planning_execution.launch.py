@@ -10,17 +10,23 @@ from moveit_configs_utils import MoveItConfigsBuilder
 def generate_launch_description():
     use_sim_time = LaunchConfiguration("use_sim_time")
     use_rviz = LaunchConfiguration("use_rviz")
+    use_ros2_control = LaunchConfiguration("use_ros2_control")
     spawn_controllers = LaunchConfiguration("spawn_controllers")
 
     moveit_config = (
         MoveItConfigsBuilder(
             "simple_2dof_arm",
-            package_name="simple_arm_moveit_config"
+            package_name="simple_arm_moveit_config",
         )
         .to_moveit_configs()
     )
 
-    # 1. 发布 robot_description，并根据 /joint_states 发布 /tf
+    ros2_controllers_path = (
+        moveit_config.package_path / "config" / "ros2_controllers.yaml"
+    )
+    rviz_config = moveit_config.package_path / "config" / "moveit.rviz"
+
+    # Publish robot_description and derive TF from /joint_states.
     robot_state_publisher = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
@@ -32,26 +38,47 @@ def generate_launch_description():
         ],
     )
 
-    # 2. 如果你需要 world -> base_link 的固定 TF，可以保留这个节点
-    # 如果你的系统已经由别处发布 world -> base_link，可以删掉它，避免重复 TF
+    # Publish the fixed world -> base_link transform used by this MoveIt config.
     static_tf = Node(
         package="tf2_ros",
         executable="static_transform_publisher",
         name="static_transform_publisher0",
         output="screen",
         arguments=[
-            "--x", "0",
-            "--y", "0",
-            "--z", "0",
-            "--roll", "0",
-            "--pitch", "0",
-            "--yaw", "0",
-            "--frame-id", "world",
-            "--child-frame-id", "base_link",
+            "--x",
+            "0",
+            "--y",
+            "0",
+            "--z",
+            "0",
+            "--roll",
+            "0",
+            "--pitch",
+            "0",
+            "--yaw",
+            "0",
+            "--frame-id",
+            "world",
+            "--child-frame-id",
+            "base_link",
         ],
     )
 
-    # 3. MoveIt 核心节点：负责规划、碰撞检测、轨迹生成、轨迹执行管理
+    # Start ros2_control's controller manager with the fake hardware system
+    # described in simple_2dof_arm.ros2_control.xacro.
+    ros2_control_node = Node(
+        package="controller_manager",
+        executable="ros2_control_node",
+        parameters=[
+            moveit_config.robot_description,
+            str(ros2_controllers_path),
+            {"use_sim_time": use_sim_time},
+        ],
+        output="screen",
+        condition=IfCondition(use_ros2_control),
+    )
+
+    # Start MoveIt's planning and execution server.
     move_group = Node(
         package="moveit_ros_move_group",
         executable="move_group",
@@ -63,27 +90,21 @@ def generate_launch_description():
         ],
     )
 
-    # 4. RViz，可选启动
-    rviz_config = str(moveit_config.package_path / "config" / "moveit.rviz")
-
+    # Optional RViz session with the MotionPlanning plugin configured.
     rviz = Node(
         package="rviz2",
         executable="rviz2",
         name="rviz2",
         output="screen",
-        arguments=["-d", rviz_config],
+        arguments=["-d", str(rviz_config)],
         parameters=[
-            moveit_config.robot_description,
-            moveit_config.robot_description_semantic,
-            moveit_config.robot_description_kinematics,
-            moveit_config.planning_pipelines,
+            moveit_config.to_dict(),
             {"use_sim_time": use_sim_time},
         ],
         condition=IfCondition(use_rviz),
     )
 
-    # 5. 控制器 spawner
-    # 注意：这里假设 /controller_manager 已经由 Gazebo 插件或真实驱动启动
+    # Load and activate controllers managed by /controller_manager.
     joint_state_broadcaster_spawner = Node(
         package="controller_manager",
         executable="spawner",
@@ -108,28 +129,34 @@ def generate_launch_description():
         condition=IfCondition(spawn_controllers),
     )
 
-    return LaunchDescription([
-        DeclareLaunchArgument(
-            "use_sim_time",
-            default_value="false",
-            description="Use simulation clock. Set true for Gazebo.",
-        ),
-        DeclareLaunchArgument(
-            "use_rviz",
-            default_value="true",
-            description="Start RViz with MoveIt MotionPlanning plugin.",
-        ),
-        DeclareLaunchArgument(
-            "spawn_controllers",
-            default_value="true",
-            description="Spawn joint_state_broadcaster and arm_controller.",
-        ),
-
-        robot_state_publisher,
-        static_tf,
-        move_group,
-        rviz,
-
-        joint_state_broadcaster_spawner,
-        arm_controller_spawner,
-    ])
+    return LaunchDescription(
+        [
+            DeclareLaunchArgument(
+                "use_sim_time",
+                default_value="false",
+                description="Use simulation clock. Set true when another simulator publishes /clock.",
+            ),
+            DeclareLaunchArgument(
+                "use_rviz",
+                default_value="true",
+                description="Start RViz with the MoveIt MotionPlanning plugin.",
+            ),
+            DeclareLaunchArgument(
+                "use_ros2_control",
+                default_value="true",
+                description="Start ros2_control_node for the fake hardware system.",
+            ),
+            DeclareLaunchArgument(
+                "spawn_controllers",
+                default_value="true",
+                description="Spawn joint_state_broadcaster and arm_controller.",
+            ),
+            robot_state_publisher,
+            static_tf,
+            ros2_control_node,
+            move_group,
+            rviz,
+            joint_state_broadcaster_spawner,
+            arm_controller_spawner,
+        ]
+    )

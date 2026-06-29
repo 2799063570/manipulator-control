@@ -80,6 +80,22 @@ ament_target_dependencies(
   "rclcpp"
 )
 
+add_executable(param_server 
+  src/param/param_server.cpp
+)
+ament_target_dependencies(
+  param_server
+  "rclcpp"
+)
+
+add_executable(param_client 
+  src/param/param_client.cpp
+)
+ament_target_dependencies(
+  param_client
+  "rclcpp"
+)
+
 add_executable(tf_static_broadcaster 
   src/tf/tf_static_broadcaster.cpp
 )
@@ -200,6 +216,8 @@ install(TARGETS
   tf_point_listener
   joint_position_cmd_to_states
   robot_position_cmd
+  param_server
+  param_client
   DESTINATION lib/${PROJECT_NAME})
 ament_export_dependencies(rosidl_default_runtime)
 

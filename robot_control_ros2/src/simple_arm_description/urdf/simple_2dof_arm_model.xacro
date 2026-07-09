@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:property name="base_size_x" value="0.25"/>
+  <xacro:property name="base_size_y" value="0.25"/>
+  <xacro:property name="base_size_z" value="0.10"/>
+  <xacro:property name="link1_length" value="1.0"/>
+  <xacro:property name="link2_length" value="0.8"/>
+  <xacro:property name="link1_width" value="0.08"/>
+  <xacro:property name="link2_width" value="0.06"/>
+  <xacro:property name="gazebo_visual_clearance" value="0.02"/>
+
+  <xacro:macro name="box_inertial" params="mass x y z origin_x origin_y origin_z">
+    <inertial>
+      <origin xyz="${origin_x} ${origin_y} ${origin_z}" rpy="0 0 0"/>
+      <mass value="${mass}"/>
+      <inertia
+        ixx="${mass / 12.0 * (y * y + z * z)}"
+        ixy="0"
+        ixz="0"
+        iyy="${mass / 12.0 * (x * x + z * z)}"
+        iyz="0"
+        izz="${mass / 12.0 * (x * x + y * y)}"/>
+    </inertial>
+  </xacro:macro>
+
+  <xacro:macro name="sphere_inertial" params="mass radius">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="${mass}"/>
+      <inertia
+        ixx="${2.0 / 5.0 * mass * radius * radius}"
+        ixy="0"
+        ixz="0"
+        iyy="${2.0 / 5.0 * mass * radius * radius}"
+        iyz="0"
+        izz="${2.0 / 5.0 * mass * radius * radius}"/>
+    </inertial>
+  </xacro:macro>
+
+  <xacro:macro name="simple_2dof_arm_model" params="use_world_joint:=false">
+    <material name="gray">
+      <color rgba="0.5 0.5 0.5 1.0"/>
+    </material>
+    <material name="blue">
+      <color rgba="0.1 0.3 0.9 1.0"/>
+    </material>
+    <material name="green">
+      <color rgba="0.1 0.8 0.2 1.0"/>
+    </material>
+    <material name="red">
+      <color rgba="0.9 0.1 0.1 1.0"/>
+    </material>
+
+    <xacro:if value="${use_world_joint}">
+      <link name="world"/>
+
+      <joint name="world_to_base_link" type="fixed">
+        <parent link="world"/>
+        <child link="base_link"/>
+        <origin xyz="0 0 ${base_size_z / 2.0 + gazebo_visual_clearance}" rpy="0 0 0"/>
+      </joint>
+    </xacro:if>
+
+    <link name="base_link">
+      <xacro:box_inertial mass="1.0" x="${base_size_x}" y="${base_size_y}" z="${base_size_z}" origin_x="0" origin_y="0" origin_z="0"/>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="${base_size_x} ${base_size_y} ${base_size_z}"/>
+        </geometry>
+        <material name="gray"/>
+      </visual>
+      <xacro:if value="${not use_world_joint}">
+        <collision>
+          <origin xyz="0 0 0" rpy="0 0 0"/>
+          <geometry>
+            <box size="${base_size_x} ${base_size_y} ${base_size_z}"/>
+          </geometry>
+        </collision>
+      </xacro:if>
+    </link>
+
+    <joint name="joint1" type="revolute">
+      <parent link="base_link"/>
+      <child link="link1"/>
+      <origin xyz="0 0 ${base_size_z / 2.0 + link1_width / 2.0 + gazebo_visual_clearance}" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-3.14" upper="3.14" effort="10.0" velocity="1.0"/>
+    </joint>
+
+    <link name="link1">
+      <xacro:box_inertial mass="0.5" x="${link1_length}" y="${link1_width}" z="${link1_width}" origin_x="${link1_length / 2.0}" origin_y="0" origin_z="0"/>
+      <visual>
+        <origin xyz="${link1_length / 2.0} 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="${link1_length} ${link1_width} ${link1_width}"/>
+        </geometry>
+        <material name="blue"/>
+      </visual>
+      <collision>
+        <origin xyz="${link1_length / 2.0} 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="${link1_length} ${link1_width} ${link1_width}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="joint2" type="revolute">
+      <parent link="link1"/>
+      <child link="link2"/>
+      <origin xyz="${link1_length} 0 0" rpy="0 0 0"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="-1.57" upper="1.57" effort="10.0" velocity="1.0"/>
+    </joint>
+
+    <link name="link2">
+      <xacro:box_inertial mass="0.4" x="${link2_length}" y="${link2_width}" z="${link2_width}" origin_x="${link2_length / 2.0}" origin_y="0" origin_z="0"/>
+      <visual>
+        <origin xyz="${link2_length / 2.0} 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="${link2_length} ${link2_width} ${link2_width}"/>
+        </geometry>
+        <material name="green"/>
+      </visual>
+      <collision>
+        <origin xyz="${link2_length / 2.0} 0 0" rpy="0 0 0"/>
+        <geometry>
+          <box size="${link2_length} ${link2_width} ${link2_width}"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="tool0_fixed_joint" type="fixed">
+      <parent link="link2"/>
+      <child link="tool0"/>
+      <origin xyz="${link2_length} 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="tool0">
+      <xacro:sphere_inertial mass="0.05" radius="0.04"/>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.04"/>
+        </geometry>
+        <material name="red"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <sphere radius="0.04"/>
+        </geometry>
+      </collision>
+    </link>
+  </xacro:macro>
+</robot>

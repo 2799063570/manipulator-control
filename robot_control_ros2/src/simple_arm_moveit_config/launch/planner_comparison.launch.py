@@ -72,12 +72,33 @@ def generate_launch_description():
         .to_moveit_configs()
     )
 
-    move_group = Node(
-        package="moveit_ros_move_group",
-        executable="move_group",
-        name="move_group",
+    comparison = Node(
+        package="simple_arm_moveit_config",
+        executable="planner_comparison",
+        name="planner_comparison",
         output="screen",
-        parameters=[moveit_config.to_dict(), OMPL_PARAMETERS],
+        parameters=[
+            moveit_config.to_dict(),
+            OMPL_PARAMETERS,
+            {
+                "planning_group": "arm",
+                "planners": [
+                    "RRTConnectkConfigDefault",
+                    "RRTkConfigDefault",
+                    "RRTstarkConfigDefault",
+                    "PRMkConfigDefault",
+                    "PRMstarkConfigDefault",
+                    "ESTkConfigDefault",
+                    "KPIECEkConfigDefault",
+                    "BKPIECEkConfigDefault",
+                    "LBKPIECEkConfigDefault",
+                ],
+                "runs": 5,
+                "planning_time": 5.0,
+                "target_joint_values": [1.0, 0.6],
+                "output_prefix": "planner_comparison",
+            },
+        ],
     )
 
-    return LaunchDescription([move_group])
+    return LaunchDescription([comparison])

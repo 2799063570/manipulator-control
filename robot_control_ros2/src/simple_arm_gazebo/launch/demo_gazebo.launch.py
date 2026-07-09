@@ -1,5 +1,10 @@
 from launch import LaunchDescription
+from launch.actions import IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import Command, FindExecutable, PathJoinSubstitution
 from launch_ros.actions import Node
+from launch_ros.parameter_descriptions import ParameterValue
+from launch_ros.substitutions import FindPackageShare
 
 from moveit_configs_utils import MoveItConfigsBuilder
 
@@ -71,13 +76,76 @@ def generate_launch_description():
         .planning_pipelines(default_planning_pipeline="ompl", pipelines=["ompl"])
         .to_moveit_configs()
     )
+    rviz_config = moveit_config.package_path / "config" / "moveit.rviz"
+    moveit_config_share = FindPackageShare("simple_arm_moveit_config")
+
+    robot_description_xacro = PathJoinSubstitution(
+        [moveit_config_share, "config", "simple_2dof_arm.urdf.xacro"]
+    )
+    initial_positions_file = PathJoinSubstitution(
+        [moveit_config_share, "config", "initial_positions.yaml"]
+    )
+    ros2_controllers_file = PathJoinSubstitution(
+        [moveit_config_share, "config", "ros2_controllers.yaml"]
+    )
+    gazebo_robot_description = {
+        "robot_description": ParameterValue(
+            Command(
+                [
+                    FindExecutable(name="xacro"),
+                    " ",
+                    robot_description_xacro,
+                    " ",
+                    "hardware_type:=gazebo",
+                    " ",
+                    "use_world_joint:=true",
+                    " ",
+                    "initial_positions_file:=",
+                    initial_positions_file,
+                    " ",
+                    "ros2_controllers_file:=",
+                    ros2_controllers_file,
+                ]
+            ),
+            value_type=str,
+        )
+    }
+
+    gazebo = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution(
+                [
+                    FindPackageShare("simple_arm_gazebo"),
+                    "launch",
+                    "gazebo.launch.py",
+                ]
+            )
+        )
+    )
 
     move_group = Node(
         package="moveit_ros_move_group",
         executable="move_group",
-        name="move_group",
         output="screen",
-        parameters=[moveit_config.to_dict(), OMPL_PARAMETERS],
+        parameters=[
+            moveit_config.to_dict(),
+            gazebo_robot_description,
+            OMPL_PARAMETERS,
+            {"use_sim_time": True},
+        ],
     )
 
-    return LaunchDescription([move_group])
+    rviz = Node(
+        package="rviz2",
+        executable="rviz2",
+        output="screen",
+        arguments=["-d", str(rviz_config)],
+        parameters=[
+            moveit_config.to_dict(),
+            gazebo_robot_description,
+            OMPL_PARAMETERS,
+            {"use_sim_time": True},
+        ],
+    )
+
+    return LaunchDescription([gazebo, move_group, rviz])

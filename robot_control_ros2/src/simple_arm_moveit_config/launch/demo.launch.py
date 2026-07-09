@@ -1,7 +1,21 @@
-from moveit_configs_utils import MoveItConfigsBuilder
-from moveit_configs_utils.launches import generate_demo_launch
+from launch import LaunchDescription
+from launch.actions import IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import PathJoinSubstitution
+from launch_ros.substitutions import FindPackageShare
 
 
 def generate_launch_description():
-    moveit_config = MoveItConfigsBuilder("simple_2dof_arm", package_name="simple_arm_moveit_config").to_moveit_configs()
-    return generate_demo_launch(moveit_config)
+    planning_execution_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            PathJoinSubstitution(
+                [
+                    FindPackageShare("simple_arm_moveit_config"),
+                    "launch",
+                    "planning_execution.launch.py",
+                ]
+            )
+        )
+    )
+
+    return LaunchDescription([planning_execution_launch])

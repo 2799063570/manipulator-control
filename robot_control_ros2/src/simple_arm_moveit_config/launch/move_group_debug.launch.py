@@ -1,4 +1,7 @@
+from pprint import pformat
+
 from launch import LaunchDescription
+from launch.actions import OpaqueFunction
 from launch_ros.actions import Node
 
 from moveit_configs_utils import MoveItConfigsBuilder
@@ -65,19 +68,44 @@ OMPL_PARAMETERS = {
 }
 
 
-def generate_launch_description():
-    moveit_config = (
+def build_moveit_config():
+    return (
         MoveItConfigsBuilder("simple_2dof_arm", package_name="simple_arm_moveit_config")
         .planning_pipelines(default_planning_pipeline="ompl", pipelines=["ompl"])
         .to_moveit_configs()
     )
+
+
+def print_debug_params(context):
+    moveit_config = (
+        build_moveit_config()
+    )
+    params = moveit_config.to_dict()
+
+    print("\n=== move_group_debug parameters ===")
+    print("default_planning_pipeline:")
+    print(pformat(params.get("default_planning_pipeline")))
+    print("planning_pipelines:")
+    print(pformat(params.get("planning_pipelines")))
+    print("ompl:")
+    print(pformat(params.get("ompl")))
+    print("flat OMPL override parameters:")
+    print(pformat(OMPL_PARAMETERS))
+    print("=== end move_group_debug parameters ===\n")
+
+    return []
+
+
+def generate_launch_description():
+    moveit_config = build_moveit_config()
 
     move_group = Node(
         package="moveit_ros_move_group",
         executable="move_group",
         name="move_group",
         output="screen",
+        emulate_tty=True,
         parameters=[moveit_config.to_dict(), OMPL_PARAMETERS],
     )
 
-    return LaunchDescription([move_group])
+    return LaunchDescription([OpaqueFunction(function=print_debug_params), move_group])

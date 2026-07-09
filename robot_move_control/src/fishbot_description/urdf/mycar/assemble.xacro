@@ -1,0 +1,11 @@
+<!-- 组合小车底盘与摄像头 -->
+<robot name="my_car_camera" xmlns:xacro="http://wiki.ros.org/xacro">
+    <xacro:include filename="matrix_algorithm.xacro" />
+    <xacro:include filename="base_link.xacro" />
+    <xacro:include filename="camare.xacro" />
+    <xacro:include filename="radius.xacro" />
+    <xacro:include filename="movtion_control.xacro" />
+    <!-- 雷达仿真的 xacro 文件 -->
+    <xacro:include filename="radius_simulator.xacro" />
+
+</robot>

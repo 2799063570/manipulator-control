@@ -1,14 +1,22 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="simple_2dof_arm">
     <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
+    <xacro:arg name="hardware_type" default="fake" />
+    <xacro:arg name="ros2_controllers_file" default="" />
+    <xacro:arg name="use_world_joint" default="false" />
 
-    <!-- Import simple_2dof_arm urdf file -->
-    <xacro:include filename="$(find simple_arm_description)/urdf/simple_2dof_arm.urdf" />
+    <!-- Import and instantiate the robot model. -->
+    <xacro:include filename="$(find simple_arm_description)/urdf/simple_2dof_arm_model.xacro" />
+    <xacro:simple_2dof_arm_model use_world_joint="$(arg use_world_joint)"/>
 
     <!-- Import control_xacro -->
     <xacro:include filename="simple_2dof_arm.ros2_control.xacro" />
 
 
-    <xacro:simple_2dof_arm_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/>
+    <xacro:simple_2dof_arm_ros2_control
+        name="SimpleArmSystem"
+        initial_positions_file="$(arg initial_positions_file)"
+        hardware_type="$(arg hardware_type)"
+        ros2_controllers_file="$(arg ros2_controllers_file)"/>
 
 </robot>

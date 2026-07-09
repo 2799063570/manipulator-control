@@ -36,6 +36,7 @@ def generate_launch_description():
             "simple_2dof_arm",
             package_name="simple_arm_moveit_config",
         )
+        .planning_pipelines(default_planning_pipeline="ompl", pipelines=["ompl"])
         .to_moveit_configs()
     )
 

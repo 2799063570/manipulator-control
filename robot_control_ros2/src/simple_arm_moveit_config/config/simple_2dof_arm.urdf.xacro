@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="simple_2dof_arm">
+    <!-- 初始位置 硬件类型(fake\gazebo)  -->
     <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
     <xacro:arg name="hardware_type" default="fake" />
     <xacro:arg name="ros2_controllers_file" default="" />

@@ -6,7 +6,7 @@ from launch.substitutions import Command, FindExecutable, LaunchConfiguration, P
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
-
+# 需要注意的是 虚拟机显卡渲染有问题 我们需要设置软件渲染 即LIBGL_ALWAYS_SOFTWARE=1
 def generate_launch_description():
     use_sim_time = LaunchConfiguration("use_sim_time")
     world = LaunchConfiguration("world")

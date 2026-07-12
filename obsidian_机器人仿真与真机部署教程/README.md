@@ -50,6 +50,8 @@ tags: [ROS2, Gazebo, MoveIt2, ros2_control, 机械臂, 移动机器人]
 22. [[22-MoveIt与ros2_control加载执行全流程]]：规划管线、前后处理、执行器，以及 Fake、Gazebo、真机三种硬件后端的逐层加载图解。
 23. [[24-ros2_control_node详解]]：Fake 与真机中 controller manager 的启动、资源、生命周期、控制周期和调试手册。
 24. [[25-robot_state_publisher-RSP详解]]：URDF、robot_description、joint_states、TF/TF static 的完整关系与调试实验。
+25. [[26-ROS2-QoS详解与机器人通信配置]]：可靠性、持久性、队列、兼容性，以及本项目 topic 的 QoS 选择。
+26. [[27-系统总总结与学习闭环]]：从 Xacro 到真机、从 Fake 到 Gazebo 的一页总览、启动顺序和验收路径。
 
 ## 总体数据流
 

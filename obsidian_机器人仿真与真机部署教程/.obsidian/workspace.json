@@ -185,11 +185,15 @@
   },
   "active": "abb9dc390bb51bc9",
   "lastOpenFiles": [
-    "24-ros2_control_node详解.md",
+    "27-系统总总结与学习闭环.md",
+    "26-ROS2-QoS详解与机器人通信配置.md",
+    "21-CMakeLists与package.xml从入门到当前工程.md",
+    "03-机械臂Gazebo与MoveIt2仿真.md",
+    "01-项目盘点与目标架构.md",
     "25-robot_state_publisher-RSP详解.md",
+    "24-ros2_control_node详解.md",
     "22-MoveIt与ros2_control加载执行全流程.md",
     "23-ros2_control三种后端-Fake-Gazebo-真机对照.md",
-    "03-机械臂Gazebo与MoveIt2仿真.md",
     "README.md",
     "02-环境与工作区复现.md",
     "10-实验0-ROS2基础与现有控制代码复现.md",
@@ -201,7 +205,6 @@
     "17-功能包与工具链详解.md",
     "18-当前代码类与ROS2接口逐项解析.md",
     "19-高频易错点与系统排障字典.md",
-    "20-面试八股题库-背诵版.md",
-    "01-项目盘点与目标架构.md"
+    "20-面试八股题库-背诵版.md"
   ]
 }

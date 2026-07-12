@@ -15,7 +15,7 @@ tags: [实验, AUBO, URDF, MoveIt2, Gazebo]
 
 ```bash
 cd ~/manipulator-control/aubo_i5_ros2_control
-source /opt/ros/humble/setup.bash
+source /opt/ros/jazzy/setup.bash
 source install/setup.bash
 ros2 run xacro xacro src/robot_description/urdf/aubo_i5.xacro > /tmp/aubo_i5.urdf
 check_urdf /tmp/aubo_i5.urdf
@@ -52,4 +52,3 @@ SRDF 不是 URDF 的替代品：URDF 描述物理树和关节，SRDF 描述规�
 - [ ] 每轴小幅运动正确，home/ready 20 次无报警。
 - [ ] 加桌子后规划不会穿过桌面。
 - [ ] 保存 10 个 TCP FK 点，为真机对照建立基线。
-

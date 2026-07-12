@@ -202,13 +202,13 @@ ros2 run tf2_tools view_frames
 
 需要已经安装 ROS2、`colcon` 和 Eigen3。
 
-如果使用 Ubuntu + ROS2 Humble，常见环境加载方式如下：
+如果使用 Ubuntu 24.04 + ROS2 Jazzy，常见环境加载方式如下：
 
 ```bash
-source /opt/ros/humble/setup.bash
+source /opt/ros/jazzy/setup.bash
 ```
 
-如果你使用的是其他 ROS2 版本，把 `humble` 换成自己的版本名。
+如果你使用的是其他 ROS2 版本，把 `jazzy` 换成自己的版本名。
 
 ### 2. 进入 ROS2 工作区
 
@@ -347,7 +347,7 @@ robot_control_ros2/src/robot_control/examples/control_loop_demo.cpp
 
 ```bash
 cd ~/cpp_practice/robot_control_ros2
-source /opt/ros/humble/setup.bash
+source /opt/ros/jazzy/setup.bash
 colcon build --packages-select robot_control
 source install/setup.bash
 ros2 run robot_control control_loop_demo

@@ -6,7 +6,7 @@ tags: [ROS2, Gazebo, MoveIt2, ros2_control, 机械臂, 移动机器人]
 # ROS 2 机器人仿真与真机部署教程
 
 > [!abstract] 适用范围
-> 本笔记基于当前仓库的真实代码编写，目标是将已有的控制算法、二维机械臂、AUBO i5 描述和小车描述，逐步发展为可验证的 Gazebo 仿真系统，并最终安全地接入真机。默认平台为 Ubuntu 22.04 + ROS 2 Humble；若使用 Jazzy，请以对应发行版的软件包名为准。
+> 本笔记基于当前仓库的真实代码编写，目标是将已有的控制算法、二维机械臂、AUBO i5 描述和小车描述，逐步发展为可验证的 Gazebo 仿真系统，并最终安全地接入真机。默认平台为 **Ubuntu 24.04 + ROS 2 Jazzy + Gazebo Harmonic**。本仓库目前的 Gazebo Sim/Xacro 写法应以 Jazzy 版本的软件包、插件日志和 API 为最终准则。
 
 ## 从当前仓库出发
 

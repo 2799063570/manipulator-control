@@ -20,11 +20,14 @@ RViz/MoveIt 收到目标，`move_group` 完成 IK、碰撞检测、OMPL 路径�
 3. `simple_arm_gazebo/launch/gazebo.launch.py`：启动 GZ、桥接 `/clock`、spawn、5 秒后加载 controller。
 4. `demo_gazebo.launch.py`：向 MoveIt 和 RViz 注入同一 robot description。
 
+> [!note] Jazzy 适配检查
+> 本仓库的 launch 使用 `ros_gz_sim`、`ros_gz_bridge` 和 `gz_ros2_control`，这与 Jazzy + Gazebo Harmonic 的方向一致。首次运行前不要猜 plugin 是否已加载；用 `ros2 pkg prefix gz_ros2_control` 确认包存在，并在 Gazebo 启动日志中确认 `gz_ros2_control::GazeboSimROS2ControlPlugin` 成功创建。若报 plugin filename 或 ABI 错误，先统一卸载/避免混用 Classic 与非 Harmonic 的 Gazebo 包，再检查本机 Jazzy 文档对应的插件名称。
+
 ## 步骤 1：只启动 Gazebo 与控制器
 
 ```bash
 cd ~/manipulator-control/robot_control_ros2
-source /opt/ros/humble/setup.bash
+source /opt/ros/jazzy/setup.bash
 source install/setup.bash
 ros2 launch simple_arm_gazebo gazebo.launch.py
 ```
@@ -92,4 +95,3 @@ ros2 topic echo /display_planned_path --once
 | 取消 action | 停止/保持并可恢复 |
 | 障碍物 | 避障或判定不可达 |
 | 20 次重复 | controller 无崩溃且成功率有记录 |
-

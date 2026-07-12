@@ -20,13 +20,15 @@ install/       构建产物和环境钩子；source 后 ROS 才能发现 package
 
 一句话记忆：**package.xml 给 ROS/rosdep 看，CMakeLists.txt 给 CMake/编译器看；两边依赖应保持一致。**
 
+本教程默认 underlay 为 `/opt/ros/jazzy`。CMake 与 package.xml 中的包名通常不含发行版前缀（如 `rclcpp`、`gz_ros2_control`）；`ros-jazzy-` 只出现在 Ubuntu apt 安装包名中，不能写进 `find_package()` 或 `<depend>`。
+
 ## 1. 工作区、package 与 overlay
 
 你的目录 `robot_control_ros2` 是一个 workspace；它的 `src/` 下有多个 package，例如 `robot_control`、`robot_control_ros2`、`simple_arm_description`、`simple_arm_gazebo`、`simple_arm_moveit_config`。执行：
 
 ```bash
 cd ~/manipulator-control/robot_control_ros2
-source /opt/ros/humble/setup.bash       # underlay：系统 ROS
+source /opt/ros/jazzy/setup.bash        # underlay：系统 ROS
 colcon build --symlink-install
 source install/setup.bash               # overlay：当前工作区
 ```
@@ -268,4 +270,3 @@ launch 文件 import 的每个 ROS package 都应该作为运行依赖。例如 
 
 **问：ament_target_dependencies 与 target_link_libraries 如何选择？**  
 答：ROS ament package 用 ament_target_dependencies，它继承包导出的 include、库和编译定义；普通 CMake target 常用 target_link_libraries。实际项目可以同时使用，例如 rclcpp 用前者、Eigen3::Eigen 用后者。
-

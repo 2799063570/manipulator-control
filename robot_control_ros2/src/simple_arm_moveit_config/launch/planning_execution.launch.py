@@ -126,13 +126,13 @@ def generate_launch_description():
         ],
     )
 
-    # Start ros2_control's controller manager with the fake hardware system
-    # described in simple_2dof_arm.ros2_control.xacro.
+    # In Jazzy, controller_manager receives the URDF from the transient-local
+    # /robot_description topic published by robot_state_publisher above.
+    # This node only needs its controller configuration parameters.
     ros2_control_node = Node(
         package="controller_manager",
         executable="ros2_control_node",
         parameters=[
-            moveit_config.robot_description,
             str(ros2_controllers_path),
             {"use_sim_time": use_sim_time},
         ],

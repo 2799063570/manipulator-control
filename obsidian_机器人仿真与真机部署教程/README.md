@@ -47,6 +47,9 @@ tags: [ROS2, Gazebo, MoveIt2, ros2_control, 机械臂, 移动机器人]
 19. [[19-高频易错点与系统排障字典]]：URDF、Gazebo、MoveIt、TF、Nav2、真机接口的错误模式。
 20. [[20-面试八股题库-背诵版]]：按主题编排的标准回答、追问和项目化表达。
 21. [[21-CMakeLists与package.xml从入门到当前工程]]：ROS 2 包的构建、依赖、安装与常见错误。
+22. [[22-MoveIt与ros2_control加载执行全流程]]：规划管线、前后处理、执行器，以及 Fake、Gazebo、真机三种硬件后端的逐层加载图解。
+23. [[24-ros2_control_node详解]]：Fake 与真机中 controller manager 的启动、资源、生命周期、控制周期和调试手册。
+24. [[25-robot_state_publisher-RSP详解]]：URDF、robot_description、joint_states、TF/TF static 的完整关系与调试实验。
 
 ## 总体数据流
 

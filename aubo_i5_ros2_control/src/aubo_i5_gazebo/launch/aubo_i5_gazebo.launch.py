@@ -1,10 +1,23 @@
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, TimerAction
+from launch.actions import (
+    DeclareLaunchArgument,
+    IncludeLaunchDescription,
+    RegisterEventHandler,
+    SetEnvironmentVariable,
+    TimerAction,
+)
+from launch.event_handlers import OnProcessExit
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.parameter_descriptions import ParameterValue
-from launch.substitutions import Command, FindExecutable, LaunchConfiguration, PathJoinSubstitution
+from launch.substitutions import (
+    Command,
+    EnvironmentVariable,
+    FindExecutable,
+    LaunchConfiguration,
+    PathJoinSubstitution,
+)
 from launch_ros.actions import Node
-from launch_ros.substitutions import FindPackageShare
+from launch_ros.substitutions import FindPackagePrefix, FindPackageShare
 
 # 需要注意的是 虚拟机显卡渲染有问题 我们需要设置软件渲染 即LIBGL_ALWAYS_SOFTWARE=1
 def generate_launch_description():
@@ -13,6 +26,20 @@ def generate_launch_description():
 
     gazebo_share = FindPackageShare("aubo_i5_gazebo")
     moveit_config_share = FindPackageShare("aubo_i5_moveit_config")
+    robot_description_resource_path = PathJoinSubstitution(
+        [FindPackagePrefix("robot_description"), "share"]
+    )
+
+    # Gazebo converts package://robot_description/... mesh URIs to model:// URIs.
+    # Make the ament share directory searchable so those meshes can be resolved.
+    gazebo_resource_path = SetEnvironmentVariable(
+        name="GZ_SIM_RESOURCE_PATH",
+        value=[
+            EnvironmentVariable("GZ_SIM_RESOURCE_PATH", default_value=""),
+            ":",
+            robot_description_resource_path,
+        ],
+    )
 
     robot_description_xacro = PathJoinSubstitution(
         [moveit_config_share, "config", "aubo_i5.urdf.xacro"]
@@ -116,7 +143,13 @@ def generate_launch_description():
 
     delayed_controller_spawners = TimerAction(
         period=5.0,
-        actions=[joint_state_broadcaster_spawner, arm_trajectory_controller_spawner],
+        actions=[joint_state_broadcaster_spawner],
+    )
+    start_arm_controller_after_broadcaster = RegisterEventHandler(
+        OnProcessExit(
+            target_action=joint_state_broadcaster_spawner,
+            on_exit=[arm_trajectory_controller_spawner],
+        )
     )
 
     return LaunchDescription(
@@ -133,10 +166,12 @@ def generate_launch_description():
                 ),
                 description="Gazebo world file.",
             ),
+            gazebo_resource_path,
             gz_sim,
             clock_bridge,
             robot_state_publisher,
             spawn_robot,
             delayed_controller_spawners,
+            start_arm_controller_after_broadcaster,
         ]
     )

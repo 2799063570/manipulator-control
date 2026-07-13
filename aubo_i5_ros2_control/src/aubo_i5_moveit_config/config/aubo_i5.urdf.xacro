@@ -11,6 +11,7 @@
     <xacro:include filename="aubo_i5.ros2_control.xacro" />
 
 
-    <xacro:aubo_i5_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/>
+    <xacro:aubo_i5_ros2_control name="control_system" initial_positions_file="$(arg initial_positions_file)" 
+        hardware_type="$(arg hardware_type)" ros2_controllers_file="$(arg ros2_controllers_file)"/>
 
 </robot>

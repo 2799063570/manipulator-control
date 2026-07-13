@@ -52,6 +52,7 @@ tags: [ROS2, Gazebo, MoveIt2, ros2_control, 机械臂, 移动机器人]
 24. [[25-robot_state_publisher-RSP详解]]：URDF、robot_description、joint_states、TF/TF static 的完整关系与调试实验。
 25. [[26-ROS2-QoS详解与机器人通信配置]]：可靠性、持久性、队列、兼容性，以及本项目 topic 的 QoS 选择。
 26. [[27-系统总总结与学习闭环]]：从 Xacro 到真机、从 Fake 到 Gazebo 的一页总览、启动顺序和验收路径。
+27. [[28-ROS1流程与ROS2对照]]：ROS 1 的参数服务器、ros_control、Gazebo Classic、MoveIt 1 和真机流程。
 
 ## 总体数据流
 

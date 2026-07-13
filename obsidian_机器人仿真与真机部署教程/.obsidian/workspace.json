@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "22-MoveIt与ros2_control加载执行全流程.md",
+                "file": "28-ROS1流程与ROS2对照.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "22-MoveIt与ros2_control加载执行全流程"
+              "title": "28-ROS1流程与ROS2对照"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "22-MoveIt与ros2_control加载执行全流程.md",
+                "file": "28-ROS1流程与ROS2对照.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "22-MoveIt与ros2_control加载执行全流程 的反向链接列表"
+              "title": "28-ROS1流程与ROS2对照 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "22-MoveIt与ros2_control加载执行全流程.md",
+                "file": "28-ROS1流程与ROS2对照.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "22-MoveIt与ros2_control加载执行全流程 的出链列表"
+              "title": "28-ROS1流程与ROS2对照 的出链列表"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "22-MoveIt与ros2_control加载执行全流程.md",
+                "file": "28-ROS1流程与ROS2对照.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "22-MoveIt与ros2_control加载执行全流程 的大纲"
+              "title": "28-ROS1流程与ROS2对照 的大纲"
             }
           }
         ]
@@ -185,6 +185,8 @@
   },
   "active": "abb9dc390bb51bc9",
   "lastOpenFiles": [
+    "22-MoveIt与ros2_control加载执行全流程.md",
+    "28-ROS1流程与ROS2对照.md",
     "27-系统总总结与学习闭环.md",
     "26-ROS2-QoS详解与机器人通信配置.md",
     "21-CMakeLists与package.xml从入门到当前工程.md",
@@ -192,7 +194,6 @@
     "01-项目盘点与目标架构.md",
     "25-robot_state_publisher-RSP详解.md",
     "24-ros2_control_node详解.md",
-    "22-MoveIt与ros2_control加载执行全流程.md",
     "23-ros2_control三种后端-Fake-Gazebo-真机对照.md",
     "README.md",
     "02-环境与工作区复现.md",

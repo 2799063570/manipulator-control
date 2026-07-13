@@ -78,7 +78,7 @@ def generate_launch_description():
         output="screen",
         arguments=[
             "-name",
-            "simple_2dof_arm",
+            "aubo_i5",
             "-topic",
             "robot_description",
             "-x",
@@ -103,11 +103,11 @@ def generate_launch_description():
         output="screen",
     )
 
-    arm_controller_spawner = Node(
+    arm_trajectory_controller_spawner = Node(
         package="controller_manager",
         executable="spawner",
         arguments=[
-            "arm_controller",
+            "arm_trajectory_controller",
             "--controller-manager",
             "/controller_manager",
         ],
@@ -116,7 +116,7 @@ def generate_launch_description():
 
     delayed_controller_spawners = TimerAction(
         period=5.0,
-        actions=[joint_state_broadcaster_spawner, arm_controller_spawner],
+        actions=[joint_state_broadcaster_spawner, arm_trajectory_controller_spawner],
     )
 
     return LaunchDescription(

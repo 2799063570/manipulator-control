@@ -14,12 +14,13 @@
                 </xacro:if>
                 <xacro:if value="${hardware_type == 'real'}">
                     <plugin>aubo_i5_hardware/AuboI5System</plugin>
-                    <param name="robot_ip">$(arg robot_ip)</param>
+                    <param name="robot_ip">${robot_ip}</param>
                     <param name="rpc_port">30004</param>
                     <param name="rtde_port">30010</param>
                     <param name="connect_timeout_ms">1000</param>
                     <param name="command_timeout_ms">100</param>
-                    <param name="enable_motion">$(arg enable_motion)</param>
+                    <param name="max_command_velocity">0.20</param>
+                    <param name="enable_motion">${enable_motion}</param>
                 </xacro:if>
                 <!-- By default, set up controllers for simulation. This won't work on real hardware -->
 
@@ -29,36 +30,42 @@
                 <state_interface name="position">
                   <param name="initial_value">${initial_positions['shoulder_joint']}</param>
                 </state_interface>
+                <state_interface name="velocity"/>
             </joint>
             <joint name="upperArm_joint">
                 <command_interface name="position"/>
                 <state_interface name="position">
                   <param name="initial_value">${initial_positions['upperArm_joint']}</param>
                 </state_interface>
+                <state_interface name="velocity"/>
             </joint>
             <joint name="foreArm_joint">
                 <command_interface name="position"/>
                 <state_interface name="position">
                   <param name="initial_value">${initial_positions['foreArm_joint']}</param>
                 </state_interface>
+                <state_interface name="velocity"/>
             </joint>
             <joint name="wrist1_joint">
                 <command_interface name="position"/>
                 <state_interface name="position">
                   <param name="initial_value">${initial_positions['wrist1_joint']}</param>
                 </state_interface>
+                <state_interface name="velocity"/>
             </joint>
             <joint name="wrist2_joint">
                 <command_interface name="position"/>
                 <state_interface name="position">
                   <param name="initial_value">${initial_positions['wrist2_joint']}</param>
                 </state_interface>
+                <state_interface name="velocity"/>
             </joint>
             <joint name="wrist3_joint">
                 <command_interface name="position"/>
                 <state_interface name="position">
                   <param name="initial_value">${initial_positions['wrist3_joint']}</param>
                 </state_interface>
+                <state_interface name="velocity"/>
             </joint>
 
         </ros2_control>

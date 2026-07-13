@@ -91,15 +91,15 @@ aubo_i5_ros2_control/src/
 
 在开始改代码前，先建立以下表格，并保存到团队文档。任何参数未确认时，真机阶段停止。
 
-| 项目 | 必须确认的值 | 如何确认 |
-| --- | --- | --- |
-| 机器人型号 | AUBO i5 的具体型号/代际/控制柜版本 | 铭牌、控制柜信息、厂家文档。 |
-| 关节顺序 | `shoulder → upperArm → foreArm → wrist1 → wrist2 → wrist3` 是否与控制柜一致 | 只读反馈下逐关节小幅手动点动比对。 |
-| 单位 | ROS 全部使用 rad、rad/s、m；控制柜接口是否同单位 | SDK 文档 + 只读反馈数值验证。 |
-| 零位与正方向 | 每个关节的零位、正方向、机械限位 | 示教器与 RViz 同步对比。 |
-| TCP | 法兰、夹爪末端、工具中心点之间的变换 | 厂家工具参数 + 三点/四点标定。 |
-| 网络 | IP、网段、RPC/RTDE 端口、超时 | 在部署主机使用只读网络测试确认。 |
-| 安全 | 急停、保护停机、速度上限、工作空间 | 现场风险评估和控制柜配置。 |
+| 项目     | 必须确认的值                                                              | 如何确认               |
+| ------ | ------------------------------------------------------------------- | ------------------ |
+| 机器人型号  | AUBO i5 的具体型号/代际/控制柜版本                                              | 铭牌、控制柜信息、厂家文档。     |
+| 关节顺序   | `shoulder → upperArm → foreArm → wrist1 → wrist2 → wrist3` 是否与控制柜一致 | 只读反馈下逐关节小幅手动点动比对。  |
+| 单位     | ROS 全部使用 rad、rad/s、m；控制柜接口是否同单位                                     | SDK 文档 + 只读反馈数值验证。 |
+| 零位与正方向 | 每个关节的零位、正方向、机械限位                                                    | 示教器与 RViz 同步对比。    |
+| TCP    | 法兰、夹爪末端、工具中心点之间的变换                                                  | 厂家工具参数 + 三点/四点标定。  |
+| 网络     | IP、网段、RPC/RTDE 端口、超时                                                | 在部署主机使用只读网络测试确认。   |
+| 安全     | 急停、保护停机、速度上限、工作空间                                                   | 现场风险评估和控制柜配置。      |
 
 ## 5. 阶段 0：模型与配置单一来源
 
@@ -435,6 +435,484 @@ enable_motion: false
 4. 增加 `check_urdf`、Xacro 展开、Gazebo spawn 和控制器启动的自动检查脚本。
 5. 整理现场参数表（型号、IP、零位、TCP、控制柜版本），但不要在仓库中提交凭据。
 6. 拉取并审计参考仓库的 `aubo_description` 子模块；确认其许可证、机器人型号与本项目网格/坐标系是否匹配。
+
+## 14. 当前 AUBO i5 工程：真机接口实施操作教程
+
+本节对应当前工作区 `aubo_i5_ros2_control`。目标是保留已经可用的 Gazebo 入口，另建默认只读的真机入口；未明确启用运动时，绝不向控制柜写入轨迹。
+
+> [!danger] 操作边界
+> 仅在实体急停可用、工作区隔离、关节/TCP/负载参数已核验，并由现场操作者明确设置 `enable_motion:=true` 时才允许发送运动命令。真机 launch 不得与 Gazebo launch 同时运行。
+
+### 14.1 三种后端的边界
+
+| 后端 | hardware plugin | controller manager 宿主 | 连接控制柜 |
+| --- | --- | --- | --- |
+| Fake | `mock_components/GenericSystem` | `ros2_control_node` | 否 |
+| Gazebo | `gz_ros2_control/GazeboSimSystem` | Gazebo 内的 `gz_ros2_control` 插件 | 否 |
+| 真机 | `aubo_i5_hardware/AuboI5System` | 外部 `ros2_control_node` | 是 |
+
+真机 launch 不得 include `aubo_i5_gazebo.launch.py`，也不得启动 `gz sim`、`ros_gz_bridge` 或模型 spawn。否则会出现重复 `/controller_manager`、重复 `/joint_states`，使 MoveIt 使用错误的状态源。
+
+### 14.2 步骤 1：核对模型与参考驱动
+
+参考 `D:\files\code\aubo_ros2_driver\aubo_ros2_driver` 的通信分层：
+
+```text
+RTDE (30010) -> actual_q / actual_qd -> read() -> state interfaces
+JointTrajectoryController -> position command -> write() -> RPC servoJoint (30004)
+```
+
+当前工程必须沿用以下关节名和顺序：
+
+```yaml
+- shoulder_joint
+- upperArm_joint
+- foreArm_joint
+- wrist1_joint
+- wrist2_joint
+- wrist3_joint
+```
+
+在 Linux 中先验证 real Xacro 能展开（尚未连接真机）：
+
+```bash
+cd ~/cpp_practice/aubo_i5_ros2_control
+source /opt/ros/jazzy/setup.bash
+source install/setup.bash
+
+CFG=$(ros2 pkg prefix aubo_i5_moveit_config)/share/aubo_i5_moveit_config/config
+ros2 run xacro xacro "$CFG/aubo_i5.urdf.xacro" \
+  hardware_type:=real \
+  initial_positions_file:="$CFG/initial_positions.yaml" \
+  ros2_controllers_file:="$CFG/real_controllers.yaml" \
+  > /tmp/aubo_i5_real.urdf
+
+check_urdf /tmp/aubo_i5_real.urdf
+grep -nE 'ros2_control|shoulder_joint|AuboI5System' /tmp/aubo_i5_real.urdf
+```
+
+上述检查未通过时，不得连接真机“边运行边调”。
+
+### 14.3 步骤 2：建立独立真机包
+
+在 `src/` 新建包，而不是把 SDK/RPC 代码写进描述、MoveIt 或 Gazebo 包：
+
+```text
+aubo_i5_hardware/
+├── include/aubo_i5_hardware/aubo_i5_system.hpp
+├── src/aubo_i5_system.cpp
+├── config/real_controllers.yaml
+├── launch/aubo_i5_real.launch.py
+├── hardware_interface_plugin.xml
+├── CMakeLists.txt
+└── package.xml
+```
+
+包依赖至少包含 `hardware_interface`、`controller_manager`、`pluginlib`、`rclcpp`、`rclcpp_lifecycle` 与厂商 AUBO SDK。SDK 版本、控制柜软件版本、RPC/RTDE 端口必须与现场确认。
+
+不要复制参考驱动中硬编码的登录凭据。IP、账号和口令只能从本机未提交配置或环境变量读取；仓库 YAML 只保留非敏感默认值。
+
+### 14.4 步骤 3：增加 real Xacro 分支
+
+在 `aubo_i5.ros2_control.xacro` 保留 `fake`、`gazebo` 分支，并添加：
+
+```xml
+<xacro:if value="${hardware_type == 'real'}">
+  <hardware>
+    <plugin>aubo_i5_hardware/AuboI5System</plugin>
+    <param name="robot_ip">$(arg robot_ip)</param>
+    <param name="rpc_port">30004</param>
+    <param name="rtde_port">30010</param>
+    <param name="connect_timeout_ms">1000</param>
+    <param name="command_timeout_ms">100</param>
+    <param name="enable_motion">$(arg enable_motion)</param>
+  </hardware>
+</xacro:if>
+```
+
+六轴关节统一声明：
+
+```xml
+<command_interface name="position"/>
+<state_interface name="position"/>
+<state_interface name="velocity"/>
+```
+
+第一版不开放 velocity command；夹爪未实现真机接口时，`joint1`、`joint2` 不进入六轴控制器。
+
+### 14.5 步骤 4：实现 SystemInterface 的安全契约
+
+| 生命周期函数 | 必须做的事 | 失败时 |
+| --- | --- | --- |
+| `on_init()` | 校验 6 个关节、名称、接口、IP/端口/超时参数 | 返回 `ERROR`，不连接、不运动 |
+| `on_activate()` | 建立 RPC/RTDE、订阅 q/dq/模式/安全状态、等待第一帧反馈 | 连接或反馈失败则 `ERROR`，不进入 Servo |
+| `read()` | 线程安全复制位置、速度和状态；检查反馈新鲜度 | 超时则 `ERROR` |
+| `write()` | 仅在连接、控制柜状态、显式使能、命令时效和软限位均通过时发送目标 | 拒绝写入并记录原因 |
+| `on_deactivate()` | 停止 Servo、停止写入、断开连接 | 不遗留 Servo 会话 |
+
+激活阶段必须先读取真实状态，再初始化命令：
+
+```cpp
+read_latest_state_or_fail();
+position_command_ = position_state_;  // 初始 hold，绝不能归零
+```
+
+这可防止控制器激活后将机械臂拉回 `initial_positions.yaml` 的零位。参考驱动中的自动 Servo、吞掉异常和硬编码凭据均不得照搬。
+
+### 14.6 步骤 5：真机控制器与限速
+
+`real_controllers.yaml` 保持 MoveIt 使用的控制器名：
+
+```yaml
+controller_manager:
+  ros__parameters:
+    update_rate: 100
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+    arm_trajectory_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+arm_trajectory_controller:
+  ros__parameters:
+    joints: [shoulder_joint, upperArm_joint, foreArm_joint,
+             wrist1_joint, wrist2_joint, wrist3_joint]
+    command_interfaces: [position]
+    state_interfaces: [position, velocity]
+    state_publish_rate: 50.0
+    action_monitor_rate: 20.0
+    allow_partial_joints_goal: false
+```
+
+参考驱动给出的速度值为：肩/大臂/小臂 `3.15 rad/s`，三个腕关节 `3.20 rad/s`。但参考 `joint_limits.yaml` 的 `has_acceleration_limits: false`，并未给出可直接复用的真机加速度上限；在厂商确认本机型、负载与控制柜版本前，不得因此关闭加速度限制。首次真机试验的 MoveIt 速度、加速度缩放均保持 `0.05` 或更低。
+
+### 14.7 步骤 6：只读启动与验收
+
+真机第一阶段只启动 `robot_state_publisher`、外部 `ros2_control_node` 与 `joint_state_broadcaster`，不激活轨迹控制器，且 `enable_motion:=false`。
+
+```bash
+ros2 node list | grep controller_manager
+ros2 control list_hardware_components
+ros2 control list_hardware_interfaces
+ros2 control list_controllers
+ros2 topic echo /joint_states --once
+```
+
+通过条件：只有一个 `/controller_manager`、只有一个 `/joint_states` publisher；`name` 和 `position` 都有六个元素；示教器点动后 ROS/RViz 的方向、单位和角度一致。此时 `arm_trajectory_controller` 必须保持 inactive。
+
+### 14.8 步骤 7：受控低速运动与回退
+
+只读验收通过后，现场操作者显式设定 `enable_motion:=true`，再激活控制器：
+
+```bash
+ros2 control load_controller --set-state active joint_state_broadcaster
+ros2 control load_controller --set-state active arm_trajectory_controller
+ros2 control list_controllers
+ros2 topic echo /joint_states --once
+```
+
+首次只允许空载、单关节、极小幅度、低缩放动作。若出现反馈超时、方向相反、首帧跳变、控制柜告警或人员进入工作区，立即停止、退出 Servo，并退回只读阶段。
+
+| 现象 | 首先处理 |
+| --- | --- |
+| MoveIt 从零位规划或首帧突跳 | 停止运动；确认激活时 `command = current q`，确认唯一且非空的 `/joint_states` |
+| `/joint_states` 为 `name: []` | 不激活轨迹控制器；检查 plugin 是否导出 6 组 state interface，排除重复 `/controller_manager` |
+| `position` command 不可用 | 核对 real Xacro 的六组 command interface 与 `export_command_interfaces()` 一一对应 |
+| Gazebo 与真机同时出现 | 停止其中一个；二者不能共用默认 `/controller_manager` 或 `/joint_states` |
+| RTDE 断线或数据过期 | 进入错误状态并停止写入；禁止自动重连后继续旧轨迹 |
+
+完成本节验收后，才允许将 MoveIt 接到 `arm_trajectory_controller/follow_joint_trajectory` action。
+
+### 14.9 迁移清单：复制什么，不复制什么
+
+参考工作区包含多个功能包，但真机接入不等于把整个工作区复制进当前工程。按下表处理：
+
+| 参考内容                                                 | 处理方式                                                                 | 原因                                                                           |
+| ---------------------------------------------------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `aubo_ros2_driver/include/aubo_hardware_interface.h` | 借鉴类划分、RPC/RTDE 数据流；在 `aubo_i5_hardware` 中重新实现                        | 当前项目的包名、启动方式、安全门和参数管理应独立维护                                                   |
+| `aubo_ros2_driver/src/aubo_hardware_interface.cpp`   | 逐项移植已验证的 SDK 调用语义：连接、订阅 `R1_actual_q`/`R1_actual_qd`、发送 `servoJoint` | 不复制硬编码凭据、自动 Servo、吞异常、无限重试等行为                                                |
+| `hardware_interface_plugin.xml`                      | 改名后直接作为模板                                                            | 这是 pluginlib 发现 `SystemInterface` 的必需清单                                      |
+| `aubo_controllers.yaml`                              | 参考 JTC 的 position command + position/velocity state 配置               | 控制器名必须保持当前工程的 `arm_trajectory_controller`，不能改成 `joint_trajectory_controller` |
+| `aubo_moveit_config/config/joint_limits.yaml`        | 仅复用速度上限；加速度仍待厂家/现场确认                                                 | 参考文件没有启用加速度约束，不能把“未限制”误认为“真实上限”                                              |
+| `aubo_description`、`aubo_moveit_config`              | 不迁移                                                                  | 当前工程已有 `robot_description`、SRDF、夹爪和相机，复制会造成双模型来源                             |
+| `aubo_gazebo`                                        | 不迁移                                                                  | 真机后端不应依赖 Gazebo，也不能与 Gazebo manager 共存                                       |
+| `aubo_msgs`、`aubo_dashboard_msgs`                    | 可选依赖，第二阶段再加入                                                         | 首个闭环只需要 q/dq、模式、安全状态与轨迹执行；仪表盘服务可后续接入                                         |
+| AUBO SDK 的头文件、共享库、CMake package                      | 必须以厂商许可与控制柜版本为准安装                                                    | 这是硬件包唯一必要的厂商库，不应把二进制或凭据直接提交到本仓库                                              |
+
+建议的首版范围：只做六轴位置轨迹执行和真实 q/dq 反馈。力控、IO、TCP 力、夹爪、仪表盘、速度控制和笛卡尔 Servo 都延后；每增加一种控制模式，就增加一种安全状态和回退路径。
+
+### 14.10 真机包的文件职责与构建配置
+
+创建包：
+
+```bash
+cd ~/cpp_practice/aubo_i5_ros2_control/src
+ros2 pkg create aubo_i5_hardware \
+  --build-type ament_cmake \
+  --dependencies hardware_interface controller_manager pluginlib rclcpp rclcpp_lifecycle
+```
+
+随后将目录调整为：
+
+```text
+aubo_i5_hardware/
+├── include/aubo_i5_hardware/
+│   ├── aubo_i5_system.hpp          # SystemInterface 声明与状态数据
+│   └── visibility_control.hpp       # 共享库导出宏（可选但推荐）
+├── src/
+│   └── aubo_i5_system.cpp           # SDK 连接、RTDE 回调、read/write、安全门
+├── config/
+│   └── real_controllers.yaml        # 真机 controller_manager/JTC 参数
+├── launch/
+│   └── aubo_i5_real.launch.py       # 只读/运动两个显式参数的 bringup
+├── test/
+│   ├── test_configuration.cpp       # 关节、接口、参数校验；不连接控制柜
+│   └── test_safety_gate.cpp          # 超时、未使能、越界时拒绝 write
+├── hardware_interface_plugin.xml    # pluginlib 注册
+├── CMakeLists.txt
+└── package.xml
+```
+
+`package.xml` 的最小运行依赖：
+
+```xml
+<depend>hardware_interface</depend>
+<depend>controller_manager</depend>
+<depend>pluginlib</depend>
+<depend>rclcpp</depend>
+<depend>rclcpp_lifecycle</depend>
+<exec_depend>joint_state_broadcaster</exec_depend>
+<exec_depend>joint_trajectory_controller</exec_depend>
+<exec_depend>robot_state_publisher</exec_depend>
+<exec_depend>xacro</exec_depend>
+```
+
+若需要运行 SDK 的诊断消息，再按需增加 `aubo_msgs` 与 `aubo_dashboard_msgs`。不要为了首版硬件接口而复制参考仓库中未使用的 Python 客户端、测试发布者或 Universal Robots 遗留描述。
+
+`CMakeLists.txt` 的关键是构建为共享库并导出 plugin 描述：
+
+```cmake
+find_package(ament_cmake REQUIRED)
+find_package(hardware_interface REQUIRED)
+find_package(pluginlib REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(rclcpp_lifecycle REQUIRED)
+find_package(aubo_sdk REQUIRED)  # 名称以厂家 SDK 实际 CMake package 为准
+
+add_library(aubo_i5_hardware_plugin SHARED
+  src/aubo_i5_system.cpp)
+target_link_libraries(aubo_i5_hardware_plugin aubo_sdk::aubo_sdk)
+ament_target_dependencies(aubo_i5_hardware_plugin
+  hardware_interface pluginlib rclcpp rclcpp_lifecycle)
+
+pluginlib_export_plugin_description_file(
+  hardware_interface hardware_interface_plugin.xml)
+
+install(TARGETS aubo_i5_hardware_plugin DESTINATION lib)
+install(DIRECTORY include config launch DESTINATION share/${PROJECT_NAME})
+ament_package()
+```
+
+参考驱动使用 `FetchContent` 在线下载 SDK。对于真机 bringup，更建议在受控的部署机上由厂家安装包或锁定校验和的内部制品提供 SDK，再通过 `aubo_sdk_DIR`/`CMAKE_PREFIX_PATH` 找到它；构建真机驱动时不应隐式从互联网下载未知版本的二进制。
+
+`hardware_interface_plugin.xml` 只需注册一个真实插件：
+
+```xml
+<library path="aubo_i5_hardware_plugin">
+  <class name="aubo_i5_hardware/AuboI5System"
+         type="aubo_i5_hardware::AuboI5System"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>AUBO i5 RPC/RTDE ros2_control hardware interface.</description>
+  </class>
+</library>
+```
+
+#### 14.10.1 AUBO i5：SDK 应如何迁移和部署
+
+当前参考仓库并没有将 SDK 源码或二进制提交到 `aubo_ros2_driver/`；它的 `CMakeLists.txt` 在构建时下载厂商发布的 `aubo_sdk`，并使用：
+
+```text
+include/                         # <aubo/...>、aubo_sdk/rtde.h、aubo_sdk/rpc.h
+lib/                             # libaubo_sdkd.so 等运行库
+lib/cmake/aubo_sdk/              # aubo_sdkConfig.cmake，供 find_package 使用
+```
+
+对 AUBO i5，迁移的是 SDK 的通用通信能力，而不是另一个 i5 URDF：
+
+| SDK 项目 | 在 `AuboI5System` 中的用途 |
+| --- | --- |
+| `RpcClient` | 连接 RPC 服务、读取机器人名/模式、进入/退出 Servo、调用 `servoJoint` |
+| `RtdeClient` | 订阅实时状态 |
+| `R1_actual_q` | 写入六轴 `position` state interface，单位应核验为 rad |
+| `R1_actual_qd` | 写入六轴 `velocity` state interface，单位应核验为 rad/s |
+| `R1_robot_mode`、`R1_safety_mode`、`runtime_state` | 作为 `write()` 的安全门条件，不能仅打印日志 |
+
+不要迁移参考仓库的 `aubo_description` 来替换当前 `robot_description`：本项目继续使用已经验证的 AUBO i5 link、joint、夹爪和 TCP 模型；SDK 只提供“真实状态从哪里读、轨迹命令往哪里写”。
+
+推荐将已获厂家授权、已校验架构的 SDK 安装在部署机，例如：
+
+```text
+/opt/aubo-sdk/0.24.1-rc.3/
+├── include/
+├── lib/
+└── lib/cmake/aubo_sdk/
+```
+
+构建前显式指向 SDK，而不是依赖在线下载：
+
+```bash
+export aubo_sdk_DIR=/opt/aubo-sdk/0.24.1-rc.3/lib/cmake/aubo_sdk
+export LD_LIBRARY_PATH=/opt/aubo-sdk/0.24.1-rc.3/lib:${LD_LIBRARY_PATH}
+
+cd ~/cpp_practice/aubo_i5_ros2_control
+colcon build --packages-select aubo_i5_hardware \
+  --cmake-args -Daubo_sdk_DIR="$aubo_sdk_DIR"
+source install/setup.bash
+```
+
+部署前验证动态链接库，而不连接控制柜：
+
+```bash
+ldd install/aubo_i5_hardware/lib/libaubo_i5_hardware_plugin.so | grep -i aubo
+```
+
+输出应解析到预期的 `/opt/aubo-sdk/.../lib`，不能指向未知旧版本。若 SDK 与控制柜版本或 CPU 架构不匹配，停止在构建/只读阶段，向 AUBO 厂家确认兼容版本；不要尝试用仿真 SDK 或随意替换共享库绕过问题。
+
+### 14.11 接口类应该继承什么、保存什么数据
+
+类继承：
+
+```cpp
+class AuboI5System : public hardware_interface::SystemInterface
+```
+
+实现时以本机安装的 ROS 2 Jazzy `hardware_interface/system_interface.hpp` 的函数签名为准；参考仓库的 API 若与 Jazzy 不同，应只迁移通信逻辑，不能机械复制旧版 `export_*_interfaces()` 写法。无论具体 API 名称是否为 `export_*_interfaces()` 或 Jazzy 对应的导出钩子，生命周期职责不变：初始化、配置/激活、读取状态、写入命令、停用。
+
+内部状态建议固定为 6 元数组，避免在高频控制循环中分配内存：
+
+```cpp
+std::array<double, 6> position_state_{};     // 最新真实 q，单位 rad
+std::array<double, 6> velocity_state_{};     // 最新真实 qd，单位 rad/s
+std::array<double, 6> position_command_{};   // JTC 目标，单位 rad
+std::array<double, 6> previous_command_{};
+
+std::mutex state_mutex_;
+std::atomic<bool> connected_{false};
+std::atomic<bool> feedback_valid_{false};
+std::atomic<bool> motion_enabled_{false};
+std::chrono::steady_clock::time_point last_feedback_time_;
+```
+
+还需要维护控制柜模式和安全状态，例如 `running`、`protective_stop`、`emergency_stop`、`fault`。不要只要 TCP 连接成功就允许 `write()`；网络正常不代表控制柜允许运动。
+
+RTDE 回调只做两件事：解析数据、在锁保护下更新 `position_state_`、`velocity_state_`、模式和最后反馈时间。回调中不做 MoveIt 调用、不阻塞等待、不执行 Servo。`read()` 只复制已接收的快照；`write()` 使用独立的 command 快照发送给 SDK。
+
+### 14.12 生命周期与 read/write 的实现顺序
+
+以下是应实现的顺序，而不是可直接粘贴的厂商 SDK 代码：
+
+```text
+on_init
+  1. 调用基类初始化
+  2. 验证恰有 6 个关节，名称和顺序完全匹配
+  3. 验证每关节有 position command、position/velocity state
+  4. 读取 robot_ip、端口、超时、enable_motion 参数；空 IP 直接 ERROR
+  5. 初始化 command/state 数组为 NaN 或明确的“无反馈”状态
+
+on_activate
+  1. 建立 RPC 与 RTDE 连接，检查每个返回值
+  2. 登录/鉴权（凭据不写入日志）
+  3. 订阅 q、qd、机器人运行模式、安全模式和故障状态
+  4. 等待一帧新鲜、长度为 6、非 NaN 的反馈；超时则断开并 ERROR
+  5. position_command = position_state，进入 hold
+  6. 若 enable_motion=false，只允许 read；不得启动 Servo
+
+read
+  1. 检查连接、反馈时间戳、q/dq 长度和有限数值
+  2. 超时或异常：标记 feedback_valid=false，返回 ERROR
+  3. 复制 q/dq 至 ros2_control state interfaces，返回 OK
+
+write
+  1. 若 enable_motion=false，拒绝并保持 hold
+  2. 检查控制柜处于允许的运行/安全模式
+  3. 检查反馈未超时、全部 command 有限、命令在软限位内
+  4. 限制单控制周期最大位移和最大速度
+  5. 首次通过后才显式启动 Servo，并发送 position command
+  6. SDK 失败、保护停、断线：立即停止后续写入，返回 ERROR
+
+on_deactivate
+  1. 停止新的 write
+  2. 请求退出 Servo；若失败，明确记录并交由现场急停/控制柜处理
+  3. 取消 RTDE 订阅、断开连接、清空 feedback_valid
+```
+
+关键伪代码：
+
+```cpp
+hardware_interface::return_type AuboI5System::write(
+    const rclcpp::Time &, const rclcpp::Duration &period)
+{
+  if (!motion_enabled_ || !connected_ || !feedback_is_fresh()) {
+    return hardware_interface::return_type::ERROR;
+  }
+  if (!controller_allows_motion() || !commands_are_safe(period)) {
+    return hardware_interface::return_type::ERROR;
+  }
+  if (!servo_joint(position_command_)) {
+    connected_ = false;
+    return hardware_interface::return_type::ERROR;
+  }
+  previous_command_ = position_command_;
+  return hardware_interface::return_type::OK;
+}
+```
+
+`commands_are_safe()` 至少检查：六个值均有限、URDF/MoveIt 软限位、单周期位移、从 `previous_command_` 计算的速度、命令超时。控制柜的硬限位、急停与保护停仍是最终保护层，软件检查不能替代它们。
+
+### 14.13 真机 launch 如何编写
+
+不要移植参考仓库自定义 `aubo_ros2_control_node.cpp` 的控制循环作为第一选择。Jazzy 已提供标准 `controller_manager` 的 `ros2_control_node`，它更容易维护，launch 应负责给它传入最终 URDF 与 `real_controllers.yaml`：
+
+```python
+control_node = Node(
+    package="controller_manager",
+    executable="ros2_control_node",
+    parameters=[robot_description, real_controllers_file],
+    output="screen",
+)
+
+robot_state_publisher = Node(
+    package="robot_state_publisher",
+    executable="robot_state_publisher",
+    parameters=[robot_description, {"use_sim_time": False}],
+    output="screen",
+)
+```
+
+launch 参数必须至少有：
+
+```text
+robot_ip                 无默认真实地址
+hardware_type:=real
+enable_motion:=false     默认只读
+controllers_file         real_controllers.yaml
+robot_username_env       环境变量名，而非明文密码
+robot_password_env       环境变量名，而非明文密码
+```
+
+只读模式仅启动 `joint_state_broadcaster`；轨迹控制器的 spawner 应由 `enable_motion` 条件控制，避免无意间提供可执行 action。真机不使用 `use_sim_time:=true`，也不 bridge `/clock`。
+
+### 14.14 从编译到真机动作的验收阶梯
+
+| 层级 | 是否连接真机 | 允许做什么 | 必须通过的证据 |
+| --- | --- | --- | --- |
+| A：静态构建 | 否 | 编译 plugin、展开 Xacro、运行单元测试 | `colcon build`、`check_urdf`、安全门测试通过 |
+| B：fake 回归 | 否 | 启动 `mock_components`、JTC、MoveIt | 六关节 `/joint_states`、action、当前状态同步 |
+| C：只读连接 | 是 | 读取 q/dq、人工示教器点动 | 唯一且完整 `/joint_states`，方向/单位/零位一致 |
+| D：hold 验收 | 是 | 激活硬件与 JSB，不发运动轨迹 | 激活前后姿态不跳变；关闭/重连不自动运动 |
+| E：单关节低速 | 是 | 小幅、空载、单轴动作 | 方向正确、误差/停止时间可接受、急停有效 |
+| F：MoveIt 短轨迹 | 是 | 已审查的低速短路径 | 实际起点等于 `/joint_states`，无越界/碰撞/告警 |
+
+每次只推进一层。任何一层失败都回退到上一层，不允许通过提高速度、绕过安全门或重复启动多个 controller manager 来“试出来”。
 
 ## 13. 相关笔记
 

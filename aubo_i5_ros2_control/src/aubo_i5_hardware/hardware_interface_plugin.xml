@@ -1,0 +1,7 @@
+<library path="aubo_i5_hardware_plugin">
+  <class name="aubo_i5_hardware/AuboI5System"
+         type="aubo_i5_hardware::AuboI5System"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>Safety-gated AUBO i5 RPC/RTDE ros2_control hardware interface.</description>
+  </class>
+</library>

@@ -352,6 +352,8 @@ aubo_i5_moveit_config/
 5. **moveit_controllers.yaml**：`arm_controller`、joints、`action_ns` 与运行中的 JTC action 相匹配。
 6. **launch**：默认 demo 常是 Fake/RViz；将 Gazebo 和 real launch 分开，不要在生成文件中直接塞 IP/真机凭据。
 
+需要重点注意的是**joint_limits.yaml**, 生成的参数整数的话默认没有小数点，导致报错
+还有就是默认没有加速度限制 导致规划成功也无法有效执行
 ### 8.5 生成后先运行 Fake，再接 Gazebo
 
 先构建所有描述与 MoveIt 包：

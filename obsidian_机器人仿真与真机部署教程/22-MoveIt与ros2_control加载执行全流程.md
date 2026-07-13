@@ -401,7 +401,7 @@ MoveIt 规划 RobotTrajectory
 
 ```mermaid
 flowchart TD
-  M[MoveIt move_group] --> A[/arm_controller/follow_joint_trajectory]
+  M[MoveIt move_group] --> A["/arm_controller/follow_joint_trajectory"]
   A --> J[JointTrajectoryController]
   J --> C[controller_manager]
   C --> H{hardware plugin}

@@ -14,14 +14,10 @@ tags: [RSP, robot_state_publisher, URDF, TF, joint_states]
 flowchart LR
   X[Xacro 展开] --> D[robot_description 参数]
   D --> R[RSP]
-  R --> RD[/robot_description
-transient-local]
-  S[/joint_states
-JSB / 仿真 / 真机反馈] --> R
-  R --> T[/tf
-可动关节]
-  R --> TS[/tf_static
-固定关节]
+  R --> RD["/robot_description<br/>transient-local"]
+  S["/joint_states<br/>JSB / 仿真 / 真机反馈"] --> R
+  R --> T["/tf<br/>可动关节"]
+  R --> TS["/tf_static<br/>固定关节"]
   T --> V[RViz / MoveIt / TF listener]
   TS --> V
   RD --> G[ros_gz_sim create / controller_manager]
@@ -199,4 +195,3 @@ Fake/Gazebo/真机运行时应只有权威状态源（通常 JSB）作为 publis
 
 **问：为什么 RSP 与 ros2_control 要分离？**  
 答：ros2_control 负责硬件读写和控制器生命周期，RSP 只做模型运动学和 TF。分离后同一 RSP 能消费 Fake、Gazebo 或真实编码器的 joint_states，上层 MoveIt/RViz 不依赖具体硬件后端，系统更容易测试和迁移。
-

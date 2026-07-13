@@ -15,7 +15,7 @@ flowchart TD
   X[Xacro] --> P[ROS Parameter Server
 /robot_description]
   P --> R[RSP]
-  R --> TF[/tf 与 /tf_static]
+  R --> TF["/tf 与 /tf_static"]
   P --> G[Gazebo Classic spawn_model]
   G --> GP[gazebo_ros_control plugin]
   GP --> CM[内部 controller_manager]

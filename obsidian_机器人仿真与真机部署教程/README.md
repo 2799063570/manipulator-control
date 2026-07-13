@@ -20,6 +20,9 @@ tags: [ROS2, Gazebo, MoveIt2, ros2_control, 机械臂, 移动机器人]
 
 ## 笔记导航
 
+30. [[30-AUBO参考驱动-仿真到真机实施手册]]：基于 `aubo_ros2_driver` 的参考驱动审计、仿真闭环、真机接口安全改造与逐级验收步骤。
+31. [[31-OMPL与MoveIt规划管线学习手册]]：七天实验式学习计划，从规划请求、碰撞、IK、RRTConnect 到 Gazebo 执行排障。
+
 1. [[01-项目盘点与目标架构]]：理解代码、确定分层和里程碑。
 2. [[02-环境与工作区复现]]：安装、编译、启动、验收命令。
 3. [[03-机械臂Gazebo与MoveIt2仿真]]：把二维臂扩成可控、可规划、可抓取的仿真系统。
@@ -64,7 +67,7 @@ flowchart LR
   C --> D{硬件接口}
   D -->|仿真| E[Gazebo Sim]
   D -->|真机| F[驱动器/MCU/机器人控制柜]
-  E --> G[/joint_states、传感器]
+  E --> G["/joint_states、传感器"]
   F --> G
   G --> H[TF / robot_state_publisher / 状态估计]
   H --> A

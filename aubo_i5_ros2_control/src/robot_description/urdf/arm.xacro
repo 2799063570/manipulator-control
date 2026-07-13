@@ -40,15 +40,15 @@
     </xacro:macro>
 
     <xacro:macro name="I5_UpperArm_Inertia">
-        <origin xyz="0.304 0.0 -0.03"
+        <origin xyz="0.2040 0.0 0.006603"
                 rpy="0 0 0" />
-        <mass value="11.90" />
-        <inertia ixx="0.0305"
-                 ixy="0"
+        <mass value="10.836261" />
+        <inertia ixx="0.026024"
+                 ixy="0.00002"
                  ixz="0"
-                 iyy="0.4505"
+                 iyy="0.432805"
                  iyz="0"
-                 izz="0.0095" />
+                 izz="0.425155" />
     </xacro:macro>
 
     <xacro:macro name="I5_ForeArm_Inertia">

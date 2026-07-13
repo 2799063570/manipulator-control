@@ -237,16 +237,16 @@ launch 文件 import 的每个 ROS package 都应该作为运行依赖。例如 
 
 ## 9. 常见报错与精确处理
 
-| 报错/现象 | 最可能原因 | 处理 |
-|---|---|---|
-| `Could not find a package configuration file` | 缺 apt 依赖或 find_package 名称错 | rosdep；核对实际 CMake package 名 |
-| `fatal error: xxx.hpp: No such file` | 没 find/链接/导出 include | CMake 加依赖，库 target PUBLIC include |
-| `undefined reference` | 声明有、实现或链接库缺失 | add 源文件到 library，target 链接该库 |
-| `ros2 run: No executable found` | target 未 install 到 `lib/${PROJECT_NAME}` | 加 install(TARGETS...)，重编/source |
-| `Package ... not found` | 未 source / install 未生成 | 检查 `ros2 pkg prefix` 和 workspace |
-| 找不到 launch/URDF | 忘记 install DIRECTORY | 加 share 安装规则，重编 |
-| msg 头文件不存在 | 没 rosidl_generate_interfaces 或依赖顺序错 | 添加生成规则/类型支持链接，clean 后重编 |
-| 旧代码仍运行 | overlay 或缓存问题 | `colcon build --symlink-install`，重新 source；必要时只删除本包 build/install/log 后重编 |
+| 报错/现象                                         | 最可能原因                                    | 处理                                                                        |
+| --------------------------------------------- | ---------------------------------------- | ------------------------------------------------------------------------- |
+| `Could not find a package configuration file` | 缺 apt 依赖或 find_package 名称错               | rosdep；核对实际 CMake package 名                                               |
+| `fatal error: xxx.hpp: No such file`          | 没 find/链接/导出 include                     | CMake 加依赖，库 target PUBLIC include                                         |
+| `undefined reference`                         | 声明有、实现或链接库缺失                             | add 源文件到 library，target 链接该库                                              |
+| `ros2 run: No executable found`               | target 未 install 到 `lib/${PROJECT_NAME}` | 加 install(TARGETS...)，重编/source                                           |
+| `Package ... not found`                       | 未 source / install 未生成                   | 检查 `ros2 pkg prefix` 和 workspace                                          |
+| 找不到 launch/URDF                               | 忘记 install DIRECTORY                     | 加 share 安装规则，重编                                                           |
+| msg 头文件不存在                                    | 没 rosidl_generate_interfaces 或依赖顺序错      | 添加生成规则/类型支持链接，clean 后重编                                                   |
+| 旧代码仍运行                                        | overlay 或缓存问题                            | `colcon build --symlink-install`，重新 source；必要时只删除本包 build/install/log 后重编 |
 
 > [!warning] 清理构建目录
 > 不要默认删除整个 workspace 的 `build/install/log`，它会抹掉其他包的构建产物。优先 `colcon build --packages-select 包名`；只有缓存确实损坏时才针对明确的包清理，并确认目录路径正确。

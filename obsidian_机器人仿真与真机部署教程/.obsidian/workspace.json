@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "31-OMPL与MoveIt规划管线学习手册.md",
+                "file": "03-机械臂Gazebo与MoveIt2仿真.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "31-OMPL与MoveIt规划管线学习手册"
+              "title": "03-机械臂Gazebo与MoveIt2仿真"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "31-OMPL与MoveIt规划管线学习手册.md",
+                "file": "03-机械臂Gazebo与MoveIt2仿真.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "31-OMPL与MoveIt规划管线学习手册 的大纲"
+              "title": "03-机械臂Gazebo与MoveIt2仿真 的大纲"
             }
           }
         ],
@@ -185,8 +185,10 @@
   },
   "active": "abb9dc390bb51bc9",
   "lastOpenFiles": [
-    "22-MoveIt与ros2_control加载执行全流程.md",
+    "04-AUBO-i5仿真到真机部署.md",
+    "21-CMakeLists与package.xml从入门到当前工程.md",
     "31-OMPL与MoveIt规划管线学习手册.md",
+    "22-MoveIt与ros2_control加载执行全流程.md",
     "30-AUBO参考驱动-仿真到真机实施手册.md",
     "README.md",
     "29-AUBO-i5从ROS1风格迁移到Jazzy实施方案.md",
@@ -194,7 +196,6 @@
     "03-机械臂Gazebo与MoveIt2仿真.md",
     "02-环境与工作区复现.md",
     "20-面试八股题库-背诵版.md",
-    "21-CMakeLists与package.xml从入门到当前工程.md",
     "24-ros2_control_node详解.md",
     "25-robot_state_publisher-RSP详解.md",
     "27-系统总总结与学习闭环.md",

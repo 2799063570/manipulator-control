@@ -1,0 +1,3 @@
+# AUBO distributes the SDK as vendor binaries.  Keep the placeholder README,
+# but do not accidentally publish the SDK itself.
+aubo_sdk/

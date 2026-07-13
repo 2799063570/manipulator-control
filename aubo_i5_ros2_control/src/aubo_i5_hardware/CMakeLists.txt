@@ -10,9 +10,22 @@ find_package(pluginlib REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
 
-# Install the AUBO SDK separately on the target Ubuntu host and point CMake at
-# its lib/cmake/aubo_sdk directory with -Daubo_sdk_DIR=... .  Do not download
-# a binary SDK implicitly as part of a real-robot build.
+# Keep the vendor SDK beside this package so that a copied workspace remains
+# self-contained.  A caller can still override this with
+# -Daubo_sdk_DIR=/path/to/lib/cmake/aubo_sdk.
+set(AUBO_SDK_BUNDLED_DIR "${CMAKE_CURRENT_SOURCE_DIR}/third_party/aubo_sdk")
+if(NOT DEFINED aubo_sdk_DIR OR "${aubo_sdk_DIR}" STREQUAL "")
+  set(aubo_sdk_DIR "${AUBO_SDK_BUNDLED_DIR}/lib/cmake/aubo_sdk"
+    CACHE PATH "Directory containing aubo_sdkConfig.cmake")
+endif()
+
+if(NOT EXISTS "${aubo_sdk_DIR}/aubo_sdkConfig.cmake" AND
+   NOT EXISTS "${aubo_sdk_DIR}/aubo_sdk-config.cmake")
+  message(FATAL_ERROR
+    "AUBO SDK was not found. Extract the vendor SDK so that this file exists:\n"
+    "  ${AUBO_SDK_BUNDLED_DIR}/lib/cmake/aubo_sdk/aubo_sdkConfig.cmake\n"
+    "Or configure with -Daubo_sdk_DIR=/absolute/path/to/lib/cmake/aubo_sdk.")
+endif()
 find_package(aubo_sdk REQUIRED)
 
 add_library(aubo_i5_hardware_plugin SHARED
@@ -24,6 +37,10 @@ target_include_directories(aubo_i5_hardware_plugin PUBLIC
   $<INSTALL_INTERFACE:include>
 )
 target_link_libraries(aubo_i5_hardware_plugin aubo_sdk::aubo_sdk)
+set_target_properties(aubo_i5_hardware_plugin PROPERTIES
+  BUILD_RPATH "${AUBO_SDK_BUNDLED_DIR}/lib"
+  INSTALL_RPATH "$ORIGIN/aubo_i5_hardware/aubo_sdk"
+)
 ament_target_dependencies(aubo_i5_hardware_plugin
   aubo_dashboard_msgs aubo_msgs
   hardware_interface pluginlib rclcpp rclcpp_lifecycle
@@ -40,6 +57,15 @@ install(TARGETS aubo_i5_hardware_plugin
 )
 install(DIRECTORY include/ DESTINATION include)
 install(DIRECTORY config launch DESTINATION share/${PROJECT_NAME})
+
+# Bundle only the runtime shared objects in the install space.  The headers
+# and CMake package files remain in third_party for source builds.
+install(DIRECTORY "${AUBO_SDK_BUNDLED_DIR}/lib/"
+  DESTINATION lib/aubo_i5_hardware/aubo_sdk
+  FILES_MATCHING
+  PATTERN "*.so"
+  PATTERN "*.so.*"
+)
 
 ament_export_dependencies(
   aubo_dashboard_msgs aubo_msgs

@@ -79,7 +79,7 @@ def generate_launch_description():
             "simple_2dof_arm",
             package_name="simple_arm_moveit_config",
         )
-        .planning_pipelines(default_planning_pipeline="ompl", pipelines=["ompl"])
+        #.planning_pipelines(default_planning_pipeline="ompl", pipelines=["ompl"])
         .to_moveit_configs()
     )
 
@@ -147,7 +147,7 @@ def generate_launch_description():
         output="screen",
         parameters=[
             moveit_config.to_dict(),
-            OMPL_PARAMETERS,
+            #OMPL_PARAMETERS,
             {"use_sim_time": use_sim_time},
         ],
     )

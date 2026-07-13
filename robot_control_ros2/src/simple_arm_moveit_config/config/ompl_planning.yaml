@@ -57,10 +57,10 @@ arm:
   planner_configs:
     - RRTConnectkConfigDefault
     - RRTkConfigDefault
-    - RRTstarkConfigDefault
-    - PRMkConfigDefault
-    - PRMstarkConfigDefault
-    - ESTkConfigDefault
-    - KPIECEkConfigDefault
-    - BKPIECEkConfigDefault
-    - LBKPIECEkConfigDefault
+ #   - RRTstarkConfigDefault
+  #  - PRMkConfigDefault
+   # - PRMstarkConfigDefault
+    #- ESTkConfigDefault
+    #- KPIECEkConfigDefault
+    #- BKPIECEkConfigDefault
+    #- LBKPIECEkConfigDefault

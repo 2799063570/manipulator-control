@@ -1,0 +1,23 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: robot_description
+    relative_path: urdf/aubo_i5_arm.urdf
+  srdf:
+    relative_path: config/aubo_i5.srdf
+  package_settings:
+    author_name: chenque
+    author_email: chenque41@gamil.com
+    generated_timestamp: 1783925901
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position

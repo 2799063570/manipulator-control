@@ -10,6 +10,8 @@
         <parent link="wrist3_Link" />
         <child  link="gripper_base_link" />
     </joint>
+     <!-- /////////////////////////////////   world   ////////////////////////////////////// -->
+    <link name="world" />
     <joint name="world2base_link" type="fixed">
         <origin xyz="0 0 0" rpy="0 0 0 " />
         <parent link="world" />

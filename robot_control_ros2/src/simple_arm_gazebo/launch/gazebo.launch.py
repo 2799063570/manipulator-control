@@ -24,6 +24,7 @@ def generate_launch_description():
         [moveit_config_share, "config", "ros2_controllers.yaml"]
     )
 
+    # 构造命令行指令 强制输出URDF XML
     robot_description_content = Command(
         [
             FindExecutable(name="xacro"),

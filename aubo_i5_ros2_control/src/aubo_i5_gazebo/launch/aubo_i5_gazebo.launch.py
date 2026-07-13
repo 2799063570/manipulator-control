@@ -35,9 +35,9 @@ def generate_launch_description():
     gazebo_resource_path = SetEnvironmentVariable(
         name="GZ_SIM_RESOURCE_PATH",
         value=[
-            EnvironmentVariable("GZ_SIM_RESOURCE_PATH", default_value=""),
-            ":",
             robot_description_resource_path,
+            ":",
+            EnvironmentVariable("GZ_SIM_RESOURCE_PATH", default_value=""),
         ],
     )
 

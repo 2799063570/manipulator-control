@@ -914,6 +914,131 @@ robot_password_env       环境变量名，而非明文密码
 
 每次只推进一层。任何一层失败都回退到上一层，不允许通过提高速度、绕过安全门或重复启动多个 controller manager 来“试出来”。
 
+### 14.15 将 AUBO SDK 随 `aubo_i5_hardware` 一起迁移
+
+#### 目标与边界
+
+为了把工作区复制到另一台 Ubuntu 控制电脑后仍能构建真机插件，可以将**已获厂家授权、且与控制柜兼容的 Linux SDK**放在硬件包内，而不是依赖每台电脑都存在 `/opt/aubo-sdk`。本项目约定 SDK 的唯一源代码位置为：
+
+```text
+src/aubo_i5_hardware/
+├── CMakeLists.txt
+├── src/
+└── third_party/
+    └── aubo_sdk/                         # 必须是这个目录名
+        ├── include/
+        │   ├── aubo/
+        │   └── aubo_sdk/
+        └── lib/
+            ├── libaubo_sdk.so             # 名称可能带版本后缀
+            └── cmake/aubo_sdk/
+                └── aubo_sdkConfig.cmake
+```
+
+`aubo_sdkConfig.cmake` 是关键文件。`find_package(aubo_sdk REQUIRED)` 不是靠看到 `libaubo_sdk.so` 就能工作；它需要这个 CMake 配置文件来得知头文件、链接库和依赖关系。
+
+SDK 是厂商二进制软件，是否可重新分发由厂家许可决定。因此 `third_party/.gitignore` 已排除 `aubo_sdk/`：可以把它随整个工作区压缩、U 盘或内网制品库一起迁移，但不要未经许可提交到公开 Git 仓库。保留 SDK 原始的 license/notice 文件。
+
+#### 第 1 步：放置 SDK
+
+若旧电脑已经按系统级方式安装了 SDK，可复制到包内：
+
+```bash
+cd ~/cpp_practice/aubo_i5_ros2_control/src/aubo_i5_hardware
+mkdir -p third_party
+cp -a /opt/aubo-sdk/0.24.1-rc.3 third_party/aubo_sdk
+```
+
+若来自压缩包，解压后不要保留多余的版本目录层级；最终必须满足：
+
+```bash
+test -f third_party/aubo_sdk/lib/cmake/aubo_sdk/aubo_sdkConfig.cmake && echo "SDK layout OK"
+```
+
+若没有输出 `SDK layout OK`，先检查实际文件位置：
+
+```bash
+find third_party -type f \( -name aubo_sdkConfig.cmake -o -name aubo_sdk-config.cmake \)
+```
+
+然后调整目录为上面的规范结构，不要通过随意复制 `.so` 来绕过配置问题。
+
+#### 第 2 步：CMake 如何查找和安装 SDK
+
+`aubo_i5_hardware/CMakeLists.txt` 的策略是：
+
+1. 默认在 `third_party/aubo_sdk/lib/cmake/aubo_sdk` 查找 SDK；
+2. 允许临时用 `-Daubo_sdk_DIR=/其他目录/lib/cmake/aubo_sdk` 覆盖；
+3. 构建时链接 `aubo_sdk::aubo_sdk`；
+4. 安装时把 SDK 的 `.so` 文件复制到：
+
+   ```text
+   install/aubo_i5_hardware/lib/aubo_i5_hardware/aubo_sdk/
+   ```
+
+5. 硬件插件写入相对 RPATH，因此从该 `install/` 空间启动时，插件可在自己的安装目录中找到 SDK，通常不需要 `/opt/aubo-sdk` 或手动设置 `LD_LIBRARY_PATH`。
+
+这保证的是“**带 SDK 的源码工作区**”和“**该工作区生成的 install 空间**”均可迁移；目标电脑仍须是匹配的 Linux 架构，例如普通工控机使用 x86_64 SDK，不能将 x86_64 SDK 复制到 aarch64 控制机。
+
+#### 第 3 步：清理硬件包缓存并构建
+
+SDK 的路径会被 CMake 缓存。第一次加入 SDK、替换 SDK 版本或修改 `aubo_sdk_DIR` 后，只清理该包即可：
+
+```bash
+cd ~/cpp_practice/aubo_i5_ros2_control
+rm -rf build/aubo_i5_hardware install/aubo_i5_hardware
+colcon build --packages-select aubo_msgs aubo_dashboard_msgs aubo_i5_hardware \
+  --event-handlers console_direct+
+source install/setup.bash
+```
+
+`aubo_msgs` 和 `aubo_dashboard_msgs` 是硬件包的 ROS 接口依赖，必须先成功构建。构建完成后先做不连接控制柜的动态链接检查：
+
+```bash
+ldd install/aubo_i5_hardware/lib/libaubo_i5_hardware_plugin.so | grep -i aubo
+```
+
+输出应指向当前工作区的 `install/aubo_i5_hardware/lib/aubo_i5_hardware/aubo_sdk/`（或在构建环境中指向明确的 SDK 路径），绝不能显示 `not found`。
+
+#### 第 4 步：本次编译错误的定位范例
+
+出现下面错误时：
+
+```text
+InputParser has not been declared
+cannot convert lambda(...) to std::function<void(arcs::aubo_sdk::InputParser&)>
+```
+
+这说明 SDK **已被找到并已参与编译**；问题在调用代码的类型名，而非 SDK 目录。查看 SDK 头文件 `aubo_sdk/rtde.h` 中 `RtdeClient::subscribe()` 的声明可知，它要求：
+
+```cpp
+std::function<void(arcs::aubo_sdk::InputParser &)>
+```
+
+因此回调参数必须写成：
+
+```cpp
+rtde_client_->subscribe(topic, [this](arcs::aubo_sdk::InputParser & parser) {
+  const auto q = parser.popVectorDouble();
+  const auto qd = parser.popVectorDouble();
+  // 更新 q、qd、robot mode 和 safety mode 的状态快照
+});
+```
+
+不能写成 `arcs::common_interface::InputParser`。`RobotModeType`、`SafetyModeType` 等数据类型可以属于 `arcs::common_interface`，但本 SDK 版本的 RTDE 回调解析器属于 `arcs::aubo_sdk`。遇到命名空间错误时，优先以本机 `third_party/aubo_sdk/include/` 中的函数声明为准，不要只依据其他版本 SDK 或参考仓库的 `using namespace` 写法推测。
+
+#### 第 5 步：如何读懂本次日志
+
+| 日志现象 | 含义 | 是否阻塞 | 处理 |
+| --- | --- | --- | --- |
+| `Could not find ... aubo_sdkConfig.cmake` | SDK 未按约定目录放置，或 CMake 没有得到正确的 `aubo_sdk_DIR` | 是 | 按第 1 步检查配置文件位置，清理该包缓存后重编译 |
+| `InputParser has not been declared` | SDK 已加载，但源代码使用了不匹配的 SDK API/命名空间 | 是 | 对照本机 SDK 头文件修正类型；本项目应为 `arcs::aubo_sdk::InputParser` |
+| `tl_expected is deprecated` | ROS Jazzy 依赖链给出的弃用提示 | 否 | 可暂时忽略；不要为消除警告而改动控制逻辑 |
+| `on_init(...) is deprecated`、`setServoMode` deprecated | Jazzy 或厂家 SDK 的兼容接口提示 | 否 | 记录并规划后续 API 升级；当前先确保安全门和 read/write 逻辑正确 |
+| `not found: ... local_setup.bash` | 前一个 `colcon build` 失败，故该包没有生成安装环境脚本 | 是（但只是后果） | 修复真正的编译错误后重新执行 `source install/setup.bash` |
+
+编译通过不等于允许连接真机。下一步仍应遵循第 14.14 节的 A→B→C 阶梯：先做静态链接检查和 fake 回归，再用 `enable_motion:=false` 只读连接验证六轴 `/joint_states`，最后才进入低速运动验收。
+
 ## 13. 相关笔记
 
 - [[04-AUBO-i5仿真到真机部署]]：现有 AUBO 总体部署说明。

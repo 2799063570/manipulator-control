@@ -190,7 +190,7 @@ bool AuboI5System::connect_and_subscribe()
     {
       return false;
     }
-    rtde_client_->subscribe(topic, [this](arcs::common_interface::InputParser & parser) {
+    rtde_client_->subscribe(topic, [this](arcs::aubo_sdk::InputParser & parser) {
       const auto q = parser.popVectorDouble();
       const auto qd = parser.popVectorDouble();
       const auto robot_mode = parser.popRobotModeType();

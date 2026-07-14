@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <xacro:macro name="aubo_i5_ros2_control" params="name initial_positions_file hardware_type ros2_controllers_file">
+    <xacro:macro name="aubo_i5_ros2_control" params="name initial_positions_file hardware_type ros2_controllers_file
+        robot_ip enable_motion">
         <xacro:property name="initial_positions" value="${xacro.load_yaml(initial_positions_file)['initial_positions']}"/>
 
         <ros2_control name="${name}" type="system">
@@ -10,6 +11,15 @@
                 </xacro:if>
                 <xacro:if value="${hardware_type == 'gazebo'}">
                     <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+                </xacro:if>
+                <xacro:if value="${hardware_type == 'real'}">
+                    <plugin>aubo_i5_hardware/AuboI5System</plugin>
+                    <param name="robot_ip">$(arg robot_ip)</param>
+                    <param name="rpc_port">30004</param>
+                    <param name="rtde_port">30010</param>
+                    <param name="connect_timeout_ms">1000</param>
+                    <param name="command_timeout_ms">100</param>
+                    <param name="enable_motion">$(arg enable_motion)</param>
                 </xacro:if>
                 <!-- By default, set up controllers for simulation. This won't work on real hardware -->
 

@@ -3,7 +3,8 @@
     <xacro:arg name="hardware_type" default="fake"/>
     <xacro:arg name="ros2_controllers_file" default="ros2_controllers.yaml"/>
     <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
-
+    <xacro:arg name="robot_ip" default="192.168.1.2"/>
+    <xacro:arg name="enable_motion" default="false"/>
     <!-- Import aubo_i5 urdf file 机器人模型文件 -->
     <xacro:include filename="$(find robot_description)/urdf/aubo_i5.xacro" />
 
@@ -12,6 +13,7 @@
 
 
     <xacro:aubo_i5_ros2_control name="control_system" initial_positions_file="$(arg initial_positions_file)" 
-        hardware_type="$(arg hardware_type)" ros2_controllers_file="$(arg ros2_controllers_file)"/>
+        hardware_type="$(arg hardware_type)" ros2_controllers_file="$(arg ros2_controllers_file)"
+        robot_ip="$(arg robot_ip)" enable_motion="$(arg enable_motion)"/>
 
 </robot>

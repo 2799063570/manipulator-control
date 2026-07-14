@@ -5,7 +5,7 @@
     <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
 
     <!-- Import aubo_i5 urdf file 机器人模型文件 -->
-    <xacro:include filename="$(find robot_description)/urdf/aubo_i5_arm.urdf" />
+    <xacro:include filename="$(find robot_description)/urdf/aubo_i5.xacro" />
 
     <!-- Import control_xacro -->
     <xacro:include filename="aubo_i5.ros2_control.xacro" />

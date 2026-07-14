@@ -57,7 +57,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="joint1" type="continuous">
+  <joint name="joint1" type="fixed">
     <origin xyz="0 -0.029 0.0892076231496363" rpy="0 -0.228448582107719 1.5707963267949" />
     <parent  link="gripper_base_link" />
     <child link="Link1" />
@@ -91,7 +91,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="joint2" type="continuous">
+  <joint name="joint2" type="fixed">
     <origin xyz="0 0.029 0.0892076231496363" rpy="0 -0.252554771757915 -1.5707963267949" />
     <parent link="gripper_base_link" />
     <child link="Link2" />

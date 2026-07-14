@@ -1,364 +1,112 @@
-# cpp_practice
+# Manipulator Control：机器人仿真、控制与真机部署
 
-这个仓库用于练习和整理机器人控制相关的 C++ 模块。目前最完整的纯 C++ 控制库位于：
+这是一个 ROS 2 Jazzy 学习与工程实践仓库。内容覆盖从 C++ 控制算法、ROS 2 通信与 TF、URDF/Xacro 建模，到 Gazebo/MoveIt 仿真，以及 AUBO i5 的 `ros2_control` 真机接口。
 
-```text
-robot_control_ros2/src/robot_control
-```
+当前工程按“独立 ROS 2 工作空间”组织。请在**目标工作空间根目录**构建和 `source install/setup.bash`，不要在仓库根目录直接执行 `colcon build`。
 
-它虽然放在 ROS2 工作区中，并使用 `ament_cmake` 管理构建，但核心控制逻辑是普通 C++ 代码：状态、限幅、插值、轨迹缓冲和雅可比求解都可以作为控制算法库单独理解和测试。
+## 工作空间总览
 
-## 文档导航
+| 工作空间 | 定位 | 适合做什么 |
+| --- | --- | --- |
+| [`aubo_i5_ros2_control`](aubo_i5_ros2_control/README.md) | AUBO i5 主工程 | Gazebo + MoveIt 仿真、模型维护、接入 AUBO 真机 |
+| [`robot_control_ros2`](robot_control_ros2/README.md) | ROS 2 与二维臂学习工程 | 控制算法、topic/service/TF、二维臂仿真和 MoveIt |
+| [`robot_move_control`](robot_move_control/README.md) | Fishbot 建模练习 | URDF/Xacro 展开与 RViz 模型显示 |
 
-项目阶段总结按章节放在 `docs/` 目录中：
-
-- [第 1 周：纯 C++ 控制基础库](docs/week1_control_library.md)
-- [第 2 周：Eigen、雅可比求解与项目化](docs/week2_jacobian_projectization.md)
-- [第 3 周：ROS2 控制节点与通信链路](docs/week3_ros2_control_nodes.md)
-- [第 4 周：URDF、TF 与 RViz2 可视化闭环](docs/week4_visualization_closure.md)
-- [简历描述与面试讲解稿](docs/resume_and_interview.md)
-
-当前项目主线：
+## 推荐学习与使用路径
 
 ```text
-纯 C++ 控制库
-  -> ROS2 控制节点
-  -> 关节命令 topic
-  -> /joint_states
-  -> robot_state_publisher
-  -> TF / robot_description
-  -> RViz2 可视化
+robot_move_control
+  └─ URDF/Xacro、link、joint、RViz
+
+robot_control_ros2
+  ├─ ROS 2 topic / service / parameter / timer / TF
+  ├─ 插补、Jacobian、轨迹缓冲、安全限幅
+  └─ 二自由度机械臂 Gazebo + MoveIt
+
+aubo_i5_ros2_control
+  ├─ AUBO i5 机器人描述
+  ├─ Gazebo + ros2_control + MoveIt
+  └─ RPC/RTDE 真机硬件接口（先只读、后低速运动）
 ```
 
-## 解决什么问题
+## 快速开始
 
-这个库解决的是机器人关节空间控制循环中的基础数据流问题：
+所有命令默认在 Ubuntu 24.04 + ROS 2 Jazzy 中执行。
 
-1. 用统一的数据结构保存机器人当前或目标关节状态。
-2. 从起点状态和目标状态生成离散轨迹点。
-3. 在执行前检查位置和速度是否超过安全限制。
-4. 将轨迹点放入缓冲区，按控制周期逐点取出执行。
-5. 为后续速度/逆运动学控制提供雅可比伪逆和阻尼最小二乘求解工具。
-
-换句话说，它不是完整机器人控制器，而是一组可以组合成控制循环的基础模块。
-
-## 模块说明
-
-### `RobotState`
-
-文件：
-
-```text
-robot_control_ros2/src/robot_control/include/robot_state.hpp
-robot_control_ros2/src/robot_control/src/robot_state.cpp
-```
-
-职责：
-
-- 保存机器人自由度 `dof`。
-- 保存关节位置 `q` 和关节速度 `dq`。
-- 提供整体设置、按索引设置、读取、打印和比较接口。
-
-典型用途：表示起点状态、目标状态、插值后的轨迹点或控制循环中的当前状态。
-
-### `SafetyLimiter`
-
-文件：
-
-```text
-robot_control_ros2/src/robot_control/include/safety_limiter.hpp
-robot_control_ros2/src/robot_control/src/safety_limiter.cpp
-```
-
-职责：
-
-- 设置每个关节的位置下限和上限。
-- 设置最大速度限制。
-- 检查 `RobotState` 或位置/速度数组是否安全。
-- 对越界的位置和速度进行 clamp 限幅。
-
-典型用途：轨迹点执行前的安全保护。
-
-### `CubicInterpolator`
-
-文件：
-
-```text
-robot_control_ros2/src/robot_control/include/cubic_interpolator.hpp
-robot_control_ros2/src/robot_control/src/cubic_interpolator.cpp
-```
-
-职责：
-
-- 设置起点状态、目标状态、运动时长 `duration` 和采样周期 `dt`。
-- 生成三次插值轨迹 `calculate3Times()`。
-- 生成五次插值轨迹 `calculate5Times()`。
-- 按索引读取离散轨迹点。
-
-典型用途：根据目标关节位置生成控制周期可执行的轨迹序列。
-
-### `TrajectoryBuffer`
-
-文件：
-
-```text
-robot_control_ros2/src/robot_control/include/trajectory_buffer.hpp
-robot_control_ros2/src/robot_control/src/trajectory_buffer.cpp
-```
-
-职责：
-
-- 使用队列保存多个 `RobotState` 轨迹点。
-- 支持 push、pop、hasNext、size 和 clear。
-
-典型用途：模拟控制器中的轨迹点缓存，每个控制周期取出一个点执行。
-
-### `JacobianSolver`
-
-文件：
-
-```text
-robot_control_ros2/src/robot_control/include/jacobian_solver.hpp
-robot_control_ros2/src/robot_control/src/jacobian_solver.cpp
-```
-
-职责：
-
-- 使用 Eigen 求解雅可比伪逆。
-- 使用阻尼最小二乘法求解。
-- 计算雅可比矩阵条件数。
-
-典型用途：速度控制、冗余机械臂控制或逆运动学求解中的线性代数基础工具。
-
-## 目录结构
-
-```text
-robot_control_ros2/
-  src/
-    robot_control/              # 纯 C++ 控制库
-      include/                  # 头文件
-      src/                      # 模块实现
-      examples/                 # 测试程序和控制循环 demo
-      CMakeLists.txt
-      package.xml
-    robot_control_ros2/         # ROS2 节点、消息和服务
-    simple_arm_description/     # 2 自由度机械臂 URDF / RViz2 可视化
-    other_package/              # 消费自定义消息的示例包
-```
-
-## RViz2 可视化闭环 demo
-
-当前已经完成一个 2 自由度机械臂可视化闭环：
-
-```text
-robot_position_cmd
-  -> /joint_position_cmd
-  -> joint_position_cmd_to_states
-  -> /joint_states
-  -> robot_state_publisher
-  -> TF / robot_description
-  -> RViz2
-```
-
-启动显示端：
+### AUBO i5 仿真
 
 ```bash
-cd ~/cpp_practice/robot_control_ros2
-colcon build
-source install/setup.bash
-ros2 launch simple_arm_description simple_2dof_arm_display.launch.py
-```
-
-另开终端启动位置命令发布：
-
-```bash
-cd ~/cpp_practice/robot_control_ros2
-source install/setup.bash
-ros2 run robot_control_ros2 robot_position_cmd
-```
-
-再开一个终端启动关节状态发布：
-
-```bash
-cd ~/cpp_practice/robot_control_ros2
-source install/setup.bash
-ros2 run robot_control_ros2 joint_position_cmd_to_states
-```
-
-验证 topic 和 TF：
-
-```bash
-ros2 topic list
-ros2 topic echo /joint_position_cmd
-ros2 topic echo /joint_states
-ros2 run tf2_tools view_frames
-```
-
-详细说明见 [第 4 周：URDF、TF 与 RViz2 可视化闭环](docs/week4_visualization_closure.md)。
-
-## 编译纯 C++ 控制库
-
-### 1. 准备环境
-
-需要已经安装 ROS2、`colcon` 和 Eigen3。
-
-如果使用 Ubuntu 24.04 + ROS2 Jazzy，常见环境加载方式如下：
-
-```bash
+cd ~/cpp_practice/aubo_i5_ros2_control
 source /opt/ros/jazzy/setup.bash
-```
-
-如果你使用的是其他 ROS2 版本，把 `jazzy` 换成自己的版本名。
-
-### 2. 进入 ROS2 工作区
-
-```bash
-cd ~/cpp_practice/robot_control_ros2
-```
-
-### 3. 编译 `robot_control`
-
-只编译纯 C++ 控制库：
-
-```bash
-colcon build --packages-select robot_control
-```
-
-编译完成后，加载本工作区环境：
-
-```bash
+colcon build --symlink-install
 source install/setup.bash
+ros2 launch aubo_i5_gazebo demo_gazebo.launch.py
 ```
 
-### 4. 编译整个 ROS2 工作区
-
-如果还想同时编译 ROS2 节点、自定义消息和其他示例包：
-
-```bash
-colcon build
-source install/setup.bash
-```
-
-如果之前构建失败，建议先清理缓存再重新编译：
-
-```bash
-rm -rf build install log
-colcon build
-source install/setup.bash
-```
-
-## 运行测试程序
-
-这些测试目前是普通可执行程序，不是 gtest。编译 `robot_control` 后，可以直接用 `ros2 run` 运行。
-
-```bash
-cd ~/cpp_practice/robot_control_ros2
-source install/setup.bash
-```
-
-运行状态模块测试：
-
-```bash
-ros2 run robot_control robot_state_test
-```
-
-运行安全限幅测试：
-
-```bash
-ros2 run robot_control safety_limiter_test
-```
-
-运行轨迹缓冲测试：
-
-```bash
-ros2 run robot_control trajectory_buffer_test
-```
-
-运行插值器测试：
-
-```bash
-ros2 run robot_control cubic_interpolator_test
-```
-
-运行雅可比求解测试：
-
-```bash
-ros2 run robot_control jacobian_solver_test
-```
-
-运行控制循环 demo：
-
-```bash
-ros2 run robot_control control_loop_demo
-```
-
-也可以直接执行安装目录下的程序，例如：
-
-```bash
-./install/robot_control/lib/robot_control/control_loop_demo
-```
-
-## 控制循环 demo 流程
-
-demo 文件：
-
-```text
-robot_control_ros2/src/robot_control/examples/control_loop_demo.cpp
-```
-
-流程如下：
-
-1. 创建 `SafetyLimiter`，设置 6 自由度机器人限制。
-2. 设置每个关节的位置范围为 `[-3.14, 3.14]`。
-3. 设置最大关节速度为 `2.0`。
-4. 创建起点关节位置：
-
-```text
-[0, 0, 0, 0, 0, 0]
-```
-
-5. 创建目标关节位置：
-
-```text
-[1, 15, -1, 1.5, 6, 21]
-```
-
-6. 用 `RobotState` 分别保存起点和目标。
-7. 创建 `CubicInterpolator(6, 5.0, 0.04)`：
-
-- `6` 表示 6 自由度。
-- `5.0` 表示轨迹总时长 5 秒。
-- `0.04` 表示每 0.04 秒生成一个轨迹点。
-
-8. 调用 `calculate3Times()` 生成三次插值轨迹。
-9. 将插值器生成的每个 `RobotState` 放入 `TrajectoryBuffer`。
-10. 控制循环开始：
-
-- 如果 buffer 里还有轨迹点，就取出下一个点。
-- 用 `SafetyLimiter::isSafe()` 检查这个点是否安全。
-- 如果安全，打印该状态。
-- 如果不安全，打印停止提示，调用 `clampRobotState()` 把状态限制到安全范围内，再打印限幅后的状态。
-
-这个 demo 故意设置了超出关节范围的目标值，例如 `15`、`6`、`21`，因此可以观察到安全限幅模块如何处理非法轨迹点。
-
-## 最小使用流程
-
-如果别人只想编译并运行纯 C++ 控制库，可以按下面步骤：
+### 二自由度机械臂仿真
 
 ```bash
 cd ~/cpp_practice/robot_control_ros2
 source /opt/ros/jazzy/setup.bash
-colcon build --packages-select robot_control
+colcon build --symlink-install
 source install/setup.bash
-ros2 run robot_control control_loop_demo
+ros2 launch simple_arm_gazebo demo_gazebo.launch.py
 ```
 
-如果要逐个验证模块：
+### Fishbot 模型显示
 
 ```bash
-ros2 run robot_control robot_state_test
-ros2 run robot_control safety_limiter_test
-ros2 run robot_control trajectory_buffer_test
-ros2 run robot_control cubic_interpolator_test
-ros2 run robot_control jacobian_solver_test
+cd ~/cpp_practice/robot_move_control
+source /opt/ros/jazzy/setup.bash
+colcon build --symlink-install
+source install/setup.bash
+ros2 launch fishbot_description dispaly_robot_xacro.launch.py
+```
+
+## AUBO i5 真机安全约定
+
+`aubo_i5_ros2_control` 中的真机接口使用厂家 AUBO SDK，经 RPC/RTDE 连接控制柜。SDK 放在：
+
+```text
+aubo_i5_ros2_control/src/aubo_i5_hardware/third_party/aubo_sdk/
+```
+
+真机启动必须先使用只读模式：
+
+```bash
+ros2 launch aubo_i5_hardware aubo_i5_real.launch.py \
+  robot_ip:=控制柜IP enable_motion:=false
+```
+
+确认完整六轴 `/joint_states`、关节方向、单位、零位和安全状态均正确后，才能在完成现场安全检查的前提下显式设置 `enable_motion:=true`。不要同时运行多个 Gazebo/MoveIt/真机 launch，避免多个状态发布者或 `/controller_manager` 相互干扰。
+
+## Obsidian 教程（推荐作为主学习手册）
+
+[`docs/`](docs/README.md) 是本仓库配套的中文 Obsidian Vault。它不是单篇说明，而是一套从代码盘点到真机验收的教程；用 Obsidian 直接打开该目录可保留双向链接、提示块和流程图。
+
+推荐按以下顺序阅读：
+
+1. [01-项目盘点与目标架构](docs/01-项目盘点与目标架构.md) 与 [02-环境与工作区复现](docs/02-环境与工作区复现.md)：了解仓库和复现环境。
+2. [10-实验0：ROS2基础与现有控制代码复现](docs/10-实验0-ROS2基础与现有控制代码复现.md) → [12-实验2：二维机械臂 Gazebo、ros2_control、MoveIt 闭环](docs/12-实验2-二维机械臂Gazebo-ros2_control-MoveIt闭环.md)：完成 ROS 2 与仿真基础。
+3. [13-实验3：AUBO i5 建模、Gazebo 与 MoveIt 配置](docs/13-实验3-AUBO-i5建模-Gazebo与MoveIt配置.md)：进入 i5 仿真。
+4. [30-AUBO参考驱动：仿真到真机实施手册](docs/30-AUBO参考驱动-仿真到真机实施手册.md)：SDK、硬件接口、真机只读验证和安全验收。
+
+教程还包含功能包/工具链说明、CMake 与 `package.xml`、MoveIt 与 `ros2_control` 执行链路、QoS、排障字典、ROS1→Jazzy 迁移及移动机器人/Nav2 专题。真机操作以教程中的安全门和逐级验收要求为准。
+
+## 其他文档
+
+- [AUBO i5 工作空间说明](aubo_i5_ros2_control/README.md)
+- [ROS 2 控制学习工作空间说明](robot_control_ros2/README.md)
+- [Fishbot 工作空间说明](robot_move_control/README.md)
+- [教程首页](docs/README.md)：Obsidian 教程导航、实验手册与参考资料。
+
+## 仓库结构
+
+```text
+manipulator-control/
+├── aubo_i5_ros2_control/                 # AUBO i5 主工作空间
+├── robot_control_ros2/                   # 控制算法与二维臂学习工作空间
+├── robot_move_control/                   # Fishbot 建模工作空间
+├── docs/                                  # 中文 Obsidian 教程、部署手册与学习笔记
+└── cpp_test/                              # 独立 C++ 练习代码
 ```

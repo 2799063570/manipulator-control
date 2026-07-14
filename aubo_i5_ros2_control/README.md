@@ -69,5 +69,5 @@ ros2 launch aubo_i5_hardware aubo_i5_real.launch.py \
 
 ## 进一步文档
 
-- `obsidian_机器人仿真与真机部署教程/30-AUBO参考驱动-仿真到真机实施手册.md`：硬件接口、SDK 迁移和真机验收步骤。
+- `../docs/30-AUBO参考驱动-仿真到真机实施手册.md`：硬件接口、SDK 迁移和真机验收步骤。
 - `aubo_i5_hardware/third_party/README.md`：厂家 SDK 的目录约定、许可证与迁移说明。

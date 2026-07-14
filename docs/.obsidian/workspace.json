@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "30-AUBO参考驱动-仿真到真机实施手册.md",
+                "file": "07-工程化-测试-排障与安全.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "30-AUBO参考驱动-仿真到真机实施手册"
+              "title": "07-工程化-测试-排障与安全"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "30-AUBO参考驱动-仿真到真机实施手册.md",
+                "file": "07-工程化-测试-排障与安全.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "30-AUBO参考驱动-仿真到真机实施手册 的大纲"
+              "title": "07-工程化-测试-排障与安全 的大纲"
             }
           }
         ],
@@ -185,9 +185,13 @@
   },
   "active": "abb9dc390bb51bc9",
   "lastOpenFiles": [
+    "16-实验6-移动机器人真机-MCU与传感器融合.md",
+    "28-ROS1流程与ROS2对照.md",
+    "README.md",
+    "01-项目盘点与目标架构.md",
+    "30-AUBO参考驱动-仿真到真机实施手册.md",
     "31-OMPL与MoveIt规划管线学习手册.md",
     "Pasted image 20260714024051.png",
-    "30-AUBO参考驱动-仿真到真机实施手册.md",
     "14-实验4-机械臂真机接口-标定与安全验证.md",
     "13-实验3-AUBO-i5建模-Gazebo与MoveIt配置.md",
     "15-实验5-差速小车-Gazebo-里程计-SLAM-Nav2.md",
@@ -195,16 +199,13 @@
     "03-机械臂Gazebo与MoveIt2仿真.md",
     "21-CMakeLists与package.xml从入门到当前工程.md",
     "22-MoveIt与ros2_control加载执行全流程.md",
-    "README.md",
     "29-AUBO-i5从ROS1风格迁移到Jazzy实施方案.md",
-    "28-ROS1流程与ROS2对照.md",
     "02-环境与工作区复现.md",
     "20-面试八股题库-背诵版.md",
     "24-ros2_control_node详解.md",
     "25-robot_state_publisher-RSP详解.md",
     "27-系统总总结与学习闭环.md",
     "26-ROS2-QoS详解与机器人通信配置.md",
-    "01-项目盘点与目标架构.md",
     "23-ros2_control三种后端-Fake-Gazebo-真机对照.md",
     "10-实验0-ROS2基础与现有控制代码复现.md",
     "12-实验2-二维机械臂Gazebo-ros2_control-MoveIt闭环.md",

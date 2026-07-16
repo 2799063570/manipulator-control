@@ -3,6 +3,11 @@
 #include <unordered_map>
 using namespace std;
 
+/*
+    给你一个整数数组 `vector<int> nums`，以及一个目标值 `target`。
+    找出两值之和为target的值的下标
+*/
+
 // 暴力求解
 vector<int> getTwoIndex(const vector<int>& nums, int target)
 {

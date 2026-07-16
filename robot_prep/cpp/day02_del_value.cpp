@@ -3,6 +3,10 @@
 
 using namespace std;
 
+/*
+    删除数组中的指定元素（有序数组）
+*/
+
 // 快慢指针
 int delValueFS(vector<int>& nums, int target)
 {

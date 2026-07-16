@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "07-工程化-测试-排障与安全.md",
+                "file": "14天执行清单/03-字符串与滑动窗口.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "07-工程化-测试-排障与安全"
+              "title": "03-字符串与滑动窗口"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "07-工程化-测试-排障与安全.md",
+                "file": "14天执行清单/03-字符串与滑动窗口.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "07-工程化-测试-排障与安全 的大纲"
+              "title": "03-字符串与滑动窗口 的大纲"
             }
           }
         ],
@@ -185,32 +185,32 @@
   },
   "active": "abb9dc390bb51bc9",
   "lastOpenFiles": [
+    "14天执行清单/README.md",
+    "14天执行清单/01-数组与复杂度.md",
+    "14天执行清单/03-字符串与滑动窗口.md",
+    "14天执行清单/02-双指针.md",
+    "35-机械臂远程控制与任务编排平台实施文档.md",
+    "33-基础补齐-14天执行清单.md",
+    "Pasted image 20260714024051.png",
+    "14天执行清单/14-第二次模拟与项目排障记录.md",
+    "14天执行清单/13-机器人控制基础连接.md",
+    "14天执行清单/12-DP与QoS排障.md",
+    "14天执行清单/11-堆与项目状态链路.md",
+    "14天执行清单/10-图搜索与TF.md",
+    "14天执行清单/09-树的遍历.md",
+    "14天执行清单/08-哈希与STL取舍.md",
+    "14天执行清单/07-第一次模拟与复盘.md",
+    "14天执行清单/06-链表与最小ROS包.md",
+    "14天执行清单/05-二分与排序.md",
+    "14天执行清单/04-栈与队列.md",
+    "14天执行清单",
+    "32-十月机器人开发求职笔试准备计划.md",
+    "34-机器人开发多线程与实时性学习手册.md",
+    "30-AUBO参考驱动-仿真到真机实施手册.md",
+    "29-AUBO-i5从ROS1风格迁移到Jazzy实施方案.md",
+    "07-工程化-测试-排障与安全.md",
     "16-实验6-移动机器人真机-MCU与传感器融合.md",
     "28-ROS1流程与ROS2对照.md",
-    "README.md",
-    "01-项目盘点与目标架构.md",
-    "30-AUBO参考驱动-仿真到真机实施手册.md",
-    "31-OMPL与MoveIt规划管线学习手册.md",
-    "Pasted image 20260714024051.png",
-    "14-实验4-机械臂真机接口-标定与安全验证.md",
-    "13-实验3-AUBO-i5建模-Gazebo与MoveIt配置.md",
-    "15-实验5-差速小车-Gazebo-里程计-SLAM-Nav2.md",
-    "04-AUBO-i5仿真到真机部署.md",
-    "03-机械臂Gazebo与MoveIt2仿真.md",
-    "21-CMakeLists与package.xml从入门到当前工程.md",
-    "22-MoveIt与ros2_control加载执行全流程.md",
-    "29-AUBO-i5从ROS1风格迁移到Jazzy实施方案.md",
-    "02-环境与工作区复现.md",
-    "20-面试八股题库-背诵版.md",
-    "24-ros2_control_node详解.md",
-    "25-robot_state_publisher-RSP详解.md",
-    "27-系统总总结与学习闭环.md",
-    "26-ROS2-QoS详解与机器人通信配置.md",
-    "23-ros2_control三种后端-Fake-Gazebo-真机对照.md",
-    "10-实验0-ROS2基础与现有控制代码复现.md",
-    "12-实验2-二维机械臂Gazebo-ros2_control-MoveIt闭环.md",
-    "11-实验1-轨迹规划-限幅与雅可比控制.md",
-    "09-项目实施清单.md",
-    "17-功能包与工具链详解.md"
+    "README.md"
   ]
 }

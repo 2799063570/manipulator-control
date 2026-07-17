@@ -18,12 +18,14 @@ find_package(turtlesim REQUIRED)
 # find_package(turtlesim REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
+find_package(rclcpp_action REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/JointStateCommand.msg"
   "srv/Student.srv"
   "msg/JointVelocityCmd.msg"
-  "msg/JointPositionCmd.msg")
+  "msg/JointPositionCmd.msg"
+  "action/Fibonacci.action")
 
 add_executable(joint_velocity_publisher src/topic/joint_velocity_publisher.cpp)
 ament_target_dependencies(
@@ -170,7 +172,22 @@ ament_target_dependencies(
   "rclcpp"
   robot_control
 )
-
+add_executable(fibonacci_server 
+  src/action/fibonacci_server.cpp
+)
+ament_target_dependencies(
+  fibonacci_server
+  "rclcpp"
+  "rclcpp_action"
+)
+add_executable(fibonacci_client 
+  src/action/fibonacci_client.cpp
+)
+ament_target_dependencies(
+  fibonacci_client
+  "rclcpp"
+  "rclcpp_action"
+)
 rosidl_get_typesupport_target(cpp_typesupport_target
   ${PROJECT_NAME}
   rosidl_typesupport_cpp
@@ -200,6 +217,12 @@ target_link_libraries(joint_position_cmd_to_states
 target_link_libraries(robot_position_cmd
   "${cpp_typesupport_target}"
 )
+target_link_libraries(fibonacci_server
+  "${cpp_typesupport_target}"
+)
+target_link_libraries(fibonacci_client
+  "${cpp_typesupport_target}"
+)
 install(TARGETS
   joint_velocity_publisher 
   joint_velocity_subscriber 
@@ -218,6 +241,8 @@ install(TARGETS
   robot_position_cmd
   param_server
   param_client
+  fibonacci_server
+  fibonacci_client
   DESTINATION lib/${PROJECT_NAME})
 ament_export_dependencies(rosidl_default_runtime)
 

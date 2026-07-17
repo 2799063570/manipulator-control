@@ -35,6 +35,7 @@ int main()
     const std::vector<RobotState>& robot_vector = ci.getTrajectory();
 
     std::cout << "trans has " << ci.getStateNum() << std::endl;
+    robot_vector[0].printState();
 
     return 0;
 

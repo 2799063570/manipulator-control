@@ -27,8 +27,23 @@ ament_target_dependencies(
   geometry_msgs
   trajectory_msgs
 )
+
+add_executable(moveit_cartesian_demo 
+  src/moveit_cartesian_demo.cpp
+)
+ament_target_dependencies(
+  moveit_cartesian_demo
+  rclcpp
+  moveit_core
+  moveit_ros_planning
+  moveit_ros_planning_interface
+  geometry_msgs
+  trajectory_msgs
+)
+
 install(TARGETS
   grasp_init
+  moveit_cartesian_demo
   DESTINATION lib/${PROJECT_NAME})
 
 install(DIRECTORY

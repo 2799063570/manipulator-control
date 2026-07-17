@@ -2,9 +2,7 @@
 #include <memory>
 #include <thread>
 #include "moveit/move_group_interface/move_group_interface.hpp"
-
 #include <geometry_msgs/msg/pose.hpp>
-
 #include <tf2/LinearMath/Quaternion.h>
 
 /**

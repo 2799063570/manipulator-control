@@ -51,16 +51,33 @@ hardware_interface::CallbackReturn AuboI5System::on_init(
       const auto it = info_.hardware_parameters.find(name);
       return it == info_.hardware_parameters.end() ? fallback : it->second;
     };
-  robot_ip_ = parameter("robot_ip", "");
-  rpc_port_ = std::stoi(parameter("rpc_port", "30004"));
-  rtde_port_ = std::stoi(parameter("rtde_port", "30010"));
-  connect_timeout_ms_ = std::stoi(parameter("connect_timeout_ms", "1000"));
-  command_timeout_ms_ = std::stoi(parameter("command_timeout_ms", "100"));
-  max_command_velocity_ = std::stod(parameter("max_command_velocity", "0.20"));
-  enable_motion_ = parameter("enable_motion", "false") == "true";
+  try
+  {
+    robot_ip_ = parameter("robot_ip", "");
+    rpc_port_ = std::stoi(parameter("rpc_port", "30004"));
+    rtde_port_ = std::stoi(parameter("rtde_port", "30010"));
+    connect_timeout_ms_ = std::stoi(parameter("connect_timeout_ms", "1000"));
+    command_timeout_ms_ = std::stoi(parameter("command_timeout_ms", "100"));
+    max_command_velocity_ = std::stod(parameter("max_command_velocity", "0.20"));
+    enable_motion_ = parameter("enable_motion", "false") == "true";
+  }
+  catch (const std::exception & exception)
+  {
+    RCLCPP_ERROR(rclcpp::get_logger("AuboI5System"),
+      "Invalid hardware parameter: %s", exception.what());
+    return hardware_interface::CallbackReturn::ERROR;
+  }
   if (robot_ip_.empty())
   {
     RCLCPP_ERROR(rclcpp::get_logger("AuboI5System"), "robot_ip must be explicitly provided.");
+    return hardware_interface::CallbackReturn::ERROR;
+  }
+  if (rpc_port_ <= 0 || rtde_port_ <= 0 || connect_timeout_ms_ <= 0 ||
+    command_timeout_ms_ <= 0 || !std::isfinite(max_command_velocity_) ||
+    max_command_velocity_ <= 0.0)
+  {
+    RCLCPP_ERROR(rclcpp::get_logger("AuboI5System"),
+      "Ports, timeouts and max_command_velocity must be positive finite values.");
     return hardware_interface::CallbackReturn::ERROR;
   }
   return hardware_interface::CallbackReturn::SUCCESS;
@@ -86,9 +103,14 @@ hardware_interface::CallbackReturn AuboI5System::on_activate(
     stop_servo();
     return hardware_interface::CallbackReturn::ERROR;
   }
-  std::lock_guard<std::mutex> lock(state_mutex_);
+  {
+    std::lock_guard<std::mutex> lock(state_mutex_);
+    position_state_ = feedback_position_;
+    velocity_state_ = feedback_velocity_;
+  }
   position_command_ = position_state_;
   previous_command_ = position_state_;
+  std::copy(position_state_.begin(), position_state_.end(), servo_target_.begin());
   RCLCPP_INFO(rclcpp::get_logger("AuboI5System"),
     "AUBO i5 hardware activated in %s mode.", enable_motion_ ? "motion-enabled" : "read-only");
   return hardware_interface::CallbackReturn::SUCCESS;
@@ -100,6 +122,24 @@ hardware_interface::CallbackReturn AuboI5System::on_deactivate(
   stop_servo();
   connected_ = false;
   feedback_valid_ = false;
+  if (rtde_client_)
+  {
+    try
+    {
+      rtde_client_->logout();
+      rtde_client_->disconnect();
+    }
+    catch (...) {}
+  }
+  if (rpc_client_)
+  {
+    try
+    {
+      rpc_client_->logout();
+      rpc_client_->disconnect();
+    }
+    catch (...) {}
+  }
   rtde_client_.reset();
   rpc_client_.reset();
   return hardware_interface::CallbackReturn::SUCCESS;
@@ -128,8 +168,17 @@ std::vector<hardware_interface::CommandInterface> AuboI5System::export_command_i
 
 hardware_interface::return_type AuboI5System::read(const rclcpp::Time &, const rclcpp::Duration &)
 {
-  return feedback_is_fresh() ? hardware_interface::return_type::OK :
-    hardware_interface::return_type::ERROR;
+  if (!feedback_is_fresh())
+  {
+    feedback_valid_ = false;
+    stop_servo();
+    return hardware_interface::return_type::ERROR;
+  }
+
+  std::lock_guard<std::mutex> lock(state_mutex_);
+  position_state_ = feedback_position_;
+  velocity_state_ = feedback_velocity_;
+  return hardware_interface::return_type::OK;
 }
 
 hardware_interface::return_type AuboI5System::write(
@@ -139,24 +188,35 @@ hardware_interface::return_type AuboI5System::write(
   {
     return hardware_interface::return_type::OK;
   }
-  if (!feedback_is_fresh() || !command_is_safe(period) || !start_servo())
+  if (!feedback_is_fresh() || !command_is_safe(period))
   {
+    stop_servo();
     return hardware_interface::return_type::ERROR;
   }
-  std::vector<double> target(position_command_.begin(), position_command_.end());
+  if (!start_servo())
+  {
+    stop_servo();
+    connected_ = false;
+    return hardware_interface::return_type::ERROR;
+  }
+  std::copy(position_command_.begin(), position_command_.end(), servo_target_.begin());
   try
   {
     const int result = rpc_client_->getRobotInterface(robot_name_)->getMotionControl()->servoJoint(
-      target, 0.2, 0.2, 0.01, 0.1, 200);
+      servo_target_, 0.2, 0.2, period.seconds(), 0.1, 200);
     if (result < 0)
     {
       RCLCPP_ERROR(rclcpp::get_logger("AuboI5System"), "servoJoint failed with code %d", result);
+      stop_servo();
+      connected_ = false;
       return hardware_interface::return_type::ERROR;
     }
   }
   catch (const std::exception & exception)
   {
     RCLCPP_ERROR(rclcpp::get_logger("AuboI5System"), "servoJoint exception: %s", exception.what());
+    stop_servo();
+    connected_ = false;
     return hardware_interface::return_type::ERROR;
   }
   previous_command_ = position_command_;
@@ -165,6 +225,9 @@ hardware_interface::return_type AuboI5System::write(
 
 bool AuboI5System::connect_and_subscribe()
 {
+  connected_ = false;
+  feedback_valid_ = false;
+  robot_name_.clear();
   const char * username = std::getenv("AUBO_ROBOT_USERNAME");
   const char * password = std::getenv("AUBO_ROBOT_PASSWORD");
   if (username == nullptr || password == nullptr)
@@ -176,37 +239,58 @@ bool AuboI5System::connect_and_subscribe()
   try
   {
     rpc_client_ = std::make_shared<arcs::aubo_sdk::RpcClient>();
-    rpc_client_->setRequestTimeout(connect_timeout_ms_);
-    rpc_client_->connect(robot_ip_, rpc_port_);
-    rpc_client_->login(username, password);
-    robot_name_ = rpc_client_->getRobotNames().front();
+    if (rpc_client_->setRequestTimeout(connect_timeout_ms_) != 0 ||
+      rpc_client_->connect(robot_ip_, rpc_port_) != 0 ||
+      rpc_client_->login(username, password) != 0)
+    {
+      RCLCPP_ERROR(rclcpp::get_logger("AuboI5System"), "RPC connection or login failed.");
+      return false;
+    }
+    const auto robot_names = rpc_client_->getRobotNames();
+    if (robot_names.empty())
+    {
+      RCLCPP_ERROR(rclcpp::get_logger("AuboI5System"), "The controller returned no robot names.");
+      return false;
+    }
+    robot_name_ = robot_names.front();
 
     rtde_client_ = std::make_shared<arcs::aubo_sdk::RtdeClient>();
-    rtde_client_->connect(robot_ip_, rtde_port_);
-    rtde_client_->login(username, password);
+    if (rtde_client_->connect(robot_ip_, rtde_port_) < 0 ||
+      rtde_client_->login(username, password) != 0)
+    {
+      RCLCPP_ERROR(rclcpp::get_logger("AuboI5System"), "RTDE connection or login failed.");
+      return false;
+    }
     const int topic = rtde_client_->setTopic(false,
       {"R1_actual_q", "R1_actual_qd", "R1_robot_mode", "R1_safety_mode"}, 125, 0);
     if (topic < 0)
     {
+      RCLCPP_ERROR(rclcpp::get_logger("AuboI5System"), "Could not create the RTDE feedback topic.");
       return false;
     }
-    rtde_client_->subscribe(topic, [this](arcs::aubo_sdk::InputParser & parser) {
+    if (rtde_client_->subscribe(topic, [this](arcs::aubo_sdk::InputParser & parser) {
       const auto q = parser.popVectorDouble();
       const auto qd = parser.popVectorDouble();
       const auto robot_mode = parser.popRobotModeType();
       const auto safety_mode = parser.popSafetyModeType();
-      if (q.size() != 6 || qd.size() != 6)
+      if (q.size() != 6 || qd.size() != 6 ||
+        !std::all_of(q.begin(), q.end(), [](double value) {return std::isfinite(value);}) ||
+        !std::all_of(qd.begin(), qd.end(), [](double value) {return std::isfinite(value);}))
       {
         return;
       }
       std::lock_guard<std::mutex> lock(state_mutex_);
-      std::copy_n(q.begin(), 6, position_state_.begin());
-      std::copy_n(qd.begin(), 6, velocity_state_.begin());
+      std::copy_n(q.begin(), 6, feedback_position_.begin());
+      std::copy_n(qd.begin(), 6, feedback_velocity_.begin());
       robot_mode_ = robot_mode;
       safety_mode_ = safety_mode;
       last_feedback_time_ = std::chrono::steady_clock::now();
       feedback_valid_ = true;
-    });
+    }) != 0)
+    {
+      RCLCPP_ERROR(rclcpp::get_logger("AuboI5System"), "Could not subscribe to RTDE feedback.");
+      return false;
+    }
     connected_ = true;
     return true;
   }
@@ -231,8 +315,12 @@ bool AuboI5System::feedback_is_fresh() const
 
 bool AuboI5System::command_is_safe(const rclcpp::Duration & period) const
 {
-  std::lock_guard<std::mutex> lock(state_mutex_);
   const double maximum_delta = max_command_velocity_ * period.seconds();
+  if (!std::isfinite(maximum_delta) || maximum_delta <= 0.0)
+  {
+    RCLCPP_ERROR(rclcpp::get_logger("AuboI5System"), "Invalid controller update period.");
+    return false;
+  }
   for (std::size_t i = 0; i < kJointNames.size(); ++i)
   {
     if (!std::isfinite(position_command_[i]) ||
@@ -242,6 +330,7 @@ bool AuboI5System::command_is_safe(const rclcpp::Duration & period) const
       return false;
     }
   }
+  std::lock_guard<std::mutex> lock(state_mutex_);
   return robot_mode_ == arcs::common_interface::RobotModeType::Running &&
     (safety_mode_ == arcs::common_interface::SafetyModeType::Normal ||
      safety_mode_ == arcs::common_interface::SafetyModeType::ReducedMode);
@@ -249,13 +338,31 @@ bool AuboI5System::command_is_safe(const rclcpp::Duration & period) const
 
 bool AuboI5System::start_servo()
 {
-  if (servo_started_)
+  if (servo_started_ && rpc_client_)
   {
     return true;
   }
   try
   {
-    rpc_client_->getRobotInterface(robot_name_)->getMotionControl()->setServoMode(true);
+    if (!rpc_client_ || robot_name_.empty())
+    {
+      return false;
+    }
+    const auto motion = rpc_client_->getRobotInterface(robot_name_)->getMotionControl();
+    if (motion->setServoMode(true) != 0)
+    {
+      RCLCPP_ERROR(rclcpp::get_logger("AuboI5System"), "Could not enter Servo mode.");
+      return false;
+    }
+    for (int attempt = 0; attempt < 5 && !motion->isServoModeEnabled(); ++attempt)
+    {
+      std::this_thread::sleep_for(std::chrono::milliseconds(5));
+    }
+    if (!motion->isServoModeEnabled())
+    {
+      RCLCPP_ERROR(rclcpp::get_logger("AuboI5System"), "Could not confirm Servo mode.");
+      return false;
+    }
     servo_started_ = true;
     return true;
   }

@@ -62,8 +62,13 @@ private:
   mutable std::mutex state_mutex_;
   std::array<double, 6> position_state_{};
   std::array<double, 6> velocity_state_{};
+  // RTDE owns these snapshots.  State interfaces are only updated by read(),
+  // which keeps the controller thread separate from the SDK callback thread.
+  std::array<double, 6> feedback_position_{};
+  std::array<double, 6> feedback_velocity_{};
   std::array<double, 6> position_command_{};
   std::array<double, 6> previous_command_{};
+  std::vector<double> servo_target_{6, 0.0};
   std::chrono::steady_clock::time_point last_feedback_time_{};
   std::atomic<bool> connected_{false};
   std::atomic<bool> feedback_valid_{false};

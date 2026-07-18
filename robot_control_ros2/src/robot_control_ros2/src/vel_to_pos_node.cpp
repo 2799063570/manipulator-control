@@ -13,7 +13,7 @@ using JointPositionCmd = robot_control_ros2::msg::JointPositionCmd;
 class Vel2PosNode : public rclcpp::Node
 {
     public:
-        Vel2PosNode() : Node("Vel_to_Pos_node"), 
+        Vel2PosNode() : Node("vel_to_pos_node"), 
             dof_(this->declare_parameter<int>("dof", 6)),
             max_velocity_(this->declare_parameter<double>("max_velocity", 1.2)),
             duration_(this->declare_parameter<double>("velocity_cmd_time", 0.1)),

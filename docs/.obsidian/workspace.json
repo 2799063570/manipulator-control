@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "14天执行清单/02-双指针.md",
+                "file": "05-移动机器人仿真与Nav2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02-双指针"
+              "title": "05-移动机器人仿真与Nav2"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "14天执行清单/02-双指针.md",
+                "file": "05-移动机器人仿真与Nav2.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "02-双指针 的大纲"
+              "title": "05-移动机器人仿真与Nav2 的大纲"
             }
           }
         ],
@@ -185,6 +185,7 @@
   },
   "active": "abb9dc390bb51bc9",
   "lastOpenFiles": [
+    "14天执行清单/02-双指针.md",
     "14天执行清单/01-数组与复杂度.md",
     "04-AUBO-i5仿真到真机部署.md",
     "03-机械臂Gazebo与MoveIt2仿真.md",
@@ -196,7 +197,6 @@
     "14天执行清单/10-图搜索与TF.md",
     "14天执行清单/04-栈与队列.md",
     "14天执行清单/03-字符串与滑动窗口.md",
-    "14天执行清单/02-双指针.md",
     "14天执行清单/README.md",
     "35-机械臂远程控制与任务编排平台实施文档.md",
     "33-基础补齐-14天执行清单.md",

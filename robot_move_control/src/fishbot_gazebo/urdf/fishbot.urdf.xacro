@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<robot name="fishbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- Reuse the validated links and joints, but intentionally omit the Gazebo
+       Classic control/sensor plugins from assemble.xacro. -->
+  <xacro:include filename="$(find fishbot_description)/urdf/mycar/matrix_algorithm.xacro"/>
+  <xacro:include filename="$(find fishbot_description)/urdf/mycar/base_link.xacro"/>
+  <xacro:include filename="$(find fishbot_description)/urdf/mycar/camare.xacro"/>
+  <xacro:include filename="$(find fishbot_description)/urdf/mycar/radius.xacro"/>
+
+  <ros2_control name="FishbotSystem" type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+    <joint name="left_wheel2base_link">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+    <joint name="right_wheel2base_link">
+      <command_interface name="velocity"/>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+    </joint>
+  </ros2_control>
+
+  <gazebo>
+    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>$(find fishbot_gazebo)/config/controllers.yaml</parameters>
+    </plugin>
+  </gazebo>
+
+  <!-- Gazebo Sim publishes this sensor as /scan; ros_gz_bridge converts it
+       to sensor_msgs/LaserScan for SLAM Toolbox and Nav2. -->
+  <gazebo reference="laser">
+    <sensor name="lidar" type="gpu_lidar">
+      <always_on>1</always_on>
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+      <topic>/scan</topic>
+      <gz_frame_id>laser</gz_frame_id>
+      <lidar>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.1415926</min_angle>
+            <max_angle>3.1415926</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>12.0</max>
+          <resolution>0.01</resolution>
+        </range>
+      </lidar>
+    </sensor>
+  </gazebo>
+</robot>

@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <world name="nav2_world">
+    <physics name="1ms" type="ignored">
+      <max_step_size>0.01</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"/>
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"/>
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"/>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+
+    <light type="directional" name="sun">
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision"><geometry><plane><normal>0 0 1</normal><size>20 20</size></plane></geometry></collision>
+        <visual name="visual"><geometry><plane><normal>0 0 1</normal><size>20 20</size></plane></geometry></visual>
+      </link>
+    </model>
+
+    <!-- A bounded, asymmetric course makes scan matching and navigation easy to verify. -->
+    <model name="walls"><static>true</static><link name="link">
+      <collision name="north"><pose>0 4 0.5 0 0 0</pose><geometry><box><size>8.2 0.15 1.0</size></box></geometry></collision>
+      <collision name="south"><pose>0 -4 0.5 0 0 0</pose><geometry><box><size>8.2 0.15 1.0</size></box></geometry></collision>
+      <collision name="east"><pose>4 0 0.5 0 0 0</pose><geometry><box><size>0.15 8.2 1.0</size></box></geometry></collision>
+      <collision name="west"><pose>-4 0 0.5 0 0 0</pose><geometry><box><size>0.15 8.2 1.0</size></box></geometry></collision>
+      <visual name="north_v"><pose>0 4 0.5 0 0 0</pose><geometry><box><size>8.2 0.15 1.0</size></box></geometry></visual>
+      <visual name="south_v"><pose>0 -4 0.5 0 0 0</pose><geometry><box><size>8.2 0.15 1.0</size></box></geometry></visual>
+      <visual name="east_v"><pose>4 0 0.5 0 0 0</pose><geometry><box><size>0.15 8.2 1.0</size></box></geometry></visual>
+      <visual name="west_v"><pose>-4 0 0.5 0 0 0</pose><geometry><box><size>0.15 8.2 1.0</size></box></geometry></visual>
+    </link></model>
+    <model name="center_obstacle"><static>true</static><pose>1.0 0.8 0.5 0 0 0</pose><link name="link">
+      <collision name="collision"><geometry><box><size>1.4 0.8 1.0</size></box></geometry></collision>
+      <visual name="visual"><geometry><box><size>1.4 0.8 1.0</size></box></geometry></visual>
+    </link></model>
+    <model name="corner_obstacle"><static>true</static><pose>-2.0 -1.5 0.5 0 0 0</pose><link name="link">
+      <collision name="collision"><geometry><cylinder><radius>0.45</radius><length>1.0</length></cylinder></geometry></collision>
+      <visual name="visual"><geometry><cylinder><radius>0.45</radius><length>1.0</length></cylinder></geometry></visual>
+    </link></model>
+  </world>
+</sdf>

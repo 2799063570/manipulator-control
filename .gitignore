@@ -13,6 +13,9 @@ log/
 **/install/
 **/log/
 
+# Real robot addresses and calibrated motion-test values
+**/config/*.local.yaml
+
 # Compiled files
 *.o
 *.so

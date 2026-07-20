@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="wheeltec_mini_mec">
+  <!--
+    Dimensions are based on the vendor mini_mec_robot.urdf: wheel radius 0.0375 m,
+    wheelbase 0.17 m and track 0.195 m. Measure the actual robot before using
+    this model for collision-sensitive navigation.
+  -->
+  <xacro:macro name="wheeltec_mecanum_wheel" params="joint_name link_name x y roller_direction wheel_radius wheel_width">
+    <link name="${link_name}">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.10"/>
+        <inertia ixx="0.00010" ixy="0.0" ixz="0.0" iyy="0.00006" iyz="0.0" izz="0.00010"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
+        <geometry><cylinder radius="${wheel_radius}" length="${wheel_width}"/></geometry>
+        <material name="wheeltec_black"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="1.57079632679 0 0"/>
+        <geometry><cylinder radius="${wheel_radius}" length="${wheel_width}"/></geometry>
+      </collision>
+    </link>
+    <joint name="${joint_name}" type="continuous">
+      <parent link="base_link"/>
+      <child link="${link_name}"/>
+      <origin xyz="${x} ${y} ${-wheel_radius}" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+      <limit effort="8.0" velocity="25.0"/>
+    </joint>
+    <!-- Gazebo Sim uses this direction to approximate the 45-degree rollers. -->
+    <gazebo reference="${link_name}">
+      <mu1>1.0</mu1>
+      <mu2>0.05</mu2>
+      <fdir1 gz:expressed_in="base_link" xmlns:gz="http://gazebosim.org/schema">${roller_direction}</fdir1>
+    </gazebo>
+  </xacro:macro>
+
+  <xacro:macro name="wheeltec_mini_mec_model">
+    <xacro:property name="wheel_radius" value="0.0375"/>
+    <xacro:property name="wheel_width" value="0.030"/>
+    <xacro:property name="wheelbase" value="0.170"/>
+    <xacro:property name="track" value="0.195"/>
+    <xacro:property name="base_length" value="0.270"/>
+    <xacro:property name="base_width" value="0.185"/>
+    <xacro:property name="base_height" value="0.055"/>
+
+    <material name="wheeltec_gray"><color rgba="0.72 0.72 0.72 1"/></material>
+    <material name="wheeltec_black"><color rgba="0.04 0.04 0.04 1"/></material>
+    <material name="sensor_blue"><color rgba="0.10 0.45 0.85 1"/></material>
+
+    <link name="base_footprint"/>
+    <link name="base_link">
+      <inertial>
+        <origin xyz="0 0 0.0225" rpy="0 0 0"/>
+        <mass value="3.0"/>
+        <inertia ixx="0.025" ixy="0.0" ixz="0.0" iyy="0.030" iyz="0.0" izz="0.045"/>
+      </inertial>
+      <visual>
+        <origin xyz="0 0 0.0225" rpy="0 0 0"/>
+        <geometry><box size="${base_length} ${base_width} ${base_height}"/></geometry>
+        <material name="wheeltec_gray"/>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0.0225" rpy="0 0 0"/>
+        <geometry><box size="${base_length} ${base_width} ${base_height}"/></geometry>
+      </collision>
+    </link>
+    <joint name="base_footprint_joint" type="fixed">
+      <parent link="base_footprint"/>
+      <child link="base_link"/>
+      <origin xyz="0 0 ${wheel_radius + 0.0375}" rpy="0 0 0"/>
+    </joint>
+
+    <xacro:wheeltec_mecanum_wheel joint_name="front_left_wheel_joint" link_name="front_left_wheel_link"
+      x="${wheelbase / 2}" y="${track / 2}" roller_direction="1 -1 0" wheel_radius="${wheel_radius}" wheel_width="${wheel_width}"/>
+    <xacro:wheeltec_mecanum_wheel joint_name="front_right_wheel_joint" link_name="front_right_wheel_link"
+      x="${wheelbase / 2}" y="${-track / 2}" roller_direction="1 1 0" wheel_radius="${wheel_radius}" wheel_width="${wheel_width}"/>
+    <xacro:wheeltec_mecanum_wheel joint_name="rear_left_wheel_joint" link_name="rear_left_wheel_link"
+      x="${-wheelbase / 2}" y="${track / 2}" roller_direction="1 1 0" wheel_radius="${wheel_radius}" wheel_width="${wheel_width}"/>
+    <xacro:wheeltec_mecanum_wheel joint_name="rear_right_wheel_joint" link_name="rear_right_wheel_link"
+      x="${-wheelbase / 2}" y="${-track / 2}" roller_direction="1 -1 0" wheel_radius="${wheel_radius}" wheel_width="${wheel_width}"/>
+
+    <link name="laser">
+      <visual>
+        <geometry><cylinder radius="0.032" length="0.045"/></geometry>
+        <material name="sensor_blue"/>
+      </visual>
+      <collision><geometry><cylinder radius="0.032" length="0.045"/></geometry></collision>
+    </link>
+    <joint name="laser_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="laser"/>
+      <origin xyz="0.055 0 0.115" rpy="0 0 0"/>
+    </joint>
+
+    <link name="imu_link"/>
+    <joint name="imu_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="imu_link"/>
+      <origin xyz="0 0 0.060" rpy="0 0 0"/>
+    </joint>
+  </xacro:macro>
+</robot>

@@ -1,0 +1,27 @@
+wheeltec_base_driver:
+  ros__parameters:
+    # The udev symlink from the Wheeltec installation script is preferred.
+    serial_port: /dev/wheeltec_controller
+    baud_rate: 115200
+
+    odom_frame: odom
+    base_frame: base_footprint
+    imu_frame: gyro_link
+    publish_tf: true
+
+    # Safety: publish a zero command if cmd_vel stops arriving.
+    command_timeout_sec: 0.5
+    max_linear_x: 0.35
+    max_linear_y: 0.35
+    max_angular_z: 1.0
+    accept_lateral_velocity: true
+
+    # Preserve the legacy Wheeltec protocol: m/s and rad/s are encoded as
+    # signed int16 values after multiplication by 1000.
+    linear_command_scale: 1000.0
+    angular_command_scale: 1000.0
+
+    odom_x_scale: 1.0
+    odom_y_scale: 1.0
+    odom_z_scale_positive: 1.0
+    odom_z_scale_negative: 1.0

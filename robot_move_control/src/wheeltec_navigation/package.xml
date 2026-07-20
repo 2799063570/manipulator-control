@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>wheeltec_navigation</name>
+  <version>0.1.0</version>
+  <description>
+    ROS 2 Jazzy Nav2 and slam_toolbox configuration for a Wheeltec mobile base.
+  </description>
+  <maintainer email="todo@example.com">Manipulator-control maintainers</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>nav2_amcl</exec_depend>
+  <exec_depend>nav2_bringup</exec_depend>
+  <exec_depend>nav2_map_server</exec_depend>
+  <exec_depend>slam_toolbox</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

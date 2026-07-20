@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="wheeltec_mini_mec">
+  <xacro:include filename="$(find wheeltec_description)/urdf/wheeltec_mini_mec_base.urdf.xacro"/>
+  <xacro:wheeltec_mini_mec_model/>
+
+  <!-- Gazebo Sim holonomic drive plugin.  It has the same external ROS-facing
+       cmd_vel/odom/TF contract as wheeltec_base_driver, without opening a serial port. -->
+  <gazebo>
+    <plugin filename="gz-sim-mecanum-drive-system" name="gz::sim::systems::MecanumDrive">
+      <front_left_joint>front_left_wheel_joint</front_left_joint>
+      <front_right_joint>front_right_wheel_joint</front_right_joint>
+      <back_left_joint>rear_left_wheel_joint</back_left_joint>
+      <back_right_joint>rear_right_wheel_joint</back_right_joint>
+      <wheelbase>0.170</wheelbase>
+      <wheel_separation>0.195</wheel_separation>
+      <wheel_radius>0.0375</wheel_radius>
+      <odom_publish_frequency>50</odom_publish_frequency>
+      <topic>/cmd_vel</topic>
+      <odom_topic>/odom</odom_topic>
+      <tf_topic>/tf</tf_topic>
+      <frame_id>odom</frame_id>
+      <child_frame_id>base_footprint</child_frame_id>
+    </plugin>
+  </gazebo>
+
+  <gazebo reference="laser">
+    <sensor name="lidar" type="gpu_lidar">
+      <always_on>1</always_on>
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+      <topic>/scan</topic>
+      <gz_frame_id>laser</gz_frame_id>
+      <lidar>
+        <scan><horizontal><samples>360</samples><resolution>1</resolution>
+          <min_angle>-3.14159265359</min_angle><max_angle>3.14159265359</max_angle>
+        </horizontal></scan>
+        <range><min>0.10</min><max>12.0</max><resolution>0.01</resolution></range>
+      </lidar>
+    </sensor>
+  </gazebo>
+</robot>

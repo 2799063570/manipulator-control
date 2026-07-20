@@ -264,10 +264,17 @@ ListNode* mergeList(ListNode* head1, ListNode* head2)
 }
 ```
 合并两个
-
+还是这个思路
+我们首先思考函数的功能是什么 我们函数是为了返回一个合并后的头节点
+相信后面的已经完成了融合 
+我们只需要完成当下节点需要做的 判断是那个节点作为头节点
+跳出递归的条件：出现空指针
 
 
 - C++：构造/析构、对象生命周期、RAII。
+
+
+
 - OS：虚拟内存；栈与堆的角色。
 - ROS：创建自己的最小 C++ package，包含 publisher 与 subscriber，并用 `colcon build` 构建。
 

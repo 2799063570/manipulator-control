@@ -9,6 +9,7 @@ from launch_ros.substitutions import FindPackageShare
 
 def generate_launch_description():
     use_sim_time = LaunchConfiguration("use_sim_time")
+    navigation_enabled = LaunchConfiguration("navigation_enabled")
     world = LaunchConfiguration("world")
     gazebo_share = FindPackageShare("wheeltec_gazebo")
     model = PathJoinSubstitution([gazebo_share, "urdf", "wheeltec_mini_mec.gazebo.urdf.xacro"])
@@ -42,6 +43,12 @@ def generate_launch_description():
         output="screen",
         parameters=[{"robot_description": robot_description, "use_sim_time": use_sim_time}],
     )
+    command_mux = Node(
+        package="wheeltec_control",
+        executable="cmd_mux",
+        output="screen",
+        parameters=[{"navigation_enabled": navigation_enabled}],
+    )
     spawn_robot = Node(
         package="ros_gz_sim",
         executable="create",
@@ -52,11 +59,17 @@ def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument("use_sim_time", default_value="true"),
         DeclareLaunchArgument(
+            "navigation_enabled",
+            default_value="false",
+            description="Accept Nav2 commands from /cmd_vel_nav.",
+        ),
+        DeclareLaunchArgument(
             "world",
             default_value=PathJoinSubstitution([gazebo_share, "worlds", "wheeltec_world.sdf"]),
         ),
         gazebo,
         bridge,
         state_publisher,
+        command_mux,
         spawn_robot,
     ])

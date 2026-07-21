@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>wheeltec_control</name>
+  <version>0.1.0</version>
+  <description>Manual teleoperation and safe command selection for the Wheeltec mobile base.</description>
+  <maintainer email="todo@example.com">Manipulator-control maintainers</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_python</buildtool_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

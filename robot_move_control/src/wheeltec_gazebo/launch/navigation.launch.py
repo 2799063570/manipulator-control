@@ -26,6 +26,15 @@ def _launch_navigation(context, *args, **kwargs):
                 ),
                 launch_arguments={"use_sim_time": use_sim_time, "map_file": map_file}.items(),
             ),
+            # Some Nav2 Jazzy deployments start map_server with an empty
+            # yaml_filename despite the launch argument.  Load the same map
+            # through its lifecycle service once it becomes available.
+            Node(
+                package="wheeltec_control",
+                executable="map_loader",
+                output="screen",
+                parameters=[{"map_file": map_file}],
+            ),
         ])
     ]
 

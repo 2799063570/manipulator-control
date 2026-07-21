@@ -21,6 +21,7 @@ setup(
         "console_scripts": [
             "cmd_mux = wheeltec_control.cmd_mux:main",
             "keyboard_teleop = wheeltec_control.keyboard_teleop:main",
+            "map_loader = wheeltec_control.map_loader:main",
         ],
     },
 )

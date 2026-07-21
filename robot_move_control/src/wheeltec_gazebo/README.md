@@ -39,7 +39,7 @@ ros2 launch wheeltec_gazebo mapping.launch.py
 保存地图后仿真导航：
 
 ```bash
-ros2 launch wheeltec_gazebo navigation.launch.py map:=$HOME/maps/wheeltec_lab.yaml
+ros2 launch wheeltec_gazebo navigation.launch.py map_file:=$HOME/maps/wheeltec_lab.yaml
 ```
 
 ## 验证顺序

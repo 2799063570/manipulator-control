@@ -7,9 +7,9 @@ from launch_ros.substitutions import FindPackageShare
 
 def _launch_nav2(context, *args, **kwargs):
     """Resolve parent launch arguments before entering Nav2's map scope."""
-    map_file = LaunchConfiguration("map").perform(context)
+    map_file = LaunchConfiguration("map_file").perform(context)
     if not map_file:
-        raise RuntimeError("A saved map is required. Pass map:=/absolute/path/to/map.yaml")
+        raise RuntimeError("A saved map is required. Pass map_file:=/absolute/path/to/map.yaml")
     nav2_bringup = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             PathJoinSubstitution([FindPackageShare("nav2_bringup"), "launch", "bringup_launch.py"])
@@ -32,7 +32,7 @@ def _launch_nav2(context, *args, **kwargs):
 def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument(
-            "map", description="Absolute path to the saved map YAML file.",
+            "map_file", description="Absolute path to the saved map YAML file.",
         ),
         DeclareLaunchArgument("use_sim_time", default_value="false"),
         DeclareLaunchArgument("autostart", default_value="true"),

@@ -52,7 +52,7 @@ ros2 run nav2_map_server map_saver_cli -f ~/maps/wheeltec_lab
 
 ```bash
 ros2 launch wheeltec_navigation localization.launch.py \
-  map:=$HOME/maps/wheeltec_lab.yaml
+  map_file:=$HOME/maps/wheeltec_lab.yaml
 ```
 
 在 RViz 中使用 **2D Pose Estimate** 设置机器人初始位置。此模式仅完成地图加载与 AMCL 定位，不会接收导航目标。
@@ -61,7 +61,7 @@ ros2 launch wheeltec_navigation localization.launch.py \
 
 ```bash
 ros2 launch wheeltec_navigation navigation.launch.py \
-  map:=$HOME/maps/wheeltec_lab.yaml
+  map_file:=$HOME/maps/wheeltec_lab.yaml
 ```
 
 该启动文件加载地图、AMCL 和完整 Nav2。RViz 发送 **Nav2 Goal** 后，Nav2 通过 `/cmd_vel` 控制底盘。

@@ -1,5 +1,5 @@
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, OpaqueFunction
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, LogInfo, OpaqueFunction
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.substitutions import FindPackageShare
@@ -23,11 +23,13 @@ def _launch_nav2(context, *args, **kwargs):
         }.items(),
     )
 
-    return [nav2_bringup]
+    return [
+        LogInfo(msg=["Starting Nav2 with map: ", map_file]),
+        nav2_bringup,
+    ]
 
 
 def generate_launch_description():
-
     return LaunchDescription([
         DeclareLaunchArgument(
             "map", description="Absolute path to the saved map YAML file.",

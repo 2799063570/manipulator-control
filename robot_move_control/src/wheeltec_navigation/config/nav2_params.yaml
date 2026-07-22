@@ -73,7 +73,7 @@ controller_server:
     goal_checker:
       plugin: nav2_controller::SimpleGoalChecker
       stateful: true
-      xy_goal_tolerance: 0.15
+      xy_goal_tolerance: 0.30
       # For this non-holonomic simulation, reaching the requested map
       # position is sufficient.  Do not keep rotating to match the arrow
       # direction from RViz after the robot has arrived.
@@ -83,16 +83,16 @@ controller_server:
       debug_trajectory_details: false
       min_vel_x: -0.20
       min_vel_y: 0.0
-      max_vel_x: 0.30
+      max_vel_x: 0.18
       max_vel_y: 0.0
       max_vel_theta: 0.8
       min_speed_xy: 0.0
-      max_speed_xy: 0.32
+      max_speed_xy: 0.18
       min_speed_theta: 0.0
-      acc_lim_x: 0.5
+      acc_lim_x: 0.25
       acc_lim_y: 0.0
       acc_lim_theta: 1.5
-      decel_lim_x: -0.5
+      decel_lim_x: -0.8
       decel_lim_y: 0.0
       decel_lim_theta: -1.5
       vx_samples: 20
@@ -102,8 +102,8 @@ controller_server:
       linear_granularity: 0.05
       angular_granularity: 0.025
       transform_tolerance: 0.3
-      xy_goal_tolerance: 0.15
-      trans_stopped_velocity: 0.08
+      xy_goal_tolerance: 0.30
+      trans_stopped_velocity: 0.15
       short_circuit_trajectory_evaluation: true
       stateful: true
       critics: [Oscillation, BaseObstacle, GoalAlign, PathAlign, PathDist, GoalDist]

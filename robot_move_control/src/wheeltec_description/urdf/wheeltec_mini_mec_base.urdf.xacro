@@ -29,11 +29,12 @@
       <axis xyz="0 1 0"/>
       <limit effort="8.0" velocity="25.0"/>
     </joint>
-    <!-- Gazebo Sim uses this direction to approximate the 45-degree rollers. -->
+    <!-- Use strong two-directional contact friction in Gazebo Sim.  The old
+         mu2=0.05 setup made every wheel spin with almost no usable traction,
+         so encoder odometry moved while the physical chassis stayed still. -->
     <gazebo reference="${link_name}">
-      <mu1>1.0</mu1>
-      <mu2>0.05</mu2>
-      <fdir1 gz:expressed_in="base_link" xmlns:gz="http://gazebosim.org/schema">${roller_direction}</fdir1>
+      <mu1>5.0</mu1>
+      <mu2>5.0</mu2>
     </gazebo>
   </xacro:macro>
 

@@ -59,7 +59,9 @@ controller_server:
     controller_frequency: 20.0
     min_x_velocity_threshold: 0.001
     min_y_velocity_threshold: 0.001
-    min_theta_velocity_threshold: 0.001
+    # Treat tiny residual angular commands as stopped; otherwise DWB can keep
+    # issuing imperceptibly small turns around an already-reached goal.
+    min_theta_velocity_threshold: 0.05
     failure_tolerance: 0.3
     progress_checker_plugins: [progress_checker]
     goal_checker_plugins: [goal_checker]
@@ -72,7 +74,7 @@ controller_server:
       plugin: nav2_controller::SimpleGoalChecker
       stateful: true
       xy_goal_tolerance: 0.15
-      yaw_goal_tolerance: 0.2
+      yaw_goal_tolerance: 0.35
     FollowPath:
       plugin: dwb_core::DWBLocalPlanner
       debug_trajectory_details: false
@@ -109,8 +111,8 @@ controller_server:
       GoalAlign.forward_point_distance: 0.1
       PathDist.scale: 28.0
       GoalDist.scale: 20.0
-      RotateToGoal.scale: 20.0
-      RotateToGoal.slowing_factor: 5.0
+      RotateToGoal.scale: 12.0
+      RotateToGoal.slowing_factor: 2.0
       RotateToGoal.lookahead_time: -1.0
 
 local_costmap:

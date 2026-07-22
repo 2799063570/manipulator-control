@@ -65,10 +65,10 @@ def generate_launch_description():
         # The saved wheeltec_lab map has its (0, 0, 0) pose at this location
         # in wheeltec_world.  Keeping this fixed lets AMCL's automatic initial
         # pose (0, 0, 0) align Gazebo, RViz and the saved map on every launch.
-        # base_footprint is on the ground plane.  Spawning it at z=0.08 left
-        # the wheel contact patches floating 8 cm above the floor: encoders
-        # turned while the physical robot (and lidar) stayed still.
-        arguments=["-name", "wheeltec_mini_mec", "-topic", "robot_description", "-x", "-2.484", "-y", "1.520", "-z", "0.0"],
+        # Gazebo spawns the model at its canonical link (base_link), not at
+        # base_footprint.  base_link is 0.075 m above base_footprint, so this
+        # height places the 0.0375 m-radius wheels exactly on the ground.
+        arguments=["-name", "wheeltec_mini_mec", "-topic", "robot_description", "-x", "-2.484", "-y", "1.520", "-z", "0.075"],
     )
 
     return LaunchDescription([

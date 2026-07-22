@@ -29,14 +29,12 @@
       <axis xyz="0 1 0"/>
       <limit effort="8.0" velocity="25.0"/>
     </joint>
-    <!-- Mecanum roller contact: fdir1 follows the 45-degree roller axis.
-         A roller must slide easily along that axis (mu1), while generating
-         traction perpendicular to it (mu2).  Equal high friction turns this
-         chassis into a conventional four-wheel drive and prevents strafing. -->
+    <!-- Stable Gazebo Sim contact model.  The URDF-to-SDF conversion does not
+         reliably preserve the per-roller friction direction, so use ordinary
+         high-friction wheel contact and run Nav2 in non-holonomic mode. -->
     <gazebo reference="${link_name}">
-      <mu1>0.05</mu1>
+      <mu1>5.0</mu1>
       <mu2>5.0</mu2>
-      <fdir1 gz:expressed_in="base_link" xmlns:gz="http://gazebosim.org/schema">${roller_direction}</fdir1>
     </gazebo>
   </xacro:macro>
 

@@ -77,21 +77,21 @@ controller_server:
       plugin: dwb_core::DWBLocalPlanner
       debug_trajectory_details: false
       min_vel_x: -0.20
-      min_vel_y: -0.20
+      min_vel_y: 0.0
       max_vel_x: 0.30
-      max_vel_y: 0.20
+      max_vel_y: 0.0
       max_vel_theta: 0.8
       min_speed_xy: 0.0
       max_speed_xy: 0.32
       min_speed_theta: 0.0
       acc_lim_x: 0.5
-      acc_lim_y: 0.5
+      acc_lim_y: 0.0
       acc_lim_theta: 1.5
       decel_lim_x: -0.5
-      decel_lim_y: -0.5
+      decel_lim_y: 0.0
       decel_lim_theta: -1.5
       vx_samples: 20
-      vy_samples: 15
+      vy_samples: 1
       vtheta_samples: 20
       sim_time: 1.7
       linear_granularity: 0.05

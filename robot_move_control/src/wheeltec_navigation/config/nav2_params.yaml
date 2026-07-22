@@ -74,7 +74,10 @@ controller_server:
       plugin: nav2_controller::SimpleGoalChecker
       stateful: true
       xy_goal_tolerance: 0.15
-      yaw_goal_tolerance: 0.35
+      # For this non-holonomic simulation, reaching the requested map
+      # position is sufficient.  Do not keep rotating to match the arrow
+      # direction from RViz after the robot has arrived.
+      yaw_goal_tolerance: 6.283185
     FollowPath:
       plugin: dwb_core::DWBLocalPlanner
       debug_trajectory_details: false
@@ -103,7 +106,7 @@ controller_server:
       trans_stopped_velocity: 0.08
       short_circuit_trajectory_evaluation: true
       stateful: true
-      critics: [RotateToGoal, Oscillation, BaseObstacle, GoalAlign, PathAlign, PathDist, GoalDist]
+      critics: [Oscillation, BaseObstacle, GoalAlign, PathAlign, PathDist, GoalDist]
       BaseObstacle.scale: 0.02
       PathAlign.scale: 24.0
       PathAlign.forward_point_distance: 0.1

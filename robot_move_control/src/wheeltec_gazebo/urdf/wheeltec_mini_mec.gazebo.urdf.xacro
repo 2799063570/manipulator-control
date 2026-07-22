@@ -16,10 +16,24 @@
       <wheel_radius>0.0375</wheel_radius>
       <odom_publish_frequency>50</odom_publish_frequency>
       <topic>/cmd_vel</topic>
-      <odom_topic>/odom</odom_topic>
-      <tf_topic>/tf</tf_topic>
+      <!-- Keep wheel-encoder odometry separate.  It drifts from the physical
+           model whenever the mecanum wheels slip, so it must not drive RViz
+           or AMCL's odom -> base_footprint transform. -->
+      <odom_topic>/wheel_encoder_odom</odom_topic>
+      <tf_topic>/wheel_encoder_tf</tf_topic>
       <frame_id>odom</frame_id>
       <child_frame_id>base_footprint</child_frame_id>
+    </plugin>
+    <!-- Publish the simulated model's post-physics pose as ground-truth
+         odometry.  This is the same pose that moves the laser in Gazebo, so
+         scan points remain registered with RViz after the robot drives. -->
+    <plugin filename="gz-sim-odometry-publisher-system" name="gz::sim::systems::OdometryPublisher">
+      <odom_frame>odom</odom_frame>
+      <robot_base_frame>base_footprint</robot_base_frame>
+      <odom_publish_frequency>50</odom_publish_frequency>
+      <odom_topic>/odom</odom_topic>
+      <tf_topic>/tf</tf_topic>
+      <dimensions>2</dimensions>
     </plugin>
     <!-- Publish the wheel joint positions so robot_state_publisher can
          generate the corresponding dynamic TF frames for RViz. -->

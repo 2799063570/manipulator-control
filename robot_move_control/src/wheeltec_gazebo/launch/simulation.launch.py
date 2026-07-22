@@ -62,7 +62,10 @@ def generate_launch_description():
         package="ros_gz_sim",
         executable="create",
         output="screen",
-        arguments=["-name", "wheeltec_mini_mec", "-topic", "robot_description", "-x", "-2.5", "-y", "1.5", "-z", "0.08"],
+        # The saved wheeltec_lab map has its (0, 0, 0) pose at this location
+        # in wheeltec_world.  Keeping this fixed lets AMCL's automatic initial
+        # pose (0, 0, 0) align Gazebo, RViz and the saved map on every launch.
+        arguments=["-name", "wheeltec_mini_mec", "-topic", "robot_description", "-x", "-2.484", "-y", "1.520", "-z", "0.08"],
     )
 
     return LaunchDescription([

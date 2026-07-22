@@ -32,8 +32,14 @@
     </plugin>
   </gazebo>
 
-  <gazebo reference="laser">
+  <!-- Attach the Gazebo sensor explicitly to base_link.  Some Gazebo Sim
+       URDF conversions retain the message frame from a reference-only link
+       but instantiate the GPU lidar at the model origin.  This pose is the
+       same as laser_joint (relative to base_link), so the physical sensor and
+       the ROS laser TF are guaranteed to coincide. -->
+  <gazebo reference="base_link">
     <sensor name="lidar" type="gpu_lidar">
+      <pose>0.055 0 0.115 0 0 0</pose>
       <always_on>1</always_on>
       <visualize>true</visualize>
       <update_rate>10</update_rate>

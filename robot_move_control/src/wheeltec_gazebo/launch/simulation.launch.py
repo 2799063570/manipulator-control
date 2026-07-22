@@ -1,7 +1,7 @@
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import Command, FindExecutable, LaunchConfiguration, PathJoinSubstitution
+from launch.substitutions import Command, FindExecutable, LaunchConfiguration, PathJoinSubstitution, PythonExpression
 from launch_ros.actions import Node
 from launch_ros.parameter_descriptions import ParameterValue
 from launch_ros.substitutions import FindPackageShare
@@ -10,6 +10,7 @@ from launch_ros.substitutions import FindPackageShare
 def generate_launch_description():
     use_sim_time = LaunchConfiguration("use_sim_time")
     navigation_enabled = LaunchConfiguration("navigation_enabled")
+    gazebo_gui = LaunchConfiguration("gazebo_gui")
     world = LaunchConfiguration("world")
     gazebo_share = FindPackageShare("wheeltec_gazebo")
     model = PathJoinSubstitution([gazebo_share, "urdf", "wheeltec_mini_mec.gazebo.urdf.xacro"])
@@ -21,7 +22,15 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             PathJoinSubstitution([FindPackageShare("ros_gz_sim"), "launch", "gz_sim.launch.py"])
         ),
-        launch_arguments={"gz_args": ["-r -v 4 ", world]}.items(),
+        # Running the Gazebo GUI alongside RViz and a GPU lidar can exhaust the
+        # graphics driver on modest machines.  Keep it optional; the server,
+        # sensors and ROS topics still run with gazebo_gui:=false.
+        launch_arguments={
+            "gz_args": [
+                PythonExpression(["'-r -v 4 ' if '", gazebo_gui, "' == 'true' else '-r -v 4 -s '"]),
+                world,
+            ]
+        }.items(),
     )
     bridge = Node(
         package="ros_gz_bridge",
@@ -62,6 +71,11 @@ def generate_launch_description():
             "navigation_enabled",
             default_value="false",
             description="Accept Nav2 commands from /cmd_vel_nav.",
+        ),
+        DeclareLaunchArgument(
+            "gazebo_gui",
+            default_value="true",
+            description="Start the Gazebo graphical client. Set false for headless simulation.",
         ),
         DeclareLaunchArgument(
             "world",

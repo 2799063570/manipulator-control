@@ -42,6 +42,7 @@ def _launch_navigation(context, *args, **kwargs):
 def generate_launch_description():
     use_sim_time = LaunchConfiguration("use_sim_time")
     use_rviz = LaunchConfiguration("use_rviz")
+    gazebo_gui = LaunchConfiguration("gazebo_gui")
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             PathJoinSubstitution([FindPackageShare("wheeltec_gazebo"), "launch", "simulation.launch.py"])
@@ -49,6 +50,7 @@ def generate_launch_description():
         launch_arguments={
             "use_sim_time": use_sim_time,
             "navigation_enabled": "true",
+            "gazebo_gui": gazebo_gui,
         }.items(),
     )
     rviz = Node(
@@ -63,6 +65,7 @@ def generate_launch_description():
         DeclareLaunchArgument("use_sim_time", default_value="true"),
         DeclareLaunchArgument("map_file", description="Absolute path to the map YAML file."),
         DeclareLaunchArgument("use_rviz", default_value="true", description="Start RViz with the Wheeltec map configuration."),
+        DeclareLaunchArgument("gazebo_gui", default_value="true", description="Start Gazebo GUI; use false if it freezes."),
         gazebo,
         OpaqueFunction(function=_launch_navigation),
         rviz,

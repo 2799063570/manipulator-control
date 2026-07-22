@@ -65,8 +65,10 @@ Visualization Manager:
       Use Timestamp: false
     - Class: rviz_default_plugins/LaserScan
       Color: 255; 85; 255
+      Decay Time: 0
       Enabled: true
       Name: LaserScan
+      Queue Size: 1
       Size (m): 0.03
       Style: Points
       Topic:

@@ -73,7 +73,7 @@ ros2 launch wheeltec_navigation navigation.launch.py \
 3. 设置低速限制：`max_vel_x/y/theta`、`max_velocity` 和底盘驱动的速度上限应一致。
 4. 再调 `inflation_radius`、DWB 局部规划参数和 AMCL 噪声参数。
 
-默认配置针对麦克纳姆/全向 Wheeltec 底盘：AMCL 使用 `OmniMotionModel`，DWB 允许 `linear.y`。若是差速或履带底盘，应同时把底盘驱动的 `accept_lateral_velocity` 设为 `false`，并将 `nav2_params.yaml` 中所有 y 速度和 y 加速度限制设为 `0`。
+默认配置针对当前 Gazebo 教学模型采用非全向控制：AMCL 使用 `DifferentialMotionModel`，DWB 和速度平滑器都禁止 `linear.y`。如果以后要恢复真正麦克纳姆横移，需要同时重新校准轮子物理模型、里程计模型、AMCL 运动模型和 Nav2 的 y 向速度限制。
 
 ## 常见排障顺序
 

@@ -17,6 +17,7 @@ class CmdMux(Node):
     def __init__(self):
         super().__init__("wheeltec_cmd_mux")
         self.declare_parameter("navigation_enabled", False)
+        self.declare_parameter("navigation_topic", "/cmd_vel_smoothed")
         self.declare_parameter("teleop_timeout", 0.5)
         self.declare_parameter("navigation_timeout", 0.5)
         self.declare_parameter("publish_rate", 20.0)
@@ -28,7 +29,8 @@ class CmdMux(Node):
         self._active_source = None
 
         self.create_subscription(Twist, "/cmd_vel_teleop", self._teleop_callback, 10)
-        self.create_subscription(Twist, "/cmd_vel_nav", self._navigation_callback, 10)
+        navigation_topic = str(self.get_parameter("navigation_topic").value)
+        self.create_subscription(Twist, navigation_topic, self._navigation_callback, 10)
         self._publisher = self.create_publisher(Twist, "/cmd_vel", 10)
 
         rate = float(self.get_parameter("publish_rate").value)

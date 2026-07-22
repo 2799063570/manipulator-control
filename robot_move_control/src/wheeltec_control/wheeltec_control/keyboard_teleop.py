@@ -12,8 +12,9 @@ from rclpy.node import Node
 
 HELP = """
 Keyboard control (publish to /cmd_vel_teleop)
-  w/s: forward/backward      a/d: left/right
-  q/e: rotate left/right     space: stop
+  w/s: forward/backward
+  q/e: rotate left/right
+  space: stop
   Ctrl-C: quit
 """.strip()
 
@@ -22,27 +23,23 @@ class KeyboardTeleop(Node):
     def __init__(self):
         super().__init__("wheeltec_keyboard_teleop")
         self.declare_parameter("linear_speed", 0.15)
-        self.declare_parameter("lateral_speed", 0.15)
         self.declare_parameter("angular_speed", 0.5)
         self._publisher = self.create_publisher(Twist, "/cmd_vel_teleop", 10)
 
     def publish_key(self, key):
         command = Twist()
         linear_speed = float(self.get_parameter("linear_speed").value)
-        lateral_speed = float(self.get_parameter("lateral_speed").value)
         angular_speed = float(self.get_parameter("angular_speed").value)
         bindings = {
             "w": (linear_speed, 0.0, 0.0),
             "s": (-linear_speed, 0.0, 0.0),
-            "a": (0.0, lateral_speed, 0.0),
-            "d": (0.0, -lateral_speed, 0.0),
             "q": (0.0, 0.0, angular_speed),
             "e": (0.0, 0.0, -angular_speed),
             " ": (0.0, 0.0, 0.0),
         }
         if key not in bindings:
             return
-        command.linear.x, command.linear.y, command.angular.z = bindings[key]
+        command.linear.x, _, command.angular.z = bindings[key]
         self._publisher.publish(command)
 
     def stop(self):

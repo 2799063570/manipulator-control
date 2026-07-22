@@ -1,9 +1,9 @@
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, GroupAction, IncludeLaunchDescription, LogInfo, OpaqueFunction
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, LogInfo, OpaqueFunction
 from launch.conditions import IfCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
-from launch_ros.actions import Node, SetRemap
+from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
 
@@ -16,26 +16,12 @@ def _launch_navigation(context, *args, **kwargs):
 
     return [
         LogInfo(msg=["Launching Wheeltec navigation with map: ", map_file]),
-        GroupAction([
-            # Keep Nav2 separate from manual teleoperation.  The command mux then
-            # selects /cmd_vel_nav unless the operator is actively commanding.
-            SetRemap(src="cmd_vel", dst="cmd_vel_nav"),
-            IncludeLaunchDescription(
-                PythonLaunchDescriptionSource(
-                    PathJoinSubstitution([FindPackageShare("wheeltec_navigation"), "launch", "navigation.launch.py"])
-                ),
-                launch_arguments={"use_sim_time": use_sim_time, "map_file": map_file}.items(),
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(
+                PathJoinSubstitution([FindPackageShare("wheeltec_navigation"), "launch", "navigation.launch.py"])
             ),
-            # Some Nav2 Jazzy deployments start map_server with an empty
-            # yaml_filename despite the launch argument.  Load the same map
-            # through its lifecycle service once it becomes available.
-            Node(
-                package="wheeltec_control",
-                executable="map_loader",
-                output="screen",
-                parameters=[{"map_file": map_file}],
-            ),
-        ])
+            launch_arguments={"use_sim_time": use_sim_time, "map_file": map_file}.items(),
+        ),
     ]
 
 

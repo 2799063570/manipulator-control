@@ -51,4 +51,4 @@ ros2 run tf2_ros tf2_echo odom base_footprint
 ros2 run tf2_ros tf2_echo base_footprint laser
 ```
 
-然后低速发布 `linear.y`，确认仿真车能横移；这一步验证麦克纳姆轮的方向、roller 摩擦方向与 Gazebo 控制器配置。仿真通过不代表实车尺寸、轮子打滑和雷达外参已经准确，真实车仍需单独标定。
+然后低速发布 `linear.x` 和 `angular.z`，确认仿真车能前后移动并原地转向；当前教学版不测试 `linear.y` 横移。仿真通过不代表实车尺寸、轮子打滑和雷达外参已经准确，真实车仍需单独标定。

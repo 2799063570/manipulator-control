@@ -76,7 +76,7 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "navigation_enabled",
             default_value="false",
-            description="Accept Nav2 commands from /cmd_vel_nav.",
+            description="Accept Nav2 commands from /cmd_vel_smoothed.",
         ),
         DeclareLaunchArgument(
             "gazebo_gui",

@@ -29,12 +29,13 @@
       <axis xyz="0 1 0"/>
       <limit effort="8.0" velocity="25.0"/>
     </joint>
-    <!-- Stable Gazebo Sim contact model.  The URDF-to-SDF conversion does not
-         reliably preserve the per-roller friction direction, so use ordinary
-         high-friction wheel contact and run Nav2 in non-holonomic mode. -->
+    <!-- Approximate each mecanum wheel's free roller direction with
+         anisotropic contact friction.  Making both directions high-friction
+         over-constrains the four wheels and causes severe slip / slow motion. -->
     <gazebo reference="${link_name}">
-      <mu1>5.0</mu1>
-      <mu2>5.0</mu2>
+      <mu1>1.0</mu1>
+      <mu2>0.0</mu2>
+      <fdir1>${roller_direction}</fdir1>
     </gazebo>
   </xacro:macro>
 

@@ -55,7 +55,7 @@ ros2 launch wheeltec_navigation localization.launch.py \
   map_file:=$HOME/maps/wheeltec_lab.yaml
 ```
 
-在 RViz 中使用 **2D Pose Estimate** 设置机器人初始位置。此模式仅完成地图加载与 AMCL 定位，不会接收导航目标。
+在 RViz 中使用 **2D Pose Estimate** 设置机器人初始位置。真机启动时不会再默认假设机器人位于地图原点；收到初始位姿前没有 `map → odom` 属于正常状态。此模式仅完成地图加载与 AMCL 定位，不会接收导航目标。
 
 ## 模式三：自主导航
 
@@ -64,7 +64,9 @@ ros2 launch wheeltec_navigation navigation.launch.py \
   map_file:=$HOME/maps/wheeltec_lab.yaml
 ```
 
-该启动文件加载地图、AMCL 和完整 Nav2。RViz 发送 **Nav2 Goal** 后，Nav2 通过 `/cmd_vel` 控制底盘。
+该启动文件加载地图、AMCL 和完整 Nav2。启动后先使用 **2D Pose Estimate** 设置初始位置，再发送 **Nav2 Goal**；Nav2 通过 `/cmd_vel` 控制底盘。
+
+导航节点由 `nav2_lifecycle_bringup.py` 逐个配置和激活。它会在 lifecycle 服务响应偏慢时查询节点真实状态并重试，避免 `planner_server` 的 global costmap 首次加载地图稍慢就让整套 Nav2 bringup abort。
 
 ## 首次调参顺序
 
@@ -73,7 +75,7 @@ ros2 launch wheeltec_navigation navigation.launch.py \
 3. 设置低速限制：`max_vel_x/y/theta`、`max_velocity` 和底盘驱动的速度上限应一致。
 4. 再调 `inflation_radius`、DWB 局部规划参数和 AMCL 噪声参数。
 
-默认配置针对当前 Gazebo 教学模型采用非全向控制：AMCL 使用 `DifferentialMotionModel`，Pure Pursuit 控制器和速度平滑器都禁止 `linear.y`。如果以后要恢复真正麦克纳姆横移，需要同时重新校准轮子物理模型、里程计模型、AMCL 运动模型和 Nav2 的 y 向速度限制。
+Gazebo 教学模型使用麦克纳姆运动学：AMCL 使用 `OmniMotionModel`，局部控制器使用 DWB，并允许 `linear.y` 横移。真实车如果横移打滑明显，需要重新标定轮子摩擦、里程计模型、AMCL 噪声和 Nav2 的 y 向速度限制。
 
 ## 常见排障顺序
 

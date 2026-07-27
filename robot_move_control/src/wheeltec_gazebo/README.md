@@ -42,6 +42,12 @@ ros2 launch wheeltec_gazebo mapping.launch.py
 ros2 launch wheeltec_gazebo navigation.launch.py map_file:=$HOME/maps/wheeltec_lab.yaml
 ```
 
+导航启动文件会先启动 Gazebo，默认等待 5 秒再启动 AMCL/Nav2，并自动使用保存地图中的 `(0, 0, 0)` 初始位姿。较慢的机器可以增加 `nav_start_delay`，例如 `nav_start_delay:=8.0`。
+
+Nav2 导航节点使用带状态检查和重试的 lifecycle helper 启动；如果 `planner_server` 首次配置 global costmap 时响应慢半拍，启动流程会继续确认节点是否已经进入目标状态，而不是直接中止 bringup。
+
+同一时间只运行一个 `wheeltec_world` 仿真实例。多个 Gazebo 实例会同时发布同名 `/world/wheeltec_world/clock`，造成 ROS 仿真时间倒跳、TF 被清空，并表现为 RViz 中定位跳变。启动文件使用独立的 Gazebo Transport 分区和 `/tmp/wheeltec_world.lock` 单实例锁；旧实例未退出时，新启动会直接提示 `Another wheeltec_world simulation is still running`。日志出现 `Moved backwards in time` 时，先关闭所有旧的 Gazebo/launch 终端，再重新启动一次。
+
 ## 验证顺序
 
 ```bash
@@ -51,4 +57,4 @@ ros2 run tf2_ros tf2_echo odom base_footprint
 ros2 run tf2_ros tf2_echo base_footprint laser
 ```
 
-然后低速发布 `linear.x` 和 `angular.z`，确认仿真车能前后移动并原地转向；当前教学版不测试 `linear.y` 横移。仿真通过不代表实车尺寸、轮子打滑和雷达外参已经准确，真实车仍需单独标定。
+然后低速发布 `linear.x`、`linear.y` 和 `angular.z`，确认仿真车能前后横移并原地转向。仿真通过不代表实车尺寸、轮子打滑和雷达外参已经准确，真实车仍需单独标定。

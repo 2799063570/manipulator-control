@@ -11,7 +11,7 @@ def generate_launch_description():
             PathJoinSubstitution([FindPackageShare("nav2_bringup"), "launch", "localization_launch.py"])
         ),
         launch_arguments={
-            "map": LaunchConfiguration("map"),
+            "map": LaunchConfiguration("map_file"),
             "use_sim_time": LaunchConfiguration("use_sim_time"),
             "autostart": LaunchConfiguration("autostart"),
             "params_file": LaunchConfiguration("params_file"),
@@ -21,7 +21,7 @@ def generate_launch_description():
 
     return LaunchDescription([
         DeclareLaunchArgument(
-            "map", description="Absolute path to the saved map YAML file.",
+            "map_file", description="Absolute path to the saved map YAML file.",
         ),
         DeclareLaunchArgument("use_sim_time", default_value="false"),
         DeclareLaunchArgument("autostart", default_value="true"),

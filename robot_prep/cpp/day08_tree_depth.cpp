@@ -52,5 +52,11 @@ int main()
     TreeNode* node5 = new TreeNode(1, node3, node4);
 
     cout << "get Tree depth : " << getTreeMaxDepthStack(node5) << endl;
+
+    delete node1;
+    delete node2;
+    delete node3;
+    delete node4;
+    delete node5;
     return 0;
 }

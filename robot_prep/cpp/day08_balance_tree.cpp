@@ -44,6 +44,12 @@ int main()
 
     cout << "is balance tree : " << (isBalanceTree(node5) ? "yes" : "no") << endl;
 
-    delete node1, node2, node3, node4, node5, node6;
+    delete node1;
+    delete node2;
+    delete node3;
+    delete node4;
+    delete node5;
+    delete node6;
+    
     return 0;
 }

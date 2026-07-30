@@ -1,0 +1,20 @@
+# robot control about manipulator
+
+这个一个关于机械臂操作的功能包
+
+robot_state
+维护RobotState对象，维护机器人的状态变量，目前是自由度,位置,速度
+
+safety_limiter
+维护SafetyLimiter对象，关于限位的相关操作，目前有上下位置边界列表,最大绝对值速度,自由度
+
+trajectory_buffer
+维护TrajectoryBuffer对象，利用双向队列deque来存储机器人的状态
+
+cubic_interpolator
+维护CubicInterpolator对象，自由度持续时间和时间间隔dt
+
+jacobian_solver
+维护JacobianSolver对象，计算雅可比矩阵的逆矩阵和计算速度
+
+examples下的程序 用于测试src下的程序，包含各自的main程序入口

@@ -10,13 +10,13 @@ class SafetyLimiter{
 public:
     explicit SafetyLimiter(size_t dof, double maxVelocity = 10);
 
-    void setLowerLimits(const std::vector<double>& low);
+    void setLowerLimits(const std::vector<double>& low);// 设置位置的上下边界
     void setUpperLimits(const std::vector<double>& upr);
-    void setMaxVelocity(double v);
-    const std::vector<double>& lowerLimits() const;
+    void setMaxVelocity(double v);// 设置绝对最大速度
+    const std::vector<double>& lowerLimits() const; // 获取位置上下边界
     const std::vector<double>& upperLimits() const;
-    double maxVelocity() const; 
-    size_t size() const;
+    double maxVelocity() const;     // 获取绝对最大速度
+    size_t size() const;            // 自由度
     bool isSafe(const std::vector<double>& positon, const std::vector<double>& vel) const;
     bool isSafe(const RobotState& robotState) const;
     std::vector<double> clampPosition(const std::vector<double>& position) const;

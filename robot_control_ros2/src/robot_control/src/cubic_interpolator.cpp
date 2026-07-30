@@ -50,6 +50,7 @@ void CubicInterpolator::calculate3Times()
     std::vector<QuinticCoeff> coeffs(dof_);
     for (size_t i = 0; i<dof_; i++)
     {
+        // 计算三次插值的多项式系数 
         compute3Coeff(q_start_[i], dq_start_[i], q_goal_[i], dq_goal_[i], duration_, coeffs[i]);
     }
     for (size_t i = 0; i<num_; ++i)

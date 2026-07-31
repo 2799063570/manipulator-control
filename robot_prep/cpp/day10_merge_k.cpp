@@ -5,6 +5,12 @@
 
 using namespace std;
 
+/*
+    合并 K 个有序链表
+    需要注意的是 我们需要定义比较写重载运算法和写比较器
+    每个链表是从小到大的顺序
+*/
+// 定义链表的节点
 class Node{
 public:
     Node(int val = 0, shared_ptr<Node> next = nullptr)
@@ -29,18 +35,18 @@ struct cmp
 shared_ptr<Node> getMergeNode(shared_ptr<Node> node1, shared_ptr<Node> node2, shared_ptr<Node> node3)
 {
     priority_queue<shared_ptr<Node>, vector<shared_ptr<Node>>, cmp> q;
-    shared_ptr<Node> dummy = make_shared<Node>();
-    shared_ptr<Node> tail = dummy;
+    shared_ptr<Node> dummy = make_shared<Node>();// 头节点
+    shared_ptr<Node> tail = dummy;// 指向返回链表的尾部节点
     if (node1) q.push(node1);
     if (node2) q.push(node2);
     if (node3) q.push(node3);
     while(!q.empty())
     {
-        shared_ptr<Node> curr = q.top();
+        shared_ptr<Node> curr = q.top();// 从最小堆中获取最小节点 并弹出
         q.pop();
 
-        tail->next_ = curr;
-        tail = curr;
+        tail->next_ = curr;// 尾节点指向该节点
+        tail = curr;// 移动尾节点
 
         if (curr->next_) q.push(curr->next_);
     }
@@ -60,6 +66,7 @@ void printTreeNode(shared_ptr<Node> node)
 
 int main()
 {
+
     shared_ptr<Node> node1 = make_shared<Node>(5);
     shared_ptr<Node> node2 = make_shared<Node>(4, node1);
     shared_ptr<Node> node3 = make_shared<Node>(1, node2);

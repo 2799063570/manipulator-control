@@ -29,7 +29,7 @@ struct TestConfig
   std::string robot_ip;
   int rpc_port{30004};
   int rtde_port{30010};
-  int feedback_timeout_ms{2000};
+  int feedback_timeout_ms{2000};// 等待时间
   std::string joint_name;
   double delta_rad{0.0};
   double duration_s{0.0};
@@ -133,7 +133,7 @@ inline bool connect_and_read_feedback(
   Feedback & feedback,
   std::string & robot_name)
 {
-  const char * username = std::getenv("AUBO_ROBOT_USERNAME");
+  const char * username = std::getenv("AUBO_ROBOT_USERNAME");// 寻找环境变量 用户名和密码
   const char * password = std::getenv("AUBO_ROBOT_PASSWORD");
   if (username == nullptr || password == nullptr)
   {
@@ -178,13 +178,13 @@ inline bool connect_and_read_feedback(
       return false;
     }
     if (rtde->subscribe(topic, [&feedback](arcs::aubo_sdk::InputParser & parser) {
-      const auto q = parser.popVectorDouble();
+      const auto q = parser.popVectorDouble();// 解析位置、速度、模式
       const auto qd = parser.popVectorDouble();
       const auto robot_mode = parser.popRobotModeType();
       const auto safety_mode = parser.popSafetyModeType();
       if (q.size() != kArmDof || qd.size() != kArmDof ||
         !std::all_of(q.begin(), q.end(), [](double value) {return std::isfinite(value);}) ||
-        !std::all_of(qd.begin(), qd.end(), [](double value) {return std::isfinite(value);}))
+        !std::all_of(qd.begin(), qd.end(), [](double value) {return std::isfinite(value);})) // 判断一个范围内的所有元素是否都满足某个条件。
       {
         return;
       }
@@ -197,7 +197,7 @@ inline bool connect_and_read_feedback(
         feedback.timestamp = std::chrono::steady_clock::now();
         feedback.valid = true;
       }
-      feedback.received.notify_all();
+      feedback.received.notify_all();// 通知所有的线程
     }) != 0)
     {
       std::cerr << "Could not subscribe to RTDE feedback.\n";
@@ -205,10 +205,10 @@ inline bool connect_and_read_feedback(
       return false;
     }
 
-    std::unique_lock<std::mutex> lock(feedback.mutex);
+    std::unique_lock<std::mutex> lock(feedback.mutex);// 上锁
     if (!feedback.received.wait_for(lock, std::chrono::milliseconds(config.feedback_timeout_ms), [&feedback] {
       return feedback.valid;
-    }))
+    }))// 设置等待条件 防止虚假唤醒。
     {
       std::cerr << "Timed out waiting for a valid six-axis RTDE feedback frame.\n";
       lock.unlock();

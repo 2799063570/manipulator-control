@@ -3,6 +3,10 @@
 
 #include "aubo_i5_hardware/sdk_test_support.hpp"
 
+/*
+  读取关节状态 机器人状态  
+*/
+
 namespace
 {
 
@@ -18,7 +22,7 @@ int main(int argc, char ** argv)
   std::string config_path = aubo_i5_hardware::test_support::default_config_path();
   if (argc == 3 && std::string(argv[1]) == "--config")
   {
-    config_path = argv[2];
+    config_path = argv[2];// 输入yaml配置文件路径
   }
   else if (argc != 1)
   {
@@ -28,7 +32,7 @@ int main(int argc, char ** argv)
 
   aubo_i5_hardware::test_support::TestConfig config;
   std::string config_error;
-  if (!aubo_i5_hardware::test_support::load_test_config(config_path, config, config_error))
+  if (!aubo_i5_hardware::test_support::load_test_config(config_path, config, config_error))// 读取yaml文件中的数据倒导入到config中
   {
     std::cerr << config_error << '\n';
     return 2;

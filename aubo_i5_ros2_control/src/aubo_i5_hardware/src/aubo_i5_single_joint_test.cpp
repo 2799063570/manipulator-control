@@ -11,6 +11,10 @@
 
 #include "aubo_i5_hardware/sdk_test_support.hpp"
 
+/*
+  Aubo i5 的单关节伺服运动测试程序，通过 RPC 建立控制连接，通过 RTDE 获取实时状态，然后进入 Servo 模式，
+  以125Hz周期发送单个关节的目标位置，最后通过反馈位置验证运动是否成功。
+*/
 namespace
 {
 
@@ -67,12 +71,13 @@ int joint_index(const std::string & joint_name)
 
 int main(int argc, char ** argv)
 {
+  // 安全启动
   if (!has_flag(argc, argv, "--enable-motion") || !has_flag(argc, argv, "--acknowledge-safety"))
   {
     print_usage();
     return 2;
   }
-
+  // 还是读取参数文件
   std::string config_path = aubo_i5_hardware::test_support::default_config_path();
   if (const char * requested_config = argument_value(argc, argv, "--config"))
   {
@@ -87,7 +92,7 @@ int main(int argc, char ** argv)
   }
 
   const std::string joint_name = config.joint_name;
-  const int axis = joint_index(joint_name);
+  const int axis = joint_index(joint_name);// 获取关节对应的id
   if (axis < 0)
   {
     std::cerr << "Unknown joint name: " << joint_name << '\n';
@@ -96,6 +101,8 @@ int main(int argc, char ** argv)
 
   const double delta = config.delta_rad;
   const double duration_seconds = config.duration_s;
+  // 检查条件
+  // 角度变化 时间限制 
   if (!std::isfinite(delta) || !std::isfinite(duration_seconds) || delta == 0.0 ||
     std::abs(delta) > kMaximumTestDelta || duration_seconds < 2.0 || duration_seconds > 10.0 ||
     config.speed_fraction <= 0.0 || config.speed_fraction > kTestSpeedFraction)
@@ -127,7 +134,7 @@ int main(int argc, char ** argv)
     std::lock_guard<std::mutex> lock(feedback.mutex);
     initial_position = feedback.position;
   }
-  const double final_position = initial_position[axis] + delta;
+  const double final_position = initial_position[axis] + delta;// 在当前关节角度加上对应的角度变化
   if (final_position < config.lower_limit_rad || final_position > config.upper_limit_rad)
   {
     std::cerr << "Target exceeds the limits specified in the YAML file.\n";
@@ -162,7 +169,7 @@ int main(int argc, char ** argv)
     else
     {
       speed_fraction_changed = true;
-      if (motion->setServoMode(true) != 0)
+      if (motion->setServoMode(true) != 0)//实时伺服模式
       {
         std::cerr << "Could not enable Servo mode.\n";
         exit_code = 1;
@@ -182,9 +189,9 @@ int main(int argc, char ** argv)
         }
         else
         {
-          const auto steps = static_cast<int>(std::ceil(duration_seconds * 125.0));
-          const auto period = std::chrono::microseconds(8000);
-          std::vector<double> target(initial_position.begin(), initial_position.end());
+          const auto steps = static_cast<int>(std::ceil(duration_seconds * 125.0));// 执行步数
+          const auto period = std::chrono::microseconds(8000);// 8ms
+          std::vector<double> target(initial_position.begin(), initial_position.end());// 目标关节角度数组
           auto next_cycle = std::chrono::steady_clock::now();
           std::cout << "Moving " << joint_name << " by " << delta << " rad over "
                     << duration_seconds << " s at a " << config.speed_fraction * 100.0
@@ -200,7 +207,7 @@ int main(int argc, char ** argv)
               break;
             }
             target[axis] = initial_position[axis] + delta * static_cast<double>(step) / steps;
-            if (motion->servoJoint(target, 0.1, 0.1, 0.008, 0.03, 100) < 0)
+            if (motion->servoJoint(target, 0.1, 0.1, 0.008, 0.03, 100) < 0)// 发送目标关节角度
             {
               std::cerr << "servoJoint rejected the command at step " << step << ".\n";
               exit_code = 1;

@@ -19,6 +19,7 @@ find_package(turtlesim REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(rclcpp_action REQUIRED)
+find_package(pluginlib REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/JointStateCommand.msg"
@@ -26,6 +27,33 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/JointVelocityCmd.msg"
   "msg/JointPositionCmd.msg"
   "action/Fibonacci.action")
+
+# -------------------- pluginlib 动态插件学习示例 --------------------
+# 两个派生类被编译进共享库；加载程序不会直接链接这个目标。
+add_library(printer_plugins SHARED
+  src/pluginlib_demo/printer_plugins.cpp
+)
+target_compile_features(printer_plugins PUBLIC cxx_std_17)
+target_include_directories(printer_plugins
+  PUBLIC
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+)
+ament_target_dependencies(printer_plugins pluginlib)
+
+# 主程序只依赖基类和 pluginlib，不链接 printer_plugins。
+add_executable(pluginlib_demo
+  src/pluginlib_demo/pluginlib_demo.cpp
+)
+target_compile_features(pluginlib_demo PRIVATE cxx_std_17)
+target_include_directories(pluginlib_demo PRIVATE
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>
+)
+ament_target_dependencies(pluginlib_demo pluginlib)
+
+# 把 XML 注册到 ament 索引，pluginlib 才能通过基类包名发现插件。
+pluginlib_export_plugin_description_file(robot_control_ros2 printer_plugins.xml)
 
 add_executable(joint_velocity_publisher src/topic/joint_velocity_publisher.cpp)
 ament_target_dependencies(
@@ -244,6 +272,17 @@ install(TARGETS
   fibonacci_server
   fibonacci_client
   DESTINATION lib/${PROJECT_NAME})
+
+# 插件库遵循 ROS 2/ament 惯例安装到 lib，加载程序安装到 ros2 run 查找的位置。
+install(TARGETS printer_plugins
+  LIBRARY DESTINATION lib
+)
+install(TARGETS pluginlib_demo
+  RUNTIME DESTINATION lib/${PROJECT_NAME}
+)
+install(DIRECTORY include/
+  DESTINATION include
+)
 ament_export_dependencies(rosidl_default_runtime)
 
 install(DIRECTORY

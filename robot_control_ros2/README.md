@@ -48,4 +48,47 @@ ros2 launch turtlesim_exercise turtlesim_follow.launch.py
 ros2 launch robot_control_ros2 vel_to_pos_node.launch.py
 ```
 
+## pluginlib 动态插件入门示例
+
+`robot_control_ros2` 中包含一个与 AUBO 硬件接口加载方式相似的最小插件示例：
+
+- `PrinterBase` 是所有插件共同继承的抽象基类；
+- `ChinesePrinter` 和 `EnglishPrinter` 是两个派生类；
+- 两个派生类编译到 `libprinter_plugins.so`，并通过导出宏注册；
+- `printer_plugins.xml` 建立插件名称、C++ 类型和动态库之间的映射；
+- `pluginlib_demo` 只依赖基类，运行时才按字符串名称加载具体插件。
+
+构建并运行：
+
+```bash
+cd ~/cpp_practice/robot_control_ros2
+source /opt/ros/jazzy/setup.bash
+colcon build --packages-up-to robot_control_ros2
+source install/setup.bash
+ros2 run robot_control_ros2 pluginlib_demo
+```
+
+预期输出：
+
+```text
+准备加载插件：robot_control_ros2/ChinesePrinter
+你好，我是运行时加载的中文打印插件！
+插件调用完成。
+```
+
+不重新编译主程序，直接改用英文插件：
+
+```bash
+ros2 run robot_control_ros2 pluginlib_demo robot_control_ros2/EnglishPrinter
+```
+
+还可以检查主程序没有直接链接插件库：
+
+```bash
+ldd install/robot_control_ros2/lib/robot_control_ros2/pluginlib_demo | grep printer_plugins
+```
+
+正常情况下该命令没有输出。插件库不是主程序的固定链接依赖，而是 `pluginlib`
+读取 XML 后通过 `dlopen()` 按需加载。这正是它和普通 `target_link_libraries()` 动态链接的区别。
+
 每次只保留一套仿真/控制 launch 在运行，避免遗留节点同时发布 `/joint_states` 或占用同名 `/controller_manager`。

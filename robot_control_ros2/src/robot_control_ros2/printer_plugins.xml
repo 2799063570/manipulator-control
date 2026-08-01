@@ -1,0 +1,12 @@
+<library path="printer_plugins">
+  <class name="robot_control_ros2/ChinesePrinter"
+         type="robot_control_ros2::ChinesePrinter"
+         base_class_type="robot_control_ros2::PrinterBase">
+    <description>输出中文消息的最小 pluginlib 示例。</description>
+  </class>
+  <class name="robot_control_ros2/EnglishPrinter"
+         type="robot_control_ros2::EnglishPrinter"
+         base_class_type="robot_control_ros2::PrinterBase">
+    <description>输出英文消息的最小 pluginlib 示例。</description>
+  </class>
+</library>

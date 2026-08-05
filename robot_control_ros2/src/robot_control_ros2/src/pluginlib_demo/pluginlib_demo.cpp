@@ -7,7 +7,7 @@
 
 int main(int argc, char ** argv)
 {
-  // 不传参数时加载中文插件，也可以在运行时传入另一个 XML 中注册的插件名。
+  // 不传参数时加载中文插件，也可以在运行时传入另一个 XML 中注册的插件名。 test
   const std::string plugin_name = argc > 1 ? argv[1] : "robot_control_ros2/ChinesePrinter";
 
   try
